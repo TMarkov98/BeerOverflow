@@ -11,17 +11,14 @@ namespace BeerOverflow.Models
         public int Id { get; set; }
         public string Name
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            get;
+            set;
         }
-        public BeerType BeerType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Brewery { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public BeerType BeerType { get; set; }
+        public string Brewery { get; set; }
         public double AlcoholByVolume
         {
-            get
-            {
-                return this._alcoholByVolume;
-            }
+            get => this._alcoholByVolume;
             set
             {
                 if (value < 3 || value > 13)
