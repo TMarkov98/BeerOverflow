@@ -6,7 +6,7 @@ namespace BeerOverflow.Models
 {
     public class Beer : IBeer
     {
-        private int _alcoholByVolume;
+        private double _alcoholByVolume;
 
         public int Id { get; set; }
         public string Name
@@ -16,7 +16,7 @@ namespace BeerOverflow.Models
         }
         public BeerType BeerType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Brewery { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public int AlcoholByVolume
+        public double AlcoholByVolume
         {
             get
             {
