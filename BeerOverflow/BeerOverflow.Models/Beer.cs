@@ -4,10 +4,11 @@ using System;
 
 namespace BeerOverflow.Models
 {
-    public class Beer : Contracts.IBeer
+    public class Beer : IBeer
     {
-        int
+        private int _alcoholByVolume;
 
+        public int Id { get; set; }
         public string Name
         {
             get => throw new NotImplementedException();
@@ -19,9 +20,14 @@ namespace BeerOverflow.Models
         {
             get
             {
-                return 
-            };
-            set => throw new NotImplementedException();
+                return this._alcoholByVolume;
+            }
+            set
+            {
+                if (value < 3 || value > 13)
+                    throw new ArgumentOutOfRangeException("AbV must be > 3 and < 13.");
+                this._alcoholByVolume = value;
+            }
         }
     }
 }

@@ -3,8 +3,8 @@ using System;
 
 namespace BeerOverflow.Services
 {
-    public static class Services
+    public static class BeerServices
     {
-        public static Beer CreateBeer() { }
+        public static IBeer CreateBeer() { }
     }
 }

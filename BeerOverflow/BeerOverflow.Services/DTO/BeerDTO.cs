@@ -4,7 +4,8 @@ using System.Text;
 
 namespace BeerOverflow.Services.DTO
 {
-    interface BeerDTO
+    public class BeerDTO
     {
+
     }
 }
