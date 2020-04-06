@@ -1,5 +1,4 @@
 ﻿using BeerOverflow.Models;
-using System;
 using System.Collections.Generic;
 
 namespace BeerOverflow.Database
@@ -9,6 +8,7 @@ namespace BeerOverflow.Database
         static Database()
         {
             Beers = new List<Beer>();
+            SeedData();
         }
         public static List<Beer> Beers { get; set; }
         public static void SeedData()
@@ -17,7 +17,31 @@ namespace BeerOverflow.Database
             {
                 new Beer
                 {
-                    Id = 1
+                    Id = 1,
+                    Name = "Balter IIPA",
+                    BeerType = Models.Enums.BeerType.Ipa,
+                    Brewery = "Australia"
+                },
+                new Beer
+                {
+                    Id = 3,
+                    Name = "BentSpoke Cluster 8",
+                    BeerType = Models.Enums.BeerType.PaleAle,
+                    Brewery = "Australia"
+                },
+                new Beer
+                {
+                    Id = 2,
+                    Name = "Stone & Wood Pacific Ale",
+                    BeerType = Models.Enums.BeerType.PaleAle,
+                    Brewery = "Australia"
+                },
+                new Beer
+                {
+                    Id = 4,
+                    Name = "Modus Operandi Former Tenant",
+                    BeerType = Models.Enums.BeerType.IrishRedAle,
+                    Brewery = "Australia"
                 }
             });
         }
