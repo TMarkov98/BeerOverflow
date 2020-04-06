@@ -30,9 +30,9 @@ namespace BeerOverflow.Services
             throw new NotImplementedException();
         }
 
-        public ICollection<IBeerDTO> GetAllBeers()
+        public ICollection<BeerDTO> GetAllBeers()
         {
-            var beers = Database.Database
+            var beers = Database.Database.Beers
                 .Select(x => new BeerDTO
                 {
                     Id = x.Id,
@@ -46,9 +46,9 @@ namespace BeerOverflow.Services
             return beers;
         }
 
-        public IBeerDTO GetBeer(int id)
+        public BeerDTO GetBeer(int id)
         {
-            var beer = Database.Database
+            var beer = Database.Database.Beers
                 .FirstOrDefault(b => b.Id == id);
 
             if (beer == null)
@@ -56,7 +56,7 @@ namespace BeerOverflow.Services
                 throw new ArgumentNullException();
             }
 
-            IBeerDTO beerDTO = new BeerDTO
+            var beerDTO = new BeerDTO
             {
                 Id = beer.Id,
                 Name = beer.Name,

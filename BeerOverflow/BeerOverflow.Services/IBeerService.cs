@@ -1,4 +1,5 @@
 ﻿using BeerOverflow.Models.Contracts;
+using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.DTO.Contracts;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,8 @@ namespace BeerOverflow.Services
 {
     interface IBeerService
     {
-        IBeerDTO GetBeer(int id);
-        ICollection<IBeerDTO> GetAllBeers();
+        BeerDTO GetBeer(int id);
+        ICollection<BeerDTO> GetAllBeers();
         IBeer CreateBeer(IBeerDTO beerDTO);
         bool DeleteBeer(int id);
     }

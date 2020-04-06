@@ -7,14 +7,14 @@ namespace BeerOverflow.Services.DTO
 {
     public class BeerDTO
     {
-        private int _alcoholByVolume;
+        private double _alcoholByVolume;
 
 
         public int Id { get; set; }
         public string Name { get; set; }
         public BeerType BeerType { get; set; }
         public string Brewery { get; set; }
-        public int AlcoholByVolume
+        public double AlcoholByVolume
         {
             get
             {

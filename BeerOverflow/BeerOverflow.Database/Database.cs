@@ -1,5 +1,6 @@
 ﻿using BeerOverflow.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BeerOverflow.Database
 {
