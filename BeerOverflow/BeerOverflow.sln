@@ -5,11 +5,14 @@ VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerOverflow", "BeerOverflow\BeerOverflow.csproj", "{278D61A8-4F8A-4D1A-B3E5-82EF6D4CC241}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerOverflow.Models", "BeerOverflow.Models\BeerOverflow.Models.csproj", "{F9B01343-E6D8-4483-8855-21A0A358AA44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerOverflow.Models", "BeerOverflow.Models\BeerOverflow.Models.csproj", "{F9B01343-E6D8-4483-8855-21A0A358AA44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerOverflow.Database", "BeerOverflow.Database\BeerOverflow.Database.csproj", "{93EDE977-408E-48A3-98A0-52E36C090D13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerOverflow.Database", "BeerOverflow.Database\BeerOverflow.Database.csproj", "{93EDE977-408E-48A3-98A0-52E36C090D13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerOverflow.Services", "BeerOverflow.Services\BeerOverflow.Services.csproj", "{0CD6AACB-3D2F-43D9-BE62-B3CB6A3D359D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeerOverflow.Services", "BeerOverflow.Services\BeerOverflow.Services.csproj", "{0CD6AACB-3D2F-43D9-BE62-B3CB6A3D359D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{93EDE977-408E-48A3-98A0-52E36C090D13} = {93EDE977-408E-48A3-98A0-52E36C090D13}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
