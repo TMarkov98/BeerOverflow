@@ -21,6 +21,7 @@ namespace BeerOverflow.Services
                 Brewery = beerDTO.Brewery,
                 AlcoholByVolume = beerDTO.AlcoholByVolume
             };
+            Database.Database.Beers.Add(beer);
             return beer;
 
         }
