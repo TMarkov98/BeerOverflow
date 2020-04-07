@@ -6,6 +6,7 @@ using BeerOverflow.Services.DTO.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.SqlClient;
 
 namespace BeerOverflow.Services
 {
