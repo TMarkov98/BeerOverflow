@@ -11,5 +11,9 @@ namespace BeerOverflow.Models.Contracts
         BeerType BeerType { get; set; }
         string Brewery { get; set; }
         double AlcoholByVolume { get; set; }
+        string Country { get; set; }
+        DateTime CreatedOn { get; set; }
+        DateTime DeletedOn { get; set; }
+        DateTime ModifiedOn { get; set; }
     }
 }
