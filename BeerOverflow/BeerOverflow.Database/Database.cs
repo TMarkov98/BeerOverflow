@@ -23,7 +23,7 @@ namespace BeerOverflow.Database
                     "Bulgaria",
                     "Australia",
                     4.5
-                ),
+                ){Id = 1},
                 new Beer
                 (
                     "BentSpoke Cluster 8",
@@ -31,7 +31,7 @@ namespace BeerOverflow.Database
                     "Neptun",
                     "Australia",
                     5
-                ),
+                ){ Id = 2},
                 new Beer
                 (
                     "Stone & Wood Pacific Ale",
@@ -39,7 +39,7 @@ namespace BeerOverflow.Database
                     "Mars",
                     "Australia",
                     7.5
-                ),
+                ){ Id = 3},
                 new Beer
                 (
                     "Modus Operandt",
@@ -47,7 +47,7 @@ namespace BeerOverflow.Database
                     "Bulgaria",
                     "Australia",
                     6.5
-                )
+                ){ Id = 4}
             });
         }
     }

@@ -9,9 +9,9 @@ namespace BeerOverflow.Web.Models
     public class BeerViewModel
     {
         public string Name { get; set; }
-        public BeerType BeerType { get; set; }
+        public string BeerType { get; set; }
         public string Brewery { get; set; }
-        public double AlcoholByVolume { get; set; }
         public string Country { get; set; }
+        public double AlcoholByVolume { get; set; }
     }
 }

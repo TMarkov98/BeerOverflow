@@ -28,7 +28,7 @@ namespace BeerOverflow.Controllers
                 .Select(x => new BeerViewModel
                 {
                     Name = x.Name,
-                    BeerType = x.BeerType,
+                    BeerType = x.BeerType.ToString(),
                     Brewery = x.Brewery,
                     Country = x.Country,
                     AlcoholByVolume = x.AlcoholByVolume,

@@ -32,7 +32,8 @@ namespace BeerOverflow.Services
                     Name = x.Name,
                     BeerType = x.BeerType,
                     Brewery = x.Brewery,
-                    AlcoholByVolume = x.AlcoholByVolume
+                    Country = x.Country,
+                    AlcoholByVolume = x.AlcoholByVolume,
                 })
                 .ToList();
 
@@ -54,7 +55,8 @@ namespace BeerOverflow.Services
                 Name = beer.Name,
                 BeerType = beer.BeerType,
                 Brewery = beer.Brewery,
-                AlcoholByVolume = beer.AlcoholByVolume
+                Country = beer.Country,
+                AlcoholByVolume = beer.AlcoholByVolume,
             };
 
             return beerDTO;

@@ -16,8 +16,10 @@ namespace BeerOverflow.Models
             this.BeerType = beerType;
             this.Brewery = brewery;
             this.Country = country;
+            this.AlcoholByVolume = AbV;
+            
         }
-        public int Id { get; }
+        public int Id { get; set; }
         public string Name
         {
             get => this._name;
