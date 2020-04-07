@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BeerOverflow.Services
 {
-    interface IBeerService
+    public interface IBeerService
     {
         BeerDTO GetBeer(int id);
         ICollection<BeerDTO> GetAllBeers();

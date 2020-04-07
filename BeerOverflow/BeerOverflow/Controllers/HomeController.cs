@@ -6,21 +6,35 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BeerOverflow.Models;
+using BeerOverflow.Services;
+using BeerOverflow.Web.Models;
 
 namespace BeerOverflow.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IBeerService _beerService;
+        public HomeController(ILogger<HomeController> logger, IBeerService beerService)
         {
             _logger = logger;
+            _beerService = beerService ?? throw new ArgumentNullException("BeerService can not be null.");
         }
 
         public IActionResult Index()
         {
-            return View();
+            var homeModel = new HomeIndexViewModel();
+            homeModel.AllBeers = this._beerService.GetAllBeers()
+                .Select(x => new BeerViewModel
+                {
+                    Name = x.Name,
+                    BeerType = x.BeerType,
+                    Brewery = x.Brewery,
+                    Country = x.Country,
+                    AlcoholByVolume = x.AlcoholByVolume,
+                })
+                .ToList();
+            return View(homeModel);
         }
 
         public IActionResult Privacy()

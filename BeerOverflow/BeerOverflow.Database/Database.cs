@@ -17,37 +17,37 @@ namespace BeerOverflow.Database
             Beers.AddRange(new List<Beer>
             {
                 new Beer
-                {
-                    Id = 1,
-                    Name = "Balter IIPA",
-                    BeerType = Models.Enums.BeerType.Ipa,
-                    Brewery = "Australia",
-                    AlcoholByVolume = 4.5
-                },
+                (
+                    "Balter IIPA",
+                    Models.Enums.BeerType.Ipa,
+                    "Bulgaria",
+                    "Australia",
+                    4.5
+                ),
                 new Beer
-                {
-                    Id = 3,
-                    Name = "BentSpoke Cluster 8",
-                    BeerType = Models.Enums.BeerType.PaleAle,
-                    Brewery = "Australia",
-                    AlcoholByVolume = 5
-                },
+                (
+                    "BentSpoke Cluster 8",
+                    Models.Enums.BeerType.PaleAle,
+                    "Neptun",
+                    "Australia",
+                    5
+                ),
                 new Beer
-                {
-                    Id = 2,
-                    Name = "Stone & Wood Pacific Ale",
-                    BeerType = Models.Enums.BeerType.PaleAle,
-                    Brewery = "Australia",
-                    AlcoholByVolume = 7.5
-                },
+                (
+                    "Stone & Wood Pacific Ale",
+                    Models.Enums.BeerType.PaleAle,
+                    "Mars",
+                    "Australia",
+                    7.5
+                ),
                 new Beer
-                {
-                    Id = 4,
-                    Name = "Modus Operandi Former Tenant",
-                    BeerType = Models.Enums.BeerType.IrishRedAle,
-                    Brewery = "Australia",
-                    AlcoholByVolume = 6.5
-                }
+                (
+                    "Modus Operandt",
+                    Models.Enums.BeerType.IrishRedAle,
+                    "Bulgaria",
+                    "Australia",
+                    6.5
+                )
             });
         }
     }

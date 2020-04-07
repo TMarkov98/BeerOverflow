@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BeerOverflow.Models\BeerOverflow.Models.csproj" />
+    <ProjectReference Include="..\BeerOverflow.Services\BeerOverflow.Services.csproj" />
   </ItemGroup>
 
 
