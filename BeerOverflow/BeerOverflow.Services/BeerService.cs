@@ -14,14 +14,7 @@ namespace BeerOverflow.Services
     {
         public IBeer CreateBeer(IBeerDTO beerDTO)
         {
-            var beer = new Beer
-            {
-                Name = beerDTO.Name,
-                BeerType = beerDTO.BeerType,
-                Brewery = beerDTO.Brewery,
-                Country = beerDTO.Country,
-                AlcoholByVolume = beerDTO.AlcoholByVolume
-            };
+            var beer = new Beer(beerDTO.Name, beerDTO.BeerType, beerDTO.Brewery, beerDTO.Country, beerDTO.AlcoholByVolume);
             Database.Database.Beers.Add(beer);
             return beer;
         }
