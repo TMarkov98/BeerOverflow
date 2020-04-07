@@ -7,6 +7,7 @@ namespace BeerOverflow.Models.Contracts
 {
     public interface IBeer
     {
+        int Id { get; }
         string Name { get; set; }
         BeerType BeerType { get; set; }
         string Brewery { get; set; }

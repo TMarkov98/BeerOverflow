@@ -16,15 +16,14 @@ namespace BeerOverflow.Services
         {
             var beer = new Beer
             {
-                Id = beerDTO.Id,
                 Name = beerDTO.Name,
                 BeerType = beerDTO.BeerType,
                 Brewery = beerDTO.Brewery,
+                Country = beerDTO.Country,
                 AlcoholByVolume = beerDTO.AlcoholByVolume
             };
             Database.Database.Beers.Add(beer);
             return beer;
-
         }
 
         public bool DeleteBeer(int id)
@@ -37,7 +36,6 @@ namespace BeerOverflow.Services
             var beers = Database.Database.Beers
                 .Select(x => new BeerDTO
                 {
-                    Id = x.Id,
                     Name = x.Name,
                     BeerType = x.BeerType,
                     Brewery = x.Brewery,
@@ -60,7 +58,6 @@ namespace BeerOverflow.Services
 
             var beerDTO = new BeerDTO
             {
-                Id = beer.Id,
                 Name = beer.Name,
                 BeerType = beer.BeerType,
                 Brewery = beer.Brewery,
