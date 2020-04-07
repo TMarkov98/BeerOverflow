@@ -8,6 +8,7 @@ namespace BeerOverflow.Web.Models
 {
     public class BeerViewModel
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string BeerType { get; set; }
         public string Brewery { get; set; }

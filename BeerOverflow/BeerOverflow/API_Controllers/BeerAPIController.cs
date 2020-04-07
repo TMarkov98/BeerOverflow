@@ -33,6 +33,22 @@ namespace BeerOverflow.Web.API_Controllers
                 });
             return Ok(model);
         }
+        [HttpGet]
+        [Route("{id}")]
+        public IActionResult Get(int id)
+        {
+            var beerDTO = this._beerService.GetBeer(id);
+            var model = new BeerViewModel
+            {
+                Id = beerDTO.Id,
+                Name = beerDTO.Name,
+                BeerType = beerDTO.BeerType.ToString(),
+                Brewery = beerDTO.Brewery,
+                Country = beerDTO.Country,
+                AlcoholByVolume = beerDTO.AlcoholByVolume,
+            };
+            return Ok(model);
+        }
         //public string Name { get; set; }
         //public BeerType BeerType { get; set; }
         //public string Brewery { get; set; }

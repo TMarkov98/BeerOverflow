@@ -52,6 +52,7 @@ namespace BeerOverflow.Services
 
             var beerDTO = new BeerDTO
             {
+                Id = beer.Id,
                 Name = beer.Name,
                 BeerType = beer.BeerType,
                 Brewery = beer.Brewery,
