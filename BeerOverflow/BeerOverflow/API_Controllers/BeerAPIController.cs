@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BeerOverflow.Models.Enums;
 using BeerOverflow.Services;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Web.Models;
@@ -61,7 +60,7 @@ namespace BeerOverflow.Web.API_Controllers
             var beerDTO = new BeerDTO
             {
                 Name = beerViewModel.Name,
-                BeerType = (BeerType)Enum.Parse(typeof(BeerType), beerViewModel.BeerType, true),
+                BeerType = beerViewModel.BeerType,
                 Brewery = beerViewModel.Brewery,
                 Country = beerViewModel.Country,
                 AlcoholByVolume = beerViewModel.AlcoholByVolume

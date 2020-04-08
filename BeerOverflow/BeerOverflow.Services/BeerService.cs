@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.SqlClient;
+using BeerOverflow.Models.Enums;
 
 namespace BeerOverflow.Services
 {
@@ -14,7 +15,7 @@ namespace BeerOverflow.Services
     {
         public IBeer CreateBeer(IBeerDTO beerDTO)
         {
-            var beer = new Beer(beerDTO.Name, beerDTO.BeerType, beerDTO.Brewery, beerDTO.Country, beerDTO.AlcoholByVolume);
+            var beer = new Beer(beerDTO.Name, (BeerType)Enum.Parse(typeof(BeerType), beerDTO.BeerType, true), beerDTO.Brewery, beerDTO.Country, beerDTO.AlcoholByVolume);
             Database.Database.Beers.Add(beer);
             beer.Id = Database.Database.Beers.Count;
             return beer;
@@ -32,7 +33,7 @@ namespace BeerOverflow.Services
                 {
                     Id = x.Id,
                     Name = x.Name,
-                    BeerType = x.BeerType,
+                    BeerType = x.BeerType.ToString(),
                     Brewery = x.Brewery,
                     Country = x.Country,
                     AlcoholByVolume = x.AlcoholByVolume,
@@ -56,7 +57,7 @@ namespace BeerOverflow.Services
             {
                 Id = beer.Id,
                 Name = beer.Name,
-                BeerType = beer.BeerType,
+                BeerType = beer.BeerType.ToString(),
                 Brewery = beer.Brewery,
                 Country = beer.Country,
                 AlcoholByVolume = beer.AlcoholByVolume,
