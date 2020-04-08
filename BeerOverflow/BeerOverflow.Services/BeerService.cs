@@ -13,12 +13,12 @@ namespace BeerOverflow.Services
 {
     public class BeerService : IBeerService
     {
-        public IBeer CreateBeer(IBeerDTO beerDTO)
+        public IBeerDTO CreateBeer(IBeerDTO beerDTO)
         {
             var beer = new Beer(beerDTO.Name, (BeerType)Enum.Parse(typeof(BeerType), beerDTO.BeerType, true), beerDTO.Brewery, beerDTO.Country, beerDTO.AlcoholByVolume);
             Database.Database.Beers.Add(beer);
             beer.Id = Database.Database.Beers.Count;
-            return beer;
+            return beerDTO;
         }
 
         public bool DeleteBeer(int id)

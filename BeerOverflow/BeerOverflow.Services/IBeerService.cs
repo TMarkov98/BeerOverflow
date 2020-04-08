@@ -11,7 +11,7 @@ namespace BeerOverflow.Services
     {
         BeerDTO GetBeer(int id);
         ICollection<BeerDTO> GetAllBeers();
-        IBeer CreateBeer(IBeerDTO beerDTO);
+        IBeerDTO CreateBeer(IBeerDTO beerDTO);
         bool DeleteBeer(int id);
     }
 }
