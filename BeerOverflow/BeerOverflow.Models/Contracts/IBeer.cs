@@ -16,5 +16,6 @@ namespace BeerOverflow.Models.Contracts
         DateTime CreatedOn { get; set; }
         DateTime DeletedOn { get; set; }
         DateTime ModifiedOn { get; set; }
+        bool IsDeleted { get; set; }
     }
 }

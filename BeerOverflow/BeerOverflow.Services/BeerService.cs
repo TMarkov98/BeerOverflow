@@ -65,6 +65,27 @@ namespace BeerOverflow.Services
 
             return beerDTO;
         }
+        public BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, string country, double AbV)
+        {
+            var beer = Database.Database.Beers
+                .Where(b => b.IsDeleted == false)
+                .FirstOrDefault(b => b.Id == id);
+            beer.Name = name;
+            beer.BeerType = (BeerType)Enum.Parse(typeof(BeerType), beerType, true);
+            beer.Brewery = brewery;
+            beer.Country = country;
+            beer.AlcoholByVolume = AbV;
+
+            var beerDTO = new BeerDTO
+            {
+                Name = beer.Name,
+                BeerType = beer.BeerType.ToString(),
+                Brewery = beer.Brewery,
+                Country = beer.Country,
+                AlcoholByVolume = beer.AlcoholByVolume,
+            };
+            return beerDTO;
+        }
     }
 }
 
