@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BeerOverflow.Models.Enums;
 using BeerOverflow.Services;
+using BeerOverflow.Services.DTO;
 using BeerOverflow.Web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -49,6 +51,23 @@ namespace BeerOverflow.Web.API_Controllers
                 AlcoholByVolume = beerDTO.AlcoholByVolume,
             };
             return Ok(model);
+        }
+        [HttpPost]
+        [Route("")]
+        public IActionResult Post([FromBody]BeerViewModel beerViewModel)
+        {
+            if (beerViewModel == null)
+                return BadRequest();
+            var beerDTO = new BeerDTO
+            {
+                Name = beerViewModel.Name,
+                BeerType = (BeerType)Enum.Parse(typeof(BeerType), beerViewModel.BeerType, true),
+                Brewery = beerViewModel.Brewery,
+                Country = beerViewModel.Country,
+                AlcoholByVolume = beerViewModel.AlcoholByVolume
+            };
+            var beer = _beerService.CreateBeer(beerDTO);
+            return Created("Post", beer);
         }
     }
 }

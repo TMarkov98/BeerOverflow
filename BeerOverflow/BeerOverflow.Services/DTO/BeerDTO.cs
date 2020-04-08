@@ -1,11 +1,12 @@
 ﻿using BeerOverflow.Models.Enums;
+using BeerOverflow.Services.DTO.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BeerOverflow.Services.DTO
 {
-    public class BeerDTO
+    public class BeerDTO : IBeerDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }

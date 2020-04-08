@@ -16,6 +16,7 @@ namespace BeerOverflow.Services
         {
             var beer = new Beer(beerDTO.Name, beerDTO.BeerType, beerDTO.Brewery, beerDTO.Country, beerDTO.AlcoholByVolume);
             Database.Database.Beers.Add(beer);
+            beer.Id = Database.Database.Beers.Count;
             return beer;
         }
 
