@@ -25,6 +25,7 @@ namespace BeerOverflow.Web.API_Controllers
             var model = this._beerService.GetAllBeers()
                 .Select(x => new BeerViewModel
                 {
+                    Id = x.Id,
                     Name = x.Name,
                     BeerType = x.BeerType.ToString(),
                     Brewery = x.Brewery,
@@ -49,10 +50,5 @@ namespace BeerOverflow.Web.API_Controllers
             };
             return Ok(model);
         }
-        //public string Name { get; set; }
-        //public BeerType BeerType { get; set; }
-        //public string Brewery { get; set; }
-        //public double AlcoholByVolume { get; set; }
-        //public string Country { get; set; }
     }
 }

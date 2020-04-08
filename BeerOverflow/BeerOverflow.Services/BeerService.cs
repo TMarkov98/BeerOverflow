@@ -29,6 +29,7 @@ namespace BeerOverflow.Services
             var beers = Database.Database.Beers
                 .Select(x => new BeerDTO
                 {
+                    Id = x.Id,
                     Name = x.Name,
                     BeerType = x.BeerType,
                     Brewery = x.Brewery,
