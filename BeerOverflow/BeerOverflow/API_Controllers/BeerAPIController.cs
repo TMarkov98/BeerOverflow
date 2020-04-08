@@ -68,5 +68,14 @@ namespace BeerOverflow.Web.API_Controllers
             var beer = _beerService.CreateBeer(beerDTO);
             return Created("Post", beer);
         }
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult Put(int id, [FromBody] BeerViewModel beerViewModel)
+        {
+            if (beerViewModel==null)
+                return BadRequest();
+            var beer = this._beerService.UpdateBeer(id, beerViewModel.Name, beerViewModel.BeerType, beerViewModel.Brewery, beerViewModel.Country, beerViewModel.AlcoholByVolume);
+            return Ok(beer);
+        }
     }
 }
