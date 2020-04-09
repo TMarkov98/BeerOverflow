@@ -7,7 +7,7 @@ namespace BeerOverflow.Services.BreweryServices
     public interface IBreweryServices
     {
         IBreweryDTO CreateBrewery(IBreweryDTO breweryDTO);
-        IBreweryDTO Get(int id);
-        ICollection<BreweryDTO> GetAll();
+        IBreweryDTO GetBrewery(int id);
+        ICollection<BreweryDTO> GetAllBreweries();
     }
 }

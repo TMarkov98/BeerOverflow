@@ -19,24 +19,24 @@ namespace BeerOverflow.Services.BreweryServices
             brewery.Id = Database.Database.Breweries.Count;
             return breweryDTO;
         }
-        public IBreweryDTO Get(int id)
+        public IBreweryDTO GetBrewery(int id)
         {
             var brewery = Database.Database.Breweries.FirstOrDefault(i => i.Id == id);
             if (brewery == null)
                 throw new ArgumentNullException("Brewery can NOT be null.");
 
-            var breweryDTO = new BreweryDTO(brewery.Id, brewery.Name, brewery.BreweryCountry.ToString());
+            var breweryDTO = new BreweryDTO(brewery.Name, brewery.BreweryCountry.ToString()) { Id = brewery.Id };
             return breweryDTO;
         }
-        public ICollection<BreweryDTO> GetAll()
+        public ICollection<BreweryDTO> GetAllBreweries()
         {
             var breweries = Database.Database.Breweries
                 .Select(x => new BreweryDTO
                 (
-                    x.Id,
                     x.Name,
                     x.BreweryCountry.ToString()
-                )).ToList();
+                )
+                { Id = x.Id }).ToList();
             return breweries;
         }
     }
