@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BeerOverflow.Services.BreweryServices
 {
-    class BreweryServices : IBreweryServices
+    public class BreweryServices : IBreweryServices
     {
         public IBreweryDTO CreateBrewery(IBreweryDTO breweryDTO)
         {
