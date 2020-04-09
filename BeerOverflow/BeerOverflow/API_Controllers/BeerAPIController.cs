@@ -74,7 +74,7 @@ namespace BeerOverflow.Web.API_Controllers
         {
             if (beerViewModel==null)
                 return BadRequest();
-            var beer = this._beerService.UpdateBeer(id, beerViewModel.Name, beerViewModel.BeerType, beerViewModel.Brewery, beerViewModel.Country, beerViewModel.AlcoholByVolume);
+            var beer = this._beerService.UpdateBeer(id, beerViewModel.Name, beerViewModel.BeerType, beerViewModel.Brewery, beerViewModel.BreweryCountry, beerViewModel.Country, beerViewModel.AlcoholByVolume);
             return Ok(beer);
         }
     }

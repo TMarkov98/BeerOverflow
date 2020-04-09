@@ -12,6 +12,7 @@ namespace BeerOverflow.Services.DTO
         public string Name { get; set; }
         public string BeerType { get; set; }
         public string Brewery { get; set; }
+        public string BreweryCountry { get; set; }
         public string Country { get; set; }
         public double AlcoholByVolume { get; set; }
     }

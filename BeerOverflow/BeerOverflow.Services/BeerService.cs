@@ -15,7 +15,12 @@ namespace BeerOverflow.Services
     {
         public IBeerDTO CreateBeer(IBeerDTO beerDTO)
         {
-            var beer = new Beer(beerDTO.Name, (BeerType)Enum.Parse(typeof(BeerType), beerDTO.BeerType, true), beerDTO.Brewery, beerDTO.Country, beerDTO.AlcoholByVolume);
+            var beer = new Beer(beerDTO.Name, 
+                (BeerType)Enum.Parse(typeof(BeerType), beerDTO.BeerType, true),
+                new Brewery(beerDTO.Brewery, beerDTO.BreweryCountry),
+                (Country)Enum.Parse(typeof(Country), beerDTO.Country, true),
+                beerDTO.AlcoholByVolume);
+
             Database.Database.Beers.Add(beer);
             beer.Id = Database.Database.Beers.Count;
             return beerDTO;
@@ -34,8 +39,9 @@ namespace BeerOverflow.Services
                     Id = x.Id,
                     Name = x.Name,
                     BeerType = x.BeerType.ToString(),
-                    Brewery = x.Brewery,
-                    Country = x.Country,
+                    Brewery = x.Brewery.Name,
+                    BreweryCountry = x.Brewery.BreweryCountry.ToString(),
+                    Country = x.Country.ToString(),
                     AlcoholByVolume = x.AlcoholByVolume,
                 })
                 .ToList();
@@ -58,30 +64,32 @@ namespace BeerOverflow.Services
                 Id = beer.Id,
                 Name = beer.Name,
                 BeerType = beer.BeerType.ToString(),
-                Brewery = beer.Brewery,
-                Country = beer.Country,
+                Brewery = beer.Brewery.Name,
+                BreweryCountry = beer.Brewery.BreweryCountry.ToString(),
+                Country = beer.Country.ToString(),
                 AlcoholByVolume = beer.AlcoholByVolume,
             };
 
             return beerDTO;
         }
-        public BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, string country, double AbV)
+        public BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, string breweryCountry, string country, double AbV)
         {
             var beer = Database.Database.Beers
                 .Where(b => b.IsDeleted == false)
                 .FirstOrDefault(b => b.Id == id);
             beer.Name = name;
             beer.BeerType = (BeerType)Enum.Parse(typeof(BeerType), beerType, true);
-            beer.Brewery = brewery;
-            beer.Country = country;
+            beer.Brewery = new Brewery(brewery, breweryCountry);
+            beer.Country = (Country)Enum.Parse(typeof(Country), country, true);
             beer.AlcoholByVolume = AbV;
 
             var beerDTO = new BeerDTO
             {
                 Name = beer.Name,
                 BeerType = beer.BeerType.ToString(),
-                Brewery = beer.Brewery,
-                Country = beer.Country,
+                Brewery = beer.Brewery.Name,
+                BreweryCountry = beer.Brewery.BreweryCountry.ToString(),
+                Country = beer.Country.ToString(),
                 AlcoholByVolume = beer.AlcoholByVolume,
             };
             return beerDTO;

@@ -8,9 +8,7 @@ namespace BeerOverflow.Models
     {
         private double _alcoholByVolume;
         private string _name;
-        private string _brewery;
-        private string _country;
-        public Beer(string name, BeerType beerType, string brewery, string country, double AbV)
+        public Beer(string name, BeerType beerType, IBrewery brewery, Country country, double AbV)
         {
             this.Name = name;
             this.BeerType = beerType;
@@ -31,26 +29,8 @@ namespace BeerOverflow.Models
             }
         }
         public BeerType BeerType { get; set; }
-        public string Brewery
-        {
-            get => this._brewery;
-            set
-            {
-                if (value.Length <= 0 || value.Length > 50)
-                    throw new ArgumentException("Brewery can not be <= 0 and > 50.");
-                this._brewery = value;
-            }
-        }
-        public string Country
-        {
-            get => this._country;
-            set
-            {
-                if (value.Length <= 0 || value.Length > 50)
-                    throw new ArgumentException("Country can not be <= 0 and > 50.");
-                this._country = value;
-            }
-        }
+        public IBrewery Brewery { get; set; }
+        public Country Country { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime DeletedOn { get; set; }
         public DateTime ModifiedOn { get; set; }
