@@ -10,9 +10,11 @@ namespace BeerOverflow.Database
         static Database()
         {
             Beers = new List<Beer>();
+            Breweries = new List<Brewery>();
             SeedData();
         }
         public static List<Beer> Beers { get; set; }
+        public static List<Brewery> Breweries { get; set; }
         public static void SeedData()
         {
             Beers.AddRange(new List<Beer>
@@ -49,6 +51,13 @@ namespace BeerOverflow.Database
                     Country.SE,
                     6.5
                 ){ Id = 4}
+            });
+            Breweries.AddRange(new List<Brewery>
+            {
+                new Brewery("NaPeshoZadniqDvor", "BG"){Id = 1},
+                new Brewery("NaHitlerZadniqDvor", "AU"){ Id = 2},
+                new Brewery("NaMerkelZadniqDvor", "GE"){ Id = 3},
+                new Brewery("NaAlfZadniqDvor", "SE"){ Id = 4}
             });
         }
     }

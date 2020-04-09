@@ -13,7 +13,8 @@ namespace BeerOverflow.Models
             this.Name = name;
             this.BreweryCountry = (Country)Enum.Parse(typeof(Country), country, true);
         }
-        public int Id { get; }
+        //TODO remove 'set'
+        public int Id { get; set; }
 
         public string Name { get; set; }
         public Country BreweryCountry { get; set; }
