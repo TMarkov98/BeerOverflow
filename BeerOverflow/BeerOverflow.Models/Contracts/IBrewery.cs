@@ -9,6 +9,6 @@ namespace BeerOverflow.Models.Contracts
     {
         int Id { get; }
         string Name { get; set; }
-        Country BreweryCountry { get; set; }
+        Countries BreweryCountry { get; set; }
     }
 }

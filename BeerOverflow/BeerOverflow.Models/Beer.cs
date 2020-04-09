@@ -8,7 +8,7 @@ namespace BeerOverflow.Models
     {
         private double _alcoholByVolume;
         private string _name;
-        public Beer(string name, BeerType beerType, IBrewery brewery, Country country, double AbV)
+        public Beer(string name, BeerType beerType, IBrewery brewery, Countries country, double AbV)
         {
             this.Name = name;
             this.BeerType = beerType;
@@ -30,7 +30,7 @@ namespace BeerOverflow.Models
         }
         public BeerType BeerType { get; set; }
         public IBrewery Brewery { get; set; }
-        public Country Country { get; set; }
+        public Countries Country { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime DeletedOn { get; set; }
         public DateTime ModifiedOn { get; set; }

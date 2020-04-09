@@ -18,7 +18,7 @@ namespace BeerOverflow.Services
             var beer = new Beer(beerDTO.Name, 
                 (BeerType)Enum.Parse(typeof(BeerType), beerDTO.BeerType, true),
                 new Brewery(beerDTO.Brewery, beerDTO.BreweryCountry),
-                (Country)Enum.Parse(typeof(Country), beerDTO.Country, true),
+                (Countries)Enum.Parse(typeof(Countries), beerDTO.Country, true),
                 beerDTO.AlcoholByVolume);
 
             Database.Database.Beers.Add(beer);
@@ -80,7 +80,7 @@ namespace BeerOverflow.Services
             beer.Name = name;
             beer.BeerType = (BeerType)Enum.Parse(typeof(BeerType), beerType, true);
             beer.Brewery = new Brewery(brewery, breweryCountry);
-            beer.Country = (Country)Enum.Parse(typeof(Country), country, true);
+            beer.Country = (Countries)Enum.Parse(typeof(Countries), country, true);
             beer.AlcoholByVolume = AbV;
 
             var beerDTO = new BeerDTO

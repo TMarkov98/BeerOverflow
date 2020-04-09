@@ -24,7 +24,7 @@ namespace BeerOverflow.Database
                     "Balter IIPA",
                     Models.Enums.BeerType.Ipa,
                     new Brewery("NaPeshoZadniqDvor", "BG"),
-                    Country.BG,
+                    Countries.BG,
                     4.5
                 ){Id = 1},
                 new Beer
@@ -32,7 +32,7 @@ namespace BeerOverflow.Database
                     "BentSpoke Cluster 8",
                     Models.Enums.BeerType.PaleAle,
                     new Brewery("NaHitlerZadniqDvor", "AU"),
-                    Country.AU,
+                    Countries.AU,
                     5
                 ){ Id = 2},
                 new Beer
@@ -40,7 +40,7 @@ namespace BeerOverflow.Database
                     "Stone & Wood Pacific Ale",
                     Models.Enums.BeerType.PaleAle,
                     new Brewery("NaMerkelZadniqDvor", "GE"),
-                    Country.GE,
+                    Countries.GE,
                     7.5
                 ){ Id = 3},
                 new Beer
@@ -48,7 +48,7 @@ namespace BeerOverflow.Database
                     "Modus Operandt",
                     Models.Enums.BeerType.IrishRedAle,
                     new Brewery("NaAlfZadniqDvor", "SE"),
-                    Country.SE,
+                    Countries.SE,
                     6.5
                 ){ Id = 4}
             });

@@ -12,7 +12,7 @@ namespace BeerOverflow.Models.Contracts
         BeerType BeerType { get; set; }
         IBrewery Brewery { get; set; }
         double AlcoholByVolume { get; set; }
-        Country Country { get; set; }
+        Countries Country { get; set; }
 
     }
 }

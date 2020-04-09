@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BeerOverflow.Models.Enums
 {
-    public enum Country
+    public enum Countries
     {
         [Description("Afghanistan")] AF = 1,
         [Description("Åland Islands")] AX = 2,
