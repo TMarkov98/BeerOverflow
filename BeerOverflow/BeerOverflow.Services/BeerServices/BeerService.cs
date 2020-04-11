@@ -16,11 +16,14 @@ namespace BeerOverflow.Services
             var beer = new Beer
             {
                 Name = beerDTO.Name,
-                BeerType = (BeerType)Enum.Parse(typeof(BeerType), beerDTO.BeerType, true),
+                Type = (BeerType)Enum.Parse(typeof(BeerType), beerDTO.BeerType, true),
                 Brewery = new Brewery
                 {
                     Name = beerDTO.Brewery,
-                    BreweryCountry = (Country)Enum.Parse(typeof(Country), beerDTO.BreweryCountry, true),
+                    BreweryCountry = new Country
+                    {
+                        Name = beerDTO.BreweryCountry,
+                    }
                 },
                 AlcoholByVolume = beerDTO.AlcoholByVolume
             };
@@ -42,7 +45,7 @@ namespace BeerOverflow.Services
                 {
                     Id = x.Id,
                     Name = x.Name,
-                    BeerType = x.BeerType.Name,
+                    BeerType = x.Type.Name,
                     Brewery = x.Brewery.Name,
                     BreweryCountry = x.Brewery.BreweryCountry.Name,
                     AlcoholByVolume = x.AlcoholByVolume,
@@ -66,7 +69,7 @@ namespace BeerOverflow.Services
             {
                 Id = beer.Id,
                 Name = beer.Name,
-                BeerType = beer.BeerType.Name,
+                BeerType = beer.Type.Name,
                 Brewery = beer.Brewery.Name,
                 BreweryCountry = beer.Brewery.BreweryCountry.Name,
                 AlcoholByVolume = beer.AlcoholByVolume,
@@ -80,7 +83,7 @@ namespace BeerOverflow.Services
                 .Where(b => b.IsDeleted == false)
                 .FirstOrDefault(b => b.Id == id);
             beer.Name = name;
-            beer.BeerType = (BeerType)Enum.Parse(typeof(BeerType), beerType, true);
+            beer.Type = (BeerType)Enum.Parse(typeof(BeerType), beerType, true);
             beer.Brewery = new Brewery
             {
                 Name = brewery,
@@ -91,7 +94,7 @@ namespace BeerOverflow.Services
             var beerDTO = new BeerDTO
             {
                 Name = beer.Name,
-                BeerType = beer.BeerType.Name,
+                BeerType = beer.Type.Name,
                 Brewery = beer.Brewery.Name,
                 BreweryCountry = beer.Brewery.BreweryCountry.Name,
                 AlcoholByVolume = beer.AlcoholByVolume,

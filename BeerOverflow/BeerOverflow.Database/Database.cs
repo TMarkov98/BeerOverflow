@@ -25,7 +25,7 @@ namespace BeerOverflow.Database
                 {
                     Id = 1,
                     Name = "Balter IIPA",
-                    BeerType = new BeerType{ Name = "Ipa" },
+                    Type = new BeerType{ Name = "Ipa" },
                     Brewery = new Brewery
                     {
                         Name = "NaPeshoZadniqDvor",
@@ -42,7 +42,7 @@ namespace BeerOverflow.Database
                 {
                     Id = 1,
                     Name = "NaPeshoZadniqDvor",
-                    BreweryCountry =new Country
+                    BreweryCountry = new Country
                     {
                         Name = "Bulgaria",
                         CountryCode = "BG"
