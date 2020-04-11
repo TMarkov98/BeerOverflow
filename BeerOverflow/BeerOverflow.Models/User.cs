@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BeerOverflow.Models
 {
-    public class User : IUser, IDeletable, IAudible
+    public class User : IUser, IDeletable, IAudible, IBannable
     {
         public int Id { get; set; }
         public User()
@@ -24,6 +24,7 @@ namespace BeerOverflow.Models
         public ICollection<IBeer> Wishlist { get; set; }
         public ICollection<IReview> Reviews { get; set; }
         public bool IsBanned { get; set; }
+        public string BanReason { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime? DeletedOn { get; set; }
         public DateTime CreatedOn { get; set; }

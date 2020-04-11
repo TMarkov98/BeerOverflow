@@ -14,6 +14,5 @@ namespace BeerOverflow.Models.Contracts
         ICollection<IBeer> BeersDrank { get; set; }
         ICollection<IBeer> Wishlist { get; set; }
         ICollection<IReview> Reviews { get; set; }
-        bool IsBanned { get; set; }
     }
 }

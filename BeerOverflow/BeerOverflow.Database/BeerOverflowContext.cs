@@ -29,7 +29,7 @@ namespace BeerOverflow.Database
             modelBuilder.Entity<Brewery>().Property(b => b.Name).HasMaxLength(100).IsRequired();
             modelBuilder.Entity<Brewery>().Property(b => b.CreatedOn).IsRequired();
             modelBuilder.Entity<Review>().Property(r => r.CreatedOn).IsRequired();
-            modelBuilder.Entity<Review>().Property(r => r.Rate).IsRequired();
+            modelBuilder.Entity<Review>().Property(r => r.Rating).IsRequired();
             modelBuilder.Entity<Review>().Property(r => r.Name).HasMaxLength(30).IsRequired();
             modelBuilder.Entity<Review>().Property(r => r.Text).IsRequired();
             modelBuilder.Entity<User>().Property(r => r.UserName).HasMaxLength(20).IsRequired();
