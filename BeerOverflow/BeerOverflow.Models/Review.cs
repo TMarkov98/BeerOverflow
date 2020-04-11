@@ -12,7 +12,7 @@ namespace BeerOverflow.Models
         {
             this.CreatedOn = DateTime.Now;
         }
-        public int Rate { get; set; }
+        public int Rating { get; set; }
         public int Name { get; set; }
         public string Text { get; set; }
         public int TargetBeerId { get; set; }

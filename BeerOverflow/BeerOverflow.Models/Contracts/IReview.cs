@@ -6,7 +6,7 @@ namespace BeerOverflow.Models.Contracts
 {
     public interface IReview
     {
-        int Rate { get; set; }
+        int Rating { get; set; }
         int Name { get; set; }
         string Text { get; set; }
         int TargetBeerId { get; set; }
