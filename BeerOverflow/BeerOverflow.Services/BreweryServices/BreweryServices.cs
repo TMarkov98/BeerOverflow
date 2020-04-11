@@ -1,4 +1,5 @@
 ﻿using BeerOverflow.Models;
+using BeerOverflow.Models.Enums;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.DTO.Contracts;
 using System;
@@ -12,9 +13,11 @@ namespace BeerOverflow.Services.BreweryServices
     {
         public IBreweryDTO CreateBrewery(IBreweryDTO breweryDTO)
         {
-            var brewery = new Brewery(breweryDTO.Name,
-                breweryDTO.BreweryCountry);
-
+            var brewery = new Brewery
+            {
+                Name = breweryDTO.Name,
+                BreweryCountry = (Country)Enum.Parse(typeof(Country), breweryDTO.BreweryCountry, true)
+            };
             Database.Database.Breweries.Add(brewery);
             brewery.Id = Database.Database.Breweries.Count;
             return breweryDTO;

@@ -5,14 +5,13 @@ using System.Text;
 
 namespace BeerOverflow.Models.Contracts
 {
-    public interface IBeer : IDeletable, IAudible
+    public interface IBeer
     {
-        int Id { get; }
         string Name { get; set; }
         BeerType BeerType { get; set; }
+        int BreweryId { get; set; }
         IBrewery Brewery { get; set; }
         double AlcoholByVolume { get; set; }
-        Countries Country { get; set; }
-
+        ICollection<IReview> Reviews { get; set; }
     }
 }

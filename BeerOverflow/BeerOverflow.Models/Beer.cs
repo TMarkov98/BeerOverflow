@@ -1,49 +1,28 @@
 ﻿using BeerOverflow.Models.Contracts;
 using BeerOverflow.Models.Enums;
 using System;
+using System.Collections.Generic;
 
 namespace BeerOverflow.Models
 {
-    public class Beer : IBeer
+    public class Beer : IBeer, IAudible, IDeletable, ILikeable
     {
-        private double _alcoholByVolume;
-        private string _name;
-        public Beer(string name, BeerType beerType, IBrewery brewery, Countries country, double AbV)
+        public Beer()
         {
-            this.Name = name;
-            this.BeerType = beerType;
-            this.Brewery = brewery;
-            this.Country = country;
-            this.AlcoholByVolume = AbV;
-            
+            this.Reviews = new List<IReview>();
+            this.CreatedOn = DateTime.Now;
         }
         public int Id { get; set; }
-        public string Name
-        {
-            get => this._name;
-            set
-            {
-                if (value.Length <= 0 || value.Length > 50)
-                    throw new ArgumentException("Name can not be <= 0 and > 50.");
-                this._name = value;
-            }
-        }
+        public string Name { get; set; }
         public BeerType BeerType { get; set; }
+        public int BreweryId { get; set; }
         public IBrewery Brewery { get; set; }
-        public Countries Country { get; set; }
         public DateTime CreatedOn { get; set; }
-        public DateTime DeletedOn { get; set; }
-        public DateTime ModifiedOn { get; set; }
+        public DateTime? DeletedOn { get; set; }
+        public DateTime? ModifiedOn { get; set; }
         public bool IsDeleted { get; set; }
-        public double AlcoholByVolume
-        {
-            get => this._alcoholByVolume;
-            set
-            {
-                if (value < 3 || value > 13)
-                    throw new ArgumentOutOfRangeException("AbV must be > 3 and < 13.");
-                this._alcoholByVolume = value;
-            }
-        }
+        public double AlcoholByVolume{ get; set; }
+        public int Likes { get; set; }
+        public ICollection<IReview> Reviews { get; set; }
     }
 }

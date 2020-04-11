@@ -20,44 +20,26 @@ namespace BeerOverflow.Database
             Beers.AddRange(new List<Beer>
             {
                 new Beer
-                (
-                    "Balter IIPA",
-                    Models.Enums.BeerType.Ipa,
-                    new Brewery("NaPeshoZadniqDvor", "BG"),
-                    Countries.BG,
-                    4.5
-                ){Id = 1},
-                new Beer
-                (
-                    "BentSpoke Cluster 8",
-                    Models.Enums.BeerType.PaleAle,
-                    new Brewery("NaHitlerZadniqDvor", "AU"),
-                    Countries.AU,
-                    5
-                ){ Id = 2},
-                new Beer
-                (
-                    "Stone & Wood Pacific Ale",
-                    Models.Enums.BeerType.PaleAle,
-                    new Brewery("NaMerkelZadniqDvor", "GE"),
-                    Countries.GE,
-                    7.5
-                ){ Id = 3},
-                new Beer
-                (
-                    "Modus Operandt",
-                    Models.Enums.BeerType.IrishRedAle,
-                    new Brewery("NaAlfZadniqDvor", "SE"),
-                    Countries.SE,
-                    6.5
-                ){ Id = 4}
+                {
+                    Id = 1,
+                    Name = "Balter IIPA",
+                    BeerType = BeerType.Ipa,
+                    Brewery = new Brewery
+                    {
+                        Name = "NaPeshoZadniqDvor",
+                        BreweryCountry = Country.BG
+                    },
+                    AlcoholByVolume = 4.5,
+                }
             });
             Breweries.AddRange(new List<Brewery>
             {
-                new Brewery("NaPeshoZadniqDvor", "BG"){Id = 1},
-                new Brewery("NaHitlerZadniqDvor", "AU"){ Id = 2},
-                new Brewery("NaMerkelZadniqDvor", "GE"){ Id = 3},
-                new Brewery("NaAlfZadniqDvor", "SE"){ Id = 4}
+                new Brewery
+                {
+                    Id = 1,
+                    Name = "NaPeshoZadniqDvor",
+                    BreweryCountry = Country.BG
+                }
             });
         }
     }

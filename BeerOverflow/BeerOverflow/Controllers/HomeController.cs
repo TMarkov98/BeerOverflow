@@ -30,7 +30,6 @@ namespace BeerOverflow.Controllers
                     Name = x.Name,
                     BeerType = x.BeerType.ToString(),
                     Brewery = x.Brewery,
-                    Country = x.Country,
                     AlcoholByVolume = x.AlcoholByVolume,
                 })
                 .ToList();

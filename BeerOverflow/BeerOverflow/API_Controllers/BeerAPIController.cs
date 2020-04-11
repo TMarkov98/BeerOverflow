@@ -30,7 +30,7 @@ namespace BeerOverflow.Web.API_Controllers
                     Name = x.Name,
                     BeerType = x.BeerType.ToString(),
                     Brewery = x.Brewery,
-                    Country = x.Country,
+                    BreweryCountry = x.BreweryCountry,
                     AlcoholByVolume = x.AlcoholByVolume,
                 });
             return Ok(model);
@@ -46,7 +46,6 @@ namespace BeerOverflow.Web.API_Controllers
                 Name = beerDTO.Name,
                 BeerType = beerDTO.BeerType.ToString(),
                 Brewery = beerDTO.Brewery,
-                Country = beerDTO.Country,
                 AlcoholByVolume = beerDTO.AlcoholByVolume,
             };
             return Ok(model);
@@ -62,7 +61,6 @@ namespace BeerOverflow.Web.API_Controllers
                 Name = beerViewModel.Name,
                 BeerType = beerViewModel.BeerType,
                 Brewery = beerViewModel.Brewery,
-                Country = beerViewModel.Country,
                 AlcoholByVolume = beerViewModel.AlcoholByVolume
             };
             var beer = _beerService.CreateBeer(beerDTO);
@@ -74,7 +72,7 @@ namespace BeerOverflow.Web.API_Controllers
         {
             if (beerViewModel==null)
                 return BadRequest();
-            var beer = this._beerService.UpdateBeer(id, beerViewModel.Name, beerViewModel.BeerType, beerViewModel.Brewery, beerViewModel.BreweryCountry, beerViewModel.Country, beerViewModel.AlcoholByVolume);
+            var beer = this._beerService.UpdateBeer(id, beerViewModel.Name, beerViewModel.BeerType, beerViewModel.Brewery, beerViewModel.BreweryCountry, beerViewModel.AlcoholByVolume);
             return Ok(beer);
         }
     }

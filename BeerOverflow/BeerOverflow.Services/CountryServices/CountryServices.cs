@@ -11,7 +11,7 @@ namespace BeerOverflow.Services.CountryServices
     {
         public ICountryDTO GetCountry(int id)
         {
-            Countries countryEnum = (Countries)id;
+            Country countryEnum = (Country)id;
             string description = countryEnum.GetDescription();
             var countryDTO = new CountryDTO(id, description);
             return countryDTO;
@@ -19,7 +19,7 @@ namespace BeerOverflow.Services.CountryServices
         public ICollection<ICountryDTO> GetAllCountries()
         {
             List<ICountryDTO> result = new List<ICountryDTO>();
-            foreach(var value in Enum.GetValues(typeof(Countries)))
+            foreach(var value in Enum.GetValues(typeof(Country)))
             {
                 result.Add(new CountryDTO((int)value, value.ToString()));
             }

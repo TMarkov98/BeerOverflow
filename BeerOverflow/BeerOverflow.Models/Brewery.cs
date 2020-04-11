@@ -6,21 +6,18 @@ using System.Text;
 
 namespace BeerOverflow.Models
 {
-    public class Brewery : IBrewery
+    public class Brewery : IBrewery, IAudible, IDeletable
     {
-        public Brewery(string name, string country)
+        public Brewery()
         {
-            this.Name = name;
-            this.BreweryCountry = (Countries)Enum.Parse(typeof(Countries), country, true);
+            this.CreatedOn = DateTime.Now;
         }
-        //TODO remove 'set'
         public int Id { get; set; }
-
         public string Name { get; set; }
-        public Countries BreweryCountry { get; set; }
+        public Country BreweryCountry { get; set; }
         public bool IsDeleted { get; set; }
-        public DateTime DeletedOn { get; set; }
+        public DateTime? DeletedOn { get; set; }
         public DateTime CreatedOn { get; set; }
-        public DateTime ModifiedOn { get; set; }
+        public DateTime? ModifiedOn { get; set; }
     }
 }
