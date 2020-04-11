@@ -1,5 +1,4 @@
-﻿using BeerOverflow.Models.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -11,8 +10,8 @@ namespace BeerOverflow.Models.Contracts
         string Password { get; set; }
         string Email { get; set; }
         UserRole UserRole { get; set; }
-        ICollection<IBeer> BeersDrank { get; set; }
-        ICollection<IBeer> Wishlist { get; set; }
-        ICollection<IReview> Reviews { get; set; }
+        List<Beer> BeersDrank { get; set; }
+        List<Beer> Wishlist { get; set; }
+        List<Review> Reviews { get; set; }
     }
 }

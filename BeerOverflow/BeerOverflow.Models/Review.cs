@@ -16,9 +16,9 @@ namespace BeerOverflow.Models
         public int Name { get; set; }
         public string Text { get; set; }
         public int TargetBeerId { get; set; }
-        public IBeer TargetBeer { get; set; }
+        public Beer TargetBeer { get; set; }
         public int AuthorId { get; set; }
-        public IUser Author { get; set; }
+        public User Author { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime? ModifiedOn { get; set; }
         public bool IsDeleted { get; set; }

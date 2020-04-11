@@ -28,7 +28,8 @@ namespace BeerOverflow.Web.API_Controllers
                 .Select(c => new CountryViewModel
                 {
                     Id = c.Id,
-                    Name = c.Name
+                    Name = c.Name,
+                    CountryCode = c.CountryCode
                 });
             return Ok(model);
         }

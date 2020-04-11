@@ -6,7 +6,6 @@ using BeerOverflow.Services.DTO.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using BeerOverflow.Models.Enums;
 
 namespace BeerOverflow.Services
 {
@@ -43,9 +42,9 @@ namespace BeerOverflow.Services
                 {
                     Id = x.Id,
                     Name = x.Name,
-                    BeerType = x.BeerType.ToString(),
+                    BeerType = x.BeerType.Name,
                     Brewery = x.Brewery.Name,
-                    BreweryCountry = x.Brewery.BreweryCountry.ToString(),
+                    BreweryCountry = x.Brewery.BreweryCountry.Name,
                     AlcoholByVolume = x.AlcoholByVolume,
                 })
                 .ToList();
@@ -67,9 +66,9 @@ namespace BeerOverflow.Services
             {
                 Id = beer.Id,
                 Name = beer.Name,
-                BeerType = beer.BeerType.ToString(),
+                BeerType = beer.BeerType.Name,
                 Brewery = beer.Brewery.Name,
-                BreweryCountry = beer.Brewery.BreweryCountry.ToString(),
+                BreweryCountry = beer.Brewery.BreweryCountry.Name,
                 AlcoholByVolume = beer.AlcoholByVolume,
             };
 
@@ -92,9 +91,9 @@ namespace BeerOverflow.Services
             var beerDTO = new BeerDTO
             {
                 Name = beer.Name,
-                BeerType = beer.BeerType.ToString(),
+                BeerType = beer.BeerType.Name,
                 Brewery = beer.Brewery.Name,
-                BreweryCountry = beer.Brewery.BreweryCountry.ToString(),
+                BreweryCountry = beer.Brewery.BreweryCountry.Name,
                 AlcoholByVolume = beer.AlcoholByVolume,
             };
             return beerDTO;

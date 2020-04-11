@@ -8,5 +8,6 @@ namespace BeerOverflow.Services.DTO.Contracts
     {
         int Id { get; set; }
         string Name { get; set; }
+        string CountryCode { get; set; }
     }
 }

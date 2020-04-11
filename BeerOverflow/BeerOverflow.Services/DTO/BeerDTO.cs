@@ -1,4 +1,4 @@
-﻿using BeerOverflow.Models.Enums;
+﻿
 using BeerOverflow.Services.DTO.Contracts;
 using System;
 using System.Collections.Generic;

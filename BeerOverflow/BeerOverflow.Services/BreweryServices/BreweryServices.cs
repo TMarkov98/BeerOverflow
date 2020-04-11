@@ -1,5 +1,4 @@
 ﻿using BeerOverflow.Models;
-using BeerOverflow.Models.Enums;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.DTO.Contracts;
 using System;
@@ -28,7 +27,7 @@ namespace BeerOverflow.Services.BreweryServices
             if (brewery == null)
                 throw new ArgumentNullException("Brewery can NOT be null.");
 
-            var breweryDTO = new BreweryDTO(brewery.Name, brewery.BreweryCountry.ToString()) { Id = brewery.Id };
+            var breweryDTO = new BreweryDTO(brewery.Name, brewery.BreweryCountry.Name) { Id = brewery.Id };
             return breweryDTO;
         }
         public ICollection<BreweryDTO> GetAllBreweries()
@@ -37,7 +36,7 @@ namespace BeerOverflow.Services.BreweryServices
                 .Select(x => new BreweryDTO
                 (
                     x.Name,
-                    x.BreweryCountry.ToString()
+                    x.BreweryCountry.Name
                 )
                 { Id = x.Id }).ToList();
             return breweries;

@@ -10,8 +10,8 @@ namespace BeerOverflow.Models.Contracts
         int Name { get; set; }
         string Text { get; set; }
         int TargetBeerId { get; set; }
-        IBeer TargetBeer { get; set; }
+        Beer TargetBeer { get; set; }
         int AuthorId { get; set; }
-        IUser Author { get; set; }
+        User Author { get; set; }
     }
 }

@@ -1,5 +1,4 @@
-﻿using BeerOverflow.Models.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,8 +9,8 @@ namespace BeerOverflow.Models.Contracts
         string Name { get; set; }
         BeerType BeerType { get; set; }
         int BreweryId { get; set; }
-        IBrewery Brewery { get; set; }
+        Brewery Brewery { get; set; }
         double AlcoholByVolume { get; set; }
-        ICollection<IReview> Reviews { get; set; }
+        List<Review> Reviews { get; set; }
     }
 }

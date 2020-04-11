@@ -1,5 +1,5 @@
 ﻿using BeerOverflow.Models;
-using BeerOverflow.Models.Enums;
+
 using System.Collections.Generic;
 using System.Linq;
 
@@ -11,10 +11,12 @@ namespace BeerOverflow.Database
         {
             Beers = new List<Beer>();
             Breweries = new List<Brewery>();
+            Countries = new List<Country>();
             SeedData();
         }
         public static List<Beer> Beers { get; set; }
         public static List<Brewery> Breweries { get; set; }
+        public static List<Country> Countries { get; set; }
         public static void SeedData()
         {
             Beers.AddRange(new List<Beer>
@@ -23,11 +25,13 @@ namespace BeerOverflow.Database
                 {
                     Id = 1,
                     Name = "Balter IIPA",
-                    BeerType = BeerType.Ipa,
+                    BeerType = new BeerType{ Name = "Ipa" },
                     Brewery = new Brewery
                     {
                         Name = "NaPeshoZadniqDvor",
-                        BreweryCountry = Country.BG
+                        BreweryCountry =new Country{
+                        Name = "Bulgaria",
+                        CountryCode = "BG"}
                     },
                     AlcoholByVolume = 4.5,
                 }
@@ -38,7 +42,20 @@ namespace BeerOverflow.Database
                 {
                     Id = 1,
                     Name = "NaPeshoZadniqDvor",
-                    BreweryCountry = Country.BG
+                    BreweryCountry =new Country
+                    {
+                        Name = "Bulgaria",
+                        CountryCode = "BG"
+                    }
+                }
+            });
+            Countries.AddRange(new List<Country>
+            {
+                new Country
+                {
+                    Id = 1,
+                    Name = "Bulgaria",
+                    CountryCode = "BG"
                 }
             });
         }
