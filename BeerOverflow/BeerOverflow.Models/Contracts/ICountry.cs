@@ -1,4 +1,4 @@
-﻿namespace BeerOverflow.Models
+﻿namespace BeerOverflow.Models.Contracts
 {
     public interface ICountry
     {

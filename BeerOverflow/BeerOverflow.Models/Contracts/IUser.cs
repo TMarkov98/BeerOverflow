@@ -10,8 +10,8 @@ namespace BeerOverflow.Models.Contracts
         string Password { get; set; }
         string Email { get; set; }
         UserRole UserRole { get; set; }
-        List<Beer> BeersDrank { get; set; }
-        List<Beer> Wishlist { get; set; }
+        List<BeerDrank> BeersDrank { get; set; }
+        List<WishlistBeer> Wishlist { get; set; }
         List<Review> Reviews { get; set; }
     }
 }

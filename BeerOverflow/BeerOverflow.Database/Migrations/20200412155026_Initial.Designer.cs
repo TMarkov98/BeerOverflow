@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeerOverflow.Database.Migrations
 {
     [DbContext(typeof(BeerOverflowContext))]
-    [Migration("20200411173332_Initial")]
+    [Migration("20200412155026_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -57,23 +57,28 @@ namespace BeerOverflow.Database.Migrations
                     b.Property<int?>("TypeId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("UserId1")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("BreweryId");
 
                     b.HasIndex("TypeId");
 
-                    b.HasIndex("UserId");
-
-                    b.HasIndex("UserId1");
-
                     b.ToTable("Beers");
+                });
+
+            modelBuilder.Entity("BeerOverflow.Models.BeerDrank", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BeerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "BeerId");
+
+                    b.HasIndex("BeerId");
+
+                    b.ToTable("BeerDrank");
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.BeerType", b =>
@@ -257,6 +262,21 @@ namespace BeerOverflow.Database.Migrations
                     b.ToTable("UserRole");
                 });
 
+            modelBuilder.Entity("BeerOverflow.Models.WishlistBeer", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BeerId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "BeerId");
+
+                    b.HasIndex("BeerId");
+
+                    b.ToTable("WishlistBeer");
+                });
+
             modelBuilder.Entity("BeerOverflow.Models.Beer", b =>
                 {
                     b.HasOne("BeerOverflow.Models.Brewery", "Brewery")
@@ -268,14 +288,21 @@ namespace BeerOverflow.Database.Migrations
                     b.HasOne("BeerOverflow.Models.BeerType", "Type")
                         .WithMany()
                         .HasForeignKey("TypeId");
+                });
 
-                    b.HasOne("BeerOverflow.Models.User", null)
+            modelBuilder.Entity("BeerOverflow.Models.BeerDrank", b =>
+                {
+                    b.HasOne("BeerOverflow.Models.Beer", "Beer")
+                        .WithMany()
+                        .HasForeignKey("BeerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BeerOverflow.Models.User", "User")
                         .WithMany("BeersDrank")
-                        .HasForeignKey("UserId");
-
-                    b.HasOne("BeerOverflow.Models.User", null)
-                        .WithMany("Wishlist")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.Brewery", b =>
@@ -305,6 +332,21 @@ namespace BeerOverflow.Database.Migrations
                     b.HasOne("BeerOverflow.Models.UserRole", "UserRole")
                         .WithMany()
                         .HasForeignKey("UserRoleId");
+                });
+
+            modelBuilder.Entity("BeerOverflow.Models.WishlistBeer", b =>
+                {
+                    b.HasOne("BeerOverflow.Models.Beer", "Beer")
+                        .WithMany()
+                        .HasForeignKey("BeerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BeerOverflow.Models.User", "User")
+                        .WithMany("Wishlist")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

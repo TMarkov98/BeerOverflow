@@ -37,9 +37,16 @@ namespace BeerOverflow.Database
             modelBuilder.Entity<Review>().Property(r => r.Name).HasMaxLength(30).IsRequired();
             modelBuilder.Entity<Review>().Property(r => r.Text).IsRequired();
 
-            modelBuilder.Entity<User>().Property(r => r.UserName).HasMaxLength(20).IsRequired();
-            modelBuilder.Entity<User>().Property(r => r.Password).HasMaxLength(20).IsRequired();
-            modelBuilder.Entity<User>().Property(r => r.Email).HasMaxLength(50).IsRequired();
+            modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(20).IsRequired();
+            modelBuilder.Entity<User>().Property(u => u.Password).HasMaxLength(20).IsRequired();
+            modelBuilder.Entity<User>().Property(u => u.Email).HasMaxLength(50).IsRequired();
+
+            modelBuilder.Entity<BeerDrank>().HasKey(ub => new { ub.UserId, ub.BeerId });
+            modelBuilder.Entity<BeerDrank>().HasOne(ub => ub.User).WithMany(u => u.BeersDrank).HasForeignKey(u => u.UserId);
+
+            modelBuilder.Entity<WishlistBeer>().HasKey(ub => new { ub.UserId, ub.BeerId });
+            modelBuilder.Entity<WishlistBeer>().HasOne(ub => ub.User).WithMany(u => u.Wishlist).HasForeignKey(u => u.UserId);
+
             base.OnModelCreating(modelBuilder);
         }
     }
