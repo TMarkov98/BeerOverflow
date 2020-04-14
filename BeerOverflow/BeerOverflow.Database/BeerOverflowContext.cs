@@ -35,7 +35,7 @@ namespace BeerOverflow.Database
             modelBuilder.Entity<Brewery>().Property(b => b.CreatedOn).IsRequired();
 
             modelBuilder.Entity<Country>().Property(c => c.Name).HasMaxLength(60).IsRequired();
-            modelBuilder.Entity<Country>().Property(c => c.CountryCode).HasColumnType("char(2)");
+            modelBuilder.Entity<Country>().Property(c => c.CountryCode).HasColumnType("nvarchar(5)");
 
             modelBuilder.Entity<Review>().Property(r => r.CreatedOn).IsRequired();
             modelBuilder.Entity<Review>().Property(r => r.Rating).IsRequired();
@@ -52,6 +52,7 @@ namespace BeerOverflow.Database
             modelBuilder.Entity<WishlistBeer>().HasKey(ub => new { ub.UserId, ub.BeerId });
             modelBuilder.Entity<WishlistBeer>().HasOne(ub => ub.User).WithMany(u => u.Wishlist).HasForeignKey(u => u.UserId);
 
+            modelBuilder.SeedData();
             base.OnModelCreating(modelBuilder);
         }
     }
