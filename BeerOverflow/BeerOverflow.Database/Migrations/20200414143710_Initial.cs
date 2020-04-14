@@ -26,8 +26,8 @@ namespace BeerOverflow.Database.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
-                    CountryCode = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(maxLength: 60, nullable: false),
+                    CountryCode = table.Column<string>(type: "char(2)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -133,7 +133,7 @@ namespace BeerOverflow.Database.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BeerDrank",
+                name: "BeersDrank",
                 columns: table => new
                 {
                     UserId = table.Column<int>(nullable: false),
@@ -141,15 +141,15 @@ namespace BeerOverflow.Database.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BeerDrank", x => new { x.UserId, x.BeerId });
+                    table.PrimaryKey("PK_BeersDrank", x => new { x.UserId, x.BeerId });
                     table.ForeignKey(
-                        name: "FK_BeerDrank_Beers_BeerId",
+                        name: "FK_BeersDrank_Beers_BeerId",
                         column: x => x.BeerId,
                         principalTable: "Beers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BeerDrank_Users_UserId",
+                        name: "FK_BeersDrank_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
@@ -163,7 +163,7 @@ namespace BeerOverflow.Database.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Rating = table.Column<int>(nullable: false),
-                    Name = table.Column<int>(maxLength: 30, nullable: false),
+                    Name = table.Column<string>(maxLength: 30, nullable: false),
                     Text = table.Column<string>(nullable: false),
                     TargetBeerId = table.Column<int>(nullable: false),
                     AuthorId = table.Column<int>(nullable: false),
@@ -191,7 +191,7 @@ namespace BeerOverflow.Database.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "WishlistBeer",
+                name: "WishlistBeers",
                 columns: table => new
                 {
                     UserId = table.Column<int>(nullable: false),
@@ -199,25 +199,20 @@ namespace BeerOverflow.Database.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_WishlistBeer", x => new { x.UserId, x.BeerId });
+                    table.PrimaryKey("PK_WishlistBeers", x => new { x.UserId, x.BeerId });
                     table.ForeignKey(
-                        name: "FK_WishlistBeer_Beers_BeerId",
+                        name: "FK_WishlistBeers_Beers_BeerId",
                         column: x => x.BeerId,
                         principalTable: "Beers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_WishlistBeer_Users_UserId",
+                        name: "FK_WishlistBeers_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_BeerDrank_BeerId",
-                table: "BeerDrank",
-                column: "BeerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Beers_BreweryId",
@@ -228,6 +223,11 @@ namespace BeerOverflow.Database.Migrations
                 name: "IX_Beers_TypeId",
                 table: "Beers",
                 column: "TypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BeersDrank_BeerId",
+                table: "BeersDrank",
+                column: "BeerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Breweries_BreweryCountryId",
@@ -250,21 +250,21 @@ namespace BeerOverflow.Database.Migrations
                 column: "UserRoleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WishlistBeer_BeerId",
-                table: "WishlistBeer",
+                name: "IX_WishlistBeers_BeerId",
+                table: "WishlistBeers",
                 column: "BeerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BeerDrank");
+                name: "BeersDrank");
 
             migrationBuilder.DropTable(
                 name: "Reviews");
 
             migrationBuilder.DropTable(
-                name: "WishlistBeer");
+                name: "WishlistBeers");
 
             migrationBuilder.DropTable(
                 name: "Beers");

@@ -12,6 +12,8 @@ namespace BeerOverflow.Database
         public DbSet<Brewery> Breweries { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<WishlistBeer> WishlistBeers { get; set; }
+        public DbSet<BeerDrank> BeersDrank { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if(!optionsBuilder.IsConfigured)
@@ -31,6 +33,9 @@ namespace BeerOverflow.Database
 
             modelBuilder.Entity<Brewery>().Property(b => b.Name).HasMaxLength(100).IsRequired();
             modelBuilder.Entity<Brewery>().Property(b => b.CreatedOn).IsRequired();
+
+            modelBuilder.Entity<Country>().Property(c => c.Name).HasMaxLength(60).IsRequired();
+            modelBuilder.Entity<Country>().Property(c => c.CountryCode).HasColumnType("char(2)");
 
             modelBuilder.Entity<Review>().Property(r => r.CreatedOn).IsRequired();
             modelBuilder.Entity<Review>().Property(r => r.Rating).IsRequired();

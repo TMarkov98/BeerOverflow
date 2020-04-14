@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeerOverflow.Database.Migrations
 {
     [DbContext(typeof(BeerOverflowContext))]
-    [Migration("20200412155026_Initial")]
+    [Migration("20200414143710_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -78,7 +78,7 @@ namespace BeerOverflow.Database.Migrations
 
                     b.HasIndex("BeerId");
 
-                    b.ToTable("BeerDrank");
+                    b.ToTable("BeersDrank");
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.BeerType", b =>
@@ -139,10 +139,12 @@ namespace BeerOverflow.Database.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("CountryCode")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("char(2)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(60)")
+                        .HasMaxLength(60);
 
                     b.HasKey("Id");
 
@@ -174,8 +176,9 @@ namespace BeerOverflow.Database.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Name")
-                        .HasColumnType("int")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
                         .HasMaxLength(30);
 
                     b.Property<int>("Rating")
@@ -274,7 +277,7 @@ namespace BeerOverflow.Database.Migrations
 
                     b.HasIndex("BeerId");
 
-                    b.ToTable("WishlistBeer");
+                    b.ToTable("WishlistBeers");
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.Beer", b =>
