@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BeerOverflow.Database.Migrations
 {
     [DbContext(typeof(BeerOverflowContext))]
-    [Migration("20200415101048_Initial")]
+    [Migration("20200415125225_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,12 +69,56 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
-                            AlcoholByVolume = 4.5,
+                            AlcoholByVolume = 5.0,
                             BreweryId = 1,
-                            CreatedOn = new DateTime(2020, 4, 15, 13, 10, 48, 600, DateTimeKind.Local).AddTicks(9101),
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 919, DateTimeKind.Local).AddTicks(3617),
+                            IsDeleted = false,
+                            Likes = 40000,
+                            Name = "Kaiser",
+                            TypeId = 11
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AlcoholByVolume = 7.5,
+                            BreweryId = 2,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 919, DateTimeKind.Local).AddTicks(4553),
                             IsDeleted = false,
                             Likes = 40,
                             Name = "Ot Na Pesho Zadniq Dvor Birata",
+                            TypeId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AlcoholByVolume = 3.5,
+                            BreweryId = 3,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 919, DateTimeKind.Local).AddTicks(4596),
+                            IsDeleted = false,
+                            Likes = 40,
+                            Name = "Ot Na Pesho Predniq Dvor Birata",
+                            TypeId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AlcoholByVolume = 5.5,
+                            BreweryId = 4,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 919, DateTimeKind.Local).AddTicks(4617),
+                            IsDeleted = false,
+                            Likes = 40,
+                            Name = "Ot Na Pesho Leviq Dvor Birata",
+                            TypeId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AlcoholByVolume = 4.9000000000000004,
+                            BreweryId = 5,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 919, DateTimeKind.Local).AddTicks(4637),
+                            IsDeleted = false,
+                            Likes = 40,
+                            Name = "Ot Na Pesho Desniq Dvor Birata",
                             TypeId = 1
                         });
                 });
@@ -114,7 +158,57 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "PaleAle"
+                            Name = "Pale Lager"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Blonde Ale"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Hefewizen"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Pale Ale"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "IPA"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Amber Ale"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Irish Red Ale"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Brown Ale"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Porter"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Stout"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Pilsner"
                         });
                 });
 
@@ -155,10 +249,42 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CountryId = 1,
-                            CreatedOn = new DateTime(2020, 4, 15, 13, 10, 48, 598, DateTimeKind.Local).AddTicks(6519),
+                            CountryId = 87,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 917, DateTimeKind.Local).AddTicks(596),
+                            IsDeleted = false,
+                            Name = "Mythos Breweries"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CountryId = 34,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 918, DateTimeKind.Local).AddTicks(9012),
                             IsDeleted = false,
                             Name = "Na Pesho Zadniq Dvor"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CountryId = 34,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 918, DateTimeKind.Local).AddTicks(9094),
+                            IsDeleted = false,
+                            Name = "Na Pesho Predniq Dvor"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CountryId = 1,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 918, DateTimeKind.Local).AddTicks(9117),
+                            IsDeleted = false,
+                            Name = "Na Pesho Leviq Dvor"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CountryId = 2,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 918, DateTimeKind.Local).AddTicks(9135),
+                            IsDeleted = false,
+                            Name = "Na Pesho Desniq Dvor"
                         });
                 });
 
@@ -169,7 +295,7 @@ namespace BeerOverflow.Database.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("CountryCode")
+                    b.Property<string>("Code")
                         .HasColumnType("nvarchar(5)");
 
                     b.Property<string>("Name")
@@ -185,1489 +311,1489 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CountryCode = "AF",
+                            Code = "AF",
                             Name = "Afghanistan"
                         },
                         new
                         {
                             Id = 2,
-                            CountryCode = "AX",
+                            Code = "AX",
                             Name = "Åland Islands"
                         },
                         new
                         {
                             Id = 3,
-                            CountryCode = "AL",
+                            Code = "AL",
                             Name = "Albania"
                         },
                         new
                         {
                             Id = 4,
-                            CountryCode = "DZ",
+                            Code = "DZ",
                             Name = "Algeria"
                         },
                         new
                         {
                             Id = 5,
-                            CountryCode = "AS",
+                            Code = "AS",
                             Name = "American Samoa"
                         },
                         new
                         {
                             Id = 6,
-                            CountryCode = "AD",
+                            Code = "AD",
                             Name = "Andorra"
                         },
                         new
                         {
                             Id = 7,
-                            CountryCode = "AO",
+                            Code = "AO",
                             Name = "Angola"
                         },
                         new
                         {
                             Id = 8,
-                            CountryCode = "AI",
+                            Code = "AI",
                             Name = "Anguilla"
                         },
                         new
                         {
                             Id = 9,
-                            CountryCode = "AG",
+                            Code = "AG",
                             Name = "Antigua and Barbuda"
                         },
                         new
                         {
                             Id = 10,
-                            CountryCode = "AR",
+                            Code = "AR",
                             Name = "Argentina"
                         },
                         new
                         {
                             Id = 11,
-                            CountryCode = "AM",
+                            Code = "AM",
                             Name = "Armenia"
                         },
                         new
                         {
                             Id = 12,
-                            CountryCode = "AW",
+                            Code = "AW",
                             Name = "Aruba"
                         },
                         new
                         {
                             Id = 13,
-                            CountryCode = "AU",
+                            Code = "AU",
                             Name = "Australia"
                         },
                         new
                         {
                             Id = 14,
-                            CountryCode = "AT",
+                            Code = "AT",
                             Name = "Austria"
                         },
                         new
                         {
                             Id = 15,
-                            CountryCode = "AZ",
+                            Code = "AZ",
                             Name = "Azerbaijan"
                         },
                         new
                         {
                             Id = 16,
-                            CountryCode = "BS",
+                            Code = "BS",
                             Name = "Bahamas"
                         },
                         new
                         {
                             Id = 17,
-                            CountryCode = "BH",
+                            Code = "BH",
                             Name = "Bahrain"
                         },
                         new
                         {
                             Id = 18,
-                            CountryCode = "BD",
+                            Code = "BD",
                             Name = "Bangladesh"
                         },
                         new
                         {
                             Id = 19,
-                            CountryCode = "BB",
+                            Code = "BB",
                             Name = "Barbados"
                         },
                         new
                         {
                             Id = 20,
-                            CountryCode = "BY",
+                            Code = "BY",
                             Name = "Belarus"
                         },
                         new
                         {
                             Id = 21,
-                            CountryCode = "BE",
+                            Code = "BE",
                             Name = "Belgium"
                         },
                         new
                         {
                             Id = 22,
-                            CountryCode = "BZ",
+                            Code = "BZ",
                             Name = "Belize"
                         },
                         new
                         {
                             Id = 23,
-                            CountryCode = "BJ",
+                            Code = "BJ",
                             Name = "Benin"
                         },
                         new
                         {
                             Id = 24,
-                            CountryCode = "BM",
+                            Code = "BM",
                             Name = "Bermuda"
                         },
                         new
                         {
                             Id = 25,
-                            CountryCode = "BT",
+                            Code = "BT",
                             Name = "Bhutan"
                         },
                         new
                         {
                             Id = 26,
-                            CountryCode = "BO",
+                            Code = "BO",
                             Name = "Bolivia"
                         },
                         new
                         {
                             Id = 27,
-                            CountryCode = "BQ",
+                            Code = "BQ",
                             Name = "Bonaire, Sint Eustatius and Saba"
                         },
                         new
                         {
                             Id = 28,
-                            CountryCode = "BA",
+                            Code = "BA",
                             Name = "Bosnia and Herzegovina"
                         },
                         new
                         {
                             Id = 29,
-                            CountryCode = "BW",
+                            Code = "BW",
                             Name = "Botswana"
                         },
                         new
                         {
                             Id = 30,
-                            CountryCode = "BR",
+                            Code = "BR",
                             Name = "Brazil"
                         },
                         new
                         {
                             Id = 31,
-                            CountryCode = "IO",
+                            Code = "IO",
                             Name = "British Indian Ocean Territory"
                         },
                         new
                         {
                             Id = 32,
-                            CountryCode = "VG",
+                            Code = "VG",
                             Name = "British Virgin Islands"
                         },
                         new
                         {
                             Id = 33,
-                            CountryCode = "BN",
+                            Code = "BN",
                             Name = "Brunei"
                         },
                         new
                         {
                             Id = 34,
-                            CountryCode = "BG",
+                            Code = "BG",
                             Name = "Bulgaria"
                         },
                         new
                         {
                             Id = 35,
-                            CountryCode = "BF",
+                            Code = "BF",
                             Name = "Burkina Faso"
                         },
                         new
                         {
                             Id = 36,
-                            CountryCode = "BI",
+                            Code = "BI",
                             Name = "Burundi"
                         },
                         new
                         {
                             Id = 37,
-                            CountryCode = "CV",
+                            Code = "CV",
                             Name = "Cabo Verde"
                         },
                         new
                         {
                             Id = 38,
-                            CountryCode = "KH",
+                            Code = "KH",
                             Name = "Cambodia"
                         },
                         new
                         {
                             Id = 39,
-                            CountryCode = "CM",
+                            Code = "CM",
                             Name = "Cameroon"
                         },
                         new
                         {
                             Id = 40,
-                            CountryCode = "CA",
+                            Code = "CA",
                             Name = "Canada"
                         },
                         new
                         {
                             Id = 41,
-                            CountryCode = "029",
+                            Code = "029",
                             Name = "Caribbean"
                         },
                         new
                         {
                             Id = 42,
-                            CountryCode = "KY",
+                            Code = "KY",
                             Name = "Cayman Islands"
                         },
                         new
                         {
                             Id = 43,
-                            CountryCode = "CF",
+                            Code = "CF",
                             Name = "Central African Republic"
                         },
                         new
                         {
                             Id = 44,
-                            CountryCode = "TD",
+                            Code = "TD",
                             Name = "Chad"
                         },
                         new
                         {
                             Id = 45,
-                            CountryCode = "CL",
+                            Code = "CL",
                             Name = "Chile"
                         },
                         new
                         {
                             Id = 46,
-                            CountryCode = "CN",
+                            Code = "CN",
                             Name = "China"
                         },
                         new
                         {
                             Id = 47,
-                            CountryCode = "CX",
+                            Code = "CX",
                             Name = "Christmas Island"
                         },
                         new
                         {
                             Id = 48,
-                            CountryCode = "CC",
+                            Code = "CC",
                             Name = "Cocos (Keeling) Islands"
                         },
                         new
                         {
                             Id = 49,
-                            CountryCode = "CO",
+                            Code = "CO",
                             Name = "Colombia"
                         },
                         new
                         {
                             Id = 50,
-                            CountryCode = "KM",
+                            Code = "KM",
                             Name = "Comoros"
                         },
                         new
                         {
                             Id = 51,
-                            CountryCode = "CG",
+                            Code = "CG",
                             Name = "Congo"
                         },
                         new
                         {
                             Id = 52,
-                            CountryCode = "CD",
+                            Code = "CD",
                             Name = "Congo (DRC)"
                         },
                         new
                         {
                             Id = 53,
-                            CountryCode = "CK",
+                            Code = "CK",
                             Name = "Cook Islands"
                         },
                         new
                         {
                             Id = 54,
-                            CountryCode = "CR",
+                            Code = "CR",
                             Name = "Costa Rica"
                         },
                         new
                         {
                             Id = 55,
-                            CountryCode = "CI",
+                            Code = "CI",
                             Name = "Côte d’Ivoire"
                         },
                         new
                         {
                             Id = 56,
-                            CountryCode = "HR",
+                            Code = "HR",
                             Name = "Croatia"
                         },
                         new
                         {
                             Id = 57,
-                            CountryCode = "CU",
+                            Code = "CU",
                             Name = "Cuba"
                         },
                         new
                         {
                             Id = 58,
-                            CountryCode = "CW",
+                            Code = "CW",
                             Name = "Curaçao"
                         },
                         new
                         {
                             Id = 59,
-                            CountryCode = "CY",
+                            Code = "CY",
                             Name = "Cyprus"
                         },
                         new
                         {
                             Id = 60,
-                            CountryCode = "CZ",
+                            Code = "CZ",
                             Name = "Czechia"
                         },
                         new
                         {
                             Id = 61,
-                            CountryCode = "DK",
+                            Code = "DK",
                             Name = "Denmark"
                         },
                         new
                         {
                             Id = 62,
-                            CountryCode = "DJ",
+                            Code = "DJ",
                             Name = "Djibouti"
                         },
                         new
                         {
                             Id = 63,
-                            CountryCode = "DM",
+                            Code = "DM",
                             Name = "Dominica"
                         },
                         new
                         {
                             Id = 64,
-                            CountryCode = "DO",
+                            Code = "DO",
                             Name = "Dominican Republic"
                         },
                         new
                         {
                             Id = 65,
-                            CountryCode = "EC",
+                            Code = "EC",
                             Name = "Ecuador"
                         },
                         new
                         {
                             Id = 66,
-                            CountryCode = "EG",
+                            Code = "EG",
                             Name = "Egypt"
                         },
                         new
                         {
                             Id = 67,
-                            CountryCode = "SV",
+                            Code = "SV",
                             Name = "El Salvador"
                         },
                         new
                         {
                             Id = 68,
-                            CountryCode = "GQ",
+                            Code = "GQ",
                             Name = "Equatorial Guinea"
                         },
                         new
                         {
                             Id = 69,
-                            CountryCode = "ER",
+                            Code = "ER",
                             Name = "Eritrea"
                         },
                         new
                         {
                             Id = 70,
-                            CountryCode = "EE",
+                            Code = "EE",
                             Name = "Estonia"
                         },
                         new
                         {
                             Id = 71,
-                            CountryCode = "SZ",
+                            Code = "SZ",
                             Name = "Eswatini"
                         },
                         new
                         {
                             Id = 72,
-                            CountryCode = "ET",
+                            Code = "ET",
                             Name = "Ethiopia"
                         },
                         new
                         {
                             Id = 73,
-                            CountryCode = "150",
+                            Code = "150",
                             Name = "Europe"
                         },
                         new
                         {
                             Id = 74,
-                            CountryCode = "FK",
+                            Code = "FK",
                             Name = "Falkland Islands"
                         },
                         new
                         {
                             Id = 75,
-                            CountryCode = "FO",
+                            Code = "FO",
                             Name = "Faroe Islands"
                         },
                         new
                         {
                             Id = 76,
-                            CountryCode = "FJ",
+                            Code = "FJ",
                             Name = "Fiji"
                         },
                         new
                         {
                             Id = 77,
-                            CountryCode = "FI",
+                            Code = "FI",
                             Name = "Finland"
                         },
                         new
                         {
                             Id = 78,
-                            CountryCode = "FR",
+                            Code = "FR",
                             Name = "France"
                         },
                         new
                         {
                             Id = 79,
-                            CountryCode = "GF",
+                            Code = "GF",
                             Name = "French Guiana"
                         },
                         new
                         {
                             Id = 80,
-                            CountryCode = "PF",
+                            Code = "PF",
                             Name = "French Polynesia"
                         },
                         new
                         {
                             Id = 81,
-                            CountryCode = "GA",
+                            Code = "GA",
                             Name = "Gabon"
                         },
                         new
                         {
                             Id = 82,
-                            CountryCode = "GM",
+                            Code = "GM",
                             Name = "Gambia"
                         },
                         new
                         {
                             Id = 83,
-                            CountryCode = "GE",
+                            Code = "GE",
                             Name = "Georgia"
                         },
                         new
                         {
                             Id = 84,
-                            CountryCode = "DE",
+                            Code = "DE",
                             Name = "Germany"
                         },
                         new
                         {
                             Id = 85,
-                            CountryCode = "GH",
+                            Code = "GH",
                             Name = "Ghana"
                         },
                         new
                         {
                             Id = 86,
-                            CountryCode = "GI",
+                            Code = "GI",
                             Name = "Gibraltar"
                         },
                         new
                         {
                             Id = 87,
-                            CountryCode = "GR",
+                            Code = "GR",
                             Name = "Greece"
                         },
                         new
                         {
                             Id = 88,
-                            CountryCode = "GL",
+                            Code = "GL",
                             Name = "Greenland"
                         },
                         new
                         {
                             Id = 89,
-                            CountryCode = "GD",
+                            Code = "GD",
                             Name = "Grenada"
                         },
                         new
                         {
                             Id = 90,
-                            CountryCode = "GP",
+                            Code = "GP",
                             Name = "Guadeloupe"
                         },
                         new
                         {
                             Id = 91,
-                            CountryCode = "GU",
+                            Code = "GU",
                             Name = "Guam"
                         },
                         new
                         {
                             Id = 92,
-                            CountryCode = "GT",
+                            Code = "GT",
                             Name = "Guatemala"
                         },
                         new
                         {
                             Id = 93,
-                            CountryCode = "GG",
+                            Code = "GG",
                             Name = "Guernsey"
                         },
                         new
                         {
                             Id = 94,
-                            CountryCode = "GN",
+                            Code = "GN",
                             Name = "Guinea"
                         },
                         new
                         {
                             Id = 95,
-                            CountryCode = "GW",
+                            Code = "GW",
                             Name = "Guinea-Bissau"
                         },
                         new
                         {
                             Id = 96,
-                            CountryCode = "GY",
+                            Code = "GY",
                             Name = "Guyana"
                         },
                         new
                         {
                             Id = 97,
-                            CountryCode = "HT",
+                            Code = "HT",
                             Name = "Haiti"
                         },
                         new
                         {
                             Id = 98,
-                            CountryCode = "HN",
+                            Code = "HN",
                             Name = "Honduras"
                         },
                         new
                         {
                             Id = 99,
-                            CountryCode = "HK",
+                            Code = "HK",
                             Name = "Hong Kong SAR"
                         },
                         new
                         {
                             Id = 100,
-                            CountryCode = "HU",
+                            Code = "HU",
                             Name = "Hungary"
                         },
                         new
                         {
                             Id = 101,
-                            CountryCode = "IS",
+                            Code = "IS",
                             Name = "Iceland"
                         },
                         new
                         {
                             Id = 102,
-                            CountryCode = "IN",
+                            Code = "IN",
                             Name = "India"
                         },
                         new
                         {
                             Id = 103,
-                            CountryCode = "ID",
+                            Code = "ID",
                             Name = "Indonesia"
                         },
                         new
                         {
                             Id = 104,
-                            CountryCode = "IR",
+                            Code = "IR",
                             Name = "Iran"
                         },
                         new
                         {
                             Id = 105,
-                            CountryCode = "IQ",
+                            Code = "IQ",
                             Name = "Iraq"
                         },
                         new
                         {
                             Id = 106,
-                            CountryCode = "IE",
+                            Code = "IE",
                             Name = "Ireland"
                         },
                         new
                         {
                             Id = 107,
-                            CountryCode = "IM",
+                            Code = "IM",
                             Name = "Isle of Man"
                         },
                         new
                         {
                             Id = 108,
-                            CountryCode = "IL",
+                            Code = "IL",
                             Name = "Israel"
                         },
                         new
                         {
                             Id = 109,
-                            CountryCode = "IT",
+                            Code = "IT",
                             Name = "Italy"
                         },
                         new
                         {
                             Id = 110,
-                            CountryCode = "JM",
+                            Code = "JM",
                             Name = "Jamaica"
                         },
                         new
                         {
                             Id = 111,
-                            CountryCode = "JP",
+                            Code = "JP",
                             Name = "Japan"
                         },
                         new
                         {
                             Id = 112,
-                            CountryCode = "JE",
+                            Code = "JE",
                             Name = "Jersey"
                         },
                         new
                         {
                             Id = 113,
-                            CountryCode = "JO",
+                            Code = "JO",
                             Name = "Jordan"
                         },
                         new
                         {
                             Id = 114,
-                            CountryCode = "KZ",
+                            Code = "KZ",
                             Name = "Kazakhstan"
                         },
                         new
                         {
                             Id = 115,
-                            CountryCode = "KE",
+                            Code = "KE",
                             Name = "Kenya"
                         },
                         new
                         {
                             Id = 116,
-                            CountryCode = "KI",
+                            Code = "KI",
                             Name = "Kiribati"
                         },
                         new
                         {
                             Id = 117,
-                            CountryCode = "KR",
+                            Code = "KR",
                             Name = "Korea"
                         },
                         new
                         {
                             Id = 118,
-                            CountryCode = "XK",
+                            Code = "XK",
                             Name = "Kosovo"
                         },
                         new
                         {
                             Id = 119,
-                            CountryCode = "KW",
+                            Code = "KW",
                             Name = "Kuwait"
                         },
                         new
                         {
                             Id = 120,
-                            CountryCode = "KG",
+                            Code = "KG",
                             Name = "Kyrgyzstan"
                         },
                         new
                         {
                             Id = 121,
-                            CountryCode = "LA",
+                            Code = "LA",
                             Name = "Laos"
                         },
                         new
                         {
                             Id = 122,
-                            CountryCode = "419",
+                            Code = "419",
                             Name = "Latin America"
                         },
                         new
                         {
                             Id = 123,
-                            CountryCode = "LV",
+                            Code = "LV",
                             Name = "Latvia"
                         },
                         new
                         {
                             Id = 124,
-                            CountryCode = "LB",
+                            Code = "LB",
                             Name = "Lebanon"
                         },
                         new
                         {
                             Id = 125,
-                            CountryCode = "LS",
+                            Code = "LS",
                             Name = "Lesotho"
                         },
                         new
                         {
                             Id = 126,
-                            CountryCode = "LR",
+                            Code = "LR",
                             Name = "Liberia"
                         },
                         new
                         {
                             Id = 127,
-                            CountryCode = "LY",
+                            Code = "LY",
                             Name = "Libya"
                         },
                         new
                         {
                             Id = 128,
-                            CountryCode = "LI",
+                            Code = "LI",
                             Name = "Liechtenstein"
                         },
                         new
                         {
                             Id = 129,
-                            CountryCode = "LT",
+                            Code = "LT",
                             Name = "Lithuania"
                         },
                         new
                         {
                             Id = 130,
-                            CountryCode = "LU",
+                            Code = "LU",
                             Name = "Luxembourg"
                         },
                         new
                         {
                             Id = 131,
-                            CountryCode = "MO",
+                            Code = "MO",
                             Name = "Macao SAR"
                         },
                         new
                         {
                             Id = 132,
-                            CountryCode = "MG",
+                            Code = "MG",
                             Name = "Madagascar"
                         },
                         new
                         {
                             Id = 133,
-                            CountryCode = "MW",
+                            Code = "MW",
                             Name = "Malawi"
                         },
                         new
                         {
                             Id = 134,
-                            CountryCode = "MY",
+                            Code = "MY",
                             Name = "Malaysia"
                         },
                         new
                         {
                             Id = 135,
-                            CountryCode = "MV",
+                            Code = "MV",
                             Name = "Maldives"
                         },
                         new
                         {
                             Id = 136,
-                            CountryCode = "ML",
+                            Code = "ML",
                             Name = "Mali"
                         },
                         new
                         {
                             Id = 137,
-                            CountryCode = "MT",
+                            Code = "MT",
                             Name = "Malta"
                         },
                         new
                         {
                             Id = 138,
-                            CountryCode = "MH",
+                            Code = "MH",
                             Name = "Marshall Islands"
                         },
                         new
                         {
                             Id = 139,
-                            CountryCode = "MQ",
+                            Code = "MQ",
                             Name = "Martinique"
                         },
                         new
                         {
                             Id = 140,
-                            CountryCode = "MR",
+                            Code = "MR",
                             Name = "Mauritania"
                         },
                         new
                         {
                             Id = 141,
-                            CountryCode = "MU",
+                            Code = "MU",
                             Name = "Mauritius"
                         },
                         new
                         {
                             Id = 142,
-                            CountryCode = "YT",
+                            Code = "YT",
                             Name = "Mayotte"
                         },
                         new
                         {
                             Id = 143,
-                            CountryCode = "MX",
+                            Code = "MX",
                             Name = "Mexico"
                         },
                         new
                         {
                             Id = 144,
-                            CountryCode = "FM",
+                            Code = "FM",
                             Name = "Micronesia"
                         },
                         new
                         {
                             Id = 145,
-                            CountryCode = "MD",
+                            Code = "MD",
                             Name = "Moldova"
                         },
                         new
                         {
                             Id = 146,
-                            CountryCode = "MC",
+                            Code = "MC",
                             Name = "Monaco"
                         },
                         new
                         {
                             Id = 147,
-                            CountryCode = "MN",
+                            Code = "MN",
                             Name = "Mongolia"
                         },
                         new
                         {
                             Id = 148,
-                            CountryCode = "ME",
+                            Code = "ME",
                             Name = "Montenegro"
                         },
                         new
                         {
                             Id = 149,
-                            CountryCode = "MS",
+                            Code = "MS",
                             Name = "Montserrat"
                         },
                         new
                         {
                             Id = 150,
-                            CountryCode = "MA",
+                            Code = "MA",
                             Name = "Morocco"
                         },
                         new
                         {
                             Id = 151,
-                            CountryCode = "MZ",
+                            Code = "MZ",
                             Name = "Mozambique"
                         },
                         new
                         {
                             Id = 152,
-                            CountryCode = "MM",
+                            Code = "MM",
                             Name = "Myanmar"
                         },
                         new
                         {
                             Id = 153,
-                            CountryCode = "NA",
+                            Code = "NA",
                             Name = "Namibia"
                         },
                         new
                         {
                             Id = 154,
-                            CountryCode = "NR",
+                            Code = "NR",
                             Name = "Nauru"
                         },
                         new
                         {
                             Id = 155,
-                            CountryCode = "NP",
+                            Code = "NP",
                             Name = "Nepal"
                         },
                         new
                         {
                             Id = 156,
-                            CountryCode = "NL",
+                            Code = "NL",
                             Name = "Netherlands"
                         },
                         new
                         {
                             Id = 157,
-                            CountryCode = "NC",
+                            Code = "NC",
                             Name = "New Caledonia"
                         },
                         new
                         {
                             Id = 158,
-                            CountryCode = "NZ",
+                            Code = "NZ",
                             Name = "New Zealand"
                         },
                         new
                         {
                             Id = 159,
-                            CountryCode = "NI",
+                            Code = "NI",
                             Name = "Nicaragua"
                         },
                         new
                         {
                             Id = 160,
-                            CountryCode = "NE",
+                            Code = "NE",
                             Name = "Niger"
                         },
                         new
                         {
                             Id = 161,
-                            CountryCode = "NG",
+                            Code = "NG",
                             Name = "Nigeria"
                         },
                         new
                         {
                             Id = 162,
-                            CountryCode = "NU",
+                            Code = "NU",
                             Name = "Niue"
                         },
                         new
                         {
                             Id = 163,
-                            CountryCode = "NF",
+                            Code = "NF",
                             Name = "Norfolk Island"
                         },
                         new
                         {
                             Id = 164,
-                            CountryCode = "KP",
+                            Code = "KP",
                             Name = "North Korea"
                         },
                         new
                         {
                             Id = 165,
-                            CountryCode = "MK",
+                            Code = "MK",
                             Name = "North Macedonia"
                         },
                         new
                         {
                             Id = 166,
-                            CountryCode = "MP",
+                            Code = "MP",
                             Name = "Northern Mariana Islands"
                         },
                         new
                         {
                             Id = 167,
-                            CountryCode = "NO",
+                            Code = "NO",
                             Name = "Norway"
                         },
                         new
                         {
                             Id = 168,
-                            CountryCode = "OM",
+                            Code = "OM",
                             Name = "Oman"
                         },
                         new
                         {
                             Id = 169,
-                            CountryCode = "PK",
+                            Code = "PK",
                             Name = "Pakistan"
                         },
                         new
                         {
                             Id = 170,
-                            CountryCode = "PW",
+                            Code = "PW",
                             Name = "Palau"
                         },
                         new
                         {
                             Id = 171,
-                            CountryCode = "PS",
+                            Code = "PS",
                             Name = "Palestinian Authority"
                         },
                         new
                         {
                             Id = 172,
-                            CountryCode = "PA",
+                            Code = "PA",
                             Name = "Panama"
                         },
                         new
                         {
                             Id = 173,
-                            CountryCode = "PG",
+                            Code = "PG",
                             Name = "Papua New Guinea"
                         },
                         new
                         {
                             Id = 174,
-                            CountryCode = "PY",
+                            Code = "PY",
                             Name = "Paraguay"
                         },
                         new
                         {
                             Id = 175,
-                            CountryCode = "PE",
+                            Code = "PE",
                             Name = "Peru"
                         },
                         new
                         {
                             Id = 176,
-                            CountryCode = "PH",
+                            Code = "PH",
                             Name = "Philippines"
                         },
                         new
                         {
                             Id = 177,
-                            CountryCode = "PN",
+                            Code = "PN",
                             Name = "Pitcairn Islands"
                         },
                         new
                         {
                             Id = 178,
-                            CountryCode = "PL",
+                            Code = "PL",
                             Name = "Poland"
                         },
                         new
                         {
                             Id = 179,
-                            CountryCode = "PT",
+                            Code = "PT",
                             Name = "Portugal"
                         },
                         new
                         {
                             Id = 180,
-                            CountryCode = "PR",
+                            Code = "PR",
                             Name = "Puerto Rico"
                         },
                         new
                         {
                             Id = 181,
-                            CountryCode = "QA",
+                            Code = "QA",
                             Name = "Qatar"
                         },
                         new
                         {
                             Id = 182,
-                            CountryCode = "RE",
+                            Code = "RE",
                             Name = "Réunion"
                         },
                         new
                         {
                             Id = 183,
-                            CountryCode = "RO",
+                            Code = "RO",
                             Name = "Romania"
                         },
                         new
                         {
                             Id = 184,
-                            CountryCode = "RU",
+                            Code = "RU",
                             Name = "Russia"
                         },
                         new
                         {
                             Id = 185,
-                            CountryCode = "RW",
+                            Code = "RW",
                             Name = "Rwanda"
                         },
                         new
                         {
                             Id = 186,
-                            CountryCode = "BL",
+                            Code = "BL",
                             Name = "Saint Barthélemy"
                         },
                         new
                         {
                             Id = 187,
-                            CountryCode = "KN",
+                            Code = "KN",
                             Name = "Saint Kitts and Nevis"
                         },
                         new
                         {
                             Id = 188,
-                            CountryCode = "LC",
+                            Code = "LC",
                             Name = "Saint Lucia"
                         },
                         new
                         {
                             Id = 189,
-                            CountryCode = "MF",
+                            Code = "MF",
                             Name = "Saint Martin"
                         },
                         new
                         {
                             Id = 190,
-                            CountryCode = "PM",
+                            Code = "PM",
                             Name = "Saint Pierre and Miquelon"
                         },
                         new
                         {
                             Id = 191,
-                            CountryCode = "VC",
+                            Code = "VC",
                             Name = "Saint Vincent and the Grenadines"
                         },
                         new
                         {
                             Id = 192,
-                            CountryCode = "WS",
+                            Code = "WS",
                             Name = "Samoa"
                         },
                         new
                         {
                             Id = 193,
-                            CountryCode = "SM",
+                            Code = "SM",
                             Name = "San Marino"
                         },
                         new
                         {
                             Id = 194,
-                            CountryCode = "ST",
+                            Code = "ST",
                             Name = "São Tomé and Príncipe"
                         },
                         new
                         {
                             Id = 195,
-                            CountryCode = "SA",
+                            Code = "SA",
                             Name = "Saudi Arabia"
                         },
                         new
                         {
                             Id = 196,
-                            CountryCode = "SN",
+                            Code = "SN",
                             Name = "Senegal"
                         },
                         new
                         {
                             Id = 197,
-                            CountryCode = "RS",
+                            Code = "RS",
                             Name = "Serbia"
                         },
                         new
                         {
                             Id = 198,
-                            CountryCode = "SC",
+                            Code = "SC",
                             Name = "Seychelles"
                         },
                         new
                         {
                             Id = 199,
-                            CountryCode = "SL",
+                            Code = "SL",
                             Name = "Sierra Leone"
                         },
                         new
                         {
                             Id = 200,
-                            CountryCode = "SG",
+                            Code = "SG",
                             Name = "Singapore"
                         },
                         new
                         {
                             Id = 201,
-                            CountryCode = "SX",
+                            Code = "SX",
                             Name = "Sint Maarten"
                         },
                         new
                         {
                             Id = 202,
-                            CountryCode = "SK",
+                            Code = "SK",
                             Name = "Slovakia"
                         },
                         new
                         {
                             Id = 203,
-                            CountryCode = "SI",
+                            Code = "SI",
                             Name = "Slovenia"
                         },
                         new
                         {
                             Id = 204,
-                            CountryCode = "SB",
+                            Code = "SB",
                             Name = "Solomon Islands"
                         },
                         new
                         {
                             Id = 205,
-                            CountryCode = "SO",
+                            Code = "SO",
                             Name = "Somalia"
                         },
                         new
                         {
                             Id = 206,
-                            CountryCode = "ZA",
+                            Code = "ZA",
                             Name = "South Africa"
                         },
                         new
                         {
                             Id = 207,
-                            CountryCode = "SS",
+                            Code = "SS",
                             Name = "South Sudan"
                         },
                         new
                         {
                             Id = 208,
-                            CountryCode = "ES",
+                            Code = "ES",
                             Name = "Spain"
                         },
                         new
                         {
                             Id = 209,
-                            CountryCode = "LK",
+                            Code = "LK",
                             Name = "Sri Lanka"
                         },
                         new
                         {
                             Id = 210,
-                            CountryCode = "SH",
+                            Code = "SH",
                             Name = "St Helena, Ascension, Tristan da Cunha"
                         },
                         new
                         {
                             Id = 211,
-                            CountryCode = "SD",
+                            Code = "SD",
                             Name = "Sudan"
                         },
                         new
                         {
                             Id = 212,
-                            CountryCode = "SR",
+                            Code = "SR",
                             Name = "Suriname"
                         },
                         new
                         {
                             Id = 213,
-                            CountryCode = "SJ",
+                            Code = "SJ",
                             Name = "Svalbard and Jan Mayen"
                         },
                         new
                         {
                             Id = 214,
-                            CountryCode = "SE",
+                            Code = "SE",
                             Name = "Sweden"
                         },
                         new
                         {
                             Id = 215,
-                            CountryCode = "CH",
+                            Code = "CH",
                             Name = "Switzerland"
                         },
                         new
                         {
                             Id = 216,
-                            CountryCode = "SY",
+                            Code = "SY",
                             Name = "Syria"
                         },
                         new
                         {
                             Id = 217,
-                            CountryCode = "TW",
+                            Code = "TW",
                             Name = "Taiwan"
                         },
                         new
                         {
                             Id = 218,
-                            CountryCode = "TJ",
+                            Code = "TJ",
                             Name = "Tajikistan"
                         },
                         new
                         {
                             Id = 219,
-                            CountryCode = "TZ",
+                            Code = "TZ",
                             Name = "Tanzania"
                         },
                         new
                         {
                             Id = 220,
-                            CountryCode = "TH",
+                            Code = "TH",
                             Name = "Thailand"
                         },
                         new
                         {
                             Id = 221,
-                            CountryCode = "TL",
+                            Code = "TL",
                             Name = "Timor-Leste"
                         },
                         new
                         {
                             Id = 222,
-                            CountryCode = "TG",
+                            Code = "TG",
                             Name = "Togo"
                         },
                         new
                         {
                             Id = 223,
-                            CountryCode = "TK",
+                            Code = "TK",
                             Name = "Tokelau"
                         },
                         new
                         {
                             Id = 224,
-                            CountryCode = "TO",
+                            Code = "TO",
                             Name = "Tonga"
                         },
                         new
                         {
                             Id = 225,
-                            CountryCode = "TT",
+                            Code = "TT",
                             Name = "Trinidad and Tobago"
                         },
                         new
                         {
                             Id = 226,
-                            CountryCode = "TN",
+                            Code = "TN",
                             Name = "Tunisia"
                         },
                         new
                         {
                             Id = 227,
-                            CountryCode = "TR",
+                            Code = "TR",
                             Name = "Turkey"
                         },
                         new
                         {
                             Id = 228,
-                            CountryCode = "TM",
+                            Code = "TM",
                             Name = "Turkmenistan"
                         },
                         new
                         {
                             Id = 229,
-                            CountryCode = "TC",
+                            Code = "TC",
                             Name = "Turks and Caicos Islands"
                         },
                         new
                         {
                             Id = 230,
-                            CountryCode = "TV",
+                            Code = "TV",
                             Name = "Tuvalu"
                         },
                         new
                         {
                             Id = 231,
-                            CountryCode = "UM",
+                            Code = "UM",
                             Name = "U.S. Outlying Islands"
                         },
                         new
                         {
                             Id = 232,
-                            CountryCode = "VI",
+                            Code = "VI",
                             Name = "U.S. Virgin Islands"
                         },
                         new
                         {
                             Id = 233,
-                            CountryCode = "UG",
+                            Code = "UG",
                             Name = "Uganda"
                         },
                         new
                         {
                             Id = 234,
-                            CountryCode = "UA",
+                            Code = "UA",
                             Name = "Ukraine"
                         },
                         new
                         {
                             Id = 235,
-                            CountryCode = "AE",
+                            Code = "AE",
                             Name = "United Arab Emirates"
                         },
                         new
                         {
                             Id = 236,
-                            CountryCode = "GB",
+                            Code = "GB",
                             Name = "United Kingdom"
                         },
                         new
                         {
                             Id = 237,
-                            CountryCode = "US",
+                            Code = "US",
                             Name = "United States"
                         },
                         new
                         {
                             Id = 238,
-                            CountryCode = "UY",
+                            Code = "UY",
                             Name = "Uruguay"
                         },
                         new
                         {
                             Id = 239,
-                            CountryCode = "UZ",
+                            Code = "UZ",
                             Name = "Uzbekistan"
                         },
                         new
                         {
                             Id = 240,
-                            CountryCode = "VU",
+                            Code = "VU",
                             Name = "Vanuatu"
                         },
                         new
                         {
                             Id = 241,
-                            CountryCode = "VA",
+                            Code = "VA",
                             Name = "Vatican City"
                         },
                         new
                         {
                             Id = 242,
-                            CountryCode = "VE",
+                            Code = "VE",
                             Name = "Venezuela"
                         },
                         new
                         {
                             Id = 243,
-                            CountryCode = "VN",
+                            Code = "VN",
                             Name = "Vietnam"
                         },
                         new
                         {
                             Id = 244,
-                            CountryCode = "WF",
+                            Code = "WF",
                             Name = "Wallis and Futuna"
                         },
                         new
                         {
                             Id = 245,
-                            CountryCode = "001",
+                            Code = "001",
                             Name = "World"
                         },
                         new
                         {
                             Id = 246,
-                            CountryCode = "YE",
+                            Code = "YE",
                             Name = "Yemen"
                         },
                         new
                         {
                             Id = 247,
-                            CountryCode = "ZM",
+                            Code = "ZM",
                             Name = "Zambia"
                         },
                         new
                         {
                             Id = 248,
-                            CountryCode = "ZW",
+                            Code = "ZW",
                             Name = "Zimbabwe"
                         });
                 });
@@ -1725,13 +1851,49 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 1,
                             AuthorId = 1,
-                            CreatedOn = new DateTime(2020, 4, 15, 13, 10, 48, 601, DateTimeKind.Local).AddTicks(8668),
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 920, DateTimeKind.Local).AddTicks(3839),
                             IsDeleted = false,
-                            Likes = 2,
+                            Likes = 250,
                             Name = "Na Pesho Review-to",
-                            Rating = 0,
+                            Rating = 10,
                             TargetBeerId = 1,
                             Text = "Mnoo dobra bira brat"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AuthorId = 2,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 920, DateTimeKind.Local).AddTicks(4040),
+                            IsDeleted = false,
+                            Likes = 2,
+                            Name = "Na Gosho Review-to",
+                            Rating = 7,
+                            TargetBeerId = 3,
+                            Text = "Evalata Pesho mnoo dobra bira"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AuthorId = 3,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 920, DateTimeKind.Local).AddTicks(4067),
+                            IsDeleted = false,
+                            Likes = 5,
+                            Name = "Na Tosho Review-to",
+                            Rating = 8,
+                            TargetBeerId = 2,
+                            Text = "Toz Pesho mnoo hubavi gi prai"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AuthorId = 4,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 920, DateTimeKind.Local).AddTicks(4088),
+                            IsDeleted = false,
+                            Likes = 2,
+                            Name = "Kaiser nomer edno",
+                            Rating = 10,
+                            TargetBeerId = 1,
+                            Text = "Bira ot butilka ne bqh pil do sq"
                         });
                 });
 
@@ -1788,13 +1950,46 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2020, 4, 15, 13, 10, 48, 601, DateTimeKind.Local).AddTicks(4233),
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 919, DateTimeKind.Local).AddTicks(8952),
                             Email = "Pesho@biri.com",
                             IsBanned = false,
                             IsDeleted = false,
                             Password = "NaPeshoParolata",
-                            RoleId = 1,
+                            RoleId = 2,
                             UserName = "Pesho"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 920, DateTimeKind.Local).AddTicks(491),
+                            Email = "Gosho@biri.com",
+                            IsBanned = false,
+                            IsDeleted = false,
+                            Password = "NaGoshoParolata",
+                            RoleId = 2,
+                            UserName = "Gosho"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 920, DateTimeKind.Local).AddTicks(564),
+                            Email = "Tosho@biri.com",
+                            IsBanned = false,
+                            IsDeleted = false,
+                            Password = "NaToshoParolata",
+                            RoleId = 2,
+                            UserName = "Tosho"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedOn = new DateTime(2020, 4, 15, 15, 52, 24, 920, DateTimeKind.Local).AddTicks(586),
+                            Email = "Slavcho@biri.com",
+                            IsBanned = false,
+                            IsDeleted = false,
+                            Password = "NaSlavchoParolata",
+                            RoleId = 2,
+                            UserName = "Slavcho"
                         });
                 });
 
@@ -1816,7 +2011,17 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
+                            RoleName = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
                             RoleName = "User"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            RoleName = "Guest"
                         });
                 });
 

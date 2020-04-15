@@ -14,13 +14,13 @@ namespace BeerOverflow.Services.CountryServices
         public ICountryDTO GetCountry(int id)
         {
             var country = Database.Database.Countries.FirstOrDefault(x => x.Id == id);
-            var countryDTO = new CountryDTO { Id=country.Id, Name = country.Name, CountryCode = country.CountryCode};
+            var countryDTO = new CountryDTO { Id=country.Id, Name = country.Name, CountryCode = country.Code};
             return countryDTO;
         }
         public ICollection<ICountryDTO> GetAllCountries()
         {
             var result = Database.Database.Countries
-                .Select(x => new CountryDTO { Id = x.Id, Name = x.Name, CountryCode = x.CountryCode }).ToArray();
+                .Select(x => new CountryDTO { Id = x.Id, Name = x.Name, CountryCode = x.Code }).ToArray();
             return result;
         }
     }

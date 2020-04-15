@@ -35,7 +35,7 @@ namespace BeerOverflow.Database
             modelBuilder.Entity<Brewery>().Property(br => br.CreatedOn).IsRequired();
 
             modelBuilder.Entity<Country>().Property(c => c.Name).HasMaxLength(60).IsRequired();
-            modelBuilder.Entity<Country>().Property(c => c.CountryCode).HasColumnType("nvarchar(5)");
+            modelBuilder.Entity<Country>().Property(c => c.Code).HasColumnType("nvarchar(5)");
 
             modelBuilder.Entity<Review>().Property(r => r.CreatedOn).IsRequired();
             modelBuilder.Entity<Review>().Property(r => r.Rating).IsRequired();

@@ -31,7 +31,7 @@ namespace BeerOverflow.Database
                         Name = "NaPeshoZadniqDvor",
                         Country =new Country{
                         Name = "Bulgaria",
-                        CountryCode = "BG"}
+                        Code = "BG"}
                     },
                     AlcoholByVolume = 4.5,
                 }
@@ -45,7 +45,7 @@ namespace BeerOverflow.Database
                     Country = new Country
                     {
                         Name = "Bulgaria",
-                        CountryCode = "BG"
+                        Code = "BG"
                     }
                 }
             });
@@ -55,7 +55,7 @@ namespace BeerOverflow.Database
                 {
                     Id = 1,
                     Name = "Bulgaria",
-                    CountryCode = "BG"
+                    Code = "BG"
                 }
             });
         }
