@@ -482,22 +482,22 @@ namespace BeerOverflow.Database.Migrations
             migrationBuilder.InsertData(
                 table: "Breweries",
                 columns: new[] { "Id", "CountryId", "CreatedOn", "DeletedOn", "IsDeleted", "ModifiedOn", "Name" },
-                values: new object[] { 1, 1, new DateTime(2020, 4, 15, 12, 44, 14, 94, DateTimeKind.Local).AddTicks(4650), null, false, null, "Na Pesho Zadniq Dvor" });
+                values: new object[] { 1, 1, new DateTime(2020, 4, 15, 13, 10, 48, 598, DateTimeKind.Local).AddTicks(6519), null, false, null, "Na Pesho Zadniq Dvor" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "BanReason", "CreatedOn", "DeletedOn", "Email", "IsBanned", "IsDeleted", "ModifiedOn", "Password", "RoleId", "UserName" },
-                values: new object[] { 1, null, new DateTime(2020, 4, 15, 12, 44, 14, 97, DateTimeKind.Local).AddTicks(2355), null, "Pesho@biri.com", false, false, null, "NaPeshoParolata", 1, "Pesho" });
+                values: new object[] { 1, null, new DateTime(2020, 4, 15, 13, 10, 48, 601, DateTimeKind.Local).AddTicks(4233), null, "Pesho@biri.com", false, false, null, "NaPeshoParolata", 1, "Pesho" });
 
             migrationBuilder.InsertData(
                 table: "Beers",
                 columns: new[] { "Id", "AlcoholByVolume", "BreweryId", "CreatedOn", "DeletedOn", "IsDeleted", "Likes", "ModifiedOn", "Name", "TypeId" },
-                values: new object[] { 1, 4.5, 1, new DateTime(2020, 4, 15, 12, 44, 14, 96, DateTimeKind.Local).AddTicks(7233), null, false, 40, null, "Ot Na Pesho Zadniq Dvor Birata", 1 });
+                values: new object[] { 1, 4.5, 1, new DateTime(2020, 4, 15, 13, 10, 48, 600, DateTimeKind.Local).AddTicks(9101), null, false, 40, null, "Ot Na Pesho Zadniq Dvor Birata", 1 });
 
             migrationBuilder.InsertData(
                 table: "Reviews",
                 columns: new[] { "Id", "AuthorId", "CreatedOn", "DeletedOn", "IsDeleted", "Likes", "ModifiedOn", "Name", "Rating", "TargetBeerId", "Text" },
-                values: new object[] { 1, 1, new DateTime(2020, 4, 15, 12, 44, 14, 97, DateTimeKind.Local).AddTicks(6738), null, false, 2, null, "Na Pesho Review-to", 0, 1, "Mnoo dobra bira brat" });
+                values: new object[] { 1, 1, new DateTime(2020, 4, 15, 13, 10, 48, 601, DateTimeKind.Local).AddTicks(8668), null, false, 2, null, "Na Pesho Review-to", 0, 1, "Mnoo dobra bira brat" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Beers_BreweryId",

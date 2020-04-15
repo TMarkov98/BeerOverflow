@@ -89,7 +89,7 @@ namespace BeerOverflow.Database
                     Likes = 2,
                     Name = "Na Pesho Review-to",
                     Text = "Mnoo dobra bira brat",
-                    CreatedOn = DateTime.Now,
+                    CreatedOn = DateTime.Now
                 });
         }
     }

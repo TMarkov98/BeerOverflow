@@ -69,7 +69,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 1,
                             AlcoholByVolume = 4.5,
                             BreweryId = 1,
-                            CreatedOn = new DateTime(2020, 4, 15, 12, 44, 14, 96, DateTimeKind.Local).AddTicks(7233),
+                            CreatedOn = new DateTime(2020, 4, 15, 13, 10, 48, 600, DateTimeKind.Local).AddTicks(9101),
                             IsDeleted = false,
                             Likes = 40,
                             Name = "Ot Na Pesho Zadniq Dvor Birata",
@@ -154,7 +154,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 1,
                             CountryId = 1,
-                            CreatedOn = new DateTime(2020, 4, 15, 12, 44, 14, 94, DateTimeKind.Local).AddTicks(4650),
+                            CreatedOn = new DateTime(2020, 4, 15, 13, 10, 48, 598, DateTimeKind.Local).AddTicks(6519),
                             IsDeleted = false,
                             Name = "Na Pesho Zadniq Dvor"
                         });
@@ -1723,7 +1723,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 1,
                             AuthorId = 1,
-                            CreatedOn = new DateTime(2020, 4, 15, 12, 44, 14, 97, DateTimeKind.Local).AddTicks(6738),
+                            CreatedOn = new DateTime(2020, 4, 15, 13, 10, 48, 601, DateTimeKind.Local).AddTicks(8668),
                             IsDeleted = false,
                             Likes = 2,
                             Name = "Na Pesho Review-to",
@@ -1786,7 +1786,7 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2020, 4, 15, 12, 44, 14, 97, DateTimeKind.Local).AddTicks(2355),
+                            CreatedOn = new DateTime(2020, 4, 15, 13, 10, 48, 601, DateTimeKind.Local).AddTicks(4233),
                             Email = "Pesho@biri.com",
                             IsBanned = false,
                             IsDeleted = false,
