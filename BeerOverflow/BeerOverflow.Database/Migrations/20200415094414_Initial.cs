@@ -13,7 +13,7 @@ namespace BeerOverflow.Database.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: false)
+                    Name = table.Column<string>(maxLength: 30, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -54,7 +54,7 @@ namespace BeerOverflow.Database.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(maxLength: 100, nullable: false),
-                    BreweryCountryId = table.Column<int>(nullable: true),
+                    CountryId = table.Column<int>(nullable: false),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     CreatedOn = table.Column<DateTime>(nullable: false),
@@ -64,11 +64,11 @@ namespace BeerOverflow.Database.Migrations
                 {
                     table.PrimaryKey("PK_Breweries", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Breweries_Country_BreweryCountryId",
-                        column: x => x.BreweryCountryId,
+                        name: "FK_Breweries_Country_CountryId",
+                        column: x => x.CountryId,
                         principalTable: "Country",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -80,7 +80,7 @@ namespace BeerOverflow.Database.Migrations
                     UserName = table.Column<string>(maxLength: 20, nullable: false),
                     Password = table.Column<string>(maxLength: 20, nullable: false),
                     Email = table.Column<string>(maxLength: 50, nullable: false),
-                    UserRoleId = table.Column<int>(nullable: true),
+                    RoleId = table.Column<int>(nullable: false),
                     IsBanned = table.Column<bool>(nullable: false),
                     BanReason = table.Column<string>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
@@ -92,11 +92,11 @@ namespace BeerOverflow.Database.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Users_UserRole_UserRoleId",
-                        column: x => x.UserRoleId,
+                        name: "FK_Users_UserRole_RoleId",
+                        column: x => x.RoleId,
                         principalTable: "UserRole",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -105,8 +105,8 @@ namespace BeerOverflow.Database.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(maxLength: 25, nullable: false),
-                    TypeId = table.Column<int>(nullable: true),
+                    Name = table.Column<string>(maxLength: 40, nullable: false),
+                    TypeId = table.Column<int>(nullable: false),
                     BreweryId = table.Column<int>(nullable: false),
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
@@ -129,7 +129,7 @@ namespace BeerOverflow.Database.Migrations
                         column: x => x.TypeId,
                         principalTable: "BeerType",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -215,11 +215,15 @@ namespace BeerOverflow.Database.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "BeerType",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 1, "PaleAle" });
+
+            migrationBuilder.InsertData(
                 table: "Country",
                 columns: new[] { "Id", "CountryCode", "Name" },
                 values: new object[,]
                 {
-                    { 1, "AF", "Afghanistan" },
                     { 158, "NZ", "New Zealand" },
                     { 159, "NI", "Nicaragua" },
                     { 160, "NE", "Niger" },
@@ -279,10 +283,9 @@ namespace BeerOverflow.Database.Migrations
                     { 152, "MM", "Myanmar" },
                     { 153, "NA", "Namibia" },
                     { 155, "NP", "Nepal" },
-                    { 126, "LR", "Liberia" },
                     { 186, "BL", "Saint Barthélemy" },
+                    { 187, "KN", "Saint Kitts and Nevis" },
                     { 188, "LC", "Saint Lucia" },
-                    { 220, "TH", "Thailand" },
                     { 221, "TL", "Timor-Leste" },
                     { 222, "TG", "Togo" },
                     { 223, "TK", "Tokelau" },
@@ -309,10 +312,11 @@ namespace BeerOverflow.Database.Migrations
                     { 244, "WF", "Wallis and Futuna" },
                     { 245, "001", "World" },
                     { 246, "YE", "Yemen" },
+                    { 247, "ZM", "Zambia" },
+                    { 220, "TH", "Thailand" },
                     { 219, "TZ", "Tanzania" },
-                    { 187, "KN", "Saint Kitts and Nevis" },
                     { 218, "TJ", "Tajikistan" },
-                    { 216, "SY", "Syria" },
+                    { 217, "TW", "Taiwan" },
                     { 189, "MF", "Saint Martin" },
                     { 190, "PM", "Saint Pierre and Miquelon" },
                     { 191, "VC", "Saint Vincent and the Grenadines" },
@@ -326,8 +330,8 @@ namespace BeerOverflow.Database.Migrations
                     { 199, "SL", "Sierra Leone" },
                     { 200, "SG", "Singapore" },
                     { 201, "SX", "Sint Maarten" },
+                    { 126, "LR", "Liberia" },
                     { 202, "SK", "Slovakia" },
-                    { 203, "SI", "Slovenia" },
                     { 204, "SB", "Solomon Islands" },
                     { 205, "SO", "Somalia" },
                     { 206, "ZA", "South Africa" },
@@ -340,7 +344,8 @@ namespace BeerOverflow.Database.Migrations
                     { 213, "SJ", "Svalbard and Jan Mayen" },
                     { 214, "SE", "Sweden" },
                     { 215, "CH", "Switzerland" },
-                    { 217, "TW", "Taiwan" },
+                    { 216, "SY", "Syria" },
+                    { 203, "SI", "Slovenia" },
                     { 125, "LS", "Lesotho" },
                     { 124, "LB", "Lebanon" },
                     { 123, "LV", "Latvia" },
@@ -372,9 +377,10 @@ namespace BeerOverflow.Database.Migrations
                     { 58, "CW", "Curaçao" },
                     { 59, "CY", "Cyprus" },
                     { 32, "VG", "British Virgin Islands" },
-                    { 60, "CZ", "Czechia" },
                     { 31, "IO", "British Indian Ocean Territory" },
+                    { 30, "BR", "Brazil" },
                     { 29, "BW", "Botswana" },
+                    { 1, "AF", "Afghanistan" },
                     { 2, "AX", "Åland Islands" },
                     { 3, "AL", "Albania" },
                     { 4, "DZ", "Algeria" },
@@ -387,8 +393,8 @@ namespace BeerOverflow.Database.Migrations
                     { 11, "AM", "Armenia" },
                     { 12, "AW", "Aruba" },
                     { 13, "AU", "Australia" },
+                    { 60, "CZ", "Czechia" },
                     { 14, "AT", "Austria" },
-                    { 15, "AZ", "Azerbaijan" },
                     { 16, "BS", "Bahamas" },
                     { 17, "BH", "Bahrain" },
                     { 18, "BD", "Bangladesh" },
@@ -402,9 +408,9 @@ namespace BeerOverflow.Database.Migrations
                     { 26, "BO", "Bolivia" },
                     { 27, "BQ", "Bonaire, Sint Eustatius and Saba" },
                     { 28, "BA", "Bosnia and Herzegovina" },
-                    { 30, "BR", "Brazil" },
+                    { 15, "AZ", "Azerbaijan" },
+                    { 248, "ZW", "Zimbabwe" },
                     { 61, "DK", "Denmark" },
-                    { 62, "DJ", "Djibouti" },
                     { 63, "DM", "Dominica" },
                     { 96, "GY", "Guyana" },
                     { 97, "HT", "Haiti" },
@@ -450,7 +456,7 @@ namespace BeerOverflow.Database.Migrations
                     { 74, "FK", "Falkland Islands" },
                     { 75, "FO", "Faroe Islands" },
                     { 76, "FJ", "Fiji" },
-                    { 247, "ZM", "Zambia" },
+                    { 62, "DJ", "Djibouti" },
                     { 77, "FI", "Finland" },
                     { 79, "GF", "French Guiana" },
                     { 80, "PF", "French Polynesia" },
@@ -465,9 +471,33 @@ namespace BeerOverflow.Database.Migrations
                     { 89, "GD", "Grenada" },
                     { 90, "GP", "Guadeloupe" },
                     { 91, "GU", "Guam" },
-                    { 78, "FR", "France" },
-                    { 248, "ZW", "Zimbabwe" }
+                    { 78, "FR", "France" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "UserRole",
+                columns: new[] { "Id", "RoleName" },
+                values: new object[] { 1, "User" });
+
+            migrationBuilder.InsertData(
+                table: "Breweries",
+                columns: new[] { "Id", "CountryId", "CreatedOn", "DeletedOn", "IsDeleted", "ModifiedOn", "Name" },
+                values: new object[] { 1, 1, new DateTime(2020, 4, 15, 12, 44, 14, 94, DateTimeKind.Local).AddTicks(4650), null, false, null, "Na Pesho Zadniq Dvor" });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "BanReason", "CreatedOn", "DeletedOn", "Email", "IsBanned", "IsDeleted", "ModifiedOn", "Password", "RoleId", "UserName" },
+                values: new object[] { 1, null, new DateTime(2020, 4, 15, 12, 44, 14, 97, DateTimeKind.Local).AddTicks(2355), null, "Pesho@biri.com", false, false, null, "NaPeshoParolata", 1, "Pesho" });
+
+            migrationBuilder.InsertData(
+                table: "Beers",
+                columns: new[] { "Id", "AlcoholByVolume", "BreweryId", "CreatedOn", "DeletedOn", "IsDeleted", "Likes", "ModifiedOn", "Name", "TypeId" },
+                values: new object[] { 1, 4.5, 1, new DateTime(2020, 4, 15, 12, 44, 14, 96, DateTimeKind.Local).AddTicks(7233), null, false, 40, null, "Ot Na Pesho Zadniq Dvor Birata", 1 });
+
+            migrationBuilder.InsertData(
+                table: "Reviews",
+                columns: new[] { "Id", "AuthorId", "CreatedOn", "DeletedOn", "IsDeleted", "Likes", "ModifiedOn", "Name", "Rating", "TargetBeerId", "Text" },
+                values: new object[] { 1, 1, new DateTime(2020, 4, 15, 12, 44, 14, 97, DateTimeKind.Local).AddTicks(6738), null, false, 2, null, "Na Pesho Review-to", 0, 1, "Mnoo dobra bira brat" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Beers_BreweryId",
@@ -485,9 +515,9 @@ namespace BeerOverflow.Database.Migrations
                 column: "BeerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Breweries_BreweryCountryId",
+                name: "IX_Breweries_CountryId",
                 table: "Breweries",
-                column: "BreweryCountryId");
+                column: "CountryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reviews_AuthorId",
@@ -500,9 +530,9 @@ namespace BeerOverflow.Database.Migrations
                 column: "TargetBeerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_UserRoleId",
+                name: "IX_Users_RoleId",
                 table: "Users",
-                column: "UserRoleId");
+                column: "RoleId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WishlistBeers_BeerId",

@@ -18,7 +18,8 @@ namespace BeerOverflow.Models
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public UserRole UserRole { get; set; }
+        public int RoleId { get; set; }
+        public UserRole Role { get; set; }
         public List<BeerDrank> BeersDrank { get; set; }
         public List<WishlistBeer> Wishlist { get; set; }
         public List<Review> Reviews { get; set; }

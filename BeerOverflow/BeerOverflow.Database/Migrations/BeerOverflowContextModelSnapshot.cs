@@ -49,10 +49,10 @@ namespace BeerOverflow.Database.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(25)")
-                        .HasMaxLength(25);
+                        .HasColumnType("nvarchar(40)")
+                        .HasMaxLength(40);
 
-                    b.Property<int?>("TypeId")
+                    b.Property<int>("TypeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -62,6 +62,19 @@ namespace BeerOverflow.Database.Migrations
                     b.HasIndex("TypeId");
 
                     b.ToTable("Beers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AlcoholByVolume = 4.5,
+                            BreweryId = 1,
+                            CreatedOn = new DateTime(2020, 4, 15, 12, 44, 14, 96, DateTimeKind.Local).AddTicks(7233),
+                            IsDeleted = false,
+                            Likes = 40,
+                            Name = "Ot Na Pesho Zadniq Dvor Birata",
+                            TypeId = 1
+                        });
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.BeerDrank", b =>
@@ -88,11 +101,19 @@ namespace BeerOverflow.Database.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
 
                     b.HasKey("Id");
 
                     b.ToTable("BeerType");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "PaleAle"
+                        });
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.Brewery", b =>
@@ -102,7 +123,7 @@ namespace BeerOverflow.Database.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("BreweryCountryId")
+                    b.Property<int>("CountryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -124,9 +145,19 @@ namespace BeerOverflow.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BreweryCountryId");
+                    b.HasIndex("CountryId");
 
                     b.ToTable("Breweries");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CountryId = 1,
+                            CreatedOn = new DateTime(2020, 4, 15, 12, 44, 14, 94, DateTimeKind.Local).AddTicks(4650),
+                            IsDeleted = false,
+                            Name = "Na Pesho Zadniq Dvor"
+                        });
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.Country", b =>
@@ -1686,6 +1717,20 @@ namespace BeerOverflow.Database.Migrations
                     b.HasIndex("TargetBeerId");
 
                     b.ToTable("Reviews");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AuthorId = 1,
+                            CreatedOn = new DateTime(2020, 4, 15, 12, 44, 14, 97, DateTimeKind.Local).AddTicks(6738),
+                            IsDeleted = false,
+                            Likes = 2,
+                            Name = "Na Pesho Review-to",
+                            Rating = 0,
+                            TargetBeerId = 1,
+                            Text = "Mnoo dobra bira brat"
+                        });
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.User", b =>
@@ -1723,19 +1768,32 @@ namespace BeerOverflow.Database.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
-                    b.Property<int?>("UserRoleId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("UserRoleId");
+                    b.HasIndex("RoleId");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedOn = new DateTime(2020, 4, 15, 12, 44, 14, 97, DateTimeKind.Local).AddTicks(2355),
+                            Email = "Pesho@biri.com",
+                            IsBanned = false,
+                            IsDeleted = false,
+                            Password = "NaPeshoParolata",
+                            RoleId = 1,
+                            UserName = "Pesho"
+                        });
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.UserRole", b =>
@@ -1751,6 +1809,13 @@ namespace BeerOverflow.Database.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserRole");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            RoleName = "User"
+                        });
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.WishlistBeer", b =>
@@ -1778,7 +1843,9 @@ namespace BeerOverflow.Database.Migrations
 
                     b.HasOne("BeerOverflow.Models.BeerType", "Type")
                         .WithMany()
-                        .HasForeignKey("TypeId");
+                        .HasForeignKey("TypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.BeerDrank", b =>
@@ -1798,9 +1865,11 @@ namespace BeerOverflow.Database.Migrations
 
             modelBuilder.Entity("BeerOverflow.Models.Brewery", b =>
                 {
-                    b.HasOne("BeerOverflow.Models.Country", "BreweryCountry")
+                    b.HasOne("BeerOverflow.Models.Country", "Country")
                         .WithMany()
-                        .HasForeignKey("BreweryCountryId");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.Review", b =>
@@ -1820,9 +1889,11 @@ namespace BeerOverflow.Database.Migrations
 
             modelBuilder.Entity("BeerOverflow.Models.User", b =>
                 {
-                    b.HasOne("BeerOverflow.Models.UserRole", "UserRole")
+                    b.HasOne("BeerOverflow.Models.UserRole", "Role")
                         .WithMany()
-                        .HasForeignKey("UserRoleId");
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BeerOverflow.Models.WishlistBeer", b =>

@@ -13,6 +13,7 @@ namespace BeerOverflow.Models
         }
         public int Id { get; set; }
         public string Name { get; set; }
+        public int TypeId { get; set; }
         public BeerType Type { get; set; }
         public int BreweryId { get; set; }
         public Brewery Brewery { get; set; }

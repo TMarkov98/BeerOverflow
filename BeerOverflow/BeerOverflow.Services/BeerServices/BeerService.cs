@@ -20,7 +20,7 @@ namespace BeerOverflow.Services
                 Brewery = new Brewery
                 {
                     Name = beerDTO.Brewery,
-                    BreweryCountry = new Country
+                    Country = new Country
                     {
                         Name = beerDTO.BreweryCountry,
                     }
@@ -47,7 +47,7 @@ namespace BeerOverflow.Services
                     Name = x.Name,
                     BeerType = x.Type.Name,
                     Brewery = x.Brewery.Name,
-                    BreweryCountry = x.Brewery.BreweryCountry.Name,
+                    BreweryCountry = x.Brewery.Country.Name,
                     AlcoholByVolume = x.AlcoholByVolume,
                 })
                 .ToList();
@@ -71,7 +71,7 @@ namespace BeerOverflow.Services
                 Name = beer.Name,
                 BeerType = beer.Type.Name,
                 Brewery = beer.Brewery.Name,
-                BreweryCountry = beer.Brewery.BreweryCountry.Name,
+                BreweryCountry = beer.Brewery.Country.Name,
                 AlcoholByVolume = beer.AlcoholByVolume,
             };
 
@@ -87,7 +87,7 @@ namespace BeerOverflow.Services
             beer.Brewery = new Brewery
             {
                 Name = brewery,
-                BreweryCountry = (Country)Enum.Parse(typeof(Country), breweryCountry, true)
+                Country = (Country)Enum.Parse(typeof(Country), breweryCountry, true)
             };
             beer.AlcoholByVolume = AbV;
 
@@ -96,7 +96,7 @@ namespace BeerOverflow.Services
                 Name = beer.Name,
                 BeerType = beer.Type.Name,
                 Brewery = beer.Brewery.Name,
-                BreweryCountry = beer.Brewery.BreweryCountry.Name,
+                BreweryCountry = beer.Brewery.Country.Name,
                 AlcoholByVolume = beer.AlcoholByVolume,
             };
             return beerDTO;

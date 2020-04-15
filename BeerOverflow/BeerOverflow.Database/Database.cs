@@ -29,7 +29,7 @@ namespace BeerOverflow.Database
                     Brewery = new Brewery
                     {
                         Name = "NaPeshoZadniqDvor",
-                        BreweryCountry =new Country{
+                        Country =new Country{
                         Name = "Bulgaria",
                         CountryCode = "BG"}
                     },
@@ -42,7 +42,7 @@ namespace BeerOverflow.Database
                 {
                     Id = 1,
                     Name = "NaPeshoZadniqDvor",
-                    BreweryCountry = new Country
+                    Country = new Country
                     {
                         Name = "Bulgaria",
                         CountryCode = "BG"

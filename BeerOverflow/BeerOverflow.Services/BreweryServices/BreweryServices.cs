@@ -15,7 +15,7 @@ namespace BeerOverflow.Services.BreweryServices
             var brewery = new Brewery
             {
                 Name = breweryDTO.Name,
-                BreweryCountry = (Country)Enum.Parse(typeof(Country), breweryDTO.BreweryCountry, true)
+                Country = (Country)Enum.Parse(typeof(Country), breweryDTO.BreweryCountry, true)
             };
             Database.Database.Breweries.Add(brewery);
             brewery.Id = Database.Database.Breweries.Count;
@@ -27,7 +27,7 @@ namespace BeerOverflow.Services.BreweryServices
             if (brewery == null)
                 throw new ArgumentNullException("Brewery can NOT be null.");
 
-            var breweryDTO = new BreweryDTO(brewery.Name, brewery.BreweryCountry.Name) { Id = brewery.Id };
+            var breweryDTO = new BreweryDTO(brewery.Name, brewery.Country.Name) { Id = brewery.Id };
             return breweryDTO;
         }
         public ICollection<BreweryDTO> GetAllBreweries()
@@ -36,7 +36,7 @@ namespace BeerOverflow.Services.BreweryServices
                 .Select(x => new BreweryDTO
                 (
                     x.Name,
-                    x.BreweryCountry.Name
+                    x.Country.Name
                 )
                 { Id = x.Id }).ToList();
             return breweries;
