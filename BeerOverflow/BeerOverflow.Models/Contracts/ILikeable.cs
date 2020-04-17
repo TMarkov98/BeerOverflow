@@ -6,6 +6,6 @@ namespace BeerOverflow.Models.Contracts
 {
     public interface ILikeable
     {
-        int Likes { get; set; }
+        List<Like> Likes { get; set; }
     }
 }

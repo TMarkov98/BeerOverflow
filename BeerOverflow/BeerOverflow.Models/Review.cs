@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BeerOverflow.Models
 {
-    public class Review : IReview, IAudible, IDeletable, ILikeable
+    public class Review : IReview, IAudible, IDeletable
     {
         public int Id { get; set; }
         public Review()
@@ -23,6 +23,5 @@ namespace BeerOverflow.Models
         public DateTime? ModifiedOn { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime? DeletedOn { get; set; }
-        public int Likes { get; set; }
     }
 }

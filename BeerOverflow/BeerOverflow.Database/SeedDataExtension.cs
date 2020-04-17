@@ -153,7 +153,6 @@ namespace BeerOverflow.Database
                     BreweryId = 1,
                     AlcoholByVolume = 5,
                     CreatedOn = DateTime.Now,
-                    Likes = 40000,
                     TypeId = 11
                 });
             modelBuilder.Entity<Beer>().HasData(
@@ -164,7 +163,6 @@ namespace BeerOverflow.Database
                     BreweryId = 2,
                     AlcoholByVolume = 7.5,
                     CreatedOn = DateTime.Now,
-                    Likes = 40,
                     TypeId = 1
                 });
             modelBuilder.Entity<Beer>().HasData(
@@ -175,7 +173,6 @@ namespace BeerOverflow.Database
                     BreweryId = 3,
                     AlcoholByVolume = 3.5,
                     CreatedOn = DateTime.Now,
-                    Likes = 40,
                     TypeId = 1
                 });
             modelBuilder.Entity<Beer>().HasData(
@@ -186,7 +183,6 @@ namespace BeerOverflow.Database
                     BreweryId = 4,
                     AlcoholByVolume = 5.5,
                     CreatedOn = DateTime.Now,
-                    Likes = 40,
                     TypeId = 1
                 });
             modelBuilder.Entity<Beer>().HasData(
@@ -197,7 +193,6 @@ namespace BeerOverflow.Database
                     BreweryId = 5,
                     AlcoholByVolume = 4.9,
                     CreatedOn = DateTime.Now,
-                    Likes = 40,
                     TypeId = 1
                 });
 
@@ -276,7 +271,6 @@ namespace BeerOverflow.Database
                     Name = "Na Pesho Review-to",
                     Text = "Mnoo dobra bira brat",
                     Rating = 10,
-                    Likes = 250,
                     CreatedOn = DateTime.Now
                 });
             modelBuilder.Entity<Review>().HasData(
@@ -288,7 +282,6 @@ namespace BeerOverflow.Database
                     Name = "Na Gosho Review-to",
                     Text = "Evalata Pesho mnoo dobra bira",
                     Rating = 7,
-                    Likes = 2,
                     CreatedOn = DateTime.Now
                 });
             modelBuilder.Entity<Review>().HasData(
@@ -300,7 +293,6 @@ namespace BeerOverflow.Database
                     Name = "Na Tosho Review-to",
                     Text = "Toz Pesho mnoo hubavi gi prai",
                     Rating = 8,
-                    Likes = 5,
                     CreatedOn = DateTime.Now
                 });
             modelBuilder.Entity<Review>().HasData(
@@ -312,7 +304,6 @@ namespace BeerOverflow.Database
                     Name = "Kaiser nomer edno",
                     Text = "Bira ot butilka ne bqh pil do sq",
                     Rating = 10,
-                    Likes = 2,
                     CreatedOn = DateTime.Now
                 });
         }

@@ -22,7 +22,7 @@ namespace BeerOverflow.Models
         public DateTime? ModifiedOn { get; set; }
         public bool IsDeleted { get; set; }
         public double AlcoholByVolume{ get; set; }
-        public int Likes { get; set; }
+        public List<Like> Likes { get; set; }
         public List<Review> Reviews { get; set; }
     }
 }

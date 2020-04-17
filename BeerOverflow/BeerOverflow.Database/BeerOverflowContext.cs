@@ -12,13 +12,14 @@ namespace BeerOverflow.Database
         public DbSet<Brewery> Breweries { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Like> Likes { get; set; }
         public DbSet<WishlistBeer> WishlistBeers { get; set; }
         public DbSet<BeerDrank> BeersDrank { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if(!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=.\\TESTSQLSERVER;Database=BeerOverflow;Trusted_Connection=true");
+                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=BeerOverflow;Trusted_Connection=true");
             }
             base.OnConfiguring(optionsBuilder);
         }
@@ -51,6 +52,9 @@ namespace BeerOverflow.Database
 
             modelBuilder.Entity<WishlistBeer>().HasKey(ub => new { ub.UserId, ub.BeerId });
             modelBuilder.Entity<WishlistBeer>().HasOne(ub => ub.User).WithMany(u => u.Wishlist).HasForeignKey(u => u.UserId);
+
+            modelBuilder.Entity<Like>().HasKey(l => new { l.BeerId, l.UserId});
+            modelBuilder.Entity<Like>().HasOne( l => l.Beer).WithMany(b => b.Likes).HasForeignKey(b => b.BeerId);
 
             modelBuilder.SeedData();
             base.OnModelCreating(modelBuilder);
