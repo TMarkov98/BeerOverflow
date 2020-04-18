@@ -32,6 +32,31 @@ namespace BeerOverflow.Web.API_Controllers
                 });
             return Ok(model);
         }
+
+        [HttpGet]
+        [Route("sort")]
+        public IActionResult Get([FromQuery] string s)
+        {
+            var model = this._breweryServices.GetAllBreweries()
+                .Select(b => new BreweryViewModel
+                {
+                    Id = b.Id,
+                    Name = b.Name,
+                    Country = b.Country
+                });
+            switch (s)
+            {
+                case "name":
+                    model = model.OrderBy(b => b.Name);
+                    break;
+                case "country":
+                    model = model.OrderBy(b => b.Country);
+                    break;
+                default:
+                    break;
+            }
+            return Ok(model);
+        }
         [HttpGet]
         [Route("{id}")]
         public IActionResult Get(int id)

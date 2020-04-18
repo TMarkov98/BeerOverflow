@@ -68,6 +68,41 @@ namespace BeerOverflow.Web.API_Controllers
             return Ok(model);
         }
         [HttpGet]
+        [Route("filter")]
+        public IActionResult Get([FromQuery] string param, [FromQuery] string value)
+        {
+            var model = this._beerService.GetAllBeers()
+                .Select(x => new BeerViewModel
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    BeerType = x.BeerType.ToString(),
+                    Brewery = x.Brewery,
+                    BreweryCountry = x.BreweryCountry,
+                    AlcoholByVolume = x.AlcoholByVolume,
+                });
+            switch (param.ToLower())
+            {
+                case "country":
+                    model = model.Where(c => c.BreweryCountry.ToLower() == value.ToLower());
+                    break;
+                case "brewery":
+                    model = model.Where(b => b.Brewery.ToLower() == value.ToLower());
+                    break;
+                case "type":
+                case "beertype":
+                    model = model.Where(t => t.BeerType.ToLower() == value.ToLower());
+                    break;
+                case "abv":
+                case "alcoholbyvolume":
+                    model = model.Where(a => a.AlcoholByVolume.ToString() == value);
+                    break;
+                default:
+                    break;
+            }
+            return Ok(model);
+        }
+        [HttpGet]
         [Route("{id}")]
         public IActionResult Get(int id)
         {
