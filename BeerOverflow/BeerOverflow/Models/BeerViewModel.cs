@@ -14,5 +14,6 @@ namespace BeerOverflow.Web.Models
         public string Brewery { get; set; }
         public string BreweryCountry { get; set; }
         public double AlcoholByVolume { get; set; }
+        public int Likes { get; set; }
     }
 }

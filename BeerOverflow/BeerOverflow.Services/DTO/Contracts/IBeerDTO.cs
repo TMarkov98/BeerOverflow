@@ -13,6 +13,6 @@ namespace BeerOverflow.Services.DTO.Contracts
         string Brewery { get; set; }
         string BreweryCountry { get; set; }
         double AlcoholByVolume { get; set; }
-
+        int Likes { get; set; }
     }
 }
