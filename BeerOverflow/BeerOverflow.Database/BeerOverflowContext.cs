@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BeerOverflow.Database
 {
-    class BeerOverflowContext : DbContext
+    public class BeerOverflowContext : DbContext
     {
         public DbSet<Beer> Beers { get; set; }
         public DbSet<Brewery> Breweries { get; set; }
@@ -15,6 +15,7 @@ namespace BeerOverflow.Database
         public DbSet<Like> Likes { get; set; }
         public DbSet<WishlistBeer> WishlistBeers { get; set; }
         public DbSet<BeerDrank> BeersDrank { get; set; }
+        public DbSet<Country> Countries { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if(!optionsBuilder.IsConfigured)

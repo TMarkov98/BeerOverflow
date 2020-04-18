@@ -28,7 +28,7 @@ namespace BeerOverflow.Web.API_Controllers
                 {
                     Id = b.Id,
                     Name = b.Name,
-                    Country = b.BreweryCountry
+                    Country = b.Country
                 });
             return Ok(model);
         }
@@ -41,7 +41,7 @@ namespace BeerOverflow.Web.API_Controllers
             {
                 Id = breweryDTO.Id,
                 Name = breweryDTO.Name,
-                Country = breweryDTO.BreweryCountry
+                Country = breweryDTO.Country
             };
             return Ok(model);
         }
@@ -51,7 +51,11 @@ namespace BeerOverflow.Web.API_Controllers
         {
             if (breweryViewModel == null)
                 return BadRequest();
-            var breweryDTO = new BreweryDTO(breweryViewModel.Name, breweryViewModel.Country);
+            var breweryDTO = new BreweryDTO
+            {
+                Name = breweryViewModel.Name, 
+                Country = breweryViewModel.Country
+            };
             var brewery = _breweryServices.CreateBrewery(breweryDTO);
             return Created("Post", brewery);
         }

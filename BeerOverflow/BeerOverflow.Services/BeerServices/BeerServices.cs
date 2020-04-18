@@ -3,14 +3,17 @@ using BeerOverflow.Models;
 using BeerOverflow.Models.Contracts;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.DTO.Contracts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace BeerOverflow.Services
 {
-    public class BeerService : IBeerService
+    public class BeerServices : IBeerServices
     {
+        private readonly BeerOverflowContext context = new BeerOverflowContext();
+
         public IBeerDTO CreateBeer(IBeerDTO beerDTO)
         {
             var beer = new Beer
@@ -28,7 +31,7 @@ namespace BeerOverflow.Services
                 AlcoholByVolume = beerDTO.AlcoholByVolume
             };
             
-            Database.Database.Beers.Add(beer);
+            context.Beers.Add(beer);
             beer.Id = Database.Database.Beers.Count;
             return beerDTO;
         }
@@ -40,7 +43,7 @@ namespace BeerOverflow.Services
 
         public ICollection<BeerDTO> GetAllBeers()
         {
-            var beers = Database.Database.Beers
+            var beers = context.Beers
                 .Select(x => new BeerDTO
                 {
                     Id = x.Id,
@@ -57,7 +60,7 @@ namespace BeerOverflow.Services
 
         public BeerDTO GetBeer(int id)
         {
-            var beer = Database.Database.Beers
+            var beer = context.Beers.Include(b => b.Type).Include(b => b.Brewery).ThenInclude(br => br.Country)
                 .FirstOrDefault(b => b.Id == id);
 
             if (beer == null)
@@ -79,7 +82,7 @@ namespace BeerOverflow.Services
         }
         public BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, string breweryCountry, double AbV)
         {
-            var beer = Database.Database.Beers
+            var beer = context.Beers
                 .Where(b => b.IsDeleted == false)
                 .FirstOrDefault(b => b.Id == id);
             beer.Name = name;

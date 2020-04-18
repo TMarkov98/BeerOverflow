@@ -1,6 +1,8 @@
-﻿using BeerOverflow.Models;
+﻿using BeerOverflow.Database;
+using BeerOverflow.Models;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.DTO.Contracts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,49 +12,43 @@ namespace BeerOverflow.Services.BreweryServices
 {
     public class BreweryServices : IBreweryServices
     {
+        private readonly BeerOverflowContext context = new BeerOverflowContext();
+
         public IBreweryDTO CreateBrewery(IBreweryDTO breweryDTO)
         {
             var brewery = new Brewery
             {
                 Name = breweryDTO.Name,
-                Country = (Country)Enum.Parse(typeof(Country), breweryDTO.BreweryCountry, true)
+                Country = (Country)Enum.Parse(typeof(Country), breweryDTO.Country, true)
             };
-            Database.Database.Breweries.Add(brewery);
+            context.Breweries.Add(brewery);
             brewery.Id = Database.Database.Breweries.Count;
             return breweryDTO;
         }
         public IBreweryDTO GetBrewery(int id)
         {
-            var brewery = Database.Database.Breweries.FirstOrDefault(i => i.Id == id);
+            var brewery = context.Breweries.Include(b => b.Country).FirstOrDefault(i => i.Id == id);
             if (brewery == null)
                 throw new ArgumentNullException("Brewery can NOT be null.");
 
-            var breweryDTO = new BreweryDTO(brewery.Name, brewery.Country.Name) { Id = brewery.Id };
+            var breweryDTO = new BreweryDTO
+            {
+                Id = brewery.Id,
+                Name = brewery.Name,
+                Country = brewery.Country.Name
+            };
             return breweryDTO;
         }
         public ICollection<BreweryDTO> GetAllBreweries()
         {
-            var breweries = Database.Database.Breweries
+            var breweries = context.Breweries
                 .Select(x => new BreweryDTO
-                (
-                    x.Name,
-                    x.Country.Name
-                )
-                { Id = x.Id }).ToList();
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Country = x.Country.Name
+                }).ToList();
             return breweries;
         }
     }
 }
-
-//public IBeerDTO CreateBeer(IBeerDTO beerDTO)
-//{
-//    var beer = new Beer(beerDTO.Name,
-//        (BeerType)Enum.Parse(typeof(BeerType), beerDTO.BeerType, true),
-//        new Brewery(beerDTO.Brewery, beerDTO.BreweryCountry),
-//        (Country)Enum.Parse(typeof(Country), beerDTO.Country, true),
-//        beerDTO.AlcoholByVolume);
-
-//    Database.Database.Beers.Add(beer);
-//    beer.Id = Database.Database.Beers.Count;
-//    return beerDTO;
-//}

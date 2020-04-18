@@ -1,4 +1,6 @@
-﻿namespace BeerOverflow.Models.Contracts
+﻿using System.Collections.Generic;
+
+namespace BeerOverflow.Models.Contracts
 {
     public interface ICountry
     {

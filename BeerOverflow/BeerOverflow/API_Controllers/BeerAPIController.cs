@@ -14,8 +14,8 @@ namespace BeerOverflow.Web.API_Controllers
     [ApiController]
     public class BeerAPIController : ControllerBase
     {
-        private readonly IBeerService _beerService;
-        public BeerAPIController(IBeerService beerService)
+        private readonly IBeerServices _beerService;
+        public BeerAPIController(IBeerServices beerService)
         {
             this._beerService = beerService ?? throw new ArgumentNullException("BeerService can NOT be null.");
         }
@@ -46,6 +46,7 @@ namespace BeerOverflow.Web.API_Controllers
                 Name = beerDTO.Name,
                 BeerType = beerDTO.BeerType.ToString(),
                 Brewery = beerDTO.Brewery,
+                BreweryCountry = beerDTO.BreweryCountry,
                 AlcoholByVolume = beerDTO.AlcoholByVolume,
             };
             return Ok(model);

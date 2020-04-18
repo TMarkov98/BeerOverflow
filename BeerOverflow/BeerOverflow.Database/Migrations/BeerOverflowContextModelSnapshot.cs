@@ -66,7 +66,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 1,
                             AlcoholByVolume = 5.0,
                             BreweryId = 1,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 184, DateTimeKind.Local).AddTicks(861),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(1939),
                             IsDeleted = false,
                             Name = "Kaiser",
                             TypeId = 11
@@ -76,7 +76,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 2,
                             AlcoholByVolume = 7.5,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 184, DateTimeKind.Local).AddTicks(2228),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(2509),
                             IsDeleted = false,
                             Name = "Ot Na Pesho Zadniq Dvor Birata",
                             TypeId = 1
@@ -86,7 +86,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 3,
                             AlcoholByVolume = 3.5,
                             BreweryId = 3,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 184, DateTimeKind.Local).AddTicks(2294),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(2545),
                             IsDeleted = false,
                             Name = "Ot Na Pesho Predniq Dvor Birata",
                             TypeId = 1
@@ -96,7 +96,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 4,
                             AlcoholByVolume = 5.5,
                             BreweryId = 4,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 184, DateTimeKind.Local).AddTicks(2344),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(2568),
                             IsDeleted = false,
                             Name = "Ot Na Pesho Leviq Dvor Birata",
                             TypeId = 1
@@ -106,7 +106,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 5,
                             AlcoholByVolume = 4.9000000000000004,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 184, DateTimeKind.Local).AddTicks(2384),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(2588),
                             IsDeleted = false,
                             Name = "Ot Na Pesho Desniq Dvor Birata",
                             TypeId = 1
@@ -240,7 +240,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 1,
                             CountryId = 87,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 178, DateTimeKind.Local).AddTicks(2604),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 604, DateTimeKind.Local).AddTicks(7794),
                             IsDeleted = false,
                             Name = "Mythos Breweries"
                         },
@@ -248,7 +248,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 2,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 182, DateTimeKind.Local).AddTicks(9254),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 606, DateTimeKind.Local).AddTicks(7276),
                             IsDeleted = false,
                             Name = "Na Pesho Zadniq Dvor"
                         },
@@ -256,7 +256,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 3,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 182, DateTimeKind.Local).AddTicks(9415),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 606, DateTimeKind.Local).AddTicks(7359),
                             IsDeleted = false,
                             Name = "Na Pesho Predniq Dvor"
                         },
@@ -264,7 +264,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 4,
                             CountryId = 1,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 182, DateTimeKind.Local).AddTicks(9464),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 606, DateTimeKind.Local).AddTicks(7381),
                             IsDeleted = false,
                             Name = "Na Pesho Leviq Dvor"
                         },
@@ -272,7 +272,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 5,
                             CountryId = 2,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 182, DateTimeKind.Local).AddTicks(9500),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 606, DateTimeKind.Local).AddTicks(7400),
                             IsDeleted = false,
                             Name = "Na Pesho Desniq Dvor"
                         });
@@ -295,7 +295,7 @@ namespace BeerOverflow.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Country");
+                    b.ToTable("Countries");
 
                     b.HasData(
                         new
@@ -656,7 +656,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 60,
                             Code = "CZ",
-                            Name = "Czech Republic"
+                            Name = "Czechia"
                         },
                         new
                         {
@@ -721,368 +721,368 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 71,
+                            Code = "SZ",
+                            Name = "Eswatini"
+                        },
+                        new
+                        {
+                            Id = 72,
                             Code = "ET",
                             Name = "Ethiopia"
                         },
                         new
                         {
-                            Id = 72,
+                            Id = 73,
                             Code = "150",
                             Name = "Europe"
                         },
                         new
                         {
-                            Id = 73,
+                            Id = 74,
                             Code = "FK",
                             Name = "Falkland Islands"
                         },
                         new
                         {
-                            Id = 74,
+                            Id = 75,
                             Code = "FO",
                             Name = "Faroe Islands"
                         },
                         new
                         {
-                            Id = 75,
+                            Id = 76,
                             Code = "FJ",
                             Name = "Fiji"
                         },
                         new
                         {
-                            Id = 76,
+                            Id = 77,
                             Code = "FI",
                             Name = "Finland"
                         },
                         new
                         {
-                            Id = 77,
+                            Id = 78,
                             Code = "FR",
                             Name = "France"
                         },
                         new
                         {
-                            Id = 78,
+                            Id = 79,
                             Code = "GF",
                             Name = "French Guiana"
                         },
                         new
                         {
-                            Id = 79,
+                            Id = 80,
                             Code = "PF",
                             Name = "French Polynesia"
                         },
                         new
                         {
-                            Id = 80,
+                            Id = 81,
                             Code = "GA",
                             Name = "Gabon"
                         },
                         new
                         {
-                            Id = 81,
+                            Id = 82,
                             Code = "GM",
                             Name = "Gambia"
                         },
                         new
                         {
-                            Id = 82,
+                            Id = 83,
                             Code = "GE",
                             Name = "Georgia"
                         },
                         new
                         {
-                            Id = 83,
+                            Id = 84,
                             Code = "DE",
                             Name = "Germany"
                         },
                         new
                         {
-                            Id = 84,
+                            Id = 85,
                             Code = "GH",
                             Name = "Ghana"
                         },
                         new
                         {
-                            Id = 85,
+                            Id = 86,
                             Code = "GI",
                             Name = "Gibraltar"
                         },
                         new
                         {
-                            Id = 86,
+                            Id = 87,
                             Code = "GR",
                             Name = "Greece"
                         },
                         new
                         {
-                            Id = 87,
+                            Id = 88,
                             Code = "GL",
                             Name = "Greenland"
                         },
                         new
                         {
-                            Id = 88,
+                            Id = 89,
                             Code = "GD",
                             Name = "Grenada"
                         },
                         new
                         {
-                            Id = 89,
+                            Id = 90,
                             Code = "GP",
                             Name = "Guadeloupe"
                         },
                         new
                         {
-                            Id = 90,
+                            Id = 91,
                             Code = "GU",
                             Name = "Guam"
                         },
                         new
                         {
-                            Id = 91,
+                            Id = 92,
                             Code = "GT",
                             Name = "Guatemala"
                         },
                         new
                         {
-                            Id = 92,
+                            Id = 93,
                             Code = "GG",
                             Name = "Guernsey"
                         },
                         new
                         {
-                            Id = 93,
+                            Id = 94,
                             Code = "GN",
                             Name = "Guinea"
                         },
                         new
                         {
-                            Id = 94,
+                            Id = 95,
                             Code = "GW",
                             Name = "Guinea-Bissau"
                         },
                         new
                         {
-                            Id = 95,
+                            Id = 96,
                             Code = "GY",
                             Name = "Guyana"
                         },
                         new
                         {
-                            Id = 96,
+                            Id = 97,
                             Code = "HT",
                             Name = "Haiti"
                         },
                         new
                         {
-                            Id = 97,
+                            Id = 98,
                             Code = "HN",
                             Name = "Honduras"
                         },
                         new
                         {
-                            Id = 98,
+                            Id = 99,
                             Code = "HK",
                             Name = "Hong Kong SAR"
                         },
                         new
                         {
-                            Id = 99,
+                            Id = 100,
                             Code = "HU",
                             Name = "Hungary"
                         },
                         new
                         {
-                            Id = 100,
+                            Id = 101,
                             Code = "IS",
                             Name = "Iceland"
                         },
                         new
                         {
-                            Id = 101,
+                            Id = 102,
                             Code = "IN",
                             Name = "India"
                         },
                         new
                         {
-                            Id = 102,
+                            Id = 103,
                             Code = "ID",
                             Name = "Indonesia"
                         },
                         new
                         {
-                            Id = 103,
+                            Id = 104,
                             Code = "IR",
                             Name = "Iran"
                         },
                         new
                         {
-                            Id = 104,
+                            Id = 105,
                             Code = "IQ",
                             Name = "Iraq"
                         },
                         new
                         {
-                            Id = 105,
+                            Id = 106,
                             Code = "IE",
                             Name = "Ireland"
                         },
                         new
                         {
-                            Id = 106,
+                            Id = 107,
                             Code = "IM",
                             Name = "Isle of Man"
                         },
                         new
                         {
-                            Id = 107,
+                            Id = 108,
                             Code = "IL",
                             Name = "Israel"
                         },
                         new
                         {
-                            Id = 108,
+                            Id = 109,
                             Code = "IT",
                             Name = "Italy"
                         },
                         new
                         {
-                            Id = 109,
+                            Id = 110,
                             Code = "JM",
                             Name = "Jamaica"
                         },
                         new
                         {
-                            Id = 110,
+                            Id = 111,
                             Code = "JP",
                             Name = "Japan"
                         },
                         new
                         {
-                            Id = 111,
+                            Id = 112,
                             Code = "JE",
                             Name = "Jersey"
                         },
                         new
                         {
-                            Id = 112,
+                            Id = 113,
                             Code = "JO",
                             Name = "Jordan"
                         },
                         new
                         {
-                            Id = 113,
+                            Id = 114,
                             Code = "KZ",
                             Name = "Kazakhstan"
                         },
                         new
                         {
-                            Id = 114,
+                            Id = 115,
                             Code = "KE",
                             Name = "Kenya"
                         },
                         new
                         {
-                            Id = 115,
+                            Id = 116,
                             Code = "KI",
                             Name = "Kiribati"
                         },
                         new
                         {
-                            Id = 116,
+                            Id = 117,
                             Code = "KR",
                             Name = "Korea"
                         },
                         new
                         {
-                            Id = 117,
+                            Id = 118,
                             Code = "XK",
                             Name = "Kosovo"
                         },
                         new
                         {
-                            Id = 118,
+                            Id = 119,
                             Code = "KW",
                             Name = "Kuwait"
                         },
                         new
                         {
-                            Id = 119,
+                            Id = 120,
                             Code = "KG",
                             Name = "Kyrgyzstan"
                         },
                         new
                         {
-                            Id = 120,
+                            Id = 121,
                             Code = "LA",
                             Name = "Laos"
                         },
                         new
                         {
-                            Id = 121,
+                            Id = 122,
                             Code = "419",
                             Name = "Latin America"
                         },
                         new
                         {
-                            Id = 122,
+                            Id = 123,
                             Code = "LV",
                             Name = "Latvia"
                         },
                         new
                         {
-                            Id = 123,
+                            Id = 124,
                             Code = "LB",
                             Name = "Lebanon"
                         },
                         new
                         {
-                            Id = 124,
+                            Id = 125,
                             Code = "LS",
                             Name = "Lesotho"
                         },
                         new
                         {
-                            Id = 125,
+                            Id = 126,
                             Code = "LR",
                             Name = "Liberia"
                         },
                         new
                         {
-                            Id = 126,
+                            Id = 127,
                             Code = "LY",
                             Name = "Libya"
                         },
                         new
                         {
-                            Id = 127,
+                            Id = 128,
                             Code = "LI",
                             Name = "Liechtenstein"
                         },
                         new
                         {
-                            Id = 128,
+                            Id = 129,
                             Code = "LT",
                             Name = "Lithuania"
                         },
                         new
                         {
-                            Id = 129,
+                            Id = 130,
                             Code = "LU",
                             Name = "Luxembourg"
                         },
                         new
                         {
-                            Id = 130,
+                            Id = 131,
                             Code = "MO",
                             Name = "Macao SAR"
-                        },
-                        new
-                        {
-                            Id = 131,
-                            Code = "MK",
-                            Name = "Macedonia, FYRO"
                         },
                         new
                         {
@@ -1285,296 +1285,296 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 165,
+                            Code = "MK",
+                            Name = "North Macedonia"
+                        },
+                        new
+                        {
+                            Id = 166,
                             Code = "MP",
                             Name = "Northern Mariana Islands"
                         },
                         new
                         {
-                            Id = 166,
+                            Id = 167,
                             Code = "NO",
                             Name = "Norway"
                         },
                         new
                         {
-                            Id = 167,
+                            Id = 168,
                             Code = "OM",
                             Name = "Oman"
                         },
                         new
                         {
-                            Id = 168,
+                            Id = 169,
                             Code = "PK",
                             Name = "Pakistan"
                         },
                         new
                         {
-                            Id = 169,
+                            Id = 170,
                             Code = "PW",
                             Name = "Palau"
                         },
                         new
                         {
-                            Id = 170,
+                            Id = 171,
                             Code = "PS",
                             Name = "Palestinian Authority"
                         },
                         new
                         {
-                            Id = 171,
+                            Id = 172,
                             Code = "PA",
                             Name = "Panama"
                         },
                         new
                         {
-                            Id = 172,
+                            Id = 173,
                             Code = "PG",
                             Name = "Papua New Guinea"
                         },
                         new
                         {
-                            Id = 173,
+                            Id = 174,
                             Code = "PY",
                             Name = "Paraguay"
                         },
                         new
                         {
-                            Id = 174,
+                            Id = 175,
                             Code = "PE",
                             Name = "Peru"
                         },
                         new
                         {
-                            Id = 175,
+                            Id = 176,
                             Code = "PH",
                             Name = "Philippines"
                         },
                         new
                         {
-                            Id = 176,
+                            Id = 177,
                             Code = "PN",
                             Name = "Pitcairn Islands"
                         },
                         new
                         {
-                            Id = 177,
+                            Id = 178,
                             Code = "PL",
                             Name = "Poland"
                         },
                         new
                         {
-                            Id = 178,
+                            Id = 179,
                             Code = "PT",
                             Name = "Portugal"
                         },
                         new
                         {
-                            Id = 179,
+                            Id = 180,
                             Code = "PR",
                             Name = "Puerto Rico"
                         },
                         new
                         {
-                            Id = 180,
+                            Id = 181,
                             Code = "QA",
                             Name = "Qatar"
                         },
                         new
                         {
-                            Id = 181,
+                            Id = 182,
                             Code = "RE",
                             Name = "Réunion"
                         },
                         new
                         {
-                            Id = 182,
+                            Id = 183,
                             Code = "RO",
                             Name = "Romania"
                         },
                         new
                         {
-                            Id = 183,
+                            Id = 184,
                             Code = "RU",
                             Name = "Russia"
                         },
                         new
                         {
-                            Id = 184,
+                            Id = 185,
                             Code = "RW",
                             Name = "Rwanda"
                         },
                         new
                         {
-                            Id = 185,
+                            Id = 186,
                             Code = "BL",
                             Name = "Saint Barthélemy"
                         },
                         new
                         {
-                            Id = 186,
+                            Id = 187,
                             Code = "KN",
                             Name = "Saint Kitts and Nevis"
                         },
                         new
                         {
-                            Id = 187,
+                            Id = 188,
                             Code = "LC",
                             Name = "Saint Lucia"
                         },
                         new
                         {
-                            Id = 188,
+                            Id = 189,
                             Code = "MF",
                             Name = "Saint Martin"
                         },
                         new
                         {
-                            Id = 189,
+                            Id = 190,
                             Code = "PM",
                             Name = "Saint Pierre and Miquelon"
                         },
                         new
                         {
-                            Id = 190,
+                            Id = 191,
                             Code = "VC",
                             Name = "Saint Vincent and the Grenadines"
                         },
                         new
                         {
-                            Id = 191,
+                            Id = 192,
                             Code = "WS",
                             Name = "Samoa"
                         },
                         new
                         {
-                            Id = 192,
+                            Id = 193,
                             Code = "SM",
                             Name = "San Marino"
                         },
                         new
                         {
-                            Id = 193,
+                            Id = 194,
                             Code = "ST",
                             Name = "São Tomé and Príncipe"
                         },
                         new
                         {
-                            Id = 194,
+                            Id = 195,
                             Code = "SA",
                             Name = "Saudi Arabia"
                         },
                         new
                         {
-                            Id = 195,
+                            Id = 196,
                             Code = "SN",
                             Name = "Senegal"
                         },
                         new
                         {
-                            Id = 196,
+                            Id = 197,
                             Code = "RS",
                             Name = "Serbia"
                         },
                         new
                         {
-                            Id = 197,
+                            Id = 198,
                             Code = "SC",
                             Name = "Seychelles"
                         },
                         new
                         {
-                            Id = 198,
+                            Id = 199,
                             Code = "SL",
                             Name = "Sierra Leone"
                         },
                         new
                         {
-                            Id = 199,
+                            Id = 200,
                             Code = "SG",
                             Name = "Singapore"
                         },
                         new
                         {
-                            Id = 200,
+                            Id = 201,
                             Code = "SX",
                             Name = "Sint Maarten"
                         },
                         new
                         {
-                            Id = 201,
+                            Id = 202,
                             Code = "SK",
                             Name = "Slovakia"
                         },
                         new
                         {
-                            Id = 202,
+                            Id = 203,
                             Code = "SI",
                             Name = "Slovenia"
                         },
                         new
                         {
-                            Id = 203,
+                            Id = 204,
                             Code = "SB",
                             Name = "Solomon Islands"
                         },
                         new
                         {
-                            Id = 204,
+                            Id = 205,
                             Code = "SO",
                             Name = "Somalia"
                         },
                         new
                         {
-                            Id = 205,
+                            Id = 206,
                             Code = "ZA",
                             Name = "South Africa"
                         },
                         new
                         {
-                            Id = 206,
+                            Id = 207,
                             Code = "SS",
                             Name = "South Sudan"
                         },
                         new
                         {
-                            Id = 207,
+                            Id = 208,
                             Code = "ES",
                             Name = "Spain"
                         },
                         new
                         {
-                            Id = 208,
+                            Id = 209,
                             Code = "LK",
                             Name = "Sri Lanka"
                         },
                         new
                         {
-                            Id = 209,
+                            Id = 210,
                             Code = "SH",
                             Name = "St Helena, Ascension, Tristan da Cunha"
                         },
                         new
                         {
-                            Id = 210,
+                            Id = 211,
                             Code = "SD",
                             Name = "Sudan"
                         },
                         new
                         {
-                            Id = 211,
+                            Id = 212,
                             Code = "SR",
                             Name = "Suriname"
                         },
                         new
                         {
-                            Id = 212,
+                            Id = 213,
                             Code = "SJ",
                             Name = "Svalbard and Jan Mayen"
-                        },
-                        new
-                        {
-                            Id = 213,
-                            Code = "SZ",
-                            Name = "Swaziland"
                         },
                         new
                         {
@@ -1741,42 +1741,48 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 241,
+                            Code = "VA",
+                            Name = "Vatican City"
+                        },
+                        new
+                        {
+                            Id = 242,
                             Code = "VE",
                             Name = "Venezuela"
                         },
                         new
                         {
-                            Id = 242,
+                            Id = 243,
                             Code = "VN",
                             Name = "Vietnam"
                         },
                         new
                         {
-                            Id = 243,
+                            Id = 244,
                             Code = "WF",
                             Name = "Wallis and Futuna"
                         },
                         new
                         {
-                            Id = 244,
+                            Id = 245,
                             Code = "001",
                             Name = "World"
                         },
                         new
                         {
-                            Id = 245,
+                            Id = 246,
                             Code = "YE",
                             Name = "Yemen"
                         },
                         new
                         {
-                            Id = 246,
+                            Id = 247,
                             Code = "ZM",
                             Name = "Zambia"
                         },
                         new
                         {
-                            Id = 247,
+                            Id = 248,
                             Code = "ZW",
                             Name = "Zimbabwe"
                         });
@@ -1847,7 +1853,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 1,
                             AuthorId = 1,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 187, DateTimeKind.Local).AddTicks(5259),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 608, DateTimeKind.Local).AddTicks(2148),
                             IsDeleted = false,
                             Name = "Na Pesho Review-to",
                             Rating = 10,
@@ -1858,7 +1864,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 2,
                             AuthorId = 2,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 187, DateTimeKind.Local).AddTicks(8311),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 608, DateTimeKind.Local).AddTicks(2376),
                             IsDeleted = false,
                             Name = "Na Gosho Review-to",
                             Rating = 7,
@@ -1869,7 +1875,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 3,
                             AuthorId = 3,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 187, DateTimeKind.Local).AddTicks(8534),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 608, DateTimeKind.Local).AddTicks(2441),
                             IsDeleted = false,
                             Name = "Na Tosho Review-to",
                             Rating = 8,
@@ -1880,7 +1886,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 4,
                             AuthorId = 4,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 187, DateTimeKind.Local).AddTicks(8659),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 608, DateTimeKind.Local).AddTicks(2465),
                             IsDeleted = false,
                             Name = "Kaiser nomer edno",
                             Rating = 10,
@@ -1942,7 +1948,7 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 185, DateTimeKind.Local).AddTicks(3481),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(7140),
                             Email = "Pesho@biri.com",
                             IsBanned = false,
                             IsDeleted = false,
@@ -1953,7 +1959,7 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 185, DateTimeKind.Local).AddTicks(8154),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(8937),
                             Email = "Gosho@biri.com",
                             IsBanned = false,
                             IsDeleted = false,
@@ -1964,7 +1970,7 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 185, DateTimeKind.Local).AddTicks(8337),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(9005),
                             Email = "Tosho@biri.com",
                             IsBanned = false,
                             IsDeleted = false,
@@ -1975,7 +1981,7 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedOn = new DateTime(2020, 4, 17, 20, 55, 35, 185, DateTimeKind.Local).AddTicks(8381),
+                            CreatedOn = new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(9028),
                             Email = "Slavcho@biri.com",
                             IsBanned = false,
                             IsDeleted = false,
@@ -2065,7 +2071,7 @@ namespace BeerOverflow.Database.Migrations
             modelBuilder.Entity("BeerOverflow.Models.Brewery", b =>
                 {
                     b.HasOne("BeerOverflow.Models.Country", "Country")
-                        .WithMany()
+                        .WithMany("Breweries")
                         .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

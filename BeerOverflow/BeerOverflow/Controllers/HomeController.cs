@@ -14,8 +14,8 @@ namespace BeerOverflow.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IBeerService _beerService;
-        public HomeController(ILogger<HomeController> logger, IBeerService beerService)
+        private readonly IBeerServices _beerService;
+        public HomeController(ILogger<HomeController> logger, IBeerServices beerService)
         {
             _logger = logger;
             _beerService = beerService ?? throw new ArgumentNullException("BeerService can not be null.");

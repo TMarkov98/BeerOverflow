@@ -26,7 +26,7 @@ namespace BeerOverflow
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddScoped<IBeerService, BeerService>();
+            services.AddScoped<IBeerServices, BeerServices>();
             services.AddScoped<ICountryServices, CountryServices>();
             services.AddScoped<IBreweryServices, BreweryServices>();
         }
