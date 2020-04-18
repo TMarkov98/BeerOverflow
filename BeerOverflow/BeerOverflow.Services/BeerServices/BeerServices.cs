@@ -32,7 +32,6 @@ namespace BeerOverflow.Services
             };
             
             context.Beers.Add(beer);
-            beer.Id = Database.Database.Beers.Count;
             return beerDTO;
         }
 

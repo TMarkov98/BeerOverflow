@@ -22,7 +22,6 @@ namespace BeerOverflow.Services.BreweryServices
                 Country = (Country)Enum.Parse(typeof(Country), breweryDTO.Country, true)
             };
             context.Breweries.Add(brewery);
-            brewery.Id = Database.Database.Breweries.Count;
             return breweryDTO;
         }
         public IBreweryDTO GetBrewery(int id)
