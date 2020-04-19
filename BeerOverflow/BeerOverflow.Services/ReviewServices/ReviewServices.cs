@@ -63,6 +63,16 @@ namespace BeerOverflow.Services.ReviewServices
             };
             return reviewDTO;
         }
+        public bool DeleteReview(int id)
+        {
+            var review = _context.Reviews.FirstOrDefault(b => b.Id == id);
+            if (review == null || review.IsDeleted)
+                return false;
+
+            review.IsDeleted = true;
+            review.DeletedOn = DateTime.Now;
+            return true;
+        }
         public ReviewDTO UpdateReviews(int id, string name, string text, int rating, string beer, string author)
         {
             var review = _context.Reviews
