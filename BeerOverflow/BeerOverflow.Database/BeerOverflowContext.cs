@@ -12,6 +12,7 @@ namespace BeerOverflow.Database
         public DbSet<Brewery> Breweries { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Like> Likes { get; set; }
         public DbSet<WishlistBeer> WishlistBeers { get; set; }
         public DbSet<BeerDrank> BeersDrank { get; set; }

@@ -132,7 +132,7 @@ namespace BeerOverflow.Web.API_Controllers
                 AlcoholByVolume = beerViewModel.AlcoholByVolume
             };
             var beer = _beerService.CreateBeer(beerDTO);
-            return Created("Post", beer);
+            return Created("Post", beerViewModel);
         }
         [HttpPut]
         [Route("{id}")]
@@ -141,7 +141,7 @@ namespace BeerOverflow.Web.API_Controllers
             if (beerViewModel==null)
                 return BadRequest();
             var beer = this._beerService.UpdateBeer(id, beerViewModel.Name, beerViewModel.BeerType, beerViewModel.Brewery, beerViewModel.BreweryCountry, beerViewModel.AlcoholByVolume);
-            return Ok(beer);
+            return Ok(beerViewModel);
         }
     }
 }

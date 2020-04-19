@@ -37,7 +37,13 @@ namespace BeerOverflow.Services
 
         public bool DeleteBeer(int id)
         {
-            throw new NotImplementedException();
+            var beer = context.Beers.FirstOrDefault(b => b.Id == id);
+            if (beer == null || beer.IsDeleted)
+                return false;
+
+            beer.IsDeleted = true;
+            beer.DeletedOn = DateTime.Now;
+            return true;
         }
 
         public ICollection<BeerDTO> GetAllBeers()

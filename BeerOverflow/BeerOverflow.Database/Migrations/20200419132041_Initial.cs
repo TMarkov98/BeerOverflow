@@ -35,7 +35,7 @@ namespace BeerOverflow.Database.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserRole",
+                name: "UserRoles",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -44,7 +44,7 @@ namespace BeerOverflow.Database.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserRole", x => x.Id);
+                    table.PrimaryKey("PK_UserRoles", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -92,9 +92,9 @@ namespace BeerOverflow.Database.Migrations
                 {
                     table.PrimaryKey("PK_Users", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Users_UserRole_RoleId",
+                        name: "FK_Users_UserRoles_RoleId",
                         column: x => x.RoleId,
-                        principalTable: "UserRole",
+                        principalTable: "UserRoles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -510,7 +510,7 @@ namespace BeerOverflow.Database.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "UserRole",
+                table: "UserRoles",
                 columns: new[] { "Id", "RoleName" },
                 values: new object[,]
                 {
@@ -524,11 +524,11 @@ namespace BeerOverflow.Database.Migrations
                 columns: new[] { "Id", "CountryId", "CreatedOn", "DeletedOn", "IsDeleted", "ModifiedOn", "Name" },
                 values: new object[,]
                 {
-                    { 4, 1, new DateTime(2020, 4, 18, 15, 14, 0, 606, DateTimeKind.Local).AddTicks(7381), null, false, null, "Na Pesho Leviq Dvor" },
-                    { 5, 2, new DateTime(2020, 4, 18, 15, 14, 0, 606, DateTimeKind.Local).AddTicks(7400), null, false, null, "Na Pesho Desniq Dvor" },
-                    { 2, 34, new DateTime(2020, 4, 18, 15, 14, 0, 606, DateTimeKind.Local).AddTicks(7276), null, false, null, "Na Pesho Zadniq Dvor" },
-                    { 3, 34, new DateTime(2020, 4, 18, 15, 14, 0, 606, DateTimeKind.Local).AddTicks(7359), null, false, null, "Na Pesho Predniq Dvor" },
-                    { 1, 87, new DateTime(2020, 4, 18, 15, 14, 0, 604, DateTimeKind.Local).AddTicks(7794), null, false, null, "Mythos Breweries" }
+                    { 4, 1, new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(1587), null, false, null, "Na Pesho Leviq Dvor" },
+                    { 5, 2, new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(1604), null, false, null, "Na Pesho Desniq Dvor" },
+                    { 2, 34, new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(1483), null, false, null, "Na Pesho Zadniq Dvor" },
+                    { 3, 34, new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(1565), null, false, null, "Na Pesho Predniq Dvor" },
+                    { 1, 87, new DateTime(2020, 4, 19, 16, 20, 40, 909, DateTimeKind.Local).AddTicks(3338), null, false, null, "Mythos Breweries" }
                 });
 
             migrationBuilder.InsertData(
@@ -536,10 +536,10 @@ namespace BeerOverflow.Database.Migrations
                 columns: new[] { "Id", "BanReason", "CreatedOn", "DeletedOn", "Email", "IsBanned", "IsDeleted", "ModifiedOn", "Password", "RoleId", "UserName" },
                 values: new object[,]
                 {
-                    { 1, null, new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(7140), null, "Pesho@biri.com", false, false, null, "NaPeshoParolata", 2, "Pesho" },
-                    { 2, null, new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(8937), null, "Gosho@biri.com", false, false, null, "NaGoshoParolata", 2, "Gosho" },
-                    { 3, null, new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(9005), null, "Tosho@biri.com", false, false, null, "NaToshoParolata", 2, "Tosho" },
-                    { 4, null, new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(9028), null, "Slavcho@biri.com", false, false, null, "NaSlavchoParolata", 2, "Slavcho" }
+                    { 1, null, new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(1773), null, "Pesho@biri.com", false, false, null, "NaPeshoParolata", 2, "Pesho" },
+                    { 2, null, new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(3328), null, "Gosho@biri.com", false, false, null, "NaGoshoParolata", 2, "Gosho" },
+                    { 3, null, new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(3393), null, "Tosho@biri.com", false, false, null, "NaToshoParolata", 2, "Tosho" },
+                    { 4, null, new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(3417), null, "Slavcho@biri.com", false, false, null, "NaSlavchoParolata", 2, "Slavcho" }
                 });
 
             migrationBuilder.InsertData(
@@ -547,11 +547,11 @@ namespace BeerOverflow.Database.Migrations
                 columns: new[] { "Id", "AlcoholByVolume", "BreweryId", "CreatedOn", "DeletedOn", "IsDeleted", "ModifiedOn", "Name", "TypeId" },
                 values: new object[,]
                 {
-                    { 4, 5.5, 4, new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(2568), null, false, null, "Ot Na Pesho Leviq Dvor Birata", 1 },
-                    { 5, 4.9000000000000004, 5, new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(2588), null, false, null, "Ot Na Pesho Desniq Dvor Birata", 1 },
-                    { 2, 7.5, 2, new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(2509), null, false, null, "Ot Na Pesho Zadniq Dvor Birata", 1 },
-                    { 3, 3.5, 3, new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(2545), null, false, null, "Ot Na Pesho Predniq Dvor Birata", 1 },
-                    { 1, 5.0, 1, new DateTime(2020, 4, 18, 15, 14, 0, 607, DateTimeKind.Local).AddTicks(1939), null, false, null, "Kaiser", 11 }
+                    { 4, 5.5, 4, new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(7312), null, false, null, "Ot Na Pesho Leviq Dvor Birata", 1 },
+                    { 5, 4.9000000000000004, 5, new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(7333), null, false, null, "Ot Na Pesho Desniq Dvor Birata", 1 },
+                    { 2, 7.5, 2, new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(7250), null, false, null, "Ot Na Pesho Zadniq Dvor Birata", 1 },
+                    { 3, 3.5, 3, new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(7287), null, false, null, "Ot Na Pesho Predniq Dvor Birata", 1 },
+                    { 1, 5.0, 1, new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(6444), null, false, null, "Kaiser", 11 }
                 });
 
             migrationBuilder.InsertData(
@@ -559,10 +559,10 @@ namespace BeerOverflow.Database.Migrations
                 columns: new[] { "Id", "AuthorId", "CreatedOn", "DeletedOn", "IsDeleted", "ModifiedOn", "Name", "Rating", "TargetBeerId", "Text" },
                 values: new object[,]
                 {
-                    { 3, 3, new DateTime(2020, 4, 18, 15, 14, 0, 608, DateTimeKind.Local).AddTicks(2441), null, false, null, "Na Tosho Review-to", 8, 2, "Toz Pesho mnoo hubavi gi prai" },
-                    { 2, 2, new DateTime(2020, 4, 18, 15, 14, 0, 608, DateTimeKind.Local).AddTicks(2376), null, false, null, "Na Gosho Review-to", 7, 3, "Evalata Pesho mnoo dobra bira" },
-                    { 1, 1, new DateTime(2020, 4, 18, 15, 14, 0, 608, DateTimeKind.Local).AddTicks(2148), null, false, null, "Na Pesho Review-to", 10, 1, "Mnoo dobra bira brat" },
-                    { 4, 4, new DateTime(2020, 4, 18, 15, 14, 0, 608, DateTimeKind.Local).AddTicks(2465), null, false, null, "Kaiser nomer edno", 10, 1, "Bira ot butilka ne bqh pil do sq" }
+                    { 3, 3, new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(6659), null, false, null, "Na Tosho Review-to", 8, 2, "Toz Pesho mnoo hubavi gi prai" },
+                    { 2, 2, new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(6633), null, false, null, "Na Gosho Review-to", 7, 3, "Evalata Pesho mnoo dobra bira" },
+                    { 1, 1, new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(6383), null, false, null, "Na Pesho Review-to", 10, 1, "Mnoo dobra bira brat" },
+                    { 4, 4, new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(6680), null, false, null, "Kaiser nomer edno", 10, 1, "Bira ot butilka ne bqh pil do sq" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -638,7 +638,7 @@ namespace BeerOverflow.Database.Migrations
                 name: "BeerType");
 
             migrationBuilder.DropTable(
-                name: "UserRole");
+                name: "UserRoles");
 
             migrationBuilder.DropTable(
                 name: "Countries");
