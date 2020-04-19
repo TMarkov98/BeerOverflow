@@ -46,6 +46,10 @@ namespace BeerOverflow.Web.API_Controllers
         [Route("")]
         public IActionResult Post([FromBody] BeerTypeViewModel beerTypeViewModel)
         {
+            if (beerTypeViewModel == null)
+                return BadRequest();
+            if (BeerTypeExists(beerTypeViewModel.Name))
+                return ValidationProblem($"Beer Type with name {beerTypeViewModel.Name} already exists.");
             var beerTypeDTO = new BeerTypeDTO
             {
                 Id = beerTypeViewModel.Id,
@@ -53,6 +57,10 @@ namespace BeerOverflow.Web.API_Controllers
             };
             var beerType = _beerTypeServices.CreateBeerType(beerTypeDTO);
             return Created("Post", beerTypeViewModel);
+        }
+        private bool BeerTypeExists(string name)
+        {
+            return _beerTypeServices.GetAllBeerTypes().Any(r => r.Name == name);
         }
     }
 }
