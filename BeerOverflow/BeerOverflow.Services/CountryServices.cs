@@ -1,5 +1,6 @@
 ﻿
 using BeerOverflow.Database;
+using BeerOverflow.Services.Contracts;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.DTO.Contracts;
 using System;
@@ -7,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BeerOverflow.Services.CountryServices
+namespace BeerOverflow.Services
 {
     public class CountryServices : ICountryServices
     {

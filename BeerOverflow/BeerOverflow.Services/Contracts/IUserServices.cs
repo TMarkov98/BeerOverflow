@@ -1,7 +1,7 @@
 ﻿using BeerOverflow.Services.DTO;
 using System.Collections.Generic;
 
-namespace BeerOverflow.Services.UserServices
+namespace BeerOverflow.Services.Contracts
 {
     public interface IUserServices
     {

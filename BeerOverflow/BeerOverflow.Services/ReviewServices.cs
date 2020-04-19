@@ -1,5 +1,6 @@
 ﻿using BeerOverflow.Database;
 using BeerOverflow.Models;
+using BeerOverflow.Services.Contracts;
 using BeerOverflow.Services.DTO;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BeerOverflow.Services.ReviewServices
+namespace BeerOverflow.Services
 {
     public class ReviewServices : IReviewServices
     {

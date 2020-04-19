@@ -1,6 +1,7 @@
 ﻿using BeerOverflow.Database;
 using BeerOverflow.Models;
 using BeerOverflow.Models.Contracts;
+using BeerOverflow.Services.Contracts;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.DTO.Contracts;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,7 @@ namespace BeerOverflow.Services
             var beer = new Beer
             {
                 Name = beerDTO.Name,
-                Type = (BeerType)Enum.Parse(typeof(BeerType), beerDTO.BeerType, true),
+                Type = context.BeerTypes.FirstOrDefault(t => t.Name == beerDTO.BeerType) ?? throw new ArgumentNullException("Beer Type not found."),
                 Brewery = new Brewery
                 {
                     Name = beerDTO.Brewery,

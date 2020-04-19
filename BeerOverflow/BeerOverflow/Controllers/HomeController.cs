@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using BeerOverflow.Models;
 using BeerOverflow.Services;
 using BeerOverflow.Web.Models;
+using BeerOverflow.Services.Contracts;
 
 namespace BeerOverflow.Controllers
 {

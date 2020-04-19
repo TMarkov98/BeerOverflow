@@ -66,7 +66,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 1,
                             AlcoholByVolume = 5.0,
                             BreweryId = 1,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(6444),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(9242),
                             IsDeleted = false,
                             Name = "Kaiser",
                             TypeId = 11
@@ -76,7 +76,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 2,
                             AlcoholByVolume = 7.5,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(7250),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(9799),
                             IsDeleted = false,
                             Name = "Ot Na Pesho Zadniq Dvor Birata",
                             TypeId = 1
@@ -86,7 +86,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 3,
                             AlcoholByVolume = 3.5,
                             BreweryId = 3,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(7287),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(9834),
                             IsDeleted = false,
                             Name = "Ot Na Pesho Predniq Dvor Birata",
                             TypeId = 1
@@ -96,7 +96,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 4,
                             AlcoholByVolume = 5.5,
                             BreweryId = 4,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(7312),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(9856),
                             IsDeleted = false,
                             Name = "Ot Na Pesho Leviq Dvor Birata",
                             TypeId = 1
@@ -106,7 +106,7 @@ namespace BeerOverflow.Database.Migrations
                             Id = 5,
                             AlcoholByVolume = 4.9000000000000004,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(7333),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(9875),
                             IsDeleted = false,
                             Name = "Ot Na Pesho Desniq Dvor Birata",
                             TypeId = 1
@@ -135,6 +135,18 @@ namespace BeerOverflow.Database.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(30)")
@@ -142,62 +154,84 @@ namespace BeerOverflow.Database.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("BeerType");
+                    b.ToTable("BeerTypes");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(4714),
+                            IsDeleted = false,
                             Name = "Pale Lager"
                         },
                         new
                         {
                             Id = 2,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(5994),
+                            IsDeleted = false,
                             Name = "Blonde Ale"
                         },
                         new
                         {
                             Id = 3,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(6042),
+                            IsDeleted = false,
                             Name = "Hefewizen"
                         },
                         new
                         {
                             Id = 4,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(6061),
+                            IsDeleted = false,
                             Name = "Pale Ale"
                         },
                         new
                         {
                             Id = 5,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(6077),
+                            IsDeleted = false,
                             Name = "IPA"
                         },
                         new
                         {
                             Id = 6,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(6096),
+                            IsDeleted = false,
                             Name = "Amber Ale"
                         },
                         new
                         {
                             Id = 7,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(6111),
+                            IsDeleted = false,
                             Name = "Irish Red Ale"
                         },
                         new
                         {
                             Id = 8,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(6127),
+                            IsDeleted = false,
                             Name = "Brown Ale"
                         },
                         new
                         {
                             Id = 9,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(6181),
+                            IsDeleted = false,
                             Name = "Porter"
                         },
                         new
                         {
                             Id = 10,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(6200),
+                            IsDeleted = false,
                             Name = "Stout"
                         },
                         new
                         {
                             Id = 11,
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(6216),
+                            IsDeleted = false,
                             Name = "Pilsner"
                         });
                 });
@@ -240,7 +274,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 1,
                             CountryId = 87,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 909, DateTimeKind.Local).AddTicks(3338),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 996, DateTimeKind.Local).AddTicks(5600),
                             IsDeleted = false,
                             Name = "Mythos Breweries"
                         },
@@ -248,7 +282,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 2,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(1483),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(3975),
                             IsDeleted = false,
                             Name = "Na Pesho Zadniq Dvor"
                         },
@@ -256,7 +290,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 3,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(1565),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(4057),
                             IsDeleted = false,
                             Name = "Na Pesho Predniq Dvor"
                         },
@@ -264,7 +298,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 4,
                             CountryId = 1,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(1587),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(4078),
                             IsDeleted = false,
                             Name = "Na Pesho Leviq Dvor"
                         },
@@ -272,7 +306,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 5,
                             CountryId = 2,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 911, DateTimeKind.Local).AddTicks(1604),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 998, DateTimeKind.Local).AddTicks(4095),
                             IsDeleted = false,
                             Name = "Na Pesho Desniq Dvor"
                         });
@@ -1853,7 +1887,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 1,
                             AuthorId = 1,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(6383),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 999, DateTimeKind.Local).AddTicks(8659),
                             IsDeleted = false,
                             Name = "Na Pesho Review-to",
                             Rating = 10,
@@ -1864,7 +1898,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 2,
                             AuthorId = 2,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(6633),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 999, DateTimeKind.Local).AddTicks(8860),
                             IsDeleted = false,
                             Name = "Na Gosho Review-to",
                             Rating = 7,
@@ -1875,7 +1909,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 3,
                             AuthorId = 3,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(6659),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 999, DateTimeKind.Local).AddTicks(8887),
                             IsDeleted = false,
                             Name = "Na Tosho Review-to",
                             Rating = 8,
@@ -1886,7 +1920,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 4,
                             AuthorId = 4,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(6680),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 999, DateTimeKind.Local).AddTicks(8908),
                             IsDeleted = false,
                             Name = "Kaiser nomer edno",
                             Rating = 10,
@@ -1948,7 +1982,7 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(1773),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 999, DateTimeKind.Local).AddTicks(4112),
                             Email = "Pesho@biri.com",
                             IsBanned = false,
                             IsDeleted = false,
@@ -1959,7 +1993,7 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(3328),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 999, DateTimeKind.Local).AddTicks(5639),
                             Email = "Gosho@biri.com",
                             IsBanned = false,
                             IsDeleted = false,
@@ -1970,7 +2004,7 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(3393),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 999, DateTimeKind.Local).AddTicks(5706),
                             Email = "Tosho@biri.com",
                             IsBanned = false,
                             IsDeleted = false,
@@ -1981,7 +2015,7 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedOn = new DateTime(2020, 4, 19, 16, 20, 40, 912, DateTimeKind.Local).AddTicks(3417),
+                            CreatedOn = new DateTime(2020, 4, 19, 17, 40, 55, 999, DateTimeKind.Local).AddTicks(5729),
                             Email = "Slavcho@biri.com",
                             IsBanned = false,
                             IsDeleted = false,

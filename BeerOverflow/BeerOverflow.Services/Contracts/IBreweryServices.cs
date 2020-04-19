@@ -2,7 +2,7 @@
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.DTO.Contracts;
 
-namespace BeerOverflow.Services.BreweryServices
+namespace BeerOverflow.Services.Contracts
 {
     public interface IBreweryServices
     {

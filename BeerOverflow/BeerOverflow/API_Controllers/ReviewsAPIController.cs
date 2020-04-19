@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BeerOverflow.Database;
 using BeerOverflow.Models;
-using BeerOverflow.Services.ReviewServices;
 using BeerOverflow.Web.Models;
 using BeerOverflow.Services.DTO;
+using BeerOverflow.Services.Contracts;
 
 namespace BeerOverflow.Web.API_Controllers
 {

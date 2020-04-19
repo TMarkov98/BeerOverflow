@@ -9,6 +9,7 @@ namespace BeerOverflow.Database
     public class BeerOverflowContext : DbContext, IBeerOverflowContext
     {
         public DbSet<Beer> Beers { get; set; }
+        public DbSet<BeerType> BeerTypes { get; set; }
         public DbSet<Brewery> Breweries { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<User> Users { get; set; }

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BeerOverflow.Services
+namespace BeerOverflow.Services.Contracts
 {
     public interface IBeerServices
     {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BeerOverflow.Services.CountryServices
+namespace BeerOverflow.Services.Contracts
 {
     public interface ICountryServices
     {
