@@ -76,13 +76,19 @@ namespace BeerOverflow.Web.API_Controllers
         {
             if (breweryViewModel == null)
                 return BadRequest();
+            if (BreweryExists(breweryViewModel.Name))
+                return ValidationProblem($"Brewery with name {breweryViewModel.Name} already exists");
             var breweryDTO = new BreweryDTO
             {
-                Name = breweryViewModel.Name, 
+                Name = breweryViewModel.Name,
                 Country = breweryViewModel.Country
             };
             var brewery = _breweryServices.CreateBrewery(breweryDTO);
             return Created("Post", brewery);
+        }
+        private bool BreweryExists(string name)
+        {
+            return _breweryServices.GetAllBreweries().Any(r => r.Name == name);
         }
     }
 }
