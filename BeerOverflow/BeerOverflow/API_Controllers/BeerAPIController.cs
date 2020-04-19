@@ -139,10 +139,17 @@ namespace BeerOverflow.Web.API_Controllers
         [Route("{id}")]
         public IActionResult Put(int id, [FromBody] BeerViewModel beerViewModel)
         {
-            if (beerViewModel==null)
+            if (beerViewModel == null)
                 return BadRequest();
+            if (BeerExists(beerViewModel.Name))
+                return ValidationProblem($"Beer with name {beerViewModel.Name} already exists.");
+
             var beer = this._beerService.UpdateBeer(id, beerViewModel.Name, beerViewModel.BeerType, beerViewModel.Brewery, beerViewModel.BreweryCountry, beerViewModel.AlcoholByVolume);
             return Ok(beerViewModel);
+        }
+        private bool BeerExists(string name)
+        {
+            return _beerService.GetAllBeers().Any(r => r.Name == name);
         }
     }
 }

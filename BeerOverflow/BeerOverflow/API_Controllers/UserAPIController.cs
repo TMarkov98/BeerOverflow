@@ -90,6 +90,8 @@ namespace BeerOverflow.Web.API_Controllers
         {
             if (userViewModel == null)
                 return BadRequest();
+            if (this.UserExists(userViewModel.UserName, userViewModel.EmailAddress))
+                return ValidationProblem($"User with {userViewModel.UserName} or {userViewModel.EmailAddress} already exist.");
             var userDTO = new UserDTO
             {
                 Id = userViewModel.Id,
@@ -110,6 +112,10 @@ namespace BeerOverflow.Web.API_Controllers
                 return BadRequest();
             var user = this._userServices.UpdateUser(id, userViewModel.UserName, userViewModel.EmailAddress, userViewModel.Role, userViewModel.IsBanned, userViewModel.BanReason);
             return Ok(user);
+        }
+        private bool UserExists(string name, string email)
+        {
+            return _userServices.GetAllUsers().Any(r => r.UserName == name || r.Email == email);
         }
     }
 }

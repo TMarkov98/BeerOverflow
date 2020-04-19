@@ -23,7 +23,7 @@ namespace BeerOverflow.Web.API_Controllers
             _reviewServices = reviewServices;
         }
         [HttpGet]
-        public IActionResult  Get()
+        public IActionResult Get()
         {
             var model = this._reviewServices.GetAllReviews()
                 .Select(x => new ReviewViewModel
@@ -55,12 +55,12 @@ namespace BeerOverflow.Web.API_Controllers
             return Ok(model);
         }
         [HttpPost("")]
-        public  IActionResult Post([FromBody] ReviewViewModel reviewViewModel)
+        public IActionResult Post([FromBody] ReviewViewModel reviewViewModel)
         {
             if (reviewViewModel == null)
                 return BadRequest();
-            if (this.ReviewExists(reviewViewModel.Name))
-                return ValidationProblem();
+            if (this.ReviewExists(reviewViewModel.Name, reviewViewModel.Author))
+                return ValidationProblem($"Review of {reviewViewModel.TargetBeer} from {reviewViewModel.Author} already exists.");
             var reviewDTO = new ReviewDTO
             {
                 Name = reviewViewModel.Name,
@@ -75,16 +75,16 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put (int id, [FromBody]ReviewViewModel reviewViewModel)
+        public IActionResult Put(int id, [FromBody]ReviewViewModel reviewViewModel)
         {
             if (reviewViewModel == null)
                 return BadRequest();
             var review = this._reviewServices.UpdateReviews(id, reviewViewModel.Name, reviewViewModel.Text, reviewViewModel.Rating, reviewViewModel.TargetBeer, reviewViewModel.Author);
             return Ok(review);
         }
-        private bool ReviewExists(string name)
+        private bool ReviewExists(string beer, string author)
         {
-            return _reviewServices.GetAllReviews().Any(r => r.Name == name);
+            return _reviewServices.GetAllReviews().Any(r => r.TargetBeer == beer && r.Author == author);
         }
     }
 }
