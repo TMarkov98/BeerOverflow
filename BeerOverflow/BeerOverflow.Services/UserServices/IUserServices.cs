@@ -11,5 +11,6 @@ namespace BeerOverflow.Services.UserServices
         IUserDTO GetUser(int id);
         ICollection<BeerDTO> GetBeersDrank(int id);
         ICollection<BeerDTO> GetWishlist(int id);
+        IUserDTO UpdateUser(int id, string userName, string email, string role, bool isBanned, string banReason);
     }
 }

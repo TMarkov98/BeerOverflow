@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BeerOverflow.Services;
 using BeerOverflow.Services.BreweryServices;
 using BeerOverflow.Services.CountryServices;
+using BeerOverflow.Services.ReviewServices;
 using BeerOverflow.Services.UserServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,7 @@ namespace BeerOverflow
             services.AddScoped<ICountryServices, CountryServices>();
             services.AddScoped<IBreweryServices, BreweryServices>();
             services.AddScoped<IUserServices, UserServices>();
+            services.AddScoped<IReviewServices, ReviewServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

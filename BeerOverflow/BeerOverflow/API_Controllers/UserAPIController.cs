@@ -29,7 +29,7 @@ namespace BeerOverflow.Web.API_Controllers
             {
                 Id = userDTO.Id,
                 UserName = userDTO.UserName,
-                Email = userDTO.Email,
+                EmailAddress = userDTO.Email,
                 Role = userDTO.Role,
                 IsBanned = userDTO.IsBanned,
                 BanReason = userDTO.BanReason
@@ -45,7 +45,7 @@ namespace BeerOverflow.Web.API_Controllers
             {
                 Id = userDTO.Id,
                 UserName = userDTO.UserName,
-                Email = userDTO.Email,
+                EmailAddress = userDTO.Email,
                 Role = userDTO.Role,
                 IsBanned = userDTO.IsBanned,
                 BanReason = userDTO.BanReason
@@ -94,13 +94,22 @@ namespace BeerOverflow.Web.API_Controllers
             {
                 Id = userViewModel.Id,
                 UserName = userViewModel.UserName,
-                Email = userViewModel.Email,
+                Email = userViewModel.EmailAddress,
                 Role = userViewModel.Role,
                 IsBanned = userViewModel.IsBanned,
                 BanReason = userViewModel.BanReason
             };
             var user = _userServices.CreateUser(userDTO);
             return Created("Post", userViewModel);
+        }
+        [HttpPut]
+        [Route("")]
+        public IActionResult Put(int id, [FromBody]UserViewModel userViewModel)
+        {
+            if (userViewModel == null)
+                return BadRequest();
+            var user = this._userServices.UpdateUser(id, userViewModel.UserName, userViewModel.EmailAddress, userViewModel.Role, userViewModel.IsBanned, userViewModel.BanReason);
+            return Ok(user);
         }
     }
 }

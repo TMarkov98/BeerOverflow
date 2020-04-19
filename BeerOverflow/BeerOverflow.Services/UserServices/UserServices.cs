@@ -92,6 +92,24 @@ namespace BeerOverflow.Services.UserServices
 
             return userDTO;
         }
+        public IUserDTO UpdateUser(int id, string userName, string email, string role, bool isBanned, string banReason)
+        {
+            var user = context.Users.FirstOrDefault(u => u.Id == id && !u.IsDeleted);
+            user.UserName = userName;
+            user.Email = email;
+            user.Role = context.UserRoles.FirstOrDefault(r => r.RoleName.ToLower() == role.ToLower()) ?? throw new ArgumentException($"Role {role} not found.");
+            user.IsBanned = isBanned;
+            user.BanReason = banReason;
+            var userDTO = new UserDTO
+            {
+                UserName = userName,
+                Email = email,
+                Role = role,
+                IsBanned = isBanned,
+                BanReason = banReason
+            };
+            return userDTO;
+        }
         public bool DeleteUser(int id)
         {
             var user = context.Users.FirstOrDefault(u => u.Id == id);
