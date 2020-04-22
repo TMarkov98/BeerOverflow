@@ -127,37 +127,6 @@ namespace BeerOverflow.Web.Controllers
             return View(beer);
         }
 
-        // GET: Beers/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var beer = await _context.Beers
-                .Include(b => b.Brewery)
-                .Include(b => b.Type)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (beer == null)
-            {
-                return NotFound();
-            }
-
-            return View(beer);
-        }
-
-        // POST: Beers/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var beer = await _context.Beers.FindAsync(id);
-            _context.Beers.Remove(beer);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
         private bool BeerExists(int id)
         {
             return _context.Beers.Any(e => e.Id == id);
