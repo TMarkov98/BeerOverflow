@@ -25,7 +25,7 @@ namespace BeerOverflow.Web.API_Controllers
         [Route("")]
         public IActionResult Get()
         {
-            var model = _userServices.GetAllUsers().Select(userDTO => new UserViewModel
+            var model = _userServices.GetAllUsers().Select(userDTO => new UserApiViewModel
             {
                 Id = userDTO.Id,
                 UserName = userDTO.UserName,
@@ -41,7 +41,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get(int id)
         {
             var userDTO = _userServices.GetUser(id);
-            var model = new UserViewModel
+            var model = new UserApiViewModel
             {
                 Id = userDTO.Id,
                 UserName = userDTO.UserName,
@@ -57,7 +57,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult GetWishlist(int id)
         {
             var beerDTOs = _userServices.GetWishlist(id);
-            var model = beerDTOs.Select(x => new BeerViewModel
+            var model = beerDTOs.Select(x => new BeerApiViewModel
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -73,7 +73,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult GetBeersDrank(int id)
         {
             var beerDTOs = _userServices.GetBeersDrank(id);
-            var model = beerDTOs.Select(x => new BeerViewModel
+            var model = beerDTOs.Select(x => new BeerApiViewModel
             {
                 Id = x.Id,
                 Name = x.Name,
@@ -86,7 +86,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPost]
         [Route("")]
-        public IActionResult Post([FromBody]UserViewModel userViewModel)
+        public IActionResult Post([FromBody]UserApiViewModel userViewModel)
         {
             if (userViewModel == null)
                 return BadRequest();
@@ -106,7 +106,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPut]
         [Route("")]
-        public IActionResult Put(int id, [FromBody]UserViewModel userViewModel)
+        public IActionResult Put(int id, [FromBody]UserApiViewModel userViewModel)
         {
             if (userViewModel == null)
                 return BadRequest();

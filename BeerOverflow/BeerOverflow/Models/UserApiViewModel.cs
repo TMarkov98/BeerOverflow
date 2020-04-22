@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BeerOverflow.Web.Models
 {
-    public class UserViewModel
+    public class UserApiViewModel
     {
         public int Id { get; set; }
         public string UserName { get; set; }

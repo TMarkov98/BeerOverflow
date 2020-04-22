@@ -25,7 +25,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get()
         {
             var model = this._countryServices.GetAllCountries()
-                .Select(c => new CountryViewModel
+                .Select(c => new CountryApiViewModel
                 {
                     Id = c.Id,
                     Name = c.Name,
@@ -38,7 +38,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get(int id)
         {
             var country = this._countryServices.GetCountry(id);
-            var model = new CountryViewModel
+            var model = new CountryApiViewModel
                 {
                     Id = country.Id,
                     Name = country.Name

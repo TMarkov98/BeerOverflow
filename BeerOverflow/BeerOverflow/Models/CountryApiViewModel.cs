@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 
 namespace BeerOverflow.Web.Models
 {
-    public class BreweryViewModel
+    public class CountryApiViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Country { get; set; }
+        public string CountryCode { get; set; }
     }
 }

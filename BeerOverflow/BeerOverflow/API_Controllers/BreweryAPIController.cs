@@ -24,7 +24,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get()
         {
             var model = this._breweryServices.GetAllBreweries()
-                .Select(b => new BreweryViewModel
+                .Select(b => new BreweryApiViewModel
                 {
                     Id = b.Id,
                     Name = b.Name,
@@ -38,7 +38,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get([FromQuery] string s)
         {
             var model = this._breweryServices.GetAllBreweries()
-                .Select(b => new BreweryViewModel
+                .Select(b => new BreweryApiViewModel
                 {
                     Id = b.Id,
                     Name = b.Name,
@@ -62,7 +62,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get(int id)
         {
             var breweryDTO = this._breweryServices.GetBrewery(id);
-            var model = new BreweryViewModel
+            var model = new BreweryApiViewModel
             {
                 Id = breweryDTO.Id,
                 Name = breweryDTO.Name,
@@ -72,7 +72,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPost]
         [Route("")]
-        public IActionResult Post([FromBody]BreweryViewModel breweryViewModel)
+        public IActionResult Post([FromBody]BreweryApiViewModel breweryViewModel)
         {
             if (breweryViewModel == null)
                 return BadRequest();

@@ -25,7 +25,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get()
         {
             var model = this._beerService.GetAllBeers()
-                .Select(x => new BeerViewModel
+                .Select(x => new BeerApiViewModel
                 {
                     Id = x.Id,
                     Name = x.Name,
@@ -41,7 +41,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get([FromQuery] string s)
         {
             var model = this._beerService.GetAllBeers()
-                .Select(x => new BeerViewModel
+                .Select(x => new BeerApiViewModel
                 {
                     Id = x.Id,
                     Name = x.Name,
@@ -73,7 +73,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get([FromQuery] string param, [FromQuery] string value)
         {
             var model = this._beerService.GetAllBeers()
-                .Select(x => new BeerViewModel
+                .Select(x => new BeerApiViewModel
                 {
                     Id = x.Id,
                     Name = x.Name,
@@ -108,7 +108,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get(int id)
         {
             var beerDTO = this._beerService.GetBeer(id);
-            var model = new BeerViewModel
+            var model = new BeerApiViewModel
             {
                 Id = beerDTO.Id,
                 Name = beerDTO.Name,
@@ -121,7 +121,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPost]
         [Route("")]
-        public IActionResult Post([FromBody]BeerViewModel beerViewModel)
+        public IActionResult Post([FromBody]BeerApiViewModel beerViewModel)
         {
             if (beerViewModel == null)
                 return BadRequest();
@@ -139,7 +139,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put(int id, [FromBody] BeerViewModel beerViewModel)
+        public IActionResult Put(int id, [FromBody] BeerApiViewModel beerViewModel)
         {
             if (beerViewModel == null)
                 return BadRequest();

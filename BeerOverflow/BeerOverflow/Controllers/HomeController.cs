@@ -26,7 +26,7 @@ namespace BeerOverflow.Controllers
         {
             var homeModel = new HomeIndexViewModel();
             homeModel.AllBeers = this._beerService.GetAllBeers()
-                .Select(x => new BeerViewModel
+                .Select(x => new BeerApiViewModel
                 {
                     Name = x.Name,
                     BeerType = x.BeerType.ToString(),

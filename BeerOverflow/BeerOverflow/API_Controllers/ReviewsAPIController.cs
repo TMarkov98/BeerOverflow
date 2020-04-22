@@ -26,7 +26,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get()
         {
             var model = this._reviewServices.GetAllReviews()
-                .Select(x => new ReviewViewModel
+                .Select(x => new ReviewApiViewModel
                 {
                     Id = x.Id,
                     Name = x.Name,
@@ -42,7 +42,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get(int id)
         {
             var reviewDTO = this._reviewServices.GetReview(id);
-            var model = new ReviewViewModel
+            var model = new ReviewApiViewModel
             {
                 Id = reviewDTO.Id,
                 Name = reviewDTO.Name,
@@ -55,7 +55,7 @@ namespace BeerOverflow.Web.API_Controllers
             return Ok(model);
         }
         [HttpPost("")]
-        public IActionResult Post([FromBody] ReviewViewModel reviewViewModel)
+        public IActionResult Post([FromBody] ReviewApiViewModel reviewViewModel)
         {
             if (reviewViewModel == null)
                 return BadRequest();
@@ -75,7 +75,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put(int id, [FromBody]ReviewViewModel reviewViewModel)
+        public IActionResult Put(int id, [FromBody]ReviewApiViewModel reviewViewModel)
         {
             if (reviewViewModel == null)
                 return BadRequest();
