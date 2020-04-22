@@ -1,6 +1,7 @@
 ﻿using BeerOverflow.Models.Contracts;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BeerOverflow.Models
 {
@@ -12,6 +13,8 @@ namespace BeerOverflow.Models
             this.CreatedOn = DateTime.Now;
         }
         public int Id { get; set; }
+        [Required]
+        [StringLength(40, MinimumLength =3)]
         public string Name { get; set; }
         public int TypeId { get; set; }
         public BeerType Type { get; set; }
@@ -21,6 +24,8 @@ namespace BeerOverflow.Models
         public DateTime? DeletedOn { get; set; }
         public DateTime? ModifiedOn { get; set; }
         public bool IsDeleted { get; set; }
+        [Required]
+        [Range(3,13)]
         public double AlcoholByVolume{ get; set; }
         public List<Like> Likes { get; set; }
         public List<Review> Reviews { get; set; }
