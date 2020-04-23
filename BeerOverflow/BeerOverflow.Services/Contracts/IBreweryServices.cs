@@ -9,6 +9,6 @@ namespace BeerOverflow.Services.Contracts
         IBreweryDTO CreateBrewery(IBreweryDTO breweryDTO);
         IBreweryDTO GetBrewery(int id);
         ICollection<BreweryDTO> GetAllBreweries();
-        BreweryDTO UpdateBrewery(int id, string name, string breweryCountry)
+        BreweryDTO UpdateBrewery(int id, string name, string breweryCountry);
     }
 }

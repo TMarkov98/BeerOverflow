@@ -9,5 +9,7 @@ namespace BeerOverflow.Services.Contracts
         bool DeleteBeerType(int id);
         ICollection<BeerTypeDTO> GetAllBeerTypes();
         BeerTypeDTO GetBeerType(int id);
+
+        BeerTypeDTO UpdateBeerType(int id, string name);
     }
 }
