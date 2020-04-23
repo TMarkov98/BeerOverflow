@@ -22,7 +22,11 @@ namespace BeerOverflow.Web.Controllers
         // GET: Beers
         public async Task<IActionResult> Index()
         {
-            var beerOverflowContext = _context.Beers.Include(b => b.Brewery).Include(b => b.Type);
+            var beerOverflowContext = _context.Beers.Include(b => b.Brewery)
+                .Include(b => b.Type)
+                .Include(b => b.Likes)
+                .Include(b => b.Reviews)
+                .ThenInclude(r => r.Author);
             return View(await beerOverflowContext.ToListAsync());
         }
 
@@ -37,6 +41,9 @@ namespace BeerOverflow.Web.Controllers
             var beer = await _context.Beers
                 .Include(b => b.Brewery)
                 .Include(b => b.Type)
+                .Include(b => b.Likes)
+                .Include(b => b.Reviews)
+                .ThenInclude(r => r.Author)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (beer == null)
             {
