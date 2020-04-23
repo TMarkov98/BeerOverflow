@@ -92,7 +92,7 @@ namespace BeerOverflow.Services
                 IsBanned = userDTO.IsBanned,
                 BanReason = userDTO.BanReason
             };
-
+            _context.SaveChanges();
             return userDTO;
         }
         public IUserDTO UpdateUser(int id, string userName, string email, string role, bool isBanned, string banReason)
@@ -111,6 +111,7 @@ namespace BeerOverflow.Services
                 IsBanned = isBanned,
                 BanReason = banReason
             };
+            _context.SaveChanges();
             return userDTO;
         }
         public bool DeleteUser(int id)
@@ -121,25 +122,30 @@ namespace BeerOverflow.Services
 
             user.IsDeleted = true;
             user.DeletedOn = DateTime.Now;
+            _context.SaveChanges();
             return true;
         }
         public bool AddToWishlist(int userId, int beerId)
         {
             var user = _context.Users.FirstOrDefault(u => u.Id == userId && !u.IsDeleted);
-            return user.Wishlist.Add(new WishlistBeer
+            var isAdded = user.Wishlist.Add(new WishlistBeer
             {
                 BeerId = beerId,
                 UserId = userId,
             });
+            _context.SaveChanges();
+            return isAdded; 
         }
         public bool AddToBeersDrank(int userId, int beerId)
         {
             var user = _context.Users.FirstOrDefault(u => u.Id == userId && !u.IsDeleted);
-            return user.BeersDrank.Add(new BeerDrank
+            var isAdded = user.BeersDrank.Add(new BeerDrank
             {
                 BeerId = beerId,
                 UserId = userId,
             });
+            _context.SaveChanges();
+            return isAdded;
         }
     }
 }

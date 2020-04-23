@@ -31,6 +31,7 @@ namespace BeerOverflow.Services
                                 ?? throw new ArgumentNullException("No beer with this name."),
             };
             _context.Reviews.Add(review);
+            _context.SaveChanges();
             return reviewDTO;
         }
 
@@ -76,6 +77,7 @@ namespace BeerOverflow.Services
 
             review.IsDeleted = true;
             review.DeletedOn = DateTime.Now;
+            _context.SaveChanges();
             return true;
         }
         public ReviewDTO UpdateReviews(int id, string name, string text, int rating, string beer, string author)
@@ -98,38 +100,8 @@ namespace BeerOverflow.Services
                 Author = review.Author.UserName,
                 TargetBeer = review.TargetBeer.Name,
             };
+            _context.SaveChanges();
             return reviewDTO;
         }
-        //public int Id { get; set; }
-        //public int Rating { get; set; }
-        //public string Name { get; set; }
-        //public string Text { get; set; }
-        //public Beer TargetBeer { get; set; }
-        //public User Author { get; set; }
-
-        //public BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, string breweryCountry, double AbV)
-        //{
-        //    var beer = context.Beers
-        //        .Where(b => b.IsDeleted == false)
-        //        .FirstOrDefault(b => b.Id == id);
-        //    beer.Name = name;
-        //    beer.Type = (BeerType)Enum.Parse(typeof(BeerType), beerType, true);
-        //    beer.Brewery = new Brewery
-        //    {
-        //        Name = brewery,
-        //        Country = (Country)Enum.Parse(typeof(Country), breweryCountry, true)
-        //    };
-        //    beer.AlcoholByVolume = AbV;
-
-        //    var beerDTO = new BeerDTO
-        //    {
-        //        Name = beer.Name,
-        //        BeerType = beer.Type.Name,
-        //        Brewery = beer.Brewery.Name,
-        //        BreweryCountry = beer.Brewery.Country.Name,
-        //        AlcoholByVolume = beer.AlcoholByVolume,
-        //    };
-        //    return beerDTO;
-        //}
     }
 }

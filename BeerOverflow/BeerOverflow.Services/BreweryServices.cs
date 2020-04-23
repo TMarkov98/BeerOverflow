@@ -27,6 +27,7 @@ namespace BeerOverflow.Services
                 Country = (Country)Enum.Parse(typeof(Country), breweryDTO.Country, true)
             };
             _context.Breweries.Add(brewery);
+            _context.SaveChanges();
             return breweryDTO;
         }
         public IBreweryDTO GetBrewery(int id)
@@ -43,6 +44,17 @@ namespace BeerOverflow.Services
             };
             return breweryDTO;
         }
+        public bool DeleteBrewery(int id)
+        {
+            var brewery = _context.Breweries.FirstOrDefault(b => b.Id == id);
+            if (brewery == null || brewery.IsDeleted)
+                return false;
+
+            brewery.IsDeleted = true;
+            brewery.DeletedOn = DateTime.Now;
+            _context.SaveChanges();
+            return true;
+        }
         public ICollection<BreweryDTO> GetAllBreweries()
         {
             var breweries = _context.Breweries
@@ -53,6 +65,21 @@ namespace BeerOverflow.Services
                     Country = x.Country.Name
                 }).ToList();
             return breweries;
+        }
+        public BreweryDTO UpdateBeerType(int id, string name, string breweryCountry)
+        {
+            var brewery = _context.Breweries
+                .Where(r => r.IsDeleted == false)
+                .FirstOrDefault(r => r.Id == id);
+            brewery.Name = name;
+            brewery.Country = _context.Countries.FirstOrDefault(c => c.Name == breweryCountry) ?? throw new ArgumentNullException("Brewery country not found.");
+            var breweryDTO = new BreweryDTO
+            {
+                Name = brewery.Name,
+                Country = brewery.Country.Name,
+            };
+            _context.SaveChanges();
+            return breweryDTO;
         }
     }
 }

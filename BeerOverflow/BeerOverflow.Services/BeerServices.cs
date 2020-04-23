@@ -24,18 +24,17 @@ namespace BeerOverflow.Services
             {
                 Name = beerDTO.Name,
                 Type = _context.BeerTypes.FirstOrDefault(t => t.Name == beerDTO.BeerType) ?? throw new ArgumentNullException("Beer Type not found."),
-                Brewery = new Brewery
-                {
-                    Name = beerDTO.Brewery,
-                    Country = new Country
-                    {
-                        Name = beerDTO.BreweryCountry,
-                    }
-                },
+                Brewery = _context.Breweries.FirstOrDefault(b => b.Name == beerDTO.Brewery) ?? throw new ArgumentNullException("Brewery not found."),
+                //new Brewery
+                //{
+                //    Name = beerDTO.Name,
+                //    Country = _context.Countries.FirstOrDefault(c => c.Name == beerDTO.BreweryCountry)
+                //},
                 AlcoholByVolume = beerDTO.AlcoholByVolume
             };
-            
+
             _context.Beers.Add(beer);
+            _context.SaveChanges();
             return beerDTO;
         }
 
@@ -47,6 +46,7 @@ namespace BeerOverflow.Services
 
             beer.IsDeleted = true;
             beer.DeletedOn = DateTime.Now;
+            _context.SaveChanges();
             return true;
         }
 
@@ -95,12 +95,17 @@ namespace BeerOverflow.Services
                 .Where(b => b.IsDeleted == false)
                 .FirstOrDefault(b => b.Id == id);
             beer.Name = name;
-            beer.Type = (BeerType)Enum.Parse(typeof(BeerType), beerType, true);
-            beer.Brewery = new Brewery
-            {
-                Name = brewery,
-                Country = (Country)Enum.Parse(typeof(Country), breweryCountry, true)
-            };
+            beer.Type = _context.BeerTypes.FirstOrDefault(t => t.Name == beerType) ?? throw new ArgumentNullException("BeerType not found.");
+            //new BeerType
+            //{
+            //    Name = beerType
+            //};
+            beer.Brewery = _context.Breweries.FirstOrDefault(b => b.Name == brewery) ?? throw new ArgumentNullException("Brewery not found.");
+            //new Brewery
+            //{
+            //    Name = brewery,
+            //    Country = _context.Countries.FirstOrDefault(c => c.Name == breweryCountry)
+            //};
             beer.AlcoholByVolume = AbV;
 
             var beerDTO = new BeerDTO
@@ -111,6 +116,7 @@ namespace BeerOverflow.Services
                 BreweryCountry = beer.Brewery.Country.Name,
                 AlcoholByVolume = beer.AlcoholByVolume,
             };
+            _context.SaveChanges();
             return beerDTO;
         }
     }

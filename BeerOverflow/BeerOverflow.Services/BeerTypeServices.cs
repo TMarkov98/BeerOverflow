@@ -22,6 +22,7 @@ namespace BeerOverflow.Services
             {
                 Name = beerTypeDTO.Name
             };
+            _context.SaveChanges();
             return beerTypeDTO;
         }
 
@@ -32,6 +33,7 @@ namespace BeerOverflow.Services
                 return false;
             beerType.IsDeleted = true;
             beerType.DeletedOn = DateTime.Now;
+            _context.SaveChanges();
             return true;
         }
 
@@ -56,6 +58,21 @@ namespace BeerOverflow.Services
                 Id = beerType.Id,
                 Name = beerType.Name
             };
+            return beerTypeDTO;
+        }
+
+        public BeerTypeDTO UpdateBeerType(int id, string name)
+        {
+            var beerType = _context.BeerTypes
+                .Where(r => r.IsDeleted == false)
+                .FirstOrDefault(r => r.Id == id);
+            beerType.Name = name;
+            
+            var beerTypeDTO = new BeerTypeDTO
+            {
+                Name = beerType.Name
+            };
+            _context.SaveChanges();
             return beerTypeDTO;
         }
     }
