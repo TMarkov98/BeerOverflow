@@ -86,6 +86,15 @@ namespace BeerOverflow.Web.API_Controllers
             var brewery = _breweryServices.CreateBrewery(breweryDTO);
             return Created("Post", brewery);
         }
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult Put(int id, [FromBody] BreweryApiViewModel breweryViewModel)
+        {
+            if (breweryViewModel == null)
+                return BadRequest();
+            _breweryServices.UpdateBrewery(id, breweryViewModel.Name, breweryViewModel.Country);
+            return Ok(breweryViewModel);
+        }
         private bool BreweryExists(string name)
         {
             return _breweryServices.GetAllBreweries().Any(r => r.Name == name);

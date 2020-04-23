@@ -66,7 +66,7 @@ namespace BeerOverflow.Services
                 }).ToList();
             return breweries;
         }
-        public BreweryDTO UpdateBeerType(int id, string name, string breweryCountry)
+        public BreweryDTO UpdateBrewery(int id, string name, string breweryCountry)
         {
             var brewery = _context.Breweries
                 .Where(r => r.IsDeleted == false)
