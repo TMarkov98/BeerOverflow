@@ -13,7 +13,11 @@ namespace BeerOverflow.Services
 {
     public class BreweryServices : IBreweryServices
     {
-        private readonly BeerOverflowContext context = new BeerOverflowContext();
+        private readonly BeerOverflowContext _context;
+        public BreweryServices(BeerOverflowContext context)
+        {
+            this._context = context;
+        }
 
         public IBreweryDTO CreateBrewery(IBreweryDTO breweryDTO)
         {
@@ -22,12 +26,12 @@ namespace BeerOverflow.Services
                 Name = breweryDTO.Name,
                 Country = (Country)Enum.Parse(typeof(Country), breweryDTO.Country, true)
             };
-            context.Breweries.Add(brewery);
+            _context.Breweries.Add(brewery);
             return breweryDTO;
         }
         public IBreweryDTO GetBrewery(int id)
         {
-            var brewery = context.Breweries.Include(b => b.Country).FirstOrDefault(i => i.Id == id);
+            var brewery = _context.Breweries.Include(b => b.Country).FirstOrDefault(i => i.Id == id);
             if (brewery == null)
                 throw new ArgumentNullException("Brewery can NOT be null.");
 
@@ -41,7 +45,7 @@ namespace BeerOverflow.Services
         }
         public ICollection<BreweryDTO> GetAllBreweries()
         {
-            var breweries = context.Breweries
+            var breweries = _context.Breweries
                 .Select(x => new BreweryDTO
                 {
                     Id = x.Id,

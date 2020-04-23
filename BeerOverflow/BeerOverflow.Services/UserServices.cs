@@ -12,11 +12,16 @@ namespace BeerOverflow.Services
 {
     public class UserServices : IUserServices
     {
-        private readonly BeerOverflowContext context = new BeerOverflowContext();
+        private readonly BeerOverflowContext _context;
+
+        public UserServices(BeerOverflowContext context)
+        {
+            this._context = context;
+        }
 
         public IUserDTO GetUser(int id)
         {
-            var user = context.Users.Include(u => u.Role).FirstOrDefault(u => u.Id == id && !u.IsDeleted);
+            var user = _context.Users.Include(u => u.Role).FirstOrDefault(u => u.Id == id && !u.IsDeleted);
             if (user == null)
                 throw new ArgumentNullException("User not found.");
 
@@ -33,7 +38,7 @@ namespace BeerOverflow.Services
         }
         public ICollection<BeerDTO> GetBeersDrank(int id)
         {
-            var user = context.Users.Include(u => u.Role).Include(u => u.BeersDrank).FirstOrDefault(i => i.Id == id);
+            var user = _context.Users.Include(u => u.Role).Include(u => u.BeersDrank).FirstOrDefault(i => i.Id == id);
             var beers = user.BeersDrank
                 .Select(x => new BeerDTO
                 {
@@ -49,7 +54,7 @@ namespace BeerOverflow.Services
         }
         public ICollection<BeerDTO> GetWishlist(int id)
         {
-            var user = context.Users.Include(u => u.Role).Include(u => u.Wishlist).FirstOrDefault(i => i.Id == id);
+            var user = _context.Users.Include(u => u.Role).Include(u => u.Wishlist).FirstOrDefault(i => i.Id == id);
             var beers = user.Wishlist
                 .Select(x => new BeerDTO
                 {
@@ -65,7 +70,7 @@ namespace BeerOverflow.Services
         }
         public ICollection<UserDTO> GetAllUsers()
         {
-            var users = context.Users.Where(u => !u.IsDeleted)
+            var users = _context.Users.Where(u => !u.IsDeleted)
                 .Select(user => new UserDTO
                 {
                     Id = user.Id,
@@ -79,7 +84,7 @@ namespace BeerOverflow.Services
         }
         public IUserDTO CreateUser(IUserDTO userDTO)
         {
-            var role = context.UserRoles.FirstOrDefault(ur => ur.RoleName == userDTO.Role);
+            var role = _context.UserRoles.FirstOrDefault(ur => ur.RoleName == userDTO.Role);
             if (role == null)
                 throw new ArgumentNullException("Invalid user role.");
             var user = new User
@@ -95,10 +100,10 @@ namespace BeerOverflow.Services
         }
         public IUserDTO UpdateUser(int id, string userName, string email, string role, bool isBanned, string banReason)
         {
-            var user = context.Users.FirstOrDefault(u => u.Id == id && !u.IsDeleted);
+            var user = _context.Users.FirstOrDefault(u => u.Id == id && !u.IsDeleted);
             user.UserName = userName;
             user.Email = email;
-            user.Role = context.UserRoles.FirstOrDefault(r => r.RoleName.ToLower() == role.ToLower()) ?? throw new ArgumentException($"Role {role} not found.");
+            user.Role = _context.UserRoles.FirstOrDefault(r => r.RoleName.ToLower() == role.ToLower()) ?? throw new ArgumentException($"Role {role} not found.");
             user.IsBanned = isBanned;
             user.BanReason = banReason;
             var userDTO = new UserDTO
@@ -113,7 +118,7 @@ namespace BeerOverflow.Services
         }
         public bool DeleteUser(int id)
         {
-            var user = context.Users.FirstOrDefault(u => u.Id == id);
+            var user = _context.Users.FirstOrDefault(u => u.Id == id);
             if (user == null || user.IsDeleted)
                 return false;
 

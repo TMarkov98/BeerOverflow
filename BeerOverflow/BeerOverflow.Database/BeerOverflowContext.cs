@@ -6,8 +6,12 @@ using System.Text;
 
 namespace BeerOverflow.Database
 {
-    public class BeerOverflowContext : DbContext, IBeerOverflowContext
+    public class BeerOverflowContext : DbContext
     {
+        public BeerOverflowContext(DbContextOptions<BeerOverflowContext> options) : base(options)
+        {
+                
+        }
         public DbSet<Beer> Beers { get; set; }
         public DbSet<BeerType> BeerTypes { get; set; }
         public DbSet<Brewery> Breweries { get; set; }
@@ -18,14 +22,7 @@ namespace BeerOverflow.Database
         public DbSet<WishlistBeer> WishlistBeers { get; set; }
         public DbSet<BeerDrank> BeersDrank { get; set; }
         public DbSet<Country> Countries { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=BeerOverflow;Trusted_Connection=true");
-            }
-            base.OnConfiguring(optionsBuilder);
-        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Beer>().Property(b => b.Name).HasMaxLength(40).IsRequired();

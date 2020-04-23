@@ -11,8 +11,11 @@ namespace BeerOverflow.Services
 {
     public class BeerTypeServices : IBeerTypeServices
     {
-        private readonly BeerOverflowContext context = new BeerOverflowContext();
-
+        private readonly BeerOverflowContext _context;
+        public BeerTypeServices(BeerOverflowContext context)
+        {
+            this._context = context;
+        }
         public IBeerTypeDTO CreateBeerType(IBeerTypeDTO beerTypeDTO)
         {
             var beerType = new BeerType
@@ -24,7 +27,7 @@ namespace BeerOverflow.Services
 
         public bool DeleteBeerType(int id)
         {
-            var beerType = context.BeerTypes.FirstOrDefault(bt => bt.Id == id);
+            var beerType = _context.BeerTypes.FirstOrDefault(bt => bt.Id == id);
             if (beerType == null)
                 return false;
             beerType.IsDeleted = true;
@@ -34,7 +37,7 @@ namespace BeerOverflow.Services
 
         public ICollection<BeerTypeDTO> GetAllBeerTypes()
         {
-            var beerTypes = context.BeerTypes
+            var beerTypes = _context.BeerTypes
                 .Select(bt => new BeerTypeDTO
                 {
                     Id = bt.Id,
@@ -45,7 +48,7 @@ namespace BeerOverflow.Services
 
         public BeerTypeDTO GetBeerType(int id)
         {
-            var beerType = context.BeerTypes.FirstOrDefault(bt => bt.Id == id);
+            var beerType = _context.BeerTypes.FirstOrDefault(bt => bt.Id == id);
             if (beerType == null)
                 throw new ArgumentNullException("BeerType not found.");
             var beerTypeDTO = new BeerTypeDTO

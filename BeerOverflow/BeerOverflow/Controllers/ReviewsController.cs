@@ -12,12 +12,12 @@ namespace BeerOverflow.Web.Controllers
 {
     public class ReviewsController : Controller
     {
-        private readonly BeerOverflowContext _context = new BeerOverflowContext();
+        private readonly BeerOverflowContext _context;
 
-        //public ReviewsController(BeerOverflowContext context)
-        //{
-        //    _context = context;
-        //}
+        public ReviewsController(BeerOverflowContext context)
+        {
+            _context = context;
+        }
 
         // GET: Reviews
         public async Task<IActionResult> Index()

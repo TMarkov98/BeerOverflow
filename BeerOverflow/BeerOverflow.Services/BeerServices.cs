@@ -13,14 +13,17 @@ namespace BeerOverflow.Services
 {
     public class BeerServices : IBeerServices
     {
-        private readonly BeerOverflowContext context = new BeerOverflowContext();
-
+        private readonly BeerOverflowContext _context;
+        public BeerServices(BeerOverflowContext context)
+        {
+            this._context = context;
+        }
         public IBeerDTO CreateBeer(IBeerDTO beerDTO)
         {
             var beer = new Beer
             {
                 Name = beerDTO.Name,
-                Type = context.BeerTypes.FirstOrDefault(t => t.Name == beerDTO.BeerType) ?? throw new ArgumentNullException("Beer Type not found."),
+                Type = _context.BeerTypes.FirstOrDefault(t => t.Name == beerDTO.BeerType) ?? throw new ArgumentNullException("Beer Type not found."),
                 Brewery = new Brewery
                 {
                     Name = beerDTO.Brewery,
@@ -32,13 +35,13 @@ namespace BeerOverflow.Services
                 AlcoholByVolume = beerDTO.AlcoholByVolume
             };
             
-            context.Beers.Add(beer);
+            _context.Beers.Add(beer);
             return beerDTO;
         }
 
         public bool DeleteBeer(int id)
         {
-            var beer = context.Beers.FirstOrDefault(b => b.Id == id);
+            var beer = _context.Beers.FirstOrDefault(b => b.Id == id);
             if (beer == null || beer.IsDeleted)
                 return false;
 
@@ -49,7 +52,7 @@ namespace BeerOverflow.Services
 
         public ICollection<BeerDTO> GetAllBeers()
         {
-            var beers = context.Beers
+            var beers = _context.Beers
                 .Select(x => new BeerDTO
                 {
                     Id = x.Id,
@@ -66,7 +69,7 @@ namespace BeerOverflow.Services
 
         public BeerDTO GetBeer(int id)
         {
-            var beer = context.Beers.Include(b => b.Type).Include(b => b.Brewery).ThenInclude(br => br.Country)
+            var beer = _context.Beers.Include(b => b.Type).Include(b => b.Brewery).ThenInclude(br => br.Country)
                 .FirstOrDefault(b => b.Id == id);
 
             if (beer == null)
@@ -88,7 +91,7 @@ namespace BeerOverflow.Services
         }
         public BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, string breweryCountry, double AbV)
         {
-            var beer = context.Beers
+            var beer = _context.Beers
                 .Where(b => b.IsDeleted == false)
                 .FirstOrDefault(b => b.Id == id);
             beer.Name = name;

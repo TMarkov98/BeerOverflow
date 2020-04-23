@@ -12,7 +12,11 @@ namespace BeerOverflow.Services
 {
     public class ReviewServices : IReviewServices
     {
-        private readonly BeerOverflowContext _context = new BeerOverflowContext();
+        private readonly BeerOverflowContext _context;
+        public ReviewServices(BeerOverflowContext context)
+        {
+            this._context = context;
+        }
 
         public IReviewDTO CreateReview(IReviewDTO reviewDTO)
         {
