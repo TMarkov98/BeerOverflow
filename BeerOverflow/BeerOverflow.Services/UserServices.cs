@@ -54,15 +54,12 @@ namespace BeerOverflow.Services
         }
         public ICollection<BeerDTO> GetWishlist(int id)
         {
-            var user = _context.Users.Include(u => u.Role).Include(u => u.Wishlist).FirstOrDefault(i => i.Id == id);
+            var user = _context.Users.Include(u => u.Role).Include(u => u.Wishlist).ThenInclude(w => w.Beer).FirstOrDefault(i => i.Id == id);
             var beers = user.Wishlist
                 .Select(x => new BeerDTO
                 {
                     Id = x.Beer.Id,
                     Name = x.Beer.Name,
-                    BeerType = x.Beer.Type.Name,
-                    Brewery = x.Beer.Brewery.Name,
-                    BreweryCountry = x.Beer.Brewery.Country.Name,
                     AlcoholByVolume = x.Beer.AlcoholByVolume,
                 })
                 .ToList();
@@ -125,6 +122,24 @@ namespace BeerOverflow.Services
             user.IsDeleted = true;
             user.DeletedOn = DateTime.Now;
             return true;
+        }
+        public bool AddToWishlist(int userId, int beerId)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId && !u.IsDeleted);
+            return user.Wishlist.Add(new WishlistBeer
+            {
+                BeerId = beerId,
+                UserId = userId,
+            });
+        }
+        public bool AddToBeersDrank(int userId, int beerId)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Id == userId && !u.IsDeleted);
+            return user.BeersDrank.Add(new BeerDrank
+            {
+                BeerId = beerId,
+                UserId = userId,
+            });
         }
     }
 }

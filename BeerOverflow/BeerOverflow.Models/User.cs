@@ -5,14 +5,14 @@ using System.Text;
 
 namespace BeerOverflow.Models
 {
-    public class User : IUser, IDeletable, IAudible, IBannable
+    public class User : IDeletable, IAudible, IBannable
     {
         public int Id { get; set; }
         public User()
         {
             this.CreatedOn = DateTime.Now;
-            this.BeersDrank = new List<BeerDrank>();
-            this.Wishlist = new List<WishlistBeer>();
+            this.BeersDrank = new HashSet<BeerDrank>();
+            this.Wishlist = new HashSet<WishlistBeer>();
             this.Reviews = new List<Review>();
         }
         public string UserName { get; set; }
@@ -20,8 +20,8 @@ namespace BeerOverflow.Models
         public string Email { get; set; }
         public int RoleId { get; set; }
         public UserRole Role { get; set; }
-        public List<BeerDrank> BeersDrank { get; set; }
-        public List<WishlistBeer> Wishlist { get; set; }
+        public HashSet<BeerDrank> BeersDrank { get; set; }
+        public HashSet<WishlistBeer> Wishlist { get; set; }
         public List<Review> Reviews { get; set; }
         public bool IsBanned { get; set; }
         public string BanReason { get; set; }

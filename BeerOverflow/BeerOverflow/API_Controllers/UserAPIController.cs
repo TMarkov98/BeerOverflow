@@ -37,6 +37,39 @@ namespace BeerOverflow.Web.API_Controllers
             return Ok(model);
         }
         [HttpGet]
+        [Route("sort")]
+        public IActionResult Get([FromQuery]string param)
+        {
+            var model = _userServices.GetAllUsers().Select(userDTO => new UserApiViewModel
+            {
+                Id = userDTO.Id,
+                UserName = userDTO.UserName,
+                EmailAddress = userDTO.Email,
+                Role = userDTO.Role,
+                IsBanned = userDTO.IsBanned,
+                BanReason = userDTO.BanReason
+            });
+            switch (param.ToLower())
+            {
+                case "name":
+                case "username":
+                    model = model.OrderBy(u => u.UserName);
+                    break;
+                case "email":
+                case "emailaddress":
+                    model = model.OrderBy(u => u.EmailAddress);
+                    break;
+                case "role":
+                case "userrole":
+                    model = model.OrderBy(u => u.Role);
+                    break;
+                case "banned":
+                    model = model.OrderBy(u => u.IsBanned);
+                    break;
+            }
+            return Ok(model);
+        }
+        [HttpGet]
         [Route("{id}")]
         public IActionResult Get(int id)
         {
@@ -57,13 +90,10 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult GetWishlist(int id)
         {
             var beerDTOs = _userServices.GetWishlist(id);
-            var model = beerDTOs.Select(x => new BeerApiViewModel
+            var model = beerDTOs.Select(x => new WishlistBeerApiViewModel
             {
                 Id = x.Id,
                 Name = x.Name,
-                BeerType = x.BeerType.ToString(),
-                Brewery = x.Brewery,
-                BreweryCountry = x.BreweryCountry,
                 AlcoholByVolume = x.AlcoholByVolume,
             });
             return Ok(model);
@@ -73,16 +103,29 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult GetBeersDrank(int id)
         {
             var beerDTOs = _userServices.GetBeersDrank(id);
-            var model = beerDTOs.Select(x => new BeerApiViewModel
+            var model = beerDTOs.Select(x => new WishlistBeerApiViewModel
             {
                 Id = x.Id,
                 Name = x.Name,
-                BeerType = x.BeerType.ToString(),
-                Brewery = x.Brewery,
-                BreweryCountry = x.BreweryCountry,
                 AlcoholByVolume = x.AlcoholByVolume,
             });
             return Ok(model);
+        }
+        [HttpPut]
+        [Route("{id}/wishlist/add")]
+        public IActionResult AddToWishlist(int id, [FromBody] int beerId)
+        {
+            var user = _userServices.GetUser(id);
+            _userServices.AddToWishlist(id, beerId);
+            return Ok(user);
+        }
+        [HttpPut]
+        [Route("{id}/beersdrank/add")]
+        public IActionResult AddToBeersDrank(int id, [FromBody] int beerId)
+        {
+            var user = _userServices.GetUser(id);
+            _userServices.AddToBeersDrank(id, beerId);
+            return Ok(user);
         }
         [HttpPost]
         [Route("")]

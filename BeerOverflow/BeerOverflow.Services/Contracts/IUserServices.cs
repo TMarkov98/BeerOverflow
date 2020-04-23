@@ -12,5 +12,7 @@ namespace BeerOverflow.Services.Contracts
         ICollection<BeerDTO> GetBeersDrank(int id);
         ICollection<BeerDTO> GetWishlist(int id);
         IUserDTO UpdateUser(int id, string userName, string email, string role, bool isBanned, string banReason);
+        bool AddToWishlist(int userId, int beerId);
+        bool AddToBeersDrank(int userId, int beerId);
     }
 }

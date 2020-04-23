@@ -306,6 +306,114 @@ namespace BeerOverflow.Database
                     Rating = 10,
                     CreatedOn = DateTime.Now
                 });
+
+            //SEED WISHLIST BEERS
+
+            modelBuilder.Entity<WishlistBeer>().HasData(
+                new WishlistBeer
+                {
+                    UserId = 1,
+                    BeerId = 1
+                });
+            modelBuilder.Entity<WishlistBeer>().HasData(
+                new WishlistBeer
+                {
+                    UserId = 1,
+                    BeerId = 2
+                });
+            modelBuilder.Entity<WishlistBeer>().HasData(
+                new WishlistBeer
+                {
+                    UserId = 1,
+                    BeerId = 3
+                });
+            modelBuilder.Entity<WishlistBeer>().HasData(
+                new WishlistBeer
+                {
+                    UserId = 2,
+                    BeerId = 1
+                });
+            modelBuilder.Entity<WishlistBeer>().HasData(
+                new WishlistBeer
+                {
+                    UserId = 2,
+                    BeerId = 2
+                });
+            modelBuilder.Entity<WishlistBeer>().HasData(
+                new WishlistBeer
+                {
+                    UserId = 2,
+                    BeerId = 4
+                });
+            modelBuilder.Entity<WishlistBeer>().HasData(
+                new WishlistBeer
+                {
+                    UserId = 3,
+                    BeerId = 4
+                });
+
+            //SEED BEERS DRANK
+
+            modelBuilder.Entity<BeerDrank>().HasData(
+                new BeerDrank
+                {
+                    UserId = 1,
+                    BeerId = 1
+                });
+            modelBuilder.Entity<BeerDrank>().HasData(
+                new BeerDrank
+                {
+                    UserId = 1,
+                    BeerId = 2
+                });
+            modelBuilder.Entity<BeerDrank>().HasData(
+                new BeerDrank
+                {
+                    UserId = 1,
+                    BeerId = 3
+                });
+            modelBuilder.Entity<BeerDrank>().HasData(
+                new BeerDrank
+                {
+                    UserId = 1,
+                    BeerId = 4
+                });
+            modelBuilder.Entity<BeerDrank>().HasData(
+                new BeerDrank
+                {
+                    UserId = 2,
+                    BeerId = 1
+                });
+            modelBuilder.Entity<BeerDrank>().HasData(
+                new BeerDrank
+                {
+                    UserId = 2,
+                    BeerId = 3
+                });
+            modelBuilder.Entity<BeerDrank>().HasData(
+                new BeerDrank
+                {
+                    UserId = 2,
+                    BeerId = 4
+                });
+            modelBuilder.Entity<BeerDrank>().HasData(
+                new BeerDrank
+                {
+                    UserId = 3,
+                    BeerId = 1
+                });
+            modelBuilder.Entity<BeerDrank>().HasData(
+                new BeerDrank
+                {
+                    UserId = 3,
+                    BeerId = 2
+                });
+            modelBuilder.Entity<BeerDrank>().HasData(
+                new BeerDrank
+                {
+                    UserId = 3,
+                    BeerId = 4
+                });
         }
     }
 }

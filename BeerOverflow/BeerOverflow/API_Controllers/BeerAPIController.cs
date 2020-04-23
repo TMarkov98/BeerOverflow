@@ -84,6 +84,9 @@ namespace BeerOverflow.Web.API_Controllers
                 });
             switch (param.ToLower())
             {
+                case "name":
+                    model = model.Where(c => c.Name.ToLower().Contains(param.ToLower()));
+                    break;
                 case "country":
                     model = model.Where(c => c.BreweryCountry.ToLower() == value.ToLower());
                     break;
