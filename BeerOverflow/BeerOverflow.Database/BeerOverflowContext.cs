@@ -25,7 +25,7 @@ namespace BeerOverflow.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Beer>().Property(b => b.Name).HasMaxLength(40).IsRequired();
+            modelBuilder.Entity<Beer>().Property(b => b.Name).HasMaxLength(100).IsRequired();
             modelBuilder.Entity<Beer>().HasOne(b => b.Type);
             modelBuilder.Entity<Beer>().Property(b => b.AlcoholByVolume).IsRequired();
             modelBuilder.Entity<Beer>().Property(b => b.CreatedOn).IsRequired();
