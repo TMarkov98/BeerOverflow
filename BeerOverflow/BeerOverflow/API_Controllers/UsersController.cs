@@ -13,11 +13,11 @@ namespace BeerOverflow.Web.API_Controllers
 {
     [Route("api/users")]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly IUserServices _userServices;
 
-        public UserController(IUserServices userServices)
+        public UsersController(IUserServices userServices)
         {
             this._userServices = userServices ?? throw new ArgumentNullException("UserServices can NOT be null.");
         }
@@ -67,12 +67,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult GetWishlist(int id)
         {
             var beerDTOs = _userServices.GetWishlist(id);
-            var model = beerDTOs.Select(x => new WishlistBeerApiViewModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                AlcoholByVolume = x.AlcoholByVolume
-            }) ;
+            var model = beerDTOs.Select(beerDTO => new WishlistBeerViewModel(beerDTO));
             return Ok(model);
         }
         [HttpGet]
@@ -80,12 +75,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult GetBeersDrank(int id)
         {
             var beerDTOs = _userServices.GetBeersDrank(id);
-            var model = beerDTOs.Select(x => new WishlistBeerApiViewModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                AlcoholByVolume = x.AlcoholByVolume,
-            });
+            var model = beerDTOs.Select(beerDTO => new WishlistBeerViewModel(beerDTO));
             return Ok(model);
         }
         [HttpPut]

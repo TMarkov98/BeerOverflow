@@ -12,11 +12,11 @@ namespace BeerOverflow.Web.API_Controllers
 {
     [Route("api/countries")]
     [ApiController]
-    public class CountryController : ControllerBase
+    public class CountriesController : ControllerBase
     {
         private readonly ICountryServices _countryServices;
 
-        public CountryController(ICountryServices countryServices)
+        public CountriesController(ICountryServices countryServices)
         {
             this._countryServices = countryServices ?? throw new ArgumentNullException("CountryService can NOT be null.");
         }

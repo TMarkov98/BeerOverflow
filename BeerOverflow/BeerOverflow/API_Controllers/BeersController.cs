@@ -9,10 +9,10 @@ namespace BeerOverflow.Web.API_Controllers
 {
     [Route("api/beers")]
     [ApiController]
-    public class BeerController : ControllerBase
+    public class BeersController : ControllerBase
     {
         private readonly IBeerServices _beerService;
-        public BeerController(IBeerServices beerService)
+        public BeersController(IBeerServices beerService)
         {
             this._beerService = beerService ?? throw new ArgumentNullException("BeerService can NOT be null.");
         }

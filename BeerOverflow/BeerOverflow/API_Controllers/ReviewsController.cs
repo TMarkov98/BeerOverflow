@@ -27,7 +27,8 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get()
         {
             //TODO Need check if TargetBeer exist
-            var model = this._reviewServices.GetAllReviews()
+            var model = this._reviewServices
+                .GetAllReviews()
                 .Select(reviewDTO => new ReviewViewModel(reviewDTO));
             return Ok(model);
         }
@@ -35,7 +36,6 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get(int id)
         {
             var reviewDTO = this._reviewServices.GetReview(id);
-            //TODO Need check if TargetBeer exist
             var model = new ReviewViewModel(reviewDTO);
             return Ok(model);
         }
@@ -47,6 +47,8 @@ namespace BeerOverflow.Web.API_Controllers
             if (this.ReviewExists(reviewViewModel.Name, reviewViewModel.Author))
                 return ValidationProblem($"Review of {reviewViewModel.TargetBeer} from {reviewViewModel.Author} already exists.");
             //TODO Need check if exist
+            if (reviewViewModel.TargetBeer == null)
+                return BadRequest("Target beer not found.");
             var reviewDTO = new ReviewDTO
             {
                 Name = reviewViewModel.Name,
@@ -64,7 +66,7 @@ namespace BeerOverflow.Web.API_Controllers
         {
             if (reviewViewModel == null)
                 return BadRequest();
-            var review = this._reviewServices.UpdateReviews(id, reviewViewModel.Name, reviewViewModel.Text, reviewViewModel.Rating, reviewViewModel.TargetBeer, reviewViewModel.Author);
+            var review = this._reviewServices.UpdateReviews(id, reviewViewModel.Name, reviewViewModel.Text, reviewViewModel.Rating);
             return Ok(review);
         }
         private bool ReviewExists(string beer, string author)

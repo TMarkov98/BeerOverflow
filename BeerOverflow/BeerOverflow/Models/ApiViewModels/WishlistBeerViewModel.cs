@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace BeerOverflow.Web.Models.ApiViewModels
 {
-    public class WishlistBeerApiViewModel
+    public class WishlistBeerViewModel
     {
-        //TODO Why has Id, Name, AlcoholByVolume
-        public WishlistBeerApiViewModel()
+        public WishlistBeerViewModel(IBeerDTO beerDTO)
         {
-
+            this.Id = beerDTO.Id;
+            this.Name = beerDTO.Name;
+            this.AlcoholByVolume = beerDTO.AlcoholByVolume;
         }
         public int Id { get; set; }
         public string Name { get; set; }
