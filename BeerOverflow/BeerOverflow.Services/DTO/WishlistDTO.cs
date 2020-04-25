@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using BeerOverflow.Models;
+using BeerOverflow.Services.DTO.Contracts;
 
-namespace BeerOverflow.Models.Contracts
+namespace BeerOverflow.Services.DTO
 {
-    public class WishlistBeer : IWishlistBeer
+    public class WishlistDTO : IWishlistDTO
     {
         public int UserId { get; set; }
         public int BeerId { get; set; }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BeerOverflow.Services.Contracts;
 using BeerOverflow.Web.Models;
+using BeerOverflow.Web.Models.ApiViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,11 +12,11 @@ namespace BeerOverflow.Web.API_Controllers
 {
     [Route("api/countries")]
     [ApiController]
-    public class CountryAPIController : ControllerBase
+    public class CountryController : ControllerBase
     {
         private readonly ICountryServices _countryServices;
 
-        public CountryAPIController(ICountryServices countryServices)
+        public CountryController(ICountryServices countryServices)
         {
             this._countryServices = countryServices ?? throw new ArgumentNullException("CountryService can NOT be null.");
         }
@@ -25,24 +26,15 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get()
         {
             var model = this._countryServices.GetAllCountries()
-                .Select(c => new CountryApiViewModel
-                {
-                    Id = c.Id,
-                    Name = c.Name,
-                    CountryCode = c.CountryCode
-                });
+                .Select(countryDTO => new CountryViewModel(countryDTO));
             return Ok(model);
         }
         [HttpGet]
         [Route("{id}")]
         public IActionResult Get(int id)
         {
-            var country = this._countryServices.GetCountry(id);
-            var model = new CountryApiViewModel
-                {
-                    Id = country.Id,
-                    Name = country.Name
-                };
+            var countryDTO = this._countryServices.GetCountry(id);
+            var model = new CountryViewModel(countryDTO);
             return Ok(model);
         }
     }

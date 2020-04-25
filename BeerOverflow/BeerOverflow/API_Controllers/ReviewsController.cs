@@ -10,63 +10,48 @@ using BeerOverflow.Models;
 using BeerOverflow.Web.Models;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.Contracts;
+using BeerOverflow.Web.Models.ApiViewModels;
 
 namespace BeerOverflow.Web.API_Controllers
 {
     [Route("api/reviews")]
     [ApiController]
-    public class ReviewsAPIController : ControllerBase
+    public class ReviewsController : ControllerBase
     {
         private readonly IReviewServices _reviewServices;
-        public ReviewsAPIController(IReviewServices reviewServices)
+        public ReviewsController(IReviewServices reviewServices)
         {
             _reviewServices = reviewServices;
         }
         [HttpGet]
         public IActionResult Get()
         {
+            //TODO Need check if TargetBeer exist
             var model = this._reviewServices.GetAllReviews()
-                .Select(x => new ReviewApiViewModel
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    Text = x.Text,
-                    Rating = x.Rating,
-                    //TODO Need check if exist
-                    TargetBeer = x.TargetBeer,
-                    Author = x.Author,
-                });
+                .Select(reviewDTO => new ReviewViewModel(reviewDTO));
             return Ok(model);
         }
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             var reviewDTO = this._reviewServices.GetReview(id);
-            var model = new ReviewApiViewModel
-            {
-                Id = reviewDTO.Id,
-                Name = reviewDTO.Name,
-                Text = reviewDTO.Text,
-                Rating = reviewDTO.Rating,
-                //TODO Need check if exist
-                TargetBeer = reviewDTO.TargetBeer,
-                Author = reviewDTO.Author,
-            };
+            //TODO Need check if TargetBeer exist
+            var model = new ReviewViewModel(reviewDTO);
             return Ok(model);
         }
         [HttpPost("")]
-        public IActionResult Post([FromBody] ReviewApiViewModel reviewViewModel)
+        public IActionResult Post([FromBody] ReviewViewModel reviewViewModel)
         {
             if (reviewViewModel == null)
                 return BadRequest();
             if (this.ReviewExists(reviewViewModel.Name, reviewViewModel.Author))
                 return ValidationProblem($"Review of {reviewViewModel.TargetBeer} from {reviewViewModel.Author} already exists.");
+            //TODO Need check if exist
             var reviewDTO = new ReviewDTO
             {
                 Name = reviewViewModel.Name,
                 Text = reviewViewModel.Text,
                 Rating = reviewViewModel.Rating,
-                //TODO Need check if exist
                 TargetBeer = reviewViewModel.TargetBeer,
                 Author = reviewViewModel.Author,
             };
@@ -75,7 +60,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put(int id, [FromBody]ReviewApiViewModel reviewViewModel)
+        public IActionResult Put(int id, [FromBody]ReviewViewModel reviewViewModel)
         {
             if (reviewViewModel == null)
                 return BadRequest();

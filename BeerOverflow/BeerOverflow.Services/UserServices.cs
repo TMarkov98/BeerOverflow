@@ -1,5 +1,6 @@
 ﻿using BeerOverflow.Database;
 using BeerOverflow.Models;
+using BeerOverflow.Models.Contracts;
 using BeerOverflow.Services.Contracts;
 using BeerOverflow.Services.DTO;
 using Microsoft.EntityFrameworkCore;

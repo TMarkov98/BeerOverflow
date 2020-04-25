@@ -1,22 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using BeerOverflow.Services;
 using BeerOverflow.Services.Contracts;
 using BeerOverflow.Services.DTO;
-using BeerOverflow.Web.Models;
-using Microsoft.AspNetCore.Http;
+using BeerOverflow.Web.Models.ApiViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BeerOverflow.Web.API_Controllers
 {
     [Route("api/beers")]
     [ApiController]
-    public class BeerAPIController : ControllerBase
+    public class BeerController : ControllerBase
     {
         private readonly IBeerServices _beerService;
-        public BeerAPIController(IBeerServices beerService)
+        public BeerController(IBeerServices beerService)
         {
             this._beerService = beerService ?? throw new ArgumentNullException("BeerService can NOT be null.");
         }
@@ -25,15 +21,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get()
         {
             var model = this._beerService.GetAllBeers()
-                .Select(x => new BeerApiViewModel
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    BeerType = x.BeerType.ToString(),
-                    Brewery = x.Brewery,
-                    BreweryCountry = x.BreweryCountry,
-                    AlcoholByVolume = x.AlcoholByVolume,
-                });
+                .Select(beerDTO => new BeerViewModel(beerDTO));
             return Ok(model);
         }
         [HttpGet]
@@ -41,15 +29,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get([FromQuery] string s)
         {
             var model = this._beerService.GetAllBeers()
-                .Select(x => new BeerApiViewModel
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    BeerType = x.BeerType.ToString(),
-                    Brewery = x.Brewery,
-                    BreweryCountry = x.BreweryCountry,
-                    AlcoholByVolume = x.AlcoholByVolume,
-                });
+                .Select(beerDTO => new BeerViewModel(beerDTO));
             switch (s.ToLower())
             {
                 case "name":
@@ -73,15 +53,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get([FromQuery] string param, [FromQuery] string value)
         {
             var model = this._beerService.GetAllBeers()
-                .Select(x => new BeerApiViewModel
-                {
-                    Id = x.Id,
-                    Name = x.Name,
-                    BeerType = x.BeerType.ToString(),
-                    Brewery = x.Brewery,
-                    BreweryCountry = x.BreweryCountry,
-                    AlcoholByVolume = x.AlcoholByVolume,
-                });
+                .Select(beerDTO => new BeerViewModel(beerDTO));
             switch (param.ToLower())
             {
                 case "name":
@@ -111,20 +83,12 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get(int id)
         {
             var beerDTO = this._beerService.GetBeer(id);
-            var model = new BeerApiViewModel
-            {
-                Id = beerDTO.Id,
-                Name = beerDTO.Name,
-                BeerType = beerDTO.BeerType.ToString(),
-                Brewery = beerDTO.Brewery,
-                BreweryCountry = beerDTO.BreweryCountry,
-                AlcoholByVolume = beerDTO.AlcoholByVolume,
-            };
+            var model = new BeerViewModel(beerDTO);
             return Ok(model);
         }
         [HttpPost]
         [Route("")]
-        public IActionResult Post([FromBody]BeerApiViewModel beerViewModel)
+        public IActionResult Post([FromBody]BeerViewModel beerViewModel)
         {
             if (beerViewModel == null)
                 return BadRequest();
@@ -142,7 +106,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put(int id, [FromBody] BeerApiViewModel beerViewModel)
+        public IActionResult Put(int id, [FromBody] BeerViewModel beerViewModel)
         {
             if (beerViewModel == null)
                 return BadRequest();
