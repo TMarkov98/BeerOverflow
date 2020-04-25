@@ -8,6 +8,6 @@ namespace BeerOverflow.Services.Contracts
         IReviewDTO CreateReview(IReviewDTO reviewDTO);
         ICollection<ReviewDTO> GetAllReviews();
         ReviewDTO GetReview(int id);
-        ReviewDTO UpdateReviews(int id, string name, string text, int rating, string beer, string author);
+        ReviewDTO UpdateReviews(int id, string name, string text, int rating);
     }
 }

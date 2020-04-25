@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BeerOverflow.Services.Contracts;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Web.Models;
+using BeerOverflow.Web.Models.ApiViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +13,10 @@ namespace BeerOverflow.Web.API_Controllers
 {
     [Route("api/breweries")]
     [ApiController]
-    public class BreweryAPIController : ControllerBase
+    public class BreweriesController : ControllerBase
     {
         private readonly IBreweryServices _breweryServices;
-        public BreweryAPIController(IBreweryServices breweryServices)
+        public BreweriesController(IBreweryServices breweryServices)
         {
             this._breweryServices = breweryServices ?? throw new ArgumentNullException("BreweryService can NOT be null.");
         }
@@ -24,12 +25,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get()
         {
             var model = this._breweryServices.GetAllBreweries()
-                .Select(b => new BreweryApiViewModel
-                {
-                    Id = b.Id,
-                    Name = b.Name,
-                    Country = b.Country
-                });
+                .Select(breweryDTO => new BreweryViewModel(breweryDTO));
             return Ok(model);
         }
 
@@ -38,12 +34,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get([FromQuery] string s)
         {
             var model = this._breweryServices.GetAllBreweries()
-                .Select(b => new BreweryApiViewModel
-                {
-                    Id = b.Id,
-                    Name = b.Name,
-                    Country = b.Country
-                });
+                .Select(breweryDTO => new BreweryViewModel(breweryDTO));
             switch (s)
             {
                 case "name":
@@ -62,17 +53,12 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get(int id)
         {
             var breweryDTO = this._breweryServices.GetBrewery(id);
-            var model = new BreweryApiViewModel
-            {
-                Id = breweryDTO.Id,
-                Name = breweryDTO.Name,
-                Country = breweryDTO.Country
-            };
+            var model = new BreweryViewModel(breweryDTO);
             return Ok(model);
         }
         [HttpPost]
         [Route("")]
-        public IActionResult Post([FromBody]BreweryApiViewModel breweryViewModel)
+        public IActionResult Post([FromBody]BreweryViewModel breweryViewModel)
         {
             if (breweryViewModel == null)
                 return BadRequest();
@@ -88,7 +74,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put(int id, [FromBody] BreweryApiViewModel breweryViewModel)
+        public IActionResult Put(int id, [FromBody] BreweryViewModel breweryViewModel)
         {
             if (breweryViewModel == null)
                 return BadRequest();

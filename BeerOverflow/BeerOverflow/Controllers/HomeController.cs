@@ -9,6 +9,7 @@ using BeerOverflow.Models;
 using BeerOverflow.Services;
 using BeerOverflow.Web.Models;
 using BeerOverflow.Services.Contracts;
+using BeerOverflow.Web.Models.ApiViewModels;
 
 namespace BeerOverflow.Controllers
 {
@@ -26,7 +27,7 @@ namespace BeerOverflow.Controllers
         {
             var homeModel = new HomeIndexViewModel();
             homeModel.AllBeers = this._beerService.GetAllBeers()
-                .Select(x => new BeerApiViewModel
+                .Select(x => new BeerViewModel
                 {
                     Name = x.Name,
                     BeerType = x.BeerType.ToString(),

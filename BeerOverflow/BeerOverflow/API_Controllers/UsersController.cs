@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BeerOverflow.Services.Contracts;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Web.Models;
+using BeerOverflow.Web.Models.ApiViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,11 +13,11 @@ namespace BeerOverflow.Web.API_Controllers
 {
     [Route("api/users")]
     [ApiController]
-    public class UserAPIController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly IUserServices _userServices;
 
-        public UserAPIController(IUserServices userServices)
+        public UsersController(IUserServices userServices)
         {
             this._userServices = userServices ?? throw new ArgumentNullException("UserServices can NOT be null.");
         }
@@ -25,30 +26,14 @@ namespace BeerOverflow.Web.API_Controllers
         [Route("")]
         public IActionResult Get()
         {
-            var model = _userServices.GetAllUsers().Select(userDTO => new UserApiViewModel
-            {
-                Id = userDTO.Id,
-                UserName = userDTO.UserName,
-                EmailAddress = userDTO.Email,
-                Role = userDTO.Role,
-                IsBanned = userDTO.IsBanned,
-                BanReason = userDTO.BanReason
-            });
+            var model = _userServices.GetAllUsers().Select(userDTO => new UserViewModel(userDTO));
             return Ok(model);
         }
         [HttpGet]
         [Route("sort")]
         public IActionResult Get([FromQuery]string param)
         {
-            var model = _userServices.GetAllUsers().Select(userDTO => new UserApiViewModel
-            {
-                Id = userDTO.Id,
-                UserName = userDTO.UserName,
-                EmailAddress = userDTO.Email,
-                Role = userDTO.Role,
-                IsBanned = userDTO.IsBanned,
-                BanReason = userDTO.BanReason
-            });
+            var model = _userServices.GetAllUsers().Select(userDTO => new UserViewModel(userDTO));
             switch (param.ToLower())
             {
                 case "name":
@@ -74,15 +59,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get(int id)
         {
             var userDTO = _userServices.GetUser(id);
-            var model = new UserApiViewModel
-            {
-                Id = userDTO.Id,
-                UserName = userDTO.UserName,
-                EmailAddress = userDTO.Email,
-                Role = userDTO.Role,
-                IsBanned = userDTO.IsBanned,
-                BanReason = userDTO.BanReason
-            };
+            var model = new UserViewModel(userDTO);
             return Ok(model);
         }
         [HttpGet]
@@ -90,12 +67,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult GetWishlist(int id)
         {
             var beerDTOs = _userServices.GetWishlist(id);
-            var model = beerDTOs.Select(x => new WishlistBeerApiViewModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                AlcoholByVolume = x.AlcoholByVolume,
-            });
+            var model = beerDTOs.Select(beerDTO => new WishlistBeerViewModel(beerDTO));
             return Ok(model);
         }
         [HttpGet]
@@ -103,12 +75,7 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult GetBeersDrank(int id)
         {
             var beerDTOs = _userServices.GetBeersDrank(id);
-            var model = beerDTOs.Select(x => new WishlistBeerApiViewModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                AlcoholByVolume = x.AlcoholByVolume,
-            });
+            var model = beerDTOs.Select(beerDTO => new WishlistBeerViewModel(beerDTO));
             return Ok(model);
         }
         [HttpPut]
@@ -129,7 +96,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPost]
         [Route("")]
-        public IActionResult Post([FromBody]UserApiViewModel userViewModel)
+        public IActionResult Post([FromBody]UserViewModel userViewModel)
         {
             if (userViewModel == null)
                 return BadRequest();
@@ -149,7 +116,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPut]
         [Route("")]
-        public IActionResult Put(int id, [FromBody]UserApiViewModel userViewModel)
+        public IActionResult Put(int id, [FromBody]UserViewModel userViewModel)
         {
             if (userViewModel == null)
                 return BadRequest();

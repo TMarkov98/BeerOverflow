@@ -20,6 +20,8 @@ namespace BeerOverflow.Services
         }
         public IBeerDTO CreateBeer(IBeerDTO beerDTO)
         {
+            if (_context.Beers.FirstOrDefault(b => b.Name == beerDTO.Name && b.Brewery.Name == beerDTO.Brewery) != null)
+                throw new ArgumentException("Beer with this name and brewery already exists.");
             var beer = new Beer
             {
                 Name = beerDTO.Name,

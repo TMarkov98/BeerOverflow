@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BeerOverflow.Models
+namespace BeerOverflow.Models.Contracts
 {
-    public class WishlistBeer
+    public class WishlistBeer : IWishlistBeer
     {
         public int UserId { get; set; }
         public int BeerId { get; set; }

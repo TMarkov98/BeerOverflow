@@ -80,7 +80,7 @@ namespace BeerOverflow.Services
             _context.SaveChanges();
             return true;
         }
-        public ReviewDTO UpdateReviews(int id, string name, string text, int rating, string beer, string author)
+        public ReviewDTO UpdateReviews(int id, string name, string text, int rating)
         {
             var review = _context.Reviews
                 .Where(r => r.IsDeleted == false)
@@ -88,17 +88,14 @@ namespace BeerOverflow.Services
             review.Name = name;
             review.Text = text;
             review.Rating = rating;
-            review.Author = _context.Users.FirstOrDefault(u => u.UserName == author)
-                            ?? throw new ArgumentNullException("No author with this name.");
-            review.TargetBeer = _context.Beers.FirstOrDefault(b => b.Name == beer)
-                                ?? throw new ArgumentNullException("No beer with this name.");
+
             var reviewDTO = new ReviewDTO
             {
                 Name = review.Name,
                 Text = review.Text,
                 Rating = review.Rating,
                 Author = review.Author.UserName,
-                TargetBeer = review.TargetBeer.Name,
+                TargetBeer = review.TargetBeer.Name
             };
             _context.SaveChanges();
             return reviewDTO;

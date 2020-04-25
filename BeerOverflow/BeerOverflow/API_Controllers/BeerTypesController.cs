@@ -6,16 +6,17 @@ using BeerOverflow.Services;
 using BeerOverflow.Services.Contracts;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Web.Models;
+using BeerOverflow.Web.Models.ApiViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BeerOverflow.Web.API_Controllers
 {
     [Route("api/beerTypes")]
     [ApiController]
-    public class BeerTypeAPIController : Controller
+    public class BeerTypesController : Controller
     {
         private readonly IBeerTypeServices _beerTypeServices;
-        public BeerTypeAPIController(IBeerTypeServices beerTypeServices)
+        public BeerTypesController(IBeerTypeServices beerTypeServices)
         {
             this._beerTypeServices = beerTypeServices ?? throw new ArgumentNullException("BeerService can NOT be null.");
         }
@@ -23,11 +24,7 @@ namespace BeerOverflow.Web.API_Controllers
         [Route("")]
         public IActionResult Get()
         {
-            var model = _beerTypeServices.GetAllBeerTypes().Select(bt => new BeerTypeApiViewModel
-            {
-                Id = bt.Id,
-                Name = bt.Name
-            });
+            var model = _beerTypeServices.GetAllBeerTypes().Select(bt_DTO => new BeerTypeViewModel(bt_DTO));
             return Ok(model);
         }
         [HttpGet]
@@ -35,16 +32,12 @@ namespace BeerOverflow.Web.API_Controllers
         public IActionResult Get(int id)
         {
             var beerDTO = _beerTypeServices.GetBeerType(id);
-            var model = new BeerTypeApiViewModel
-            {
-                Id = beerDTO.Id,
-                Name = beerDTO.Name
-            };
+            var model = new BeerTypeViewModel(beerDTO);
             return Ok(model);
         }
         [HttpPost]
         [Route("")]
-        public IActionResult Post([FromBody] BeerTypeApiViewModel beerTypeViewModel)
+        public IActionResult Post([FromBody] BeerTypeViewModel beerTypeViewModel)
         {
             if (beerTypeViewModel == null)
                 return BadRequest();
@@ -60,7 +53,7 @@ namespace BeerOverflow.Web.API_Controllers
         }
         [HttpPut]
         [Route("{id}")]
-        public IActionResult Put(int id, [FromBody] BeerTypeApiViewModel beerTypeApiViewModel)
+        public IActionResult Put(int id, [FromBody] BeerTypeViewModel beerTypeApiViewModel)
         {
             if (beerTypeApiViewModel == null)
                 return BadRequest();
