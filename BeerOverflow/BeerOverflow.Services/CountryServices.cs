@@ -21,6 +21,10 @@ namespace BeerOverflow.Services
         public ICountryDTO GetCountry(int id)
         {
             var country = _context.Countries.FirstOrDefault(x => x.Id == id);
+            if (country == null)
+            {
+                throw new ArgumentNullException("Country not found.");
+            }
             var countryDTO = new CountryDTO { Id=country.Id, Name = country.Name, CountryCode = country.Code};
             return countryDTO;
         }
