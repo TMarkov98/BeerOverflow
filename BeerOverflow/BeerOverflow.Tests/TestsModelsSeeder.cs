@@ -104,5 +104,67 @@ namespace BeerOverflow.Tests
                 CreatedOn = DateTime.UtcNow,
             };
         }
+        public static Beer Seed_Beer_v2()
+        {
+            var country = new Country()
+            {
+                Id = 2,
+                Name = "Bulgaria",
+                Code = "BG"
+            };
+            var brewery = new Brewery()
+            {
+                Id = 2,
+                Name = "BreweryName",
+                Country = country,
+                CreatedOn = DateTime.UtcNow,
+            };
+            var beerType = new BeerType()
+            {
+                Id = 2,
+                Name = "IPA",
+                CreatedOn = DateTime.UtcNow,
+            };
+            return new Beer()
+            {
+                Id = 2,
+                Name = "OtherBeerName",
+                Type = beerType,
+                Brewery = brewery,
+                AlcoholByVolume = 5,
+                CreatedOn = DateTime.UtcNow,
+            };
+        }
+        public static Beer Seed_Beer_v3()
+        {
+            var country = new Country()
+            {
+                Id = 3,
+                Name = "Bulgaria",
+                Code = "BG"
+            };
+            var brewery = new Brewery()
+            {
+                Id = 3,
+                Name = "BreweryName",
+                Country = country,
+                CreatedOn = DateTime.UtcNow,
+            };
+            var beerType = new BeerType()
+            {
+                Id = 3,
+                Name = "Ale",
+                CreatedOn = DateTime.UtcNow,
+            };
+            return new Beer()
+            {
+                Id = 3,
+                Name = "NewBeerName",
+                Type = beerType,
+                Brewery = brewery,
+                AlcoholByVolume = 12,
+                CreatedOn = DateTime.UtcNow,
+            };
+        }
     }
 }
