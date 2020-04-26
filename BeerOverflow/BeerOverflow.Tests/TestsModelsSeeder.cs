@@ -46,6 +46,33 @@ namespace BeerOverflow.Tests
                 AlcoholByVolume = 4.5,
             };
         }
+        public static BreweryDTO Seed_BreweryDTO()
+        {
+            return new BreweryDTO()
+            {
+                Id = 1,
+                Name = "BreweryName",
+                Country = "Bulgaria"
+            };
+        }
+        public static Country Seed_Country()
+        {
+            return new Country()
+            {
+                Id = 1,
+                Name = "Bulgaria",
+                Code = "BG"
+            };
+        }
+        public static CountryDTO Seed_CountryDTO()
+        {
+            return new CountryDTO()
+            {
+                Id = 1,
+                Name = "Bulgaria",
+                CountryCode = "BG"
+            };
+        }
         public static Beer Seed_Beer()
         {
             var country = new Country()

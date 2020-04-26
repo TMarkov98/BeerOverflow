@@ -24,7 +24,7 @@ namespace BeerOverflow.Services
             var brewery = new Brewery
             {
                 Name = breweryDTO.Name,
-                Country = (Country)Enum.Parse(typeof(Country), breweryDTO.Country, true)
+                Country = _context.Countries.FirstOrDefault(c => c.Name == breweryDTO.Country) ?? throw new ArgumentNullException("Country not found.")
             };
             _context.Breweries.Add(brewery);
             _context.SaveChanges();

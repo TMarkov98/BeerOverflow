@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BeerOverflow.Services.DTO
 {
-    class CountryDTO : ICountryDTO
+    public class CountryDTO : ICountryDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
