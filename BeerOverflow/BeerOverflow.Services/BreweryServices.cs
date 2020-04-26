@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Services
 {
@@ -24,17 +23,21 @@ namespace BeerOverflow.Services
             var brewery = new Brewery
             {
                 Name = breweryDTO.Name,
-                Country = _context.Countries.FirstOrDefault(c => c.Name == breweryDTO.Country) ?? throw new ArgumentNullException("Country not found.")
+                Country = _context.Countries
+                    .FirstOrDefault(c => c.Name == breweryDTO.Country) ?? throw new ArgumentNullException("Country not found.")
             };
-            var breweryExists = _context.Breweries.FirstOrDefault(b => b.Name == brewery.Name && b.Country == brewery.Country);
-            if(breweryExists != null)
+            var breweryExists = _context.Breweries
+                .FirstOrDefault(b => b.Name == brewery.Name && b.Country == brewery.Country);
+            if (breweryExists != null)
             {
                 throw new ArgumentException($"Brewery {brewery.Name} already exists in {brewery.Country.Name}");
             }
+
             _context.Breweries.Add(brewery);
             _context.SaveChanges();
             return breweryDTO;
         }
+
         public IBreweryDTO GetBrewery(int id)
         {
             var brewery = _context.Breweries.Include(b => b.Country).FirstOrDefault(i => i.Id == id);
@@ -47,11 +50,13 @@ namespace BeerOverflow.Services
                 Name = brewery.Name,
                 Country = brewery.Country.Name
             };
+
             return breweryDTO;
         }
         public bool DeleteBrewery(int id)
         {
-            var brewery = _context.Breweries.FirstOrDefault(b => b.Id == id);
+            var brewery = _context.Breweries
+                .FirstOrDefault(b => b.Id == id);
             if (brewery == null || brewery.IsDeleted)
                 return false;
 
@@ -78,12 +83,13 @@ namespace BeerOverflow.Services
                 .Where(br => br.IsDeleted == false)
                 .FirstOrDefault(r => r.Id == id);
 
-            if(brewery == null)
+            if (brewery == null)
             {
                 throw new ArgumentNullException("Brewery not found.");
             }
 
-            var breweryExists = _context.Breweries.FirstOrDefault(b => b.Name == name && b.Country.Name == breweryCountry);
+            var breweryExists = _context.Breweries
+                .FirstOrDefault(b => b.Name == name && b.Country.Name == breweryCountry);
 
             if (breweryExists != null)
             {
@@ -91,7 +97,8 @@ namespace BeerOverflow.Services
             }
 
             brewery.Name = name;
-            brewery.Country = _context.Countries.FirstOrDefault(c => c.Name == breweryCountry) ?? throw new ArgumentNullException("Brewery country not found.");
+            brewery.Country = _context.Countries
+                .FirstOrDefault(c => c.Name == breweryCountry) ?? throw new ArgumentNullException("Brewery country not found.");
 
             var breweryDTO = new BreweryDTO
             {

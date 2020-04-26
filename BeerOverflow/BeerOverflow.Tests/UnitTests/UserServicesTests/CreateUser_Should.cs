@@ -1,12 +1,8 @@
 ﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.UserServicesTests
 {
@@ -17,8 +13,8 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void ReturnCorrectUser_WhenParamsAreValid()
         {
             var options = Utils.GetOptions(nameof(ReturnCorrectUser_WhenParamsAreValid));
-            var userDTO = TestsModelsSeeder.Seed_UserDTO();
-            var userRole = TestsModelsSeeder.Seed_UserRole();
+            var userDTO = TestsModelsSeeder.SeedUserDTO();
+            var userRole = TestsModelsSeeder.SeedUserRole();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -40,11 +36,13 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void Throw_WhenUserAlreadyExists()
         {
             var options = Utils.GetOptions(nameof(Throw_WhenUserAlreadyExists));
-            var userDTO = TestsModelsSeeder.Seed_UserDTO();
-            var user = TestsModelsSeeder.Seed_User();
+            var userRole = TestsModelsSeeder.SeedUserRole();
+            var userDTO = TestsModelsSeeder.SeedUserDTO();
+            var user = TestsModelsSeeder.SeedUser();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
+                arrangeContext.UserRoles.Add(userRole);
                 arrangeContext.Users.Add(user);
                 arrangeContext.SaveChanges();
             }
@@ -58,11 +56,13 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void Throw_WhenEmailTaken()
         {
             var options = Utils.GetOptions(nameof(Throw_WhenEmailTaken));
-            var userDTO = TestsModelsSeeder.Seed_UserDTO();
-            var user = TestsModelsSeeder.Seed_User();
+            var userRole = TestsModelsSeeder.SeedUserRole();
+            var userDTO = TestsModelsSeeder.SeedUserDTO();
+            var user = TestsModelsSeeder.SeedUser();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
+                arrangeContext.UserRoles.Add(userRole);
                 arrangeContext.Users.Add(user);
                 arrangeContext.SaveChanges();
             }

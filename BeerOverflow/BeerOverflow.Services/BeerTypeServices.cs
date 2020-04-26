@@ -5,7 +5,6 @@ using BeerOverflow.Services.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Services
 {
@@ -22,7 +21,8 @@ namespace BeerOverflow.Services
             {
                 Name = beerTypeDTO.Name
             };
-            var beerTypeExists = _context.BeerTypes.FirstOrDefault(b => b.Name == beerTypeDTO.Name);
+            var beerTypeExists = _context.BeerTypes
+                .FirstOrDefault(b => b.Name == beerTypeDTO.Name);
             if (beerTypeExists != null)
             {
                 throw new ArgumentException($"BeerType {beerTypeExists.Name} already exists");
@@ -34,7 +34,8 @@ namespace BeerOverflow.Services
 
         public bool DeleteBeerType(int id)
         {
-            var beerType = _context.BeerTypes.FirstOrDefault(bt => bt.Id == id);
+            var beerType = _context.BeerTypes
+                .FirstOrDefault(bt => bt.Id == id);
             if (beerType == null || beerType.IsDeleted)
                 return false;
             beerType.IsDeleted = true;
@@ -56,7 +57,8 @@ namespace BeerOverflow.Services
 
         public BeerTypeDTO GetBeerType(int id)
         {
-            var beerType = _context.BeerTypes.FirstOrDefault(bt => bt.Id == id);
+            var beerType = _context.BeerTypes
+                .FirstOrDefault(bt => bt.Id == id);
             if (beerType == null)
                 throw new ArgumentNullException("BeerType not found.");
             var beerTypeDTO = new BeerTypeDTO
@@ -76,7 +78,8 @@ namespace BeerOverflow.Services
             if (beerType == null)
                 throw new ArgumentNullException("BeerType not found.");
 
-            var beerTypeExists = _context.BeerTypes.FirstOrDefault(b => b.Name == name);
+            var beerTypeExists = _context.BeerTypes
+                .FirstOrDefault(b => b.Name == name);
             if (beerTypeExists != null)
             {
                 throw new ArgumentException($"BeerType {beerTypeExists.Name} already exists");

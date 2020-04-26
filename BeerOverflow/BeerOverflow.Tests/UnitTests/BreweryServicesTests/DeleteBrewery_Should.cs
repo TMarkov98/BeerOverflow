@@ -1,12 +1,7 @@
 ﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
 {
@@ -17,7 +12,7 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void DeleteBrewery_WhenIdIsCorrect()
         {
             var options = Utils.GetOptions(nameof(DeleteBrewery_WhenIdIsCorrect));
-            var brewery = TestsModelsSeeder.Seed_Brewery();
+            var brewery = TestsModelsSeeder.SeedBrewery();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -37,7 +32,7 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void ReturnTrue_WhenIdIsCorrect()
         {
             var options = Utils.GetOptions(nameof(ReturnTrue_WhenIdIsCorrect));
-            var brewery = TestsModelsSeeder.Seed_Brewery();
+            var brewery = TestsModelsSeeder.SeedBrewery();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -56,7 +51,7 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void ReturnFalse_WhenIdIsIncorrect()
         {
             var options = Utils.GetOptions(nameof(ReturnFalse_WhenIdIsIncorrect));
-            var brewery = TestsModelsSeeder.Seed_Brewery();
+            var brewery = TestsModelsSeeder.SeedBrewery();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

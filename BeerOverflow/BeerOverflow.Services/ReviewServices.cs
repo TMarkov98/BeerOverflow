@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Services
 {
@@ -20,18 +19,22 @@ namespace BeerOverflow.Services
 
         public IReviewDTO CreateReview(IReviewDTO reviewDTO)
         {
-            if (_context.Reviews.FirstOrDefault(r => r.TargetBeer.Name == reviewDTO.TargetBeer && r.Author.UserName == reviewDTO.Author) != null)
+            if (_context.Reviews
+                .FirstOrDefault(r => r.TargetBeer.Name == reviewDTO.TargetBeer && r.Author.UserName == reviewDTO.Author) != null)
                 throw new ArgumentException("Review with on this beer from this user already exists.");
             var review = new Review
             {
                 Rating = reviewDTO.Rating,
                 Name = reviewDTO.Name,
                 Text = reviewDTO.Text,
-                Author = _context.Users.FirstOrDefault(u => u.UserName == reviewDTO.Author)
-                            ?? throw new ArgumentNullException("No author with this name."),
-                TargetBeer = _context.Beers.FirstOrDefault(b => b.Name == reviewDTO.TargetBeer)
-                                ?? throw new ArgumentNullException("No beer with this name."),
+                Author = _context.Users
+                    .FirstOrDefault(u => u.UserName == reviewDTO.Author)
+                    ?? throw new ArgumentNullException("No author with this name."),
+                TargetBeer = _context.Beers
+                    .FirstOrDefault(b => b.Name == reviewDTO.TargetBeer)
+                    ?? throw new ArgumentNullException("No beer with this name."),
             };
+
             _context.Reviews.Add(review);
             _context.SaveChanges();
             return reviewDTO;
@@ -54,11 +57,15 @@ namespace BeerOverflow.Services
 
         public ReviewDTO GetReview(int id)
         {
-            var review = _context.Reviews.Include(r => r.TargetBeer).Include(r => r.Author).FirstOrDefault(r => r.Id == id);
+            var review = _context.Reviews
+                .Include(r => r.TargetBeer)
+                .Include(r => r.Author)
+                .FirstOrDefault(r => r.Id == id);
             if (review == null)
             {
                 throw new ArgumentNullException("Review not found.");
             }
+
             var reviewDTO = new ReviewDTO
             {
                 Id = review.Id,
@@ -68,6 +75,7 @@ namespace BeerOverflow.Services
                 TargetBeer = review.TargetBeer.Name,
                 Author = review.Author.UserName,
             };
+
             return reviewDTO;
         }
         public bool DeleteReview(int id)

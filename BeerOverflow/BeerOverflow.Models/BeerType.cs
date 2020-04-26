@@ -1,8 +1,6 @@
 ﻿using BeerOverflow.Models.Contracts;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace BeerOverflow.Models
 {
@@ -14,7 +12,7 @@ namespace BeerOverflow.Models
         }
         public int Id { get; set; }
         [Required]
-        [StringLength(30, MinimumLength =3)]
+        [StringLength(30, MinimumLength = 3)]
         public string Name { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime? ModifiedOn { get; set; }

@@ -1,9 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
 using BeerOverflow.Services.Contracts;
 using Microsoft.AspNetCore.Builder;

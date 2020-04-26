@@ -1,12 +1,7 @@
 ﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.UserServicesTests
 {
@@ -17,11 +12,13 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void CorrectlyUpdateUser_WhenDataIsValid()
         {
             var options = Utils.GetOptions(nameof(CorrectlyUpdateUser_WhenDataIsValid));
-            var user1 = TestsModelsSeeder.Seed_User();
-            var user2 = TestsModelsSeeder.Seed_User_v2();
+            var userRole = TestsModelsSeeder.SeedUserRole();
+            var user1 = TestsModelsSeeder.SeedUser();
+            var user2 = TestsModelsSeeder.SeedUser2();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
+                arrangeContext.UserRoles.Add(userRole);
                 arrangeContext.Users.Add(user1);
                 arrangeContext.Users.Add(user2);
                 arrangeContext.SaveChanges();
@@ -40,8 +37,8 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void Throw_WhenUserNameTaken()
         {
             var options = Utils.GetOptions(nameof(Throw_WhenUserNameTaken));
-            var user1 = TestsModelsSeeder.Seed_User();
-            var user2 = TestsModelsSeeder.Seed_User_v2();
+            var user1 = TestsModelsSeeder.SeedUser();
+            var user2 = TestsModelsSeeder.SeedUser2();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -60,8 +57,8 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void Throw_WhenEmailAlreadyTaken()
         {
             var options = Utils.GetOptions(nameof(Throw_WhenEmailAlreadyTaken));
-            var user1 = TestsModelsSeeder.Seed_User();
-            var user2 = TestsModelsSeeder.Seed_User_v2();
+            var user1 = TestsModelsSeeder.SeedUser();
+            var user2 = TestsModelsSeeder.SeedUser2();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -80,8 +77,8 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void Throw_WhenUserIdIsInvalid()
         {
             var options = Utils.GetOptions(nameof(Throw_WhenUserIdIsInvalid));
-            var user1 = TestsModelsSeeder.Seed_User();
-            var user2 = TestsModelsSeeder.Seed_User_v2();
+            var user1 = TestsModelsSeeder.SeedUser();
+            var user2 = TestsModelsSeeder.SeedUser2();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

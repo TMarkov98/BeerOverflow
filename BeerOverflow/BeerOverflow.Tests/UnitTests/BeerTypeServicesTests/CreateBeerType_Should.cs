@@ -1,12 +1,8 @@
 ﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.BeerTypeServicesTests
 {
@@ -17,7 +13,7 @@ namespace BeerOverflow.Tests.UnitTests.BeerTypeServicesTests
         public void ReturnCorrectBeerType_WhenParamsAreValid()
         {
             var options = Utils.GetOptions(nameof(ReturnCorrectBeerType_WhenParamsAreValid));
-            var beerTypeDTO = TestsModelsSeeder.Seed_BeerTypeDTO();
+            var beerTypeDTO = TestsModelsSeeder.SeedBeerTypeDTO();
 
             using (var assertContext = new BeerOverflowContext(options))
             {
@@ -32,8 +28,8 @@ namespace BeerOverflow.Tests.UnitTests.BeerTypeServicesTests
         public void Throw_When_BeerTypeAlreadyExists()
         {
             var options = Utils.GetOptions(nameof(Throw_When_BeerTypeAlreadyExists));
-            var beerTypeDTO = TestsModelsSeeder.Seed_BeerTypeDTO();
-            var beerType = TestsModelsSeeder.Seed_BeerType();
+            var beerTypeDTO = TestsModelsSeeder.SeedBeerTypeDTO();
+            var beerType = TestsModelsSeeder.SeedBeerType();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

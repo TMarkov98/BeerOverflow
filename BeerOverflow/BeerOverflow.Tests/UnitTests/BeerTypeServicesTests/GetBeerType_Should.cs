@@ -1,12 +1,7 @@
 ﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.BeerTypeServicesTests
 {
@@ -17,8 +12,8 @@ namespace BeerOverflow.Tests.UnitTests.BeerTypeServicesTests
         public void ReturnCorrectBeerType_WhenIdIsValid()
         {
             var options = Utils.GetOptions(nameof(ReturnCorrectBeerType_WhenIdIsValid));
-            var beerType1 = TestsModelsSeeder.Seed_BeerType();
-            var beerType2 = TestsModelsSeeder.Seed_BeerType_v2();
+            var beerType1 = TestsModelsSeeder.SeedBeerType();
+            var beerType2 = TestsModelsSeeder.SeedBeerType2();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

@@ -2,9 +2,7 @@
 using BeerOverflow.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
 {
@@ -15,9 +13,9 @@ namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
         public void CreateCurrectReview_When_ParamsValid()
         {
             var options = Utils.GetOptions(nameof(CreateCurrectReview_When_ParamsValid));
-            var reviewDTO = TestsModelsSeeder.Seed_ReviewDTO();
-            var user = TestsModelsSeeder.Seed_User();
-            var targetbeer = TestsModelsSeeder.Seed_Beer();
+            var reviewDTO = TestsModelsSeeder.SeedReviewDTO();
+            var user = TestsModelsSeeder.SeedUser();
+            var targetbeer = TestsModelsSeeder.SeedBeer();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -41,8 +39,8 @@ namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
         public void ThrowArgumentException_When_UserNotValid()
         {
             var options = Utils.GetOptions(nameof(ThrowArgumentException_When_UserNotValid));
-            var reviewDTO = TestsModelsSeeder.Seed_ReviewDTO();
-            var targetbeer = TestsModelsSeeder.Seed_Beer();
+            var reviewDTO = TestsModelsSeeder.SeedReviewDTO();
+            var targetbeer = TestsModelsSeeder.SeedBeer();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -59,8 +57,8 @@ namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
         public void ThrowArgumentException_When_TargetBeerNotValid()
         {
             var options = Utils.GetOptions(nameof(ThrowArgumentException_When_TargetBeerNotValid));
-            var user = TestsModelsSeeder.Seed_User();
-            var reviewDTO = TestsModelsSeeder.Seed_ReviewDTO();
+            var user = TestsModelsSeeder.SeedUser();
+            var reviewDTO = TestsModelsSeeder.SeedReviewDTO();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

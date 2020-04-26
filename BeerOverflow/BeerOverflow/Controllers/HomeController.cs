@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BeerOverflow.Models;
+using BeerOverflow.Services.Contracts;
+using BeerOverflow.Web.Models;
+using BeerOverflow.Web.Models.ApiViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using BeerOverflow.Models;
-using BeerOverflow.Services;
-using BeerOverflow.Web.Models;
-using BeerOverflow.Services.Contracts;
-using BeerOverflow.Web.Models.ApiViewModels;
+using System;
+using System.Diagnostics;
+using System.Linq;
 
 namespace BeerOverflow.Controllers
 {

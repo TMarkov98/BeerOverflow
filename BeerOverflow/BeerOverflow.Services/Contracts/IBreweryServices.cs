@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using BeerOverflow.Services.DTO;
+﻿using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.DTO.Contracts;
+using System.Collections.Generic;
 
 namespace BeerOverflow.Services.Contracts
 {

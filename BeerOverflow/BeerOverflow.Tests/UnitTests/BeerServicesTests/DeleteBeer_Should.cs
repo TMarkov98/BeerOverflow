@@ -1,10 +1,7 @@
 ﻿using BeerOverflow.Database;
 using BeerOverflow.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.BeerServicesTests
 {
@@ -12,10 +9,10 @@ namespace BeerOverflow.Tests.UnitTests.BeerServicesTests
     public class DeleteBeer_Should
     {
         [TestMethod]
-        public void ChangeCurrect_IsDelete_ToTrue()
+        public void ChangeCorrect_IsDelete_ToTrue()
         {
-            var options = Utils.GetOptions(nameof(ChangeCurrect_IsDelete_ToTrue));
-            var beer = TestsModelsSeeder.Seed_Beer();
+            var options = Utils.GetOptions(nameof(ChangeCorrect_IsDelete_ToTrue));
+            var beer = TestsModelsSeeder.SeedBeer();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -47,7 +44,7 @@ namespace BeerOverflow.Tests.UnitTests.BeerServicesTests
         {
             var options = Utils.GetOptions(nameof(ReturnFalse_When_BeerToDelete_AlreadyDeleted));
 
-            var beer = TestsModelsSeeder.Seed_Beer();
+            var beer = TestsModelsSeeder.SeedBeer();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

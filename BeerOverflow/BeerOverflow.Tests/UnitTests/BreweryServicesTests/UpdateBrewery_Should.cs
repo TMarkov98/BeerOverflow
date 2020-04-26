@@ -1,12 +1,7 @@
 ﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
 {
@@ -17,11 +12,13 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void CorrectlyUpdate_WhenDataIsValid()
         {
             var options = Utils.GetOptions(nameof(CorrectlyUpdate_WhenDataIsValid));
-            var brewery1 = TestsModelsSeeder.Seed_Brewery();
-            var brewery2 = TestsModelsSeeder.Seed_Brewery_v2();
+            var country = TestsModelsSeeder.SeedCountry();
+            var brewery1 = TestsModelsSeeder.SeedBrewery();
+            var brewery2 = TestsModelsSeeder.SeedBrewery2();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
+                arrangeContext.Countries.Add(country);
                 arrangeContext.Breweries.Add(brewery1);
                 arrangeContext.Breweries.Add(brewery2);
                 arrangeContext.SaveChanges();
@@ -40,8 +37,8 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void Throw_WhenCountryIsInvalid()
         {
             var options = Utils.GetOptions(nameof(Throw_WhenCountryIsInvalid));
-            var brewery1 = TestsModelsSeeder.Seed_Brewery();
-            var brewery2 = TestsModelsSeeder.Seed_Brewery_v2();
+            var brewery1 = TestsModelsSeeder.SeedBrewery();
+            var brewery2 = TestsModelsSeeder.SeedBrewery2();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -60,8 +57,8 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void Throw_WhenBreweryIdIsInvalid()
         {
             var options = Utils.GetOptions(nameof(Throw_WhenBreweryIdIsInvalid));
-            var brewery1 = TestsModelsSeeder.Seed_Brewery();
-            var brewery2 = TestsModelsSeeder.Seed_Brewery_v2();
+            var brewery1 = TestsModelsSeeder.SeedBrewery();
+            var brewery2 = TestsModelsSeeder.SeedBrewery2();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

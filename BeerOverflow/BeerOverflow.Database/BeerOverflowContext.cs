@@ -1,9 +1,5 @@
 ﻿using BeerOverflow.Models;
-using BeerOverflow.Models.Contracts;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BeerOverflow.Database
 {
@@ -11,7 +7,7 @@ namespace BeerOverflow.Database
     {
         public BeerOverflowContext(DbContextOptions<BeerOverflowContext> options) : base(options)
         {
-                
+
         }
         public DbSet<Beer> Beers { get; set; }
         public DbSet<BeerType> BeerTypes { get; set; }

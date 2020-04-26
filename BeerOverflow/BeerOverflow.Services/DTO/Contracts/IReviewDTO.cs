@@ -1,6 +1,4 @@
-﻿using BeerOverflow.Models;
-
-namespace BeerOverflow.Services.DTO
+﻿namespace BeerOverflow.Services.DTO
 {
     public interface IReviewDTO
     {

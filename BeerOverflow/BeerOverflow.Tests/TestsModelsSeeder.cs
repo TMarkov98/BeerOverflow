@@ -1,16 +1,13 @@
 ﻿using BeerOverflow.Models;
-using BeerOverflow.Models.Contracts;
 using BeerOverflow.Services.DTO;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BeerOverflow.Tests
 {
     public class TestsModelsSeeder
     {
         //BeerType Seeders
-        public static BeerType Seed_BeerType()
+        public static BeerType SeedBeerType()
         {
             return new BeerType()
             {
@@ -19,7 +16,7 @@ namespace BeerOverflow.Tests
                 CreatedOn = DateTime.UtcNow,
             };
         }
-        public static BeerType Seed_BeerType_v2()
+        public static BeerType SeedBeerType2()
         {
             return new BeerType()
             {
@@ -28,7 +25,7 @@ namespace BeerOverflow.Tests
                 CreatedOn = DateTime.UtcNow,
             };
         }
-        public static BeerType Seed_BeerType_v3()
+        public static BeerType SeedBeerType3()
         {
             return new BeerType()
             {
@@ -37,7 +34,7 @@ namespace BeerOverflow.Tests
                 CreatedOn = DateTime.UtcNow,
             };
         }
-        public static BeerTypeDTO Seed_BeerTypeDTO()
+        public static BeerTypeDTO SeedBeerTypeDTO()
         {
             return new BeerTypeDTO()
             {
@@ -46,58 +43,40 @@ namespace BeerOverflow.Tests
             };
         }
         //Brewery Seeders
-        public static Brewery Seed_Brewery()
+        public static Brewery SeedBrewery()
         {
-            var country = new Country()
-            {
-                Id = 1,
-                Name = "Bulgaria",
-                Code = "BG"
-            };
             var brewery = new Brewery()
             {
                 Id = 1,
                 Name = "BreweryName",
-                Country = country,
+                CountryId = 1,
                 CreatedOn = DateTime.UtcNow,
             };
             return brewery;
         }
-        public static Brewery Seed_Brewery_v2()
+        public static Brewery SeedBrewery2()
         {
-            var country = new Country()
-            {
-                Id = 2,
-                Name = "Bulgaria2",
-                Code = "BG"
-            };
             var brewery = new Brewery()
             {
                 Id = 2,
                 Name = "BreweryName2",
-                Country = country,
+                CountryId = 1,
                 CreatedOn = DateTime.UtcNow,
             };
             return brewery;
         }
-        public static Brewery Seed_Brewery_v3()
+        public static Brewery SeedBrewery3()
         {
-            var country = new Country()
-            {
-                Id = 3,
-                Name = "Bulgaria3",
-                Code = "BG"
-            };
             var brewery = new Brewery()
             {
                 Id = 3,
                 Name = "BreweryName3",
-                Country = country,
+                CountryId = 1,
                 CreatedOn = DateTime.UtcNow,
             };
             return brewery;
         }
-        public static BreweryDTO Seed_BreweryDTO()
+        public static BreweryDTO SeedBreweryDTO()
         {
             return new BreweryDTO()
             {
@@ -107,7 +86,7 @@ namespace BeerOverflow.Tests
             };
         }
         //Country Seeders
-        public static Country Seed_Country()
+        public static Country SeedCountry()
         {
             return new Country()
             {
@@ -116,7 +95,7 @@ namespace BeerOverflow.Tests
                 Code = "BG"
             };
         }
-        public static Country Seed_Country_v2()
+        public static Country SeedCountry2()
         {
             return new Country()
             {
@@ -125,7 +104,7 @@ namespace BeerOverflow.Tests
                 Code = "BG"
             };
         }
-        public static Country Seed_Country_v3()
+        public static Country SeedCountry3()
         {
             return new Country()
             {
@@ -134,7 +113,7 @@ namespace BeerOverflow.Tests
                 Code = "BG"
             };
         }
-        public static CountryDTO Seed_CountryDTO()
+        public static CountryDTO SeedCountryDTO()
         {
             return new CountryDTO()
             {
@@ -144,100 +123,43 @@ namespace BeerOverflow.Tests
             };
         }
         //Seeds beers
-        public static Beer Seed_Beer()
+        public static Beer SeedBeer()
         {
-            var country = new Country()
-            {
-                Id = 1,
-                Name = "Bulgaria",
-                Code = "BG"
-            };
-            var brewery = new Brewery()
-            {
-                Id = 1,
-                Name = "BreweryName",
-                Country = country,
-                CreatedOn = DateTime.UtcNow,
-            };
-            var beerType = new BeerType()
-            {
-                Id = 1,
-                Name = "Brown Ale",
-                CreatedOn = DateTime.UtcNow,
-            };
             return new Beer()
             {
                 Id = 1,
                 Name = "BeerName",
-                Type = beerType,
-                Brewery = brewery,
+                TypeId = 1,
+                BreweryId = 1,
                 AlcoholByVolume = 4.5,
                 CreatedOn = DateTime.UtcNow,
             };
         }
-        public static Beer Seed_Beer_v2()
+        public static Beer SeedBeer2()
         {
-            var country = new Country()
-            {
-                Id = 2,
-                Name = "Bulgaria",
-                Code = "BG"
-            };
-            var brewery = new Brewery()
-            {
-                Id = 2,
-                Name = "BreweryName",
-                Country = country,
-                CreatedOn = DateTime.UtcNow,
-            };
-            var beerType = new BeerType()
-            {
-                Id = 2,
-                Name = "IPA",
-                CreatedOn = DateTime.UtcNow,
-            };
             return new Beer()
             {
                 Id = 2,
                 Name = "OtherBeerName",
-                Type = beerType,
-                Brewery = brewery,
+                TypeId = 1,
+                BreweryId = 1,
                 AlcoholByVolume = 5,
                 CreatedOn = DateTime.UtcNow,
             };
         }
-        public static Beer Seed_Beer_v3()
+        public static Beer SeedBeer3()
         {
-            var country = new Country()
-            {
-                Id = 3,
-                Name = "Bulgaria",
-                Code = "BG"
-            };
-            var brewery = new Brewery()
-            {
-                Id = 3,
-                Name = "BreweryName",
-                Country = country,
-                CreatedOn = DateTime.UtcNow,
-            };
-            var beerType = new BeerType()
-            {
-                Id = 3,
-                Name = "Ale",
-                CreatedOn = DateTime.UtcNow,
-            };
             return new Beer()
             {
                 Id = 3,
                 Name = "NewBeerName",
-                Type = beerType,
-                Brewery = brewery,
+                TypeId = 1,
+                BreweryId = 1,
                 AlcoholByVolume = 12,
                 CreatedOn = DateTime.UtcNow,
             };
         }
-        public static BeerDTO Seed_BeerDTO()
+        public static BeerDTO SeedBeerDTO()
         {
             return new BeerDTO()
             {
@@ -249,7 +171,7 @@ namespace BeerOverflow.Tests
                 AlcoholByVolume = 4.5,
             };
         }
-        public static UserRole Seed_UserRole()
+        public static UserRole SeedUserRole()
         {
             return new UserRole()
             {
@@ -258,13 +180,8 @@ namespace BeerOverflow.Tests
             };
         }
         //Seeds users
-        public static User Seed_User()
+        public static User SeedUser()
         {
-            var role = new UserRole()
-            {
-                Id = 1,
-                RoleName = "admin",
-            };
             return new User()
             {
                 Id = 1,
@@ -272,16 +189,11 @@ namespace BeerOverflow.Tests
                 Email = "username@biri.com",
                 IsBanned = false,
                 CreatedOn = DateTime.UtcNow,
-                Role = role,
+                RoleId = 1,
             };
         }
-        public static User Seed_User_v2()
+        public static User SeedUser2()
         {
-            var role = new UserRole()
-            {
-                Id = 2,
-                RoleName = "guest",
-            };
             return new User()
             {
                 Id = 2,
@@ -289,16 +201,11 @@ namespace BeerOverflow.Tests
                 Email = "otherusername@biri.com",
                 IsBanned = false,
                 CreatedOn = DateTime.UtcNow,
-                Role = role,
+                RoleId = 1,
             };
         }
-        public static User Seed_User_v3()
+        public static User SeedUser3()
         {
-            var role = new UserRole()
-            {
-                Id = 3,
-                RoleName = "user",
-            };
             return new User()
             {
                 Id = 3,
@@ -306,10 +213,10 @@ namespace BeerOverflow.Tests
                 Email = "newusername@biri.com",
                 IsBanned = false,
                 CreatedOn = DateTime.UtcNow,
-                Role = role,
+                RoleId = 1,
             };
         }
-        public static UserDTO Seed_UserDTO()
+        public static UserDTO SeedUserDTO()
         {
             var userDTO = new UserDTO()
             {
@@ -322,7 +229,7 @@ namespace BeerOverflow.Tests
             return userDTO;
         }
         //Seeds reviews
-        public static Review Seed_Review()
+        public static Review SeedReview()
         {
             var review = new Review()
             {
@@ -335,7 +242,7 @@ namespace BeerOverflow.Tests
             };
             return review;
         }
-        public static Review Seed_Review_v2()
+        public static Review SeedReview2()
         {
             var review = new Review()
             {
@@ -348,7 +255,7 @@ namespace BeerOverflow.Tests
             };
             return review;
         }
-        public static Review Seed_Review_v3()
+        public static Review SeedReview3()
         {
             var review = new Review()
             {
@@ -361,7 +268,7 @@ namespace BeerOverflow.Tests
             };
             return review;
         }
-        public static ReviewDTO Seed_ReviewDTO()
+        public static ReviewDTO SeedReviewDTO()
         {
             var reviewDTO = new ReviewDTO()
             {

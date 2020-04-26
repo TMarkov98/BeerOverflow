@@ -14,7 +14,7 @@ namespace BeerOverflow.Models
         }
         public int Id { get; set; }
         [Required]
-        [StringLength(40, MinimumLength =3)]
+        [StringLength(40, MinimumLength = 3)]
         public string Name { get; set; }
         public int TypeId { get; set; }
         public BeerType Type { get; set; }
@@ -25,8 +25,8 @@ namespace BeerOverflow.Models
         public DateTime? ModifiedOn { get; set; }
         public bool IsDeleted { get; set; }
         [Required]
-        [Range(3,13)]
-        public double AlcoholByVolume{ get; set; }
+        [Range(3, 13)]
+        public double AlcoholByVolume { get; set; }
         public List<Like> Likes { get; set; }
         public List<Review> Reviews { get; set; }
     }

@@ -1,10 +1,7 @@
 ﻿using BeerOverflow.Database;
 using BeerOverflow.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
 {
@@ -16,8 +13,8 @@ namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
         {
             var options = Utils.GetOptions(nameof(ReturnTrue_When_ParamsValid));
 
-            var review = TestsModelsSeeder.Seed_Review();
-            var beer = TestsModelsSeeder.Seed_Beer();
+            var review = TestsModelsSeeder.SeedReview();
+            var beer = TestsModelsSeeder.SeedBeer();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -50,7 +47,7 @@ namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
         {
             var options = Utils.GetOptions(nameof(ReturnFalse_When_ReviewAlreadyDel));
 
-            var review = TestsModelsSeeder.Seed_Review();
+            var review = TestsModelsSeeder.SeedReview();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

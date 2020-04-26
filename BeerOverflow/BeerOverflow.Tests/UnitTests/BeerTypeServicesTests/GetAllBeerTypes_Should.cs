@@ -1,12 +1,7 @@
 ﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.BeerTypeServicesTests
 {
@@ -17,9 +12,9 @@ namespace BeerOverflow.Tests.UnitTests.BeerTypeServicesTests
         public void ReturnCorrectList_WhenDataIsPresent()
         {
             var options = Utils.GetOptions(nameof(ReturnCorrectList_WhenDataIsPresent));
-            var beerType1 = TestsModelsSeeder.Seed_BeerType();
-            var beerType2 = TestsModelsSeeder.Seed_BeerType_v2();
-            var beerType3 = TestsModelsSeeder.Seed_BeerType_v3();
+            var beerType1 = TestsModelsSeeder.SeedBeerType();
+            var beerType2 = TestsModelsSeeder.SeedBeerType2();
+            var beerType3 = TestsModelsSeeder.SeedBeerType3();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

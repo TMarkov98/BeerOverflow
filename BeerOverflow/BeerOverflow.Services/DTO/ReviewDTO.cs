@@ -1,9 +1,4 @@
-﻿using BeerOverflow.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BeerOverflow.Services.DTO
+﻿namespace BeerOverflow.Services.DTO
 {
     public class ReviewDTO : IReviewDTO
     {

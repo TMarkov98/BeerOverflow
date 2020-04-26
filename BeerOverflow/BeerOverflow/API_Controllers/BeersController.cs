@@ -1,9 +1,9 @@
-﻿using System;
-using System.Linq;
-using BeerOverflow.Services.Contracts;
+﻿using BeerOverflow.Services.Contracts;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Web.Models.ApiViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Linq;
 
 namespace BeerOverflow.Web.API_Controllers
 {

@@ -1,11 +1,9 @@
 ﻿using BeerOverflow.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Globalization;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Globalization;
 using System.Linq;
-using BeerOverflow.Models.Contracts;
 
 namespace BeerOverflow.Database
 {

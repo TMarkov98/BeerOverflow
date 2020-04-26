@@ -1,6 +1,5 @@
 ﻿using BeerOverflow.Database;
 using BeerOverflow.Models;
-using BeerOverflow.Models.Contracts;
 using BeerOverflow.Services.Contracts;
 using BeerOverflow.Services.DTO;
 using BeerOverflow.Services.DTO.Contracts;
@@ -20,18 +19,22 @@ namespace BeerOverflow.Services
         }
         public IBeerDTO CreateBeer(IBeerDTO beerDTO)
         {
-            if (_context.Beers.FirstOrDefault(b => b.Name == beerDTO.Name && b.Brewery.Name == beerDTO.Brewery) != null)
+            var beerExists = _context.Beers
+                .FirstOrDefault(b => b.Name == beerDTO.Name && b.Brewery.Name == beerDTO.Brewery);
+            if (beerExists != null)
+            {
                 throw new ArgumentException("Beer with this name and brewery already exists.");
+            };
+
             var beer = new Beer
             {
                 Name = beerDTO.Name,
-                Type = _context.BeerTypes.FirstOrDefault(t => t.Name == beerDTO.BeerType) ?? throw new ArgumentNullException("Beer Type not found."),
-                Brewery = _context.Breweries.FirstOrDefault(b => b.Name == beerDTO.Brewery) ?? throw new ArgumentNullException("Brewery not found."),
-                //new Brewery
-                //{
-                //    Name = beerDTO.Name,
-                //    Country = _context.Countries.FirstOrDefault(c => c.Name == beerDTO.BreweryCountry)
-                //},
+                Type = _context.BeerTypes
+                    .FirstOrDefault(t => t.Name == beerDTO.BeerType)
+                    ?? throw new ArgumentNullException("Beer Type not found."),
+                Brewery = _context.Breweries
+                    .FirstOrDefault(b => b.Name == beerDTO.Brewery)
+                    ?? throw new ArgumentNullException("Brewery not found."),
                 AlcoholByVolume = beerDTO.AlcoholByVolume
             };
 
@@ -42,7 +45,8 @@ namespace BeerOverflow.Services
 
         public bool DeleteBeer(int id)
         {
-            var beer = _context.Beers.FirstOrDefault(b => b.Id == id);
+            var beer = _context.Beers
+                .FirstOrDefault(b => b.Id == id);
             if (beer == null || beer.IsDeleted)
                 return false;
 
@@ -71,7 +75,10 @@ namespace BeerOverflow.Services
 
         public BeerDTO GetBeer(int id)
         {
-            var beer = _context.Beers.Include(b => b.Type).Include(b => b.Brewery).ThenInclude(br => br.Country)
+            var beer = _context.Beers
+                .Include(b => b.Type)
+                .Include(b => b.Brewery)
+                .ThenInclude(br => br.Country)
                 .FirstOrDefault(b => b.Id == id);
 
             if (beer == null)
@@ -93,26 +100,26 @@ namespace BeerOverflow.Services
         }
         public BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, double AbV)
         {
-            if (_context.Beers.FirstOrDefault(b => b.Name == name && b.Brewery.Name == brewery) != null)
+            var beerExists = _context.Beers
+                .FirstOrDefault(b => b.Name == name && b.Brewery.Name == brewery);
+            if (beerExists != null)
+            {
                 throw new ArgumentException("Beer with this name and brewery already exists.");
+            }
             var beer = _context.Beers
                 .Include(b => b.Type)
                 .Include(b => b.Brewery)
                 .ThenInclude(br => br.Country)
                 .Where(b => b.IsDeleted == false)
                 .FirstOrDefault(b => b.Id == id);
+
             beer.Name = name;
-            beer.Type = _context.BeerTypes.FirstOrDefault(t => t.Name == beerType) ?? throw new ArgumentNullException("BeerType not found.");
-            //new BeerType
-            //{
-            //    Name = beerType
-            //};
-            beer.Brewery = _context.Breweries.FirstOrDefault(b => b.Name == brewery) ?? throw new ArgumentNullException("Brewery not found.");
-            //new Brewery
-            //{
-            //    Name = brewery,
-            //    Country = _context.Countries.FirstOrDefault(c => c.Name == breweryCountry)
-            //};
+            beer.Type = _context.BeerTypes
+                .FirstOrDefault(t => t.Name == beerType)
+                ?? throw new ArgumentNullException("BeerType not found.");
+            beer.Brewery = _context.Breweries
+                .FirstOrDefault(b => b.Name == brewery)
+                ?? throw new ArgumentNullException("Brewery not found.");
             beer.AlcoholByVolume = AbV;
 
             var beerDTO = new BeerDTO
@@ -123,6 +130,7 @@ namespace BeerOverflow.Services
                 BreweryCountry = beer.Brewery.Country.Name,
                 AlcoholByVolume = beer.AlcoholByVolume,
             };
+
             _context.SaveChanges();
             return beerDTO;
         }

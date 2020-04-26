@@ -2,8 +2,6 @@
 using BeerOverflow.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
 {
@@ -11,12 +9,12 @@ namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
     public class GetReview_Should
     {
         [TestMethod]
-        public void ReturnCurrectReview_When_ParamsValid()
+        public void ReturnCorrectReview_When_ParamsValid()
         {
-            var options = Utils.GetOptions(nameof(ReturnCurrectReview_When_ParamsValid));
-            var review = TestsModelsSeeder.Seed_Review();
-            var beer = TestsModelsSeeder.Seed_Beer();
-            var user = TestsModelsSeeder.Seed_User();
+            var options = Utils.GetOptions(nameof(ReturnCorrectReview_When_ParamsValid));
+            var review = TestsModelsSeeder.SeedReview();
+            var beer = TestsModelsSeeder.SeedBeer();
+            var user = TestsModelsSeeder.SeedUser();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

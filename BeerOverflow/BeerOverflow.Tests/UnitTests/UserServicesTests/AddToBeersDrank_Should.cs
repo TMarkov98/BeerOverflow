@@ -1,12 +1,8 @@
 ﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.UserServicesTests
 {
@@ -17,8 +13,8 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void AddBeerCorrectly_WhenParamsAreValid()
         {
             var options = Utils.GetOptions(nameof(AddBeerCorrectly_WhenParamsAreValid));
-            var user = TestsModelsSeeder.Seed_User();
-            var beer = TestsModelsSeeder.Seed_Beer();
+            var user = TestsModelsSeeder.SeedUser();
+            var beer = TestsModelsSeeder.SeedBeer();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -40,8 +36,8 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void ReturnTrue_WhenBeerAddedCorrectlyToBeersDrank()
         {
             var options = Utils.GetOptions(nameof(ReturnTrue_WhenBeerAddedCorrectlyToBeersDrank));
-            var user = TestsModelsSeeder.Seed_User();
-            var beer = TestsModelsSeeder.Seed_Beer();
+            var user = TestsModelsSeeder.SeedUser();
+            var beer = TestsModelsSeeder.SeedBeer();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -61,8 +57,8 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void Throw_WhenBeersDrankUserIdIsInvalid()
         {
             var options = Utils.GetOptions(nameof(Throw_WhenBeersDrankUserIdIsInvalid));
-            var user = TestsModelsSeeder.Seed_User();
-            var beer = TestsModelsSeeder.Seed_Beer();
+            var user = TestsModelsSeeder.SeedUser();
+            var beer = TestsModelsSeeder.SeedBeer();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -80,8 +76,8 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void Throw_WhenBeersDrankBeerIdIsInvalid()
         {
             var options = Utils.GetOptions(nameof(Throw_WhenBeersDrankBeerIdIsInvalid));
-            var user = TestsModelsSeeder.Seed_User();
-            var beer = TestsModelsSeeder.Seed_Beer();
+            var user = TestsModelsSeeder.SeedUser();
+            var beer = TestsModelsSeeder.SeedBeer();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

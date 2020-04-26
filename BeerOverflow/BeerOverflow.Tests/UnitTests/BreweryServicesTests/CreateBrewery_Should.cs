@@ -1,12 +1,8 @@
 ﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
 {
@@ -17,8 +13,8 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void ReturnCorrectBrewery_WhenParamsAreValid()
         {
             var options = Utils.GetOptions(nameof(ReturnCorrectBrewery_WhenParamsAreValid));
-            var breweryDTO = TestsModelsSeeder.Seed_BreweryDTO();
-            var country = TestsModelsSeeder.Seed_Country();
+            var breweryDTO = TestsModelsSeeder.SeedBreweryDTO();
+            var country = TestsModelsSeeder.SeedCountry();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -40,11 +36,13 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void Throw_WhenBreweryAlreadyExists()
         {
             var options = Utils.GetOptions(nameof(Throw_WhenBreweryAlreadyExists));
-            var breweryDTO = TestsModelsSeeder.Seed_BreweryDTO();
-            var brewery = TestsModelsSeeder.Seed_Brewery();
+            var breweryDTO = TestsModelsSeeder.SeedBreweryDTO();
+            var brewery = TestsModelsSeeder.SeedBrewery();
+            var country = TestsModelsSeeder.SeedCountry();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
+                arrangeContext.Countries.Add(country);
                 arrangeContext.Breweries.Add(brewery);
                 arrangeContext.SaveChanges();
             }

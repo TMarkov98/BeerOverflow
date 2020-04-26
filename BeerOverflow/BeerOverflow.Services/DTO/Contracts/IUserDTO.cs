@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace BeerOverflow.Services.DTO
+﻿namespace BeerOverflow.Services.DTO
 {
     public interface IUserDTO
     {

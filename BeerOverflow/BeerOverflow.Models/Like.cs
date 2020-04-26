@@ -1,9 +1,4 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BeerOverflow.Models
+﻿namespace BeerOverflow.Models
 {
     public class Like
     {

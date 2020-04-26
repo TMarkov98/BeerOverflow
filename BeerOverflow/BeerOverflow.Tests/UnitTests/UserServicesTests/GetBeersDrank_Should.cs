@@ -1,12 +1,10 @@
 ﻿using BeerOverflow.Database;
 using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.UserServicesTests
 {
@@ -17,12 +15,14 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
         public void ReturnCorrectDrankList_WhenParamsAreValid()
         {
             var options = Utils.GetOptions(nameof(ReturnCorrectDrankList_WhenParamsAreValid));
-            var user1 = TestsModelsSeeder.Seed_User();
-            var beer1 = TestsModelsSeeder.Seed_Beer();
-            var beer2 = TestsModelsSeeder.Seed_Beer_v2();
+            var userRole = TestsModelsSeeder.SeedUserRole();
+            var user1 = TestsModelsSeeder.SeedUser();
+            var beer1 = TestsModelsSeeder.SeedBeer();
+            var beer2 = TestsModelsSeeder.SeedBeer2();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
+                arrangeContext.UserRoles.Add(userRole);
                 arrangeContext.Users.Add(user1);
                 arrangeContext.Beers.Add(beer1);
                 arrangeContext.Beers.Add(beer2);

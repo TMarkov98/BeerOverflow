@@ -1,10 +1,7 @@
 ﻿using BeerOverflow.Database;
 using BeerOverflow.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
 {
@@ -14,17 +11,17 @@ namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
         //TODO WHY ARE THESE ASSERTS NOT PASSING ???
         // AND WHY THE ADDED REVIEWS DISAPPERAS AFTER THE FIRST USING???
         [TestMethod]
-        public void ReturnCurrectReviews_When_ParamsValid()
+        public void ReturnCorrectReviews_When_ParamsValid()
         {
-            var options = Utils.GetOptions(nameof(ReturnCurrectReviews_When_ParamsValid));
+            var options = Utils.GetOptions(nameof(ReturnCorrectReviews_When_ParamsValid));
 
-            var review = TestsModelsSeeder.Seed_Review();
-            var review2 = TestsModelsSeeder.Seed_Review_v2();
-            var review3 = TestsModelsSeeder.Seed_Review_v3();
-            var beer = TestsModelsSeeder.Seed_Beer();
-            var beer2 = TestsModelsSeeder.Seed_Beer_v2();
-            var beer3 = TestsModelsSeeder.Seed_Beer_v3();
-            var user = TestsModelsSeeder.Seed_User();
+            var review = TestsModelsSeeder.SeedReview();
+            var review2 = TestsModelsSeeder.SeedReview2();
+            var review3 = TestsModelsSeeder.SeedReview3();
+            var beer = TestsModelsSeeder.SeedBeer();
+            var beer2 = TestsModelsSeeder.SeedBeer2();
+            var beer3 = TestsModelsSeeder.SeedBeer3();
+            var user = TestsModelsSeeder.SeedUser();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

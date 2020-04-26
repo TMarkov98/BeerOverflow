@@ -1,10 +1,7 @@
 ﻿using BeerOverflow.Database;
 using BeerOverflow.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.CountryServicesTests
 {
@@ -15,9 +12,9 @@ namespace BeerOverflow.Tests.UnitTests.CountryServicesTests
         public void ReturnCurrectCountries_When_ParamsValid()
         {
             var options = Utils.GetOptions(nameof(ReturnCurrectCountries_When_ParamsValid));
-            var country = TestsModelsSeeder.Seed_Country();
-            var country2 = TestsModelsSeeder.Seed_Country_v2();
-            var country3 = TestsModelsSeeder.Seed_Country_v3();
+            var country = TestsModelsSeeder.SeedCountry();
+            var country2 = TestsModelsSeeder.SeedCountry2();
+            var country3 = TestsModelsSeeder.SeedCountry3();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {

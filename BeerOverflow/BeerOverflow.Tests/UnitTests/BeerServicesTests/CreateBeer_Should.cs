@@ -1,12 +1,7 @@
 ﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
 using BeerOverflow.Services;
-using BeerOverflow.Services.DTO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BeerOverflow.Tests.UnitTests.BeerServicesTests
 {
@@ -14,12 +9,12 @@ namespace BeerOverflow.Tests.UnitTests.BeerServicesTests
     public class CreateBeer_Should
     {
         [TestMethod]
-        public void ReturnCurrectBeer_When_ParamsValid()
+        public void ReturnCorrectBeer_When_ParamsValid()
         {
-            var options = Utils.GetOptions(nameof(ReturnCurrectBeer_When_ParamsValid));
-            var beertype = TestsModelsSeeder.Seed_BeerType();
-            var brewery = TestsModelsSeeder.Seed_Brewery();
-            var beerDTO = TestsModelsSeeder.Seed_BeerDTO();
+            var options = Utils.GetOptions(nameof(ReturnCorrectBeer_When_ParamsValid));
+            var beertype = TestsModelsSeeder.SeedBeerType();
+            var brewery = TestsModelsSeeder.SeedBrewery();
+            var beerDTO = TestsModelsSeeder.SeedBeerDTO();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
@@ -43,8 +38,8 @@ namespace BeerOverflow.Tests.UnitTests.BeerServicesTests
         public void ThrowArgumentException_When_BeerAlreadyExists()
         {
             var options = Utils.GetOptions(nameof(ThrowArgumentException_When_BeerAlreadyExists));
-            var beerDTO = TestsModelsSeeder.Seed_BeerDTO();
-            var beer = TestsModelsSeeder.Seed_Beer();
+            var beerDTO = TestsModelsSeeder.SeedBeerDTO();
+            var beer = TestsModelsSeeder.SeedBeer();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
