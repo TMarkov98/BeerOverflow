@@ -1,4 +1,5 @@
 ﻿using BeerOverflow.Models;
+using BeerOverflow.Models.Contracts;
 using BeerOverflow.Services.DTO;
 using System;
 using System.Collections.Generic;
@@ -246,6 +247,14 @@ namespace BeerOverflow.Tests
                 Brewery = "BreweryName",
                 BreweryCountry = "Bulgaria",
                 AlcoholByVolume = 4.5,
+            };
+        }
+        public static UserRole Seed_UserRole()
+        {
+            return new UserRole()
+            {
+                Id = 1,
+                RoleName = "admin",
             };
         }
         //Seeds users

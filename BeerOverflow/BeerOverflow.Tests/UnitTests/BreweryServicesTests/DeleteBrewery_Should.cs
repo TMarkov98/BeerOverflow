@@ -29,8 +29,8 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
             {
                 var sut = new BreweryServices(assertContext);
                 var act = sut.DeleteBrewery(brewery.Id);
-                var result = assertContext.Breweries.FirstOrDefault(b => b.Name == brewery.Name).IsDeleted;
-                Assert.IsTrue(result);
+                var result = assertContext.Breweries.FirstOrDefault(b => b.Name == brewery.Name);
+                Assert.IsTrue(result.IsDeleted);
             }
         }
         [TestMethod]

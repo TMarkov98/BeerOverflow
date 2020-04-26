@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BeerOverflow.Models.Contracts
+namespace BeerOverflow.Models
 {
     public class WishlistBeer : IWishlistBeer
     {
