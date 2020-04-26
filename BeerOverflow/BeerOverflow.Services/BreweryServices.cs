@@ -26,6 +26,11 @@ namespace BeerOverflow.Services
                 Name = breweryDTO.Name,
                 Country = _context.Countries.FirstOrDefault(c => c.Name == breweryDTO.Country) ?? throw new ArgumentNullException("Country not found.")
             };
+            var breweryExists = _context.Breweries.FirstOrDefault(b => b.Name == brewery.Name && b.Country == brewery.Country);
+            if(breweryExists != null)
+            {
+                throw new ArgumentException($"Brewery {brewery.Name} already exists in {brewery.Country.Name}");
+            }
             _context.Breweries.Add(brewery);
             _context.SaveChanges();
             return breweryDTO;

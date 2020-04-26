@@ -18,9 +18,11 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         {
             var options = Utils.GetOptions(nameof(ReturnCorrectBrewery_WhenParamsAreValid));
             var breweryDTO = TestsModelsSeeder.Seed_BreweryDTO();
+            var country = TestsModelsSeeder.Seed_Country();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
+                arrangeContext.Countries.Add(country);
                 arrangeContext.SaveChanges();
             }
 
