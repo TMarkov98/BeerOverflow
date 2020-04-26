@@ -17,23 +17,26 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void ReturnCorrectList_WhenDataIsPresent()
         {
             var options = Utils.GetOptions(nameof(ReturnCorrectList_WhenDataIsPresent));
-            var breweryDTO = TestsModelsSeeder.Seed_BreweryDTO();
-            var country = TestsModelsSeeder.Seed_Country();
+            var brewery1 = TestsModelsSeeder.Seed_Brewery();
+            var brewery2 = TestsModelsSeeder.Seed_Brewery_v2();
+            var brewery3 = TestsModelsSeeder.Seed_Brewery_v3();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
-                arrangeContext.Countries.Add(country);
+                arrangeContext.Breweries.Add(brewery1);
+                arrangeContext.Breweries.Add(brewery2);
+                arrangeContext.Breweries.Add(brewery3);
                 arrangeContext.SaveChanges();
             }
 
             using (var assertContext = new BeerOverflowContext(options))
             {
                 var sut = new BreweryServices(assertContext);
-                var act = sut.CreateBrewery(breweryDTO);
-                var result = assertContext.Breweries.FirstOrDefault(brewery => brewery.Name == breweryDTO.Name);
-                Assert.AreEqual(breweryDTO.Id, result.Id);
-                Assert.AreEqual(breweryDTO.Name, result.Name);
-                Assert.AreEqual(breweryDTO.Country, result.Country.Name);
+                var result = sut.GetAllBreweries().ToList();
+                Assert.AreEqual(3, result.Count);
+                Assert.AreEqual(brewery1.Name, result[0].Name);
+                Assert.AreEqual(brewery2.Name, result[1].Name);
+                Assert.AreEqual(brewery3.Name, result[2].Name);
             }
         }
     }
