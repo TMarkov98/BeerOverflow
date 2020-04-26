@@ -324,79 +324,40 @@ namespace BeerOverflow.Tests
         //Seeds reviews
         public static Review Seed_Review()
         {
-            var role = new UserRole()
-            {
-                Id = 1,
-                RoleName = "admin",
-            };
-            var user = new User()
-            {
-                Id = 1,
-                UserName = "UserName",
-                Email = "username@biri.com",
-                IsBanned = false,
-                CreatedOn = DateTime.UtcNow,
-                Role = role,
-            };
             var review = new Review()
             {
                 Id = 1,
                 Name = "ReviewName",
-                Author = user,
                 Text = "Nice beer!",
+                TargetBeerId = 1,
+                AuthorId = 1,
                 Rating = 7,
             };
             return review;
         }
         public static Review Seed_Review_v2()
         {
-            var role = new UserRole()
-            {
-                Id = 2,
-                RoleName = "admin",
-            };
-            var user = new User()
-            {
-                Id = 2,
-                UserName = "OtherUserName",
-                Email = "otherusername@biri.com",
-                IsBanned = false,
-                CreatedOn = DateTime.UtcNow,
-                Role = role,
-            };
             var review = new Review()
             {
                 Id = 2,
                 Name = "OtherReviewName",
-                Author = user,
                 Text = "Very nice beer!",
-                Rating = 8
+                Rating = 8,
+                TargetBeerId = 2,
+                AuthorId = 1,
             };
             return review;
         }
         public static Review Seed_Review_v3()
         {
-            var role = new UserRole()
-            {
-                Id = 3,
-                RoleName = "admin",
-            };
-            var user = new User()
-            {
-                Id = 3,
-                UserName = "NewUserName",
-                Email = "newusername@biri.com",
-                IsBanned = false,
-                CreatedOn = DateTime.UtcNow,
-                Role = role,
-            };
             var review = new Review()
             {
                 Id = 3,
                 Name = "NewReviewName",
-                Author = user,
                 Text = "Now that is a nice beer!",
-                Rating = 9
+                Rating = 9,
+                TargetBeerId = 3,
+                AuthorId = 1,
             };
             return review;
         }

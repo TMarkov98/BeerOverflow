@@ -37,6 +37,42 @@ namespace BeerOverflow.Tests.UnitTests.ReviewServicesTests
                 Assert.AreEqual(reviewDTO.Author, reviewDTO.Author);
             }
         }
+        [TestMethod]
+        public void ThrowArgumentException_When_UserNotValid()
+        {
+            var options = Utils.GetOptions(nameof(ThrowArgumentException_When_UserNotValid));
+            var reviewDTO = TestsModelsSeeder.Seed_ReviewDTO();
+            var targetbeer = TestsModelsSeeder.Seed_Beer();
+
+            using (var arrangeContext = new BeerOverflowContext(options))
+            {
+                arrangeContext.Beers.Add(targetbeer);
+                arrangeContext.SaveChanges();
+            }
+            using (var assertContext = new BeerOverflowContext(options))
+            {
+                var sut = new ReviewServices(assertContext);
+                Assert.ThrowsException<ArgumentNullException>(() => sut.CreateReview(reviewDTO));
+            }
+        }
+        [TestMethod]
+        public void ThrowArgumentException_When_TargetBeerNotValid()
+        {
+            var options = Utils.GetOptions(nameof(ThrowArgumentException_When_TargetBeerNotValid));
+            var user = TestsModelsSeeder.Seed_User();
+            var reviewDTO = TestsModelsSeeder.Seed_ReviewDTO();
+
+            using (var arrangeContext = new BeerOverflowContext(options))
+            {
+                arrangeContext.Users.Add(user);
+                arrangeContext.SaveChanges();
+            }
+            using (var assertContext = new BeerOverflowContext(options))
+            {
+                var sut = new ReviewServices(assertContext);
+                Assert.ThrowsException<ArgumentNullException>(() => sut.CreateReview(reviewDTO));
+            }
+        }
         //TODO Add it maybe
         //[TestMethod]
         //public void ThrowArgumentException_When_UsersReviewAlreadyExists() { }

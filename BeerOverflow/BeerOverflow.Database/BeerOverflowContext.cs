@@ -44,6 +44,9 @@ namespace BeerOverflow.Database
             modelBuilder.Entity<Review>().Property(r => r.Name).HasMaxLength(30).IsRequired();
             modelBuilder.Entity<Review>().Property(r => r.Text).IsRequired();
 
+            modelBuilder.Entity<Review>().HasKey(r => new { r.AuthorId, r.TargetBeerId });
+            modelBuilder.Entity<Review>().HasOne(r => r.TargetBeer).WithMany(b => b.Reviews).HasForeignKey(b => b.TargetBeerId);
+
             modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(20).IsRequired();
             modelBuilder.Entity<User>().Property(u => u.Password).HasMaxLength(20).IsRequired();
             modelBuilder.Entity<User>().Property(u => u.Email).HasMaxLength(50).IsRequired();

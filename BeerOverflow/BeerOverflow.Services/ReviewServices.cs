@@ -46,7 +46,6 @@ namespace BeerOverflow.Services
                     Name = r.Name,
                     Text = r.Text,
                     Rating = r.Rating,
-                    //TODO Need check if exist
                     TargetBeer = r.TargetBeer.Name,
                     Author = r.Author.UserName,
                 }).ToList();
@@ -58,7 +57,7 @@ namespace BeerOverflow.Services
             var review = _context.Reviews.Include(r => r.TargetBeer).Include(r => r.Author).FirstOrDefault(r => r.Id == id);
             if (review == null)
             {
-                throw new ArgumentNullException("Review can NOT be null.");
+                throw new ArgumentNullException("Review not found.");
             }
             var reviewDTO = new ReviewDTO
             {
@@ -85,6 +84,8 @@ namespace BeerOverflow.Services
         public ReviewDTO UpdateReviews(int id, string name, string text, int rating)
         {
             var review = _context.Reviews
+                .Include(r => r.Author)
+                .Include(r => r.TargetBeer)
                 .Where(r => r.IsDeleted == false)
                 .FirstOrDefault(r => r.Id == id);
             review.Name = name;
