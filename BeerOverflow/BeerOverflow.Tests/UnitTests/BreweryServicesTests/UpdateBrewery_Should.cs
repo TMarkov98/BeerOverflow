@@ -56,9 +56,10 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
                 Assert.ThrowsException<ArgumentNullException>(() => sut.UpdateBrewery(2, "NewBrewery", "Svazilend"));
             }
         }
-        public void Throw_WhenIdIsInvalid()
+        [TestMethod]
+        public void Throw_WhenBreweryIdIsInvalid()
         {
-            var options = Utils.GetOptions(nameof(Throw_WhenIdIsInvalid));
+            var options = Utils.GetOptions(nameof(Throw_WhenBreweryIdIsInvalid));
             var brewery1 = TestsModelsSeeder.Seed_Brewery();
             var brewery2 = TestsModelsSeeder.Seed_Brewery_v2();
 

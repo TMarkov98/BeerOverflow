@@ -125,6 +125,14 @@ namespace BeerOverflow.Tests
                 AlcoholByVolume = 4.5,
             };
         }
+        public static BeerTypeDTO Seed_BeerTypeDTO()
+        {
+            return new BeerTypeDTO()
+            {
+                Id = 1,
+                Name = "Brown Ale"
+            };
+        }
         public static BreweryDTO Seed_BreweryDTO()
         {
             return new BreweryDTO()

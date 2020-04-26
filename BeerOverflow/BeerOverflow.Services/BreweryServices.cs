@@ -74,10 +74,25 @@ namespace BeerOverflow.Services
         public BreweryDTO UpdateBrewery(int id, string name, string breweryCountry)
         {
             var brewery = _context.Breweries
-                .Where(r => r.IsDeleted == false)
+                .Include(br => br.Country)
+                .Where(br => br.IsDeleted == false)
                 .FirstOrDefault(r => r.Id == id);
+
+            if(brewery == null)
+            {
+                throw new ArgumentNullException("Brewery not found.");
+            }
+
+            var breweryExists = _context.Breweries.FirstOrDefault(b => b.Name == name && b.Country.Name == breweryCountry);
+
+            if (breweryExists != null)
+            {
+                throw new ArgumentException($"Brewery {brewery.Name} already exists in {brewery.Country.Name}");
+            }
+
             brewery.Name = name;
             brewery.Country = _context.Countries.FirstOrDefault(c => c.Name == breweryCountry) ?? throw new ArgumentNullException("Brewery country not found.");
+
             var breweryDTO = new BreweryDTO
             {
                 Name = brewery.Name,

@@ -8,28 +8,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
+namespace BeerOverflow.Tests.UnitTests.BeerTypeServicesTests
 {
     [TestClass]
-    public class DeleteBrewery_Should
+    public class DeleteBeerType_Should
     {
         [TestMethod]
-        public void DeleteBrewery_WhenIdIsCorrect()
+        public void DeleteBeerType_WhenIdIsCorrect()
         {
-            var options = Utils.GetOptions(nameof(DeleteBrewery_WhenIdIsCorrect));
-            var brewery = TestsModelsSeeder.Seed_Brewery();
+            var options = Utils.GetOptions(nameof(DeleteBeerType_WhenIdIsCorrect));
+            var beerType = TestsModelsSeeder.Seed_BeerType();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
-                arrangeContext.Breweries.Add(brewery);
+                arrangeContext.BeerTypes.Add(beerType);
                 arrangeContext.SaveChanges();
             }
 
             using (var assertContext = new BeerOverflowContext(options))
             {
-                var sut = new BreweryServices(assertContext);
-                var act = sut.DeleteBrewery(brewery.Id);
-                var result = assertContext.Breweries.FirstOrDefault(b => b.Name == brewery.Name).IsDeleted;
+                var sut = new BeerTypeServices(assertContext);
+                var act = sut.DeleteBeerType(beerType.Id);
+                var result = assertContext.BeerTypes.FirstOrDefault(bt => bt.Name == beerType.Name).IsDeleted;
                 Assert.IsTrue(result);
             }
         }
@@ -37,18 +37,18 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void ReturnTrue_WhenIdIsCorrect()
         {
             var options = Utils.GetOptions(nameof(ReturnTrue_WhenIdIsCorrect));
-            var brewery = TestsModelsSeeder.Seed_Brewery();
+            var beerType = TestsModelsSeeder.Seed_BeerType();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
-                arrangeContext.Breweries.Add(brewery);
+                arrangeContext.BeerTypes.Add(beerType);
                 arrangeContext.SaveChanges();
             }
 
             using (var assertContext = new BeerOverflowContext(options))
             {
-                var sut = new BreweryServices(assertContext);
-                var result = sut.DeleteBrewery(brewery.Id);
+                var sut = new BeerTypeServices(assertContext);
+                var result = sut.DeleteBeerType(beerType.Id);
                 Assert.IsTrue(result);
             }
         }
@@ -56,18 +56,18 @@ namespace BeerOverflow.Tests.UnitTests.BreweryServicesTests
         public void ReturnFalse_WhenIdIsIncorrect()
         {
             var options = Utils.GetOptions(nameof(ReturnFalse_WhenIdIsIncorrect));
-            var brewery = TestsModelsSeeder.Seed_Brewery();
+            var beerType = TestsModelsSeeder.Seed_BeerType();
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
-                arrangeContext.Breweries.Add(brewery);
+                arrangeContext.BeerTypes.Add(beerType);
                 arrangeContext.SaveChanges();
             }
 
             using (var assertContext = new BeerOverflowContext(options))
             {
-                var sut = new BreweryServices(assertContext);
-                var result = sut.DeleteBrewery(brewery.Id + 1);
+                var sut = new BeerTypeServices(assertContext);
+                var result = sut.DeleteBeerType(beerType.Id + 1);
                 Assert.IsFalse(result);
             }
         }
