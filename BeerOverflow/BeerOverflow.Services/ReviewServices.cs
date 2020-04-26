@@ -20,6 +20,8 @@ namespace BeerOverflow.Services
 
         public IReviewDTO CreateReview(IReviewDTO reviewDTO)
         {
+            if (_context.Reviews.FirstOrDefault(r => r.TargetBeer.Name == reviewDTO.TargetBeer && r.Author.UserName == reviewDTO.Author) != null)
+                throw new ArgumentException("Review with on this beer from this user already exists.");
             var review = new Review
             {
                 Rating = reviewDTO.Rating,

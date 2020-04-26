@@ -397,7 +397,7 @@ namespace BeerOverflow.Tests
             {
                 Id = 1,
                 Name = "ReviewName",
-                Author = "AuthorName",
+                Author = "UserName",
                 Text = "Very Nice Beer Man!",
                 Rating = 6,
                 TargetBeer = "BeerName"
