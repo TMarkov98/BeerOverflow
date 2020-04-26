@@ -8,6 +8,7 @@ namespace BeerOverflow.Tests
 {
     public class TestsModelsSeeder
     {
+        //BeerType Seeders
         public static BeerType Seed_BeerType()
         {
             return new BeerType()
@@ -35,6 +36,15 @@ namespace BeerOverflow.Tests
                 CreatedOn = DateTime.UtcNow,
             };
         }
+        public static BeerTypeDTO Seed_BeerTypeDTO()
+        {
+            return new BeerTypeDTO()
+            {
+                Id = 1,
+                Name = "Brown Ale"
+            };
+        }
+        //Brewery Seeders
         public static Brewery Seed_Brewery()
         {
             var country = new Country()
@@ -86,6 +96,16 @@ namespace BeerOverflow.Tests
             };
             return brewery;
         }
+        public static BreweryDTO Seed_BreweryDTO()
+        {
+            return new BreweryDTO()
+            {
+                Id = 1,
+                Name = "BreweryName",
+                Country = "Bulgaria"
+            };
+        }
+        //Country Seeders
         public static Country Seed_Country()
         {
             return new Country()
@@ -113,36 +133,6 @@ namespace BeerOverflow.Tests
                 Code = "BG"
             };
         }
-        public static BeerDTO Seed_BeerDTO()
-        {
-            return new BeerDTO()
-            {
-                Id = 1,
-                Name = "BeerName",
-                BeerType = "Brown Ale",
-                Brewery = "BreweryName",
-                BreweryCountry = "Bulgaria",
-                AlcoholByVolume = 4.5,
-            };
-        }
-        public static BeerTypeDTO Seed_BeerTypeDTO()
-        {
-            return new BeerTypeDTO()
-            {
-                Id = 1,
-                Name = "Brown Ale"
-            };
-        }
-        public static BreweryDTO Seed_BreweryDTO()
-        {
-            return new BreweryDTO()
-            {
-                Id = 1,
-                Name = "BreweryName",
-                Country = "Bulgaria"
-            };
-        }
-        
         public static CountryDTO Seed_CountryDTO()
         {
             return new CountryDTO()
@@ -152,6 +142,7 @@ namespace BeerOverflow.Tests
                 CountryCode = "BG"
             };
         }
+        //Seeds beers
         public static Beer Seed_Beer()
         {
             var country = new Country()
@@ -244,6 +235,174 @@ namespace BeerOverflow.Tests
                 AlcoholByVolume = 12,
                 CreatedOn = DateTime.UtcNow,
             };
+        }
+        public static BeerDTO Seed_BeerDTO()
+        {
+            return new BeerDTO()
+            {
+                Id = 1,
+                Name = "BeerName",
+                BeerType = "Brown Ale",
+                Brewery = "BreweryName",
+                BreweryCountry = "Bulgaria",
+                AlcoholByVolume = 4.5,
+            };
+        }
+        //Seeds users
+        public static User Seed_User()
+        {
+            var role = new UserRole()
+            {
+                Id = 1,
+                RoleName = "admin",
+            };
+            return new User()
+            {
+                Id = 1,
+                UserName = "UserName",
+                Email = "username@biri.com",
+                IsBanned = false,
+                CreatedOn = DateTime.UtcNow,
+                Role = role,
+            };
+        }
+        public static User Seed_User_v2()
+        {
+            var role = new UserRole()
+            {
+                Id = 2,
+                RoleName = "guest",
+            };
+            return new User()
+            {
+                Id = 2,
+                UserName = "OtherUserName",
+                Email = "otherusername@biri.com",
+                IsBanned = false,
+                CreatedOn = DateTime.UtcNow,
+                Role = role,
+            };
+        }
+        public static User Seed_User_v3()
+        {
+            var role = new UserRole()
+            {
+                Id = 3,
+                RoleName = "user",
+            };
+            return new User()
+            {
+                Id = 3,
+                UserName = "NewUserName",
+                Email = "newusername@biri.com",
+                IsBanned = false,
+                CreatedOn = DateTime.UtcNow,
+                Role = role,
+            };
+        }
+        public static UserDTO Seed_UserDTO()
+        {
+            var userDTO = new UserDTO()
+            {
+                Id = 1,
+                UserName = "UserName",
+                Email = "username@biri.com",
+                IsBanned = false,
+                Role = "admin"
+            };
+            return userDTO;
+        }
+        //Seeds reviews
+        public static Review Seed_Review()
+        {
+            var role = new UserRole()
+            {
+                Id = 1,
+                RoleName = "admin",
+            };
+            var user = new User()
+            {
+                Id = 1,
+                UserName = "UserName",
+                Email = "username@biri.com",
+                IsBanned = false,
+                CreatedOn = DateTime.UtcNow,
+                Role = role,
+            };
+            var review = new Review()
+            {
+                Id = 1,
+                Name = "ReviewName",
+                Author = user,
+                Text = "Nice beer!",
+                Rating = 7,
+            };
+            return review;
+        }
+        public static Review Seed_Review_v2()
+        {
+            var role = new UserRole()
+            {
+                Id = 2,
+                RoleName = "admin",
+            };
+            var user = new User()
+            {
+                Id = 2,
+                UserName = "OtherUserName",
+                Email = "otherusername@biri.com",
+                IsBanned = false,
+                CreatedOn = DateTime.UtcNow,
+                Role = role,
+            };
+            var review = new Review()
+            {
+                Id = 2,
+                Name = "OtherReviewName",
+                Author = user,
+                Text = "Very nice beer!",
+                Rating = 8
+            };
+            return review;
+        }
+        public static Review Seed_Review_v3()
+        {
+            var role = new UserRole()
+            {
+                Id = 3,
+                RoleName = "admin",
+            };
+            var user = new User()
+            {
+                Id = 3,
+                UserName = "NewUserName",
+                Email = "newusername@biri.com",
+                IsBanned = false,
+                CreatedOn = DateTime.UtcNow,
+                Role = role,
+            };
+            var review = new Review()
+            {
+                Id = 3,
+                Name = "NewReviewName",
+                Author = user,
+                Text = "Now that is a nice beer!",
+                Rating = 9
+            };
+            return review;
+        }
+        public static ReviewDTO Seed_ReviewDTO()
+        {
+            var reviewDTO = new ReviewDTO()
+            {
+                Id = 1,
+                Name = "ReviewName",
+                Author = "AuthorName",
+                Text = "Very Nice Beer Man!",
+                Rating = 6,
+                TargetBeer = "BeerName"
+            };
+            return reviewDTO;
         }
     }
 }
