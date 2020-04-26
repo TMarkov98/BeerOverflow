@@ -13,6 +13,6 @@ namespace BeerOverflow.Services.Contracts
         ICollection<BeerDTO> GetAllBeers();
         IBeerDTO CreateBeer(IBeerDTO beerDTO);
         bool DeleteBeer(int id);
-        BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, string breweryCountry, double AbV);
+        BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, double AbV);
     }
 }

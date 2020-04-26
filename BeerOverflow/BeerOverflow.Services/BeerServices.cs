@@ -91,9 +91,14 @@ namespace BeerOverflow.Services
 
             return beerDTO;
         }
-        public BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, string breweryCountry, double AbV)
+        public BeerDTO UpdateBeer(int id, string name, string beerType, string brewery, double AbV)
         {
+            if (_context.Beers.FirstOrDefault(b => b.Name == name && b.Brewery.Name == brewery) != null)
+                throw new ArgumentException("Beer with this name and brewery already exists.");
             var beer = _context.Beers
+                .Include(b => b.Type)
+                .Include(b => b.Brewery)
+                .ThenInclude(br => br.Country)
                 .Where(b => b.IsDeleted == false)
                 .FirstOrDefault(b => b.Id == id);
             beer.Name = name;

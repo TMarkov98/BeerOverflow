@@ -110,7 +110,7 @@ namespace BeerOverflow.Web.API_Controllers
         {
             if (beerViewModel == null)
                 return BadRequest();
-            var beer = this._beerService.UpdateBeer(id, beerViewModel.Name, beerViewModel.BeerType, beerViewModel.Brewery, beerViewModel.BreweryCountry, beerViewModel.AlcoholByVolume);
+            var beer = this._beerService.UpdateBeer(id, beerViewModel.Name, beerViewModel.BeerType, beerViewModel.Brewery, beerViewModel.AlcoholByVolume);
             return Ok(beerViewModel);
         }
         private bool BeerExists(string name)
