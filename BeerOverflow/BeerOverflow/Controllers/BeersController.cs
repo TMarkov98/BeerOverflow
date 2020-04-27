@@ -3,6 +3,7 @@ using BeerOverflow.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,14 +19,23 @@ namespace BeerOverflow.Web.Controllers
         }
 
         // GET: Beers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
             var beerOverflowContext = _context.Beers.Include(b => b.Brewery)
                 .Include(b => b.Type)
                 .Include(b => b.Likes)
                 .Include(b => b.Reviews)
                 .ThenInclude(r => r.Author);
-            return View(await beerOverflowContext.ToListAsync());
+
+            var beers = await beerOverflowContext.ToListAsync();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                beers = beers.Where(b => b.Name.Contains(searchString, StringComparison.CurrentCultureIgnoreCase)
+                                       || b.Brewery.Name.Contains(searchString, StringComparison.CurrentCultureIgnoreCase)
+                                       || b.Type.Name.ToLower().Contains(searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
+            }
+            return View(beers);
         }
 
         // GET: Beers/Details/5
