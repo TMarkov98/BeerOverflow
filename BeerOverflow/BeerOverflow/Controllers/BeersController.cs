@@ -17,7 +17,6 @@ namespace BeerOverflow.Web.Controllers
         {
             _context = context;
         }
-        public PaginatedList<Beer> Beers { get; set; }
 
         // GET: Beers
         public async Task<IActionResult> Index(string searchString)
