@@ -42,7 +42,7 @@ namespace BeerOverflow.Services
         {
             var brewery = _context.Breweries.Include(b => b.Country).FirstOrDefault(i => i.Id == id);
             if (brewery == null)
-                throw new ArgumentNullException("Brewery can NOT be null.");
+                throw new ArgumentNullException("Brewery not found.");
 
             var breweryDTO = new BreweryDTO
             {
