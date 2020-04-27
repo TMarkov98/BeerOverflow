@@ -1,5 +1,5 @@
-﻿@model IEnumerable<BeerOverflow.Models.Brewery>
-
+﻿@model PaginatedList<BeerOverflow.Models.Brewery>
+@using BeerOverflow.Web
 @{
     ViewData["Title"] = "Breweries";
 }
@@ -9,21 +9,21 @@
 <p>
     <a asp-action="Create">Create Brewery</a>
 </p>
-@using (Html.BeginForm())
-{
+<form asp-controller="Breweries" asp-action="Index">
     <p>
-        Find Brewery: @Html.TextBox("SearchString")
-        <input type="submit" value="Search" />
+        Find Brewery: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+        <input type="submit" value="Search" class="btn-primary" /> |
+        <a asp-action="Index">Back to Full List</a>
     </p>
-}
+</form>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Country)
+                Country
             </th>
             <th></th>
         </tr>
@@ -47,3 +47,20 @@
         }
     </tbody>
 </table>
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>

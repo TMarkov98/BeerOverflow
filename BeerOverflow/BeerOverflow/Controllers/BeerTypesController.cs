@@ -17,9 +17,24 @@ namespace BeerOverflow.Web.Controllers
         }
 
         // GET: BeerTypes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string currentFilter, string searchString, int? pageNumber)
         {
-            return View(await _context.BeerTypes.ToListAsync());
+            var beerTypes = _context.BeerTypes.AsQueryable();
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewData["CurrentFilter"] = searchString;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                beerTypes = beerTypes.Where(b => b.Name.ToLower().Contains(searchString.ToLower()));
+            }
+            int pageSize = 12;
+            return View(await PaginatedList<BeerType>.CreateAsync(beerTypes, pageNumber ?? 1, pageSize));
         }
 
         // GET: BeerTypes/Details/5

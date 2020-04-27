@@ -19,19 +19,26 @@ namespace BeerOverflow.Web.Controllers
         }
 
         // GET: Breweries
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string currentFilter, string searchString, int? pageNumber)
         {
-            var beerOverflowContext = _context.Breweries.Include(b => b.Country);
-            
+            var breweries = _context.Breweries.Include(b => b.Country).AsQueryable();
 
-            var breweries = await beerOverflowContext.ToListAsync();
-
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewData["CurrentFilter"] = searchString;
             if (!string.IsNullOrEmpty(searchString))
             {
-                breweries = breweries.Where(b => b.Name.Contains(searchString, StringComparison.CurrentCultureIgnoreCase)
-                                       || b.Country.Name.Contains(searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
+                breweries = breweries.Where(b => b.Name.ToLower().Contains(searchString.ToLower())
+                                       || b.Country.Name.ToLower().Contains(searchString.ToLower()));
             }
-            return View(breweries);
+            int pageSize = 12;
+            return View(await PaginatedList<Brewery>.CreateAsync(breweries, pageNumber ?? 1, pageSize));
         }
 
         // GET: Breweries/Details/5
