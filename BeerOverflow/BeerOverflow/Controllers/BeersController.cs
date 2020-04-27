@@ -19,23 +19,32 @@ namespace BeerOverflow.Web.Controllers
         }
 
         // GET: Beers
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string currentFilter, string searchString, int? pageNumber)
         {
-            var beerOverflowContext = _context.Beers.Include(b => b.Brewery)
-                .Include(b => b.Type)
-                .Include(b => b.Likes)
-                .Include(b => b.Reviews)
-                .ThenInclude(r => r.Author);
 
-            var beers = await beerOverflowContext.ToListAsync();
+            var beers = _context.Beers
+                .Include(b => b.Brewery)
+                .Include(b => b.Type).AsQueryable();
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewData["CurrentFilter"] = searchString;
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                beers = beers.Where(b => b.Name.Contains(searchString, StringComparison.CurrentCultureIgnoreCase)
-                                       || b.Brewery.Name.Contains(searchString, StringComparison.CurrentCultureIgnoreCase)
-                                       || b.Type.Name.ToLower().Contains(searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
+                beers = beers.Where(b => b.Name.ToLower().Contains(searchString.ToLower())
+                                       || b.Brewery.Name.ToLower().Contains(searchString.ToLower())
+                                       || b.Type.Name.ToLower().Contains(searchString.ToLower())).AsQueryable();
             }
-            return View(beers);
+            int pageSize = 12;
+            return View(await PaginatedList<Beer>.CreateAsync(beers, pageNumber ?? 1, pageSize));
         }
 
         // GET: Beers/Details/5
