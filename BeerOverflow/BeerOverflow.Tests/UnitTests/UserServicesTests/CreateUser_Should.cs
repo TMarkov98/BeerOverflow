@@ -69,7 +69,7 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
             using (var assertContext = new BeerOverflowContext(options))
             {
                 var sut = new UserServices(assertContext);
-                var act = sut.UpdateUser(1, "asdf", userDTO.Email, userDTO.Role, userDTO.IsBanned, userDTO.BanReason);
+                var act = sut.UpdateUser(1, "asdf", userDTO.Email, userDTO.IsBanned, userDTO.BanReason);
                 Assert.ThrowsException<ArgumentException>(() => sut.CreateUser(userDTO));
             }
         }

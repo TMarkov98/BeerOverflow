@@ -40,10 +40,6 @@ namespace BeerOverflow.Web.API_Controllers
                 case "emailaddress":
                     model = model.OrderBy(u => u.EmailAddress);
                     break;
-                case "role":
-                case "userrole":
-                    model = model.OrderBy(u => u.Role);
-                    break;
                 case "banned":
                     model = model.OrderBy(u => u.IsBanned);
                     break;
@@ -115,7 +111,7 @@ namespace BeerOverflow.Web.API_Controllers
         {
             if (userViewModel == null)
                 return BadRequest();
-            var user = this._userServices.UpdateUser(id, userViewModel.UserName, userViewModel.EmailAddress, userViewModel.Role, userViewModel.IsBanned, userViewModel.BanReason);
+            var user = this._userServices.UpdateUser(id, userViewModel.UserName, userViewModel.EmailAddress, userViewModel.IsBanned, userViewModel.BanReason);
             return Ok(user);
         }
         private bool UserExists(string name, string email)

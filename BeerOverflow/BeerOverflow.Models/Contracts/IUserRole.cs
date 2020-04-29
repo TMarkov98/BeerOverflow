@@ -2,6 +2,5 @@
 {
     interface IUserRole
     {
-        string Name { get; set; }
     }
 }

@@ -3,8 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace BeerOverflow.Models
 {
-    public class UserRole : IdentityRole<int>, IUserRole
+    public class Role : IdentityRole<int>, IUserRole
     {
-        public override string Name { get; set; }
     }
 }

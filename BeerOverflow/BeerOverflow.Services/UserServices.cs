@@ -112,7 +112,7 @@ namespace BeerOverflow.Services
             _context.SaveChanges();
             return userDTO;
         }
-        public IUserDTO UpdateUser(int id, string userName, string email, string role, bool isBanned, string banReason)
+        public IUserDTO UpdateUser(int id, string userName, string email, bool isBanned, string banReason)
         {
             var user = _context.Users
                 .FirstOrDefault(u => u.Id == id && !u.IsDeleted)

@@ -27,7 +27,7 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
             using (var assertContext = new BeerOverflowContext(options))
             {
                 var sut = new UserServices(assertContext);
-                var act = sut.UpdateUser(2, "User2Name", "user2email@biri.com", "admin", false, null);
+                var act = sut.UpdateUser(2, "User2Name", "user2email@biri.com", false, null);
                 var result = sut.GetUser(2);
                 Assert.AreEqual("User2Name", result.UserName);
                 Assert.AreEqual("user2email@biri.com", result.Email);
@@ -50,7 +50,7 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
             using (var assertContext = new BeerOverflowContext(options))
             {
                 var sut = new UserServices(assertContext);
-                Assert.ThrowsException<ArgumentException>(() => sut.UpdateUser(2, user1.UserName, "user2email@biri.com", "admin", false, null));
+                Assert.ThrowsException<ArgumentException>(() => sut.UpdateUser(2, user1.UserName, "user2email@biri.com", false, null));
             }
         }
         [TestMethod]
@@ -70,7 +70,7 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
             using (var assertContext = new BeerOverflowContext(options))
             {
                 var sut = new UserServices(assertContext);
-                Assert.ThrowsException<ArgumentException>(() => sut.UpdateUser(2, "User2Name", user1.Email, "admin", false, null));
+                Assert.ThrowsException<ArgumentException>(() => sut.UpdateUser(2, "User2Name", user1.Email, false, null));
             }
         }
         [TestMethod]
@@ -90,7 +90,7 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
             using (var assertContext = new BeerOverflowContext(options))
             {
                 var sut = new UserServices(assertContext);
-                Assert.ThrowsException<ArgumentNullException>(() => sut.UpdateUser(5, "User2Name", "user2email@biri.com", "admin", false, null));
+                Assert.ThrowsException<ArgumentNullException>(() => sut.UpdateUser(5, "User2Name", "user2email@biri.com", false, null));
             }
         }
     }

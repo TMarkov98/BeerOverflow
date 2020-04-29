@@ -171,9 +171,9 @@ namespace BeerOverflow.Tests
                 AlcoholByVolume = 4.5,
             };
         }
-        public static UserRole SeedUserRole()
+        public static Role SeedUserRole()
         {
-            return new UserRole()
+            return new Role()
             {
                 Id = 1,
                 Name = "admin",
@@ -222,6 +222,7 @@ namespace BeerOverflow.Tests
                 UserName = "UserName",
                 Email = "username@biri.com",
                 IsBanned = false,
+                Role = "admin"
             };
             return userDTO;
         }

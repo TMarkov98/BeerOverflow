@@ -26,7 +26,7 @@ namespace BeerOverflow
             services.AddDbContext<BeerOverflowContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<UserRole>()
+            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<Role>()
                 .AddEntityFrameworkStores<BeerOverflowContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();

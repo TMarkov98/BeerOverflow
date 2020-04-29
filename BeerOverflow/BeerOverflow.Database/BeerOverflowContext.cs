@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BeerOverflow.Database
 {
-    public class BeerOverflowContext : IdentityDbContext<User, UserRole, int>
+    public class BeerOverflowContext : IdentityDbContext<User, Role, int>
     {
         public BeerOverflowContext(DbContextOptions<BeerOverflowContext> options) : base(options)
         {
