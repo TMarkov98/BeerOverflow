@@ -28,6 +28,7 @@ namespace BeerOverflow
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<UserRole>()
                 .AddEntityFrameworkStores<BeerOverflowContext>();
+            services.AddControllersWithViews();
             services.AddRazorPages();
 
             services.AddControllersWithViews();
@@ -54,6 +55,7 @@ namespace BeerOverflow
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -61,6 +63,7 @@ namespace BeerOverflow
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
         }
     }
