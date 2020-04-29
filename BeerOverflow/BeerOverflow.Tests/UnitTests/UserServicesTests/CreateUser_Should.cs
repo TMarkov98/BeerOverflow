@@ -18,7 +18,7 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
-                arrangeContext.UserRoles.Add(userRole);
+                arrangeContext.Roles.Add(userRole);
                 arrangeContext.SaveChanges();
             }
 
@@ -42,7 +42,7 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
-                arrangeContext.UserRoles.Add(userRole);
+                arrangeContext.Roles.Add(userRole);
                 arrangeContext.Users.Add(user);
                 arrangeContext.SaveChanges();
             }
@@ -62,7 +62,7 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
-                arrangeContext.UserRoles.Add(userRole);
+                arrangeContext.Roles.Add(userRole);
                 arrangeContext.Users.Add(user);
                 arrangeContext.SaveChanges();
             }

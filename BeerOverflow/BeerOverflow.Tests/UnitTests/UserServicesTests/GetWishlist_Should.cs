@@ -22,7 +22,7 @@ namespace BeerOverflow.Tests.UnitTests.UserServicesTests
 
             using (var arrangeContext = new BeerOverflowContext(options))
             {
-                arrangeContext.UserRoles.Add(userRole);
+                arrangeContext.Roles.Add(userRole);
                 arrangeContext.Users.Add(user1);
                 arrangeContext.Beers.Add(beer1);
                 arrangeContext.Beers.Add(beer2);

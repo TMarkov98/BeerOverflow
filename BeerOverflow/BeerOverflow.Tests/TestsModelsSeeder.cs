@@ -176,7 +176,8 @@ namespace BeerOverflow.Tests
             return new UserRole()
             {
                 Id = 1,
-                RoleName = "admin",
+                Name = "admin",
+                NormalizedName = "ADMIN"
             };
         }
         //Seeds users
@@ -189,7 +190,6 @@ namespace BeerOverflow.Tests
                 Email = "username@biri.com",
                 IsBanned = false,
                 CreatedOn = DateTime.UtcNow,
-                RoleId = 1,
             };
         }
         public static User SeedUser2()
@@ -201,7 +201,6 @@ namespace BeerOverflow.Tests
                 Email = "otherusername@biri.com",
                 IsBanned = false,
                 CreatedOn = DateTime.UtcNow,
-                RoleId = 1,
             };
         }
         public static User SeedUser3()
@@ -213,7 +212,6 @@ namespace BeerOverflow.Tests
                 Email = "newusername@biri.com",
                 IsBanned = false,
                 CreatedOn = DateTime.UtcNow,
-                RoleId = 1,
             };
         }
         public static UserDTO SeedUserDTO()
@@ -224,7 +222,6 @@ namespace BeerOverflow.Tests
                 UserName = "UserName",
                 Email = "username@biri.com",
                 IsBanned = false,
-                Role = "admin"
             };
             return userDTO;
         }
