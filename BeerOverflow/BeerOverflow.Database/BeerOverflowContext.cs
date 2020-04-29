@@ -1,9 +1,10 @@
 ﻿using BeerOverflow.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace BeerOverflow.Database
 {
-    public class BeerOverflowContext : DbContext
+    public class BeerOverflowContext : IdentityDbContext<User, UserRole, int>
     {
         public BeerOverflowContext(DbContextOptions<BeerOverflowContext> options) : base(options)
         {
@@ -13,8 +14,6 @@ namespace BeerOverflow.Database
         public DbSet<BeerType> BeerTypes { get; set; }
         public DbSet<Brewery> Breweries { get; set; }
         public DbSet<Review> Reviews { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Like> Likes { get; set; }
         public DbSet<WishlistBeer> WishlistBeers { get; set; }
         public DbSet<BeerDrank> BeersDrank { get; set; }
@@ -44,7 +43,6 @@ namespace BeerOverflow.Database
             modelBuilder.Entity<Review>().HasOne(r => r.TargetBeer).WithMany(b => b.Reviews).HasForeignKey(b => b.TargetBeerId);
 
             modelBuilder.Entity<User>().Property(u => u.UserName).HasMaxLength(20).IsRequired();
-            modelBuilder.Entity<User>().Property(u => u.Password).HasMaxLength(20).IsRequired();
             modelBuilder.Entity<User>().Property(u => u.Email).HasMaxLength(50).IsRequired();
 
             modelBuilder.Entity<BeerDrank>().HasKey(ub => new { ub.UserId, ub.BeerId });

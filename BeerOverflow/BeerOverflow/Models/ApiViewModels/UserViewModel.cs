@@ -13,7 +13,6 @@ namespace BeerOverflow.Web.Models.ApiViewModels
             this.Id = userDTO.Id;
             this.UserName = userDTO.UserName;
             this.EmailAddress = userDTO.Email;
-            this.Role = userDTO.Role;
             this.IsBanned = userDTO.IsBanned;
             this.BanReason = userDTO.BanReason;
         }

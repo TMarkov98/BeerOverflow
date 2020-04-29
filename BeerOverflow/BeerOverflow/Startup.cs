@@ -1,4 +1,5 @@
 using BeerOverflow.Database;
+using BeerOverflow.Models;
 using BeerOverflow.Services;
 using BeerOverflow.Services.Contracts;
 using Microsoft.AspNetCore.Builder;
@@ -25,10 +26,8 @@ namespace BeerOverflow
             services.AddDbContext<BeerOverflowContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            //services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<UserRole>()
-            //    .AddEntityFrameworkStores<BeerOverflowContext>();
-            //services.AddControllersWithViews().AddNewtonsoftJson(options =>
-            //options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<UserRole>()
+                .AddEntityFrameworkStores<BeerOverflowContext>();
             services.AddRazorPages();
 
             services.AddControllersWithViews();

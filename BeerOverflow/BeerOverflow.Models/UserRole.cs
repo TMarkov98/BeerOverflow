@@ -1,10 +1,10 @@
 ﻿using BeerOverflow.Models.Contracts;
+using Microsoft.AspNetCore.Identity;
 
 namespace BeerOverflow.Models
 {
-    public class UserRole : IUserRole
+    public class UserRole : IdentityRole<int>, IUserRole
     {
-        public int Id { get; set; }
-        public string RoleName { get; set; }
+        public override string Name { get; set; }
     }
 }

@@ -1,12 +1,12 @@
 ﻿using BeerOverflow.Models.Contracts;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 
 namespace BeerOverflow.Models
 {
-    public class User : IDeletable, IAudible, IBannable
+    public class User : IdentityUser<int>, IDeletable, IAudible, IBannable
     {
-        public int Id { get; set; }
         public User()
         {
             this.CreatedOn = DateTime.Now;
@@ -14,11 +14,6 @@ namespace BeerOverflow.Models
             this.Wishlist = new HashSet<WishlistBeer>();
             this.Reviews = new List<Review>();
         }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public string Email { get; set; }
-        public int RoleId { get; set; }
-        public UserRole Role { get; set; }
         public HashSet<BeerDrank> BeersDrank { get; set; }
         public HashSet<WishlistBeer> Wishlist { get; set; }
         public List<Review> Reviews { get; set; }

@@ -21,7 +21,6 @@ namespace BeerOverflow.Services
         public IUserDTO GetUser(int id)
         {
             var user = _context.Users
-                .Include(u => u.Role)
                 .FirstOrDefault(u => u.Id == id && !u.IsDeleted)
                 ?? throw new ArgumentNullException("User not found.");
 
@@ -30,7 +29,6 @@ namespace BeerOverflow.Services
                 Id = user.Id,
                 UserName = user.UserName,
                 Email = user.Email,
-                Role = user.Role.RoleName,
                 IsBanned = user.IsBanned,
                 BanReason = user.BanReason
             };
@@ -39,7 +37,7 @@ namespace BeerOverflow.Services
         public ICollection<BeerDTO> GetBeersDrank(int id)
         {
             var user = _context.Users
-                .Include(u => u.Role).Include(u => u.BeersDrank)
+                .Include(u => u.BeersDrank)
                 .ThenInclude(bd => bd.Beer).FirstOrDefault(i => i.Id == id)
                 ?? throw new ArgumentNullException("User not found.");
             var beers = user.BeersDrank
@@ -55,7 +53,6 @@ namespace BeerOverflow.Services
         public ICollection<BeerDTO> GetWishlist(int id)
         {
             var user = _context.Users
-                .Include(u => u.Role)
                 .Include(u => u.Wishlist)
                 .ThenInclude(w => w.Beer)
                 .FirstOrDefault(i => i.Id == id)
@@ -80,7 +77,6 @@ namespace BeerOverflow.Services
                     Id = user.Id,
                     UserName = user.UserName,
                     Email = user.Email,
-                    Role = user.Role.RoleName,
                     IsBanned = user.IsBanned,
                     BanReason = user.BanReason
                 }).ToList();
@@ -89,11 +85,6 @@ namespace BeerOverflow.Services
         }
         public IUserDTO CreateUser(IUserDTO userDTO)
         {
-            var role = _context.UserRoles
-                .FirstOrDefault(ur => ur.RoleName == userDTO.Role);
-            if (role == null)
-                throw new ArgumentNullException("Invalid user role.");
-
             var userExists = _context.Users
                 .FirstOrDefault(u => u.UserName == userDTO.UserName);
 
@@ -113,7 +104,6 @@ namespace BeerOverflow.Services
             {
                 UserName = userDTO.UserName,
                 Email = userDTO.Email,
-                Role = role,
                 IsBanned = userDTO.IsBanned,
                 BanReason = userDTO.BanReason
             };
@@ -144,9 +134,6 @@ namespace BeerOverflow.Services
             }
             user.UserName = userName;
             user.Email = email;
-            user.Role = _context.UserRoles
-                .FirstOrDefault(r => r.RoleName.ToLower() == role.ToLower())
-                ?? throw new ArgumentException($"Role {role} not found.");
             user.IsBanned = isBanned;
             user.BanReason = banReason;
             var userDTO = new UserDTO
@@ -154,7 +141,6 @@ namespace BeerOverflow.Services
                 Id = id,
                 UserName = userName,
                 Email = email,
-                Role = role,
                 IsBanned = isBanned,
                 BanReason = banReason
             };

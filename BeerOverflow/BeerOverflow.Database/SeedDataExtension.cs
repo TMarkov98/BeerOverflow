@@ -3824,218 +3824,218 @@ namespace BeerOverflow.Database
                 new UserRole
                 {
                     Id = 1,
-                    RoleName = "Admin"
+                    Name = "Admin"
                 });
             modelBuilder.Entity<UserRole>().HasData(
                 new UserRole
                 {
                     Id = 2,
-                    RoleName = "User"
+                    Name = "User"
                 });
             modelBuilder.Entity<UserRole>().HasData(
                 new UserRole
                 {
                     Id = 3,
-                    RoleName = "Guest"
+                    Name = "Guest"
                 });
 
             //SEED ALL USERS
 
-            modelBuilder.Entity<User>().HasData(
-                new User
-                {
-                    Id = 1,
-                    CreatedOn = DateTime.Now,
-                    UserName = "Pesho",
-                    Password = "NaPeshoParolata",
-                    Email = "Pesho@biri.com",
-                    RoleId = 2
-                });
-            modelBuilder.Entity<User>().HasData(
-                new User
-                {
-                    Id = 2,
-                    CreatedOn = DateTime.Now,
-                    UserName = "Gosho",
-                    Password = "NaGoshoParolata",
-                    Email = "Gosho@biri.com",
-                    RoleId = 2
-                });
-            modelBuilder.Entity<User>().HasData(
-                new User
-                {
-                    Id = 3,
-                    CreatedOn = DateTime.Now,
-                    UserName = "Tosho",
-                    Password = "NaToshoParolata",
-                    Email = "Tosho@biri.com",
-                    RoleId = 2
-                });
-            modelBuilder.Entity<User>().HasData(
-                new User
-                {
-                    Id = 4,
-                    CreatedOn = DateTime.Now,
-                    UserName = "Slavcho",
-                    Password = "NaSlavchoParolata",
-                    Email = "Slavcho@biri.com",
-                    RoleId = 2
-                });
+            //modelBuilder.Entity<User>().HasData(
+            //    new User
+            //    {
+            //        Id = 1,
+            //        CreatedOn = DateTime.Now,
+            //        UserName = "Pesho",
+            //        Password = "NaPeshoParolata",
+            //        Email = "Pesho@biri.com",
+            //        RoleId = 2
+            //    });
+            //modelBuilder.Entity<User>().HasData(
+            //    new User
+            //    {
+            //        Id = 2,
+            //        CreatedOn = DateTime.Now,
+            //        UserName = "Gosho",
+            //        Password = "NaGoshoParolata",
+            //        Email = "Gosho@biri.com",
+            //        RoleId = 2
+            //    });
+            //modelBuilder.Entity<User>().HasData(
+            //    new User
+            //    {
+            //        Id = 3,
+            //        CreatedOn = DateTime.Now,
+            //        UserName = "Tosho",
+            //        Password = "NaToshoParolata",
+            //        Email = "Tosho@biri.com",
+            //        RoleId = 2
+            //    });
+            //modelBuilder.Entity<User>().HasData(
+            //    new User
+            //    {
+            //        Id = 4,
+            //        CreatedOn = DateTime.Now,
+            //        UserName = "Slavcho",
+            //        Password = "NaSlavchoParolata",
+            //        Email = "Slavcho@biri.com",
+            //        RoleId = 2
+            //    });
 
             //SEED ALL REVIEWS
 
-            modelBuilder.Entity<Review>().HasData(
-                new Review
-                {
-                    Id = 1,
-                    AuthorId = 1,
-                    TargetBeerId = 1,
-                    Name = "Na Pesho Review-to",
-                    Text = "Mnoo dobra bira brat",
-                    Rating = 10,
-                    CreatedOn = DateTime.Now
-                });
-            modelBuilder.Entity<Review>().HasData(
-                new Review
-                {
-                    Id = 2,
-                    AuthorId = 2,
-                    TargetBeerId = 3,
-                    Name = "Na Gosho Review-to",
-                    Text = "Evalata Pesho mnoo dobra bira",
-                    Rating = 7,
-                    CreatedOn = DateTime.Now
-                });
-            modelBuilder.Entity<Review>().HasData(
-                new Review
-                {
-                    Id = 3,
-                    AuthorId = 3,
-                    TargetBeerId = 2,
-                    Name = "Na Tosho Review-to",
-                    Text = "Toz Pesho mnoo hubavi gi prai",
-                    Rating = 8,
-                    CreatedOn = DateTime.Now
-                });
-            modelBuilder.Entity<Review>().HasData(
-                new Review
-                {
-                    Id = 4,
-                    AuthorId = 4,
-                    TargetBeerId = 1,
-                    Name = "Kaiser nomer edno",
-                    Text = "Bira ot butilka ne bqh pil do sq",
-                    Rating = 10,
-                    CreatedOn = DateTime.Now
-                });
+            //modelBuilder.Entity<Review>().HasData(
+            //    new Review
+            //    {
+            //        Id = 1,
+            //        AuthorId = 1,
+            //        TargetBeerId = 1,
+            //        Name = "Na Pesho Review-to",
+            //        Text = "Mnoo dobra bira brat",
+            //        Rating = 10,
+            //        CreatedOn = DateTime.Now
+            //    });
+            //modelBuilder.Entity<Review>().HasData(
+            //    new Review
+            //    {
+            //        Id = 2,
+            //        AuthorId = 2,
+            //        TargetBeerId = 3,
+            //        Name = "Na Gosho Review-to",
+            //        Text = "Evalata Pesho mnoo dobra bira",
+            //        Rating = 7,
+            //        CreatedOn = DateTime.Now
+            //    });
+            //modelBuilder.Entity<Review>().HasData(
+            //    new Review
+            //    {
+            //        Id = 3,
+            //        AuthorId = 3,
+            //        TargetBeerId = 2,
+            //        Name = "Na Tosho Review-to",
+            //        Text = "Toz Pesho mnoo hubavi gi prai",
+            //        Rating = 8,
+            //        CreatedOn = DateTime.Now
+            //    });
+            //modelBuilder.Entity<Review>().HasData(
+            //    new Review
+            //    {
+            //        Id = 4,
+            //        AuthorId = 4,
+            //        TargetBeerId = 1,
+            //        Name = "Kaiser nomer edno",
+            //        Text = "Bira ot butilka ne bqh pil do sq",
+            //        Rating = 10,
+            //        CreatedOn = DateTime.Now
+            //    });
 
             //SEED WISHLIST BEERS
 
-            modelBuilder.Entity<WishlistBeer>().HasData(
-                new WishlistBeer
-                {
-                    UserId = 1,
-                    BeerId = 1
-                });
-            modelBuilder.Entity<WishlistBeer>().HasData(
-                new WishlistBeer
-                {
-                    UserId = 1,
-                    BeerId = 2
-                });
-            modelBuilder.Entity<WishlistBeer>().HasData(
-                new WishlistBeer
-                {
-                    UserId = 1,
-                    BeerId = 3
-                });
-            modelBuilder.Entity<WishlistBeer>().HasData(
-                new WishlistBeer
-                {
-                    UserId = 2,
-                    BeerId = 1
-                });
-            modelBuilder.Entity<WishlistBeer>().HasData(
-                new WishlistBeer
-                {
-                    UserId = 2,
-                    BeerId = 2
-                });
-            modelBuilder.Entity<WishlistBeer>().HasData(
-                new WishlistBeer
-                {
-                    UserId = 2,
-                    BeerId = 4
-                });
-            modelBuilder.Entity<WishlistBeer>().HasData(
-                new WishlistBeer
-                {
-                    UserId = 3,
-                    BeerId = 4
-                });
+            //modelBuilder.Entity<WishlistBeer>().HasData(
+            //    new WishlistBeer
+            //    {
+            //        UserId = 1,
+            //        BeerId = 1
+            //    });
+            //modelBuilder.Entity<WishlistBeer>().HasData(
+            //    new WishlistBeer
+            //    {
+            //        UserId = 1,
+            //        BeerId = 2
+            //    });
+            //modelBuilder.Entity<WishlistBeer>().HasData(
+            //    new WishlistBeer
+            //    {
+            //        UserId = 1,
+            //        BeerId = 3
+            //    });
+            //modelBuilder.Entity<WishlistBeer>().HasData(
+            //    new WishlistBeer
+            //    {
+            //        UserId = 2,
+            //        BeerId = 1
+            //    });
+            //modelBuilder.Entity<WishlistBeer>().HasData(
+            //    new WishlistBeer
+            //    {
+            //        UserId = 2,
+            //        BeerId = 2
+            //    });
+            //modelBuilder.Entity<WishlistBeer>().HasData(
+            //    new WishlistBeer
+            //    {
+            //        UserId = 2,
+            //        BeerId = 4
+            //    });
+            //modelBuilder.Entity<WishlistBeer>().HasData(
+            //    new WishlistBeer
+            //    {
+            //        UserId = 3,
+            //        BeerId = 4
+            //    });
 
             //SEED BEERS DRANK
 
-            modelBuilder.Entity<BeerDrank>().HasData(
-                new BeerDrank
-                {
-                    UserId = 1,
-                    BeerId = 1
-                });
-            modelBuilder.Entity<BeerDrank>().HasData(
-                new BeerDrank
-                {
-                    UserId = 1,
-                    BeerId = 2
-                });
-            modelBuilder.Entity<BeerDrank>().HasData(
-                new BeerDrank
-                {
-                    UserId = 1,
-                    BeerId = 3
-                });
-            modelBuilder.Entity<BeerDrank>().HasData(
-                new BeerDrank
-                {
-                    UserId = 1,
-                    BeerId = 4
-                });
-            modelBuilder.Entity<BeerDrank>().HasData(
-                new BeerDrank
-                {
-                    UserId = 2,
-                    BeerId = 1
-                });
-            modelBuilder.Entity<BeerDrank>().HasData(
-                new BeerDrank
-                {
-                    UserId = 2,
-                    BeerId = 3
-                });
-            modelBuilder.Entity<BeerDrank>().HasData(
-                new BeerDrank
-                {
-                    UserId = 2,
-                    BeerId = 4
-                });
-            modelBuilder.Entity<BeerDrank>().HasData(
-                new BeerDrank
-                {
-                    UserId = 3,
-                    BeerId = 1
-                });
-            modelBuilder.Entity<BeerDrank>().HasData(
-                new BeerDrank
-                {
-                    UserId = 3,
-                    BeerId = 2
-                });
-            modelBuilder.Entity<BeerDrank>().HasData(
-                new BeerDrank
-                {
-                    UserId = 3,
-                    BeerId = 4
-                });
+            //modelBuilder.Entity<BeerDrank>().HasData(
+            //    new BeerDrank
+            //    {
+            //        UserId = 1,
+            //        BeerId = 1
+            //    });
+            //modelBuilder.Entity<BeerDrank>().HasData(
+            //    new BeerDrank
+            //    {
+            //        UserId = 1,
+            //        BeerId = 2
+            //    });
+            //modelBuilder.Entity<BeerDrank>().HasData(
+            //    new BeerDrank
+            //    {
+            //        UserId = 1,
+            //        BeerId = 3
+            //    });
+            //modelBuilder.Entity<BeerDrank>().HasData(
+            //    new BeerDrank
+            //    {
+            //        UserId = 1,
+            //        BeerId = 4
+            //    });
+            //modelBuilder.Entity<BeerDrank>().HasData(
+            //    new BeerDrank
+            //    {
+            //        UserId = 2,
+            //        BeerId = 1
+            //    });
+            //modelBuilder.Entity<BeerDrank>().HasData(
+            //    new BeerDrank
+            //    {
+            //        UserId = 2,
+            //        BeerId = 3
+            //    });
+            //modelBuilder.Entity<BeerDrank>().HasData(
+            //    new BeerDrank
+            //    {
+            //        UserId = 2,
+            //        BeerId = 4
+            //    });
+            //modelBuilder.Entity<BeerDrank>().HasData(
+            //    new BeerDrank
+            //    {
+            //        UserId = 3,
+            //        BeerId = 1
+            //    });
+            //modelBuilder.Entity<BeerDrank>().HasData(
+            //    new BeerDrank
+            //    {
+            //        UserId = 3,
+            //        BeerId = 2
+            //    });
+            //modelBuilder.Entity<BeerDrank>().HasData(
+            //    new BeerDrank
+            //    {
+            //        UserId = 3,
+            //        BeerId = 4
+            //    });
         }
     }
 }

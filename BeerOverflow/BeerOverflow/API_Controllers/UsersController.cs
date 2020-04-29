@@ -103,7 +103,6 @@ namespace BeerOverflow.Web.API_Controllers
                 Id = userViewModel.Id,
                 UserName = userViewModel.UserName,
                 Email = userViewModel.EmailAddress,
-                Role = userViewModel.Role,
                 IsBanned = userViewModel.IsBanned,
                 BanReason = userViewModel.BanReason
             };
