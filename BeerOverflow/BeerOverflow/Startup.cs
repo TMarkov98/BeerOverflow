@@ -48,7 +48,7 @@ namespace BeerOverflow
                 options.Password.RequireNonAlphanumeric = false;
             });
 
-            services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
+            services.AddMvc();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -76,6 +76,7 @@ namespace BeerOverflow
             app.UseStaticFiles();
 
             app.UseRouting();
+
             app.UseCookiePolicy();
 
 
@@ -87,13 +88,14 @@ namespace BeerOverflow
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "areas",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                    );
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
-                endpoints.MapControllerRoute(
-                    name: "Admin",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                    );
+                
             });
         }
     }
