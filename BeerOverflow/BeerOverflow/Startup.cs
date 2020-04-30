@@ -2,8 +2,11 @@ using BeerOverflow.Database;
 using BeerOverflow.Models;
 using BeerOverflow.Services;
 using BeerOverflow.Services.Contracts;
+using BeerOverflow.Web.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,14 +23,30 @@ namespace BeerOverflow
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
             services.AddDbContext<BeerOverflowContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false).AddRoles<Role>()
+            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddRoles<Role>()
                 .AddEntityFrameworkStores<BeerOverflowContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequiredLength = 6;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+            });
+
             services.AddControllersWithViews();
             services.AddRazorPages();
 
@@ -54,9 +73,13 @@ namespace BeerOverflow
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseCookiePolicy();
+
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseMiddleware<NotFoundMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
