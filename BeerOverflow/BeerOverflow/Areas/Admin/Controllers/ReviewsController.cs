@@ -1,14 +1,18 @@
-﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
-using Microsoft.AspNetCore.Authorization;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Threading.Tasks;
+using BeerOverflow.Database;
+using BeerOverflow.Models;
+using Microsoft.AspNetCore.Authorization;
 
-namespace BeerOverflow.Web.Controllers
+namespace BeerOverflow.Web.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class ReviewsController : Controller
     {
         private readonly BeerOverflowContext _context;
@@ -18,14 +22,14 @@ namespace BeerOverflow.Web.Controllers
             _context = context;
         }
 
-        // GET: Reviews
+        // GET: Admin/Reviews
         public async Task<IActionResult> Index()
         {
             var beerOverflowContext = _context.Reviews.Include(r => r.Author).Include(r => r.TargetBeer);
             return View(await beerOverflowContext.ToListAsync());
         }
 
-        // GET: Reviews/Details/5
+        // GET: Admin/Reviews/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -36,7 +40,7 @@ namespace BeerOverflow.Web.Controllers
             var review = await _context.Reviews
                 .Include(r => r.Author)
                 .Include(r => r.TargetBeer)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.AuthorId == id);
             if (review == null)
             {
                 return NotFound();
@@ -45,8 +49,7 @@ namespace BeerOverflow.Web.Controllers
             return View(review);
         }
 
-        // GET: Reviews/Create
-        [Authorize]
+        // GET: Admin/Reviews/Create
         public IActionResult Create()
         {
             ViewData["AuthorId"] = new SelectList(_context.Users, "Id", "Email");
@@ -54,10 +57,9 @@ namespace BeerOverflow.Web.Controllers
             return View();
         }
 
-        // POST: Reviews/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
+        // POST: Admin/Reviews/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Rating,Name,Text,TargetBeerId,AuthorId,CreatedOn,ModifiedOn,IsDeleted,DeletedOn")] Review review)
@@ -73,8 +75,7 @@ namespace BeerOverflow.Web.Controllers
             return View(review);
         }
 
-        // GET: Reviews/Edit/5
-        [Authorize]
+        // GET: Admin/Reviews/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -92,15 +93,14 @@ namespace BeerOverflow.Web.Controllers
             return View(review);
         }
 
-        // POST: Reviews/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
+        // POST: Admin/Reviews/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Rating,Name,Text,TargetBeerId,AuthorId,CreatedOn,ModifiedOn,IsDeleted,DeletedOn")] Review review)
         {
-            if (id != review.Id)
+            if (id != review.AuthorId)
             {
                 return NotFound();
             }
@@ -114,7 +114,7 @@ namespace BeerOverflow.Web.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ReviewExists(review.Id))
+                    if (!ReviewExists(review.AuthorId))
                     {
                         return NotFound();
                     }
@@ -130,9 +130,40 @@ namespace BeerOverflow.Web.Controllers
             return View(review);
         }
 
+        // GET: Admin/Reviews/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var review = await _context.Reviews
+                .Include(r => r.Author)
+                .Include(r => r.TargetBeer)
+                .FirstOrDefaultAsync(m => m.AuthorId == id);
+            if (review == null)
+            {
+                return NotFound();
+            }
+
+            return View(review);
+        }
+
+        // POST: Admin/Reviews/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var review = await _context.Reviews.FindAsync(id);
+            _context.Reviews.Remove(review);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         private bool ReviewExists(int id)
         {
-            return _context.Reviews.Any(e => e.Id == id);
+            return _context.Reviews.Any(e => e.AuthorId == id);
         }
     }
 }

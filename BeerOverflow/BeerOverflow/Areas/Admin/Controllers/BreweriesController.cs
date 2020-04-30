@@ -1,14 +1,18 @@
-﻿using BeerOverflow.Database;
-using BeerOverflow.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
+using BeerOverflow.Database;
+using BeerOverflow.Models;
+using Microsoft.AspNetCore.Authorization;
 
-namespace BeerOverflow.Web.Controllers
+namespace BeerOverflow.Web.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class BreweriesController : Controller
     {
         private readonly BeerOverflowContext _context;
@@ -18,30 +22,14 @@ namespace BeerOverflow.Web.Controllers
             _context = context;
         }
 
-        // GET: Breweries
-        public async Task<IActionResult> Index(string currentFilter, string searchString, int? pageNumber)
+        // GET: Admin/Breweries
+        public async Task<IActionResult> Index()
         {
-            var breweries = _context.Breweries.Include(b => b.Country).AsQueryable();
-
-            if (searchString != null)
-            {
-                pageNumber = 1;
-            }
-            else
-            {
-                searchString = currentFilter;
-            }
-            ViewData["CurrentFilter"] = searchString;
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                breweries = breweries.Where(b => b.Name.ToLower().Contains(searchString.ToLower())
-                                       || b.Country.Name.ToLower().Contains(searchString.ToLower()));
-            }
-            int pageSize = 12;
-            return View(await PaginatedList<Brewery>.CreateAsync(breweries, pageNumber ?? 1, pageSize));
+            var beerOverflowContext = _context.Breweries.Include(b => b.Country);
+            return View(await beerOverflowContext.ToListAsync());
         }
 
-        // GET: Breweries/Details/5
+        // GET: Admin/Breweries/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -60,18 +48,16 @@ namespace BeerOverflow.Web.Controllers
             return View(brewery);
         }
 
-        // GET: Breweries/Create
-        [Authorize]
+        // GET: Admin/Breweries/Create
         public IActionResult Create()
         {
             ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name");
             return View();
         }
 
-        // POST: Breweries/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
+        // POST: Admin/Breweries/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,CountryId,IsDeleted,DeletedOn,CreatedOn,ModifiedOn")] Brewery brewery)
@@ -86,8 +72,7 @@ namespace BeerOverflow.Web.Controllers
             return View(brewery);
         }
 
-        // GET: Breweries/Edit/5
-        [Authorize]
+        // GET: Admin/Breweries/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -104,10 +89,9 @@ namespace BeerOverflow.Web.Controllers
             return View(brewery);
         }
 
-        // POST: Breweries/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
+        // POST: Admin/Breweries/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CountryId,IsDeleted,DeletedOn,CreatedOn,ModifiedOn")] Brewery brewery)
@@ -139,6 +123,36 @@ namespace BeerOverflow.Web.Controllers
             }
             ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", brewery.CountryId);
             return View(brewery);
+        }
+
+        // GET: Admin/Breweries/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var brewery = await _context.Breweries
+                .Include(b => b.Country)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (brewery == null)
+            {
+                return NotFound();
+            }
+
+            return View(brewery);
+        }
+
+        // POST: Admin/Breweries/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var brewery = await _context.Breweries.FindAsync(id);
+            _context.Breweries.Remove(brewery);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         private bool BreweryExists(int id)
