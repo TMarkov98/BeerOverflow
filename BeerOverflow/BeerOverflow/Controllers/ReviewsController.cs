@@ -88,11 +88,19 @@ namespace BeerOverflow.Web.Controllers
             {
                 return NotFound();
             }
-
+            var userName = HttpContext.User.Identity.Name;
+            var user = _context.Users.FirstOrDefault(u => u.UserName == userName);
+            if (user == null)
+                return BadRequest();
+            var userId = user.Id;
             var review = await _context.Reviews.FindAsync(id);
             if (review == null)
             {
                 return NotFound();
+            }
+            if (review.AuthorId != userId)
+            {
+                return BadRequest("You can edit only Your reviews");
             }
             ViewData["AuthorId"] = new SelectList(_context.Users, "Id", "Email", review.AuthorId);
             ViewData["TargetBeerId"] = new SelectList(_context.Beers, "Id", "Name", review.TargetBeerId);

@@ -158,6 +158,15 @@ namespace BeerOverflow.Web.Controllers
             }
             return RedirectToAction("Create", "Reviews", new { id = Id});
         }
+        public IActionResult EditReview(int? Id)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
+            return RedirectToAction("Edit", "Reviews", new { id = Id });
+        }
+
         private bool BeerExists(int id)
         {
             return _context.Beers.Any(e => e.Id == id);
