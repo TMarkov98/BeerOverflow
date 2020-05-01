@@ -9,6 +9,7 @@ namespace BeerOverflow.Models
     {
         public Beer()
         {
+            this.Likes = new List<Like>();
             this.Reviews = new List<Review>();
             this.CreatedOn = DateTime.Now;
         }

@@ -160,8 +160,9 @@ namespace BeerOverflow.Web.Controllers
             {
                 return NotFound();
             }
-            return RedirectToAction("Create", "Reviews", new { id = Id});
+            return RedirectToAction("Create", "Reviews", new { id = Id });
         }
+
         public IActionResult EditReview(int? Id)
         {
             if (Id == null)
@@ -178,6 +179,34 @@ namespace BeerOverflow.Web.Controllers
                 return NotFound();
             }
             return RedirectToAction("Create", "WishlistBeers", new { id = Id });
+        }
+        public IActionResult Like(int? Id)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
+            var user = _context.Users.FirstOrDefault(u => u.UserName == HttpContext.User.Identity.Name);
+            var beer = _context.Beers.FirstOrDefault(b => b.Id == Id);
+            var likeExists = _context.Likes.FirstOrDefault(l => l.UserId == user.Id && l.BeerId == Id);
+            if(likeExists == null)
+            {
+                var like = new Like
+                {
+                    UserId = user.Id,
+                    User = user,
+                    BeerId = (int)Id,
+                    Beer = beer
+                };
+                _context.Likes.Add(like);
+                beer.Likes.Add(like);
+            }
+            else
+            {
+                _context.Likes.Remove(likeExists);
+                beer.Likes.Remove(likeExists);
+            }
+            return RedirectToAction("Details", new { id = Id });
         }
 
         private bool BeerExists(int id)
