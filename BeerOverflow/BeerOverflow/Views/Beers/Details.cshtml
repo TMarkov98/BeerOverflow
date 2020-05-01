@@ -1,5 +1,5 @@
 ﻿@model BeerOverflow.Models.Beer
-
+@using BeerOverflow.Web;
 @{
     ViewData["Title"] = "Details";
 }
@@ -7,7 +7,7 @@
 <h1>@Html.DisplayFor(model => model.Name)</h1>
 
 <div>
-    @if (Model.Likes.FirstOrDefault(l => l.BeerId == Model.Id && l.User.UserName == User.Identity.Name) == null)
+    @if (Model.Likes.FirstOrDefault(l => l.BeerId == Model.Id && l.UserId == User.GetUserId()) == null)
     {
         <a asp-action="Like" class="btn btn-primary" asp-route-id="@Model.Id">Like</a>
     }
