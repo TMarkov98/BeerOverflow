@@ -1,6 +1,5 @@
 ﻿using BeerOverflow.Database;
 using BeerOverflow.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -70,16 +69,16 @@ namespace BeerOverflow.Web.Controllers
 
             return View(beer);
         }
+
         // GET: Beers/Create
-        [Authorize]
         public IActionResult Create()
         {
             ViewData["BreweryId"] = new SelectList(_context.Breweries, "Id", "Name");
             ViewData["TypeId"] = new SelectList(_context.Set<BeerType>(), "Id", "Name");
             return View();
         }
+
         // POST: Beers/Create
-        [Authorize]
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -96,8 +95,8 @@ namespace BeerOverflow.Web.Controllers
             ViewData["TypeId"] = new SelectList(_context.Set<BeerType>(), "Id", "Name", beer.TypeId);
             return View(beer);
         }
+
         // GET: Beers/Edit/5
-        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -114,10 +113,10 @@ namespace BeerOverflow.Web.Controllers
             ViewData["TypeId"] = new SelectList(_context.Set<BeerType>(), "Id", "Name", beer.TypeId);
             return View(beer);
         }
+
         // POST: Beers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,TypeId,BreweryId,CreatedOn,DeletedOn,ModifiedOn,IsDeleted,AlcoholByVolume")] Beer beer)
@@ -151,7 +150,14 @@ namespace BeerOverflow.Web.Controllers
             ViewData["TypeId"] = new SelectList(_context.Set<BeerType>(), "Id", "Name", beer.TypeId);
             return View(beer);
         }
-
+        public IActionResult CreateReview(int? Id)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
+            return RedirectToAction("Create", "Reviews", new { id = Id});
+        }
         private bool BeerExists(int id)
         {
             return _context.Beers.Any(e => e.Id == id);

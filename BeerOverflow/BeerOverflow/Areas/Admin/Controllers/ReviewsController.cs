@@ -38,7 +38,7 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
             var review = await _context.Reviews
                 .Include(r => r.Author)
                 .Include(r => r.TargetBeer)
-                .FirstOrDefaultAsync(m => m.AuthorId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (review == null)
             {
                 return NotFound();
@@ -98,7 +98,7 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Rating,Name,Text,TargetBeerId,AuthorId,CreatedOn,ModifiedOn,IsDeleted,DeletedOn")] Review review)
         {
-            if (id != review.AuthorId)
+            if (id != review.Id)
             {
                 return NotFound();
             }
@@ -112,7 +112,7 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ReviewExists(review.AuthorId))
+                    if (!ReviewExists(review.Id))
                     {
                         return NotFound();
                     }
@@ -139,7 +139,7 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
             var review = await _context.Reviews
                 .Include(r => r.Author)
                 .Include(r => r.TargetBeer)
-                .FirstOrDefaultAsync(m => m.AuthorId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (review == null)
             {
                 return NotFound();
@@ -161,7 +161,7 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
 
         private bool ReviewExists(int id)
         {
-            return _context.Reviews.Any(e => e.AuthorId == id);
+            return _context.Reviews.Any(e => e.Id == id);
         }
     }
 }

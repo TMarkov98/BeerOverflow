@@ -40,15 +40,17 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Likes.Count)
         </dd>
-        
+
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
     <a asp-action="Index">Back to List</a>
 </div>
+
 <div></div>
 <h3>Reviews</h3>
+<a asp-action="CreateReview" asp-route-id="@Model.Id">Create Review</a>
 <div>
     <table class="table">
         <thead>
@@ -69,22 +71,23 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Reviews) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Text)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Author.Email)
-                </td>
-            </tr>
-}
+            @foreach (var item in Model.Reviews)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Author.Email)
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>

@@ -47,10 +47,17 @@ namespace BeerOverflow.Web.Controllers
 
         // GET: Reviews/Create
         [Authorize]
-        public IActionResult Create()
+        public IActionResult Create(int? id)
         {
-            ViewData["AuthorId"] = new SelectList(_context.Users, "Id", "Email");
-            ViewData["TargetBeerId"] = new SelectList(_context.Beers, "Id", "Name");
+            var userName = HttpContext.User.Identity.Name;
+            var user = _context.Users.Where(u => u.UserName == userName);
+            if (user == null)
+                return BadRequest();
+            var beer = _context.Beers.Where(b => b.Id == id);
+            if (user == null)
+                return BadRequest();
+            ViewData["AuthorId"] = new SelectList(user, "Id", "Email");
+            ViewData["TargetBeerId"] = new SelectList(beer, "Id", "Name");
             return View();
         }
 
@@ -60,7 +67,7 @@ namespace BeerOverflow.Web.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Rating,Name,Text,TargetBeerId,AuthorId,CreatedOn,ModifiedOn,IsDeleted,DeletedOn")] Review review)
+        public async Task<IActionResult> Create([Bind("Rating,Name,Text,TargetBeerId,AuthorId,CreatedOn,ModifiedOn,IsDeleted,DeletedOn")] Review review)
         {
             if (ModelState.IsValid)
             {
