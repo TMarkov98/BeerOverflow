@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BeerOverflow.Database;
 using BeerOverflow.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BeerOverflow.Web.Controllers
 {
@@ -26,6 +27,7 @@ namespace BeerOverflow.Web.Controllers
             return View(await beerOverflowContext.ToListAsync());
         }
         // GET: WishlistBeers/Create
+        [Authorize]
         public IActionResult Create(int? id)
         {
             var userCollection = _context.Users.Where(u => u.UserName == HttpContext.User.Identity.Name);
@@ -45,6 +47,7 @@ namespace BeerOverflow.Web.Controllers
         // POST: WishlistBeers/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("UserId,BeerId")] WishlistBeer wishlistBeer)
@@ -65,6 +68,7 @@ namespace BeerOverflow.Web.Controllers
         }
 
         // GET: WishlistBeers/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? userId, int? beerId)
         {
             if (userId == null || beerId == null)
@@ -85,6 +89,7 @@ namespace BeerOverflow.Web.Controllers
         }
 
         // POST: WishlistBeers/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int userId, int beerId)
