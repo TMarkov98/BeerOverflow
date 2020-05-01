@@ -167,6 +167,15 @@ namespace BeerOverflow.Web.Controllers
             return RedirectToAction("Edit", "Reviews", new { id = Id });
         }
 
+        public IActionResult AddToWishlist(int? Id)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
+            return RedirectToAction("Create", "WishlistBeers", new { id = Id });
+        }
+
         private bool BeerExists(int id)
         {
             return _context.Beers.Any(e => e.Id == id);

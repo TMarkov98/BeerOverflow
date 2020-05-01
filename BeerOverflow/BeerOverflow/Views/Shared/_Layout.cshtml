@@ -53,6 +53,12 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Reviews" asp-action="Index">Reviews</a>
                             </li>
                         }
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="WishlistBeers" asp-action="Index">My Wishlist</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

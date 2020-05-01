@@ -1,0 +1,34 @@
+﻿@model IEnumerable<BeerOverflow.Models.WishlistBeer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Wishlist</h1>
+
+<p>
+    <a asp-action="Create">Add To Wishlist</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Beers
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Beer.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Remove from Wishlist", "Delete", new { userId = item.UserId, beerId = item.BeerId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
