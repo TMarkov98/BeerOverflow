@@ -180,6 +180,16 @@ namespace BeerOverflow.Web.Controllers
             }
             return RedirectToAction("Create", "WishlistBeers", new { id = Id });
         }
+
+        public IActionResult AddToBeersDrank(int? Id)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
+            return RedirectToAction("Create", "BeersDrank", new { id = Id });
+        }
+        [Authorize]
         public IActionResult Like(int? Id)
         {
             if (Id == null)
@@ -199,13 +209,12 @@ namespace BeerOverflow.Web.Controllers
                     Beer = beer
                 };
                 _context.Likes.Add(like);
-                beer.Likes.Add(like);
             }
             else
             {
                 _context.Likes.Remove(likeExists);
-                beer.Likes.Remove(likeExists);
             }
+            _context.SaveChanges();
             return RedirectToAction("Details", new { id = Id });
         }
 

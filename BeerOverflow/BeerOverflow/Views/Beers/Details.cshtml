@@ -4,18 +4,19 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>@Html.DisplayFor(model => model.Name)</h1>
 
 <div>
-    <h4>Beer</h4>
+    @if (Model.Likes.FirstOrDefault(l => l.BeerId == Model.Id && l.User.UserName == User.Identity.Name) == null)
+    {
+        <a asp-action="Like" class="btn btn-primary" asp-route-id="@Model.Id">Like</a>
+    }
+    else
+    {
+        <a asp-action="Like" class="btn btn-secondary" asp-route-id="@Model.Id">Like</a>
+    }
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Type)
         </dt>
@@ -50,9 +51,9 @@
         <text> | </text>
         <a asp-action="AddToWishlist" asp-route-id="@Model.Id">Add To Wishlist</a>
         <text> | </text>
+        <a asp-action="AddToBeersDrank" asp-route-id="@Model.Id">Add To Beers Drank</a>
+        <text> | </text>
     }
-
-    <a asp-action="Like" asp-route-id="@Model.Id">Like</a>
     <a asp-action="Index">Back to List</a>
 </div>
 
@@ -81,26 +82,26 @@
         <tbody>
             @foreach (var item in Model.Reviews)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Rating)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Text)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Author.Email)
-                </td>
-                @if (User.Identity.Name == item.Author.UserName)
-                {
-                <td>
-                    <a asp-action="EditReview" asp-route-id="@item.Id">Edit</a>
-                </td>
-                }
-            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Text)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Author.Email)
+                    </td>
+                    @if (User.Identity.Name == item.Author.UserName)
+                    {
+                        <td>
+                            <a asp-action="EditReview" asp-route-id="@item.Id">Edit</a>
+                        </td>
+                    }
+                </tr>
             }
         </tbody>
     </table>
