@@ -97,63 +97,6 @@ namespace BeerOverflow.Web.Controllers
             ViewData["TypeId"] = new SelectList(_context.Set<BeerType>(), "Id", "Name", beer.TypeId);
             return View(beer);
         }
-
-        // GET: Beers/Edit/5
-        [Authorize]
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var beer = await _context.Beers.FindAsync(id);
-            if (beer == null)
-            {
-                return NotFound();
-            }
-            ViewData["BreweryId"] = new SelectList(_context.Breweries, "Id", "Name", beer.BreweryId);
-            ViewData["TypeId"] = new SelectList(_context.Set<BeerType>(), "Id", "Name", beer.TypeId);
-            return View(beer);
-        }
-
-        // POST: Beers/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,TypeId,BreweryId,CreatedOn,DeletedOn,ModifiedOn,IsDeleted,AlcoholByVolume")] Beer beer)
-        {
-            if (id != beer.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(beer);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BeerExists(beer.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["BreweryId"] = new SelectList(_context.Breweries, "Id", "Name", beer.BreweryId);
-            ViewData["TypeId"] = new SelectList(_context.Set<BeerType>(), "Id", "Name", beer.TypeId);
-            return View(beer);
-        }
         public IActionResult CreateReview(int? Id)
         {
             if (Id == null)
@@ -178,7 +121,22 @@ namespace BeerOverflow.Web.Controllers
             {
                 return NotFound();
             }
-            return RedirectToAction("Create", "WishlistBeers", new { id = Id });
+            var user = _context.Users.FirstOrDefault(u => u.UserName == HttpContext.User.Identity.Name);
+            var beer = _context.Beers.FirstOrDefault(b => b.Id == Id);
+            var wishlistExists = _context.WishlistBeers.FirstOrDefault(l => l.UserId == user.Id && l.BeerId == Id);
+            if (wishlistExists == null)
+            {
+                var wishlist = new WishlistBeer
+                {
+                    UserId = user.Id,
+                    User = user,
+                    BeerId = (int)Id,
+                    Beer = beer
+                };
+                _context.WishlistBeers.Add(wishlist);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("Index", "WishlistBeers");
         }
         [Authorize]
         public IActionResult AddToBeersDrank(int? Id)

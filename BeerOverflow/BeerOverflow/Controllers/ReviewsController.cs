@@ -21,7 +21,7 @@ namespace BeerOverflow.Web.Controllers
         // GET: Reviews
         public async Task<IActionResult> Index()
         {
-            var beerOverflowContext = _context.Reviews.Include(r => r.Author).Include(r => r.TargetBeer);
+            var beerOverflowContext = _context.Reviews.OrderByDescending(r => r.Id).Include(r => r.Author).Include(r => r.TargetBeer);
             return View(await beerOverflowContext.ToListAsync());
         }
 

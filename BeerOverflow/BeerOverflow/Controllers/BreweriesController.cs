@@ -86,62 +86,6 @@ namespace BeerOverflow.Web.Controllers
             ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", brewery.CountryId);
             return View(brewery);
         }
-
-        // GET: Breweries/Edit/5
-        [Authorize]
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var brewery = await _context.Breweries.FindAsync(id);
-            if (brewery == null)
-            {
-                return NotFound();
-            }
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", brewery.CountryId);
-            return View(brewery);
-        }
-
-        // POST: Breweries/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CountryId,IsDeleted,DeletedOn,CreatedOn,ModifiedOn")] Brewery brewery)
-        {
-            if (id != brewery.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(brewery);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BreweryExists(brewery.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["CountryId"] = new SelectList(_context.Countries, "Id", "Name", brewery.CountryId);
-            return View(brewery);
-        }
-
         private bool BreweryExists(int id)
         {
             return _context.Breweries.Any(e => e.Id == id);

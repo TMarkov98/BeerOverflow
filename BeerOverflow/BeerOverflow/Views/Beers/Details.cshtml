@@ -7,13 +7,16 @@
 <h1>@Html.DisplayFor(model => model.Name)</h1>
 
 <div>
-    @if (Model.Likes.FirstOrDefault(l => l.BeerId == Model.Id && l.UserId == User.GetUserId()) == null)
+    @if (User.Identity.IsAuthenticated)
     {
-        <a asp-action="Like" class="btn btn-primary" asp-route-id="@Model.Id">Like</a>
-    }
-    else
-    {
-        <a asp-action="Like" class="btn btn-secondary" asp-route-id="@Model.Id">Like</a>
+        @if (Model.Likes.FirstOrDefault(l => l.BeerId == Model.Id && l.UserId == User.GetUserId()) == null)
+        {
+            <a asp-action="Like" class="btn btn-primary" asp-route-id="@Model.Id">Like</a>
+        }
+        else
+        {
+            <a asp-action="Like" class="btn btn-secondary" asp-route-id="@Model.Id">Like</a>
+        }
     }
     <hr />
     <dl class="row">
@@ -45,7 +48,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
     @if (User.Identity.IsAuthenticated)
     {
         <text> | </text>

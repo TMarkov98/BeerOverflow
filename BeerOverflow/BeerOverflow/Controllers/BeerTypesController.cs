@@ -79,59 +79,6 @@ namespace BeerOverflow.Web.Controllers
             }
             return View(beerType);
         }
-
-        // GET: BeerTypes/Edit/5
-        [Authorize]
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var beerType = await _context.BeerTypes.FindAsync(id);
-            if (beerType == null)
-            {
-                return NotFound();
-            }
-            return View(beerType);
-        }
-
-        // POST: BeerTypes/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CreatedOn,ModifiedOn,IsDeleted,DeletedOn")] BeerType beerType)
-        {
-            if (id != beerType.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(beerType);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BeerTypeExists(beerType.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(beerType);
-        }
         private bool BeerTypeExists(int id)
         {
             return _context.BeerTypes.Any(e => e.Id == id);
