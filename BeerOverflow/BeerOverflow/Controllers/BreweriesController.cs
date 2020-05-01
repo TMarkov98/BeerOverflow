@@ -22,7 +22,9 @@ namespace BeerOverflow.Web.Controllers
         // GET: Breweries
         public async Task<IActionResult> Index(string currentFilter, string searchString, int? pageNumber)
         {
-            var breweries = _context.Breweries.Include(b => b.Country).AsQueryable();
+            var breweries = _context.Breweries
+                .Where(b => !b.IsDeleted)
+                .Include(b => b.Country).AsQueryable();
 
             if (searchString != null)
             {

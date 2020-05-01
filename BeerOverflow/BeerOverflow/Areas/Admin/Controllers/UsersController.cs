@@ -46,28 +46,6 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
             return View(user);
         }
 
-        // GET: Admin/Users/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Admin/Users/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IsBanned,BanReason,IsDeleted,DeletedOn,CreatedOn,ModifiedOn,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] User user)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(user);
-        }
-
         // GET: Admin/Users/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -89,7 +67,7 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IsBanned,BanReason,IsDeleted,DeletedOn,CreatedOn,ModifiedOn,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("IsBanned,BanReason,IsDeleted,LockoutEnd")] User user)
         {
             if (id != user.Id)
             {
@@ -100,6 +78,9 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
             {
                 try
                 {
+                    if (user.IsDeleted)
+                        user.DeletedOn = DateTime.Now;
+                    user.ModifiedOn = DateTime.Now;
                     _context.Update(user);
                     await _context.SaveChangesAsync();
                 }

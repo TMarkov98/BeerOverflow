@@ -20,7 +20,8 @@ namespace BeerOverflow.Web.Controllers
         // GET: BeerTypes
         public async Task<IActionResult> Index(string currentFilter, string searchString, int? pageNumber)
         {
-            var beerTypes = _context.BeerTypes.AsQueryable();
+            var beerTypes = _context.BeerTypes
+                .Where(b => !b.IsDeleted).AsQueryable();
             if (searchString != null)
             {
                 pageNumber = 1;

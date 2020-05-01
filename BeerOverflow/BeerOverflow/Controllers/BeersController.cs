@@ -24,6 +24,7 @@ namespace BeerOverflow.Web.Controllers
         {
 
             var beers = _context.Beers
+                .Where(b => !b.IsDeleted)
                 .Include(b => b.Brewery)
                 .Include(b => b.Type).AsQueryable();
 

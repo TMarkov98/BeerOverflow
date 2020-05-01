@@ -107,6 +107,9 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
             {
                 try
                 {
+                    if (beer.IsDeleted)
+                        beer.DeletedOn = DateTime.Now;
+                    beer.ModifiedOn = DateTime.Now;
                     _context.Update(beer);
                     await _context.SaveChangesAsync();
                 }

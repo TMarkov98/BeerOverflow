@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,7 +22,11 @@ namespace BeerOverflow.Web.Controllers
         // GET: Reviews
         public async Task<IActionResult> Index()
         {
-            var beerOverflowContext = _context.Reviews.OrderByDescending(r => r.Id).Include(r => r.Author).Include(r => r.TargetBeer);
+            var beerOverflowContext = _context.Reviews
+                .Where(r => !r.IsDeleted)
+                .OrderByDescending(r => r.Id)
+                .Include(r => r.Author)
+                .Include(r => r.TargetBeer);
             return View(await beerOverflowContext.ToListAsync());
         }
 
@@ -124,6 +129,7 @@ namespace BeerOverflow.Web.Controllers
             {
                 try
                 {
+                    review.ModifiedOn = DateTime.Now;
                     _context.Update(review);
                     await _context.SaveChangesAsync();
                 }
