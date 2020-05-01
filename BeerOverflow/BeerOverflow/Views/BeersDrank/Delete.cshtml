@@ -1,0 +1,27 @@
+﻿@model BeerOverflow.Models.BeerDrank
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Are you sure you want to Remove this beer from your drank list?</h4>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Beer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Beer.Name)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="UserId" />
+        <input type="hidden" asp-for="BeerId" />
+        <input type="submit" value="Remove" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

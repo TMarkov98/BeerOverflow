@@ -175,6 +175,15 @@ namespace BeerOverflow.Web.Controllers
             }
             return RedirectToAction("Create", "WishlistBeers", new { id = Id });
         }
+        public IActionResult AddToBeersDrank(int? Id)
+        {
+            if (Id == null)
+            {
+                return NotFound();
+            }
+            return RedirectToAction("Create", "BeersDrank", new { id = Id });
+        }
+
 
         private bool BeerExists(int id)
         {
