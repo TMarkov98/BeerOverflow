@@ -8,7 +8,7 @@
 <h1>Wishlist</h1>
 
 <p>
-    <a asp-action="Create">Add To Wishlist</a>
+    <a  type="button" class="btn btn-warning"  asp-action="Create">Add To Wishlist</a>
 </p>
 <table class="table">
     <thead>
@@ -31,7 +31,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Beer.Name)
                 </td>
-                <td>
+                <td class="btn btn-danger">
                     @Html.ActionLink("Remove from Wishlist", "Delete", new { userId = item.UserId, beerId = item.BeerId })
                 </td>
             </tr>

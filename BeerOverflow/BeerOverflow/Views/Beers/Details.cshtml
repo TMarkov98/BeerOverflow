@@ -18,7 +18,6 @@
             <a asp-action="Like" class="btn btn-secondary" asp-route-id="@Model.Id">Like</a>
         }
     }
-    <hr />
     <table class="table">
         <tr>
             <td>
@@ -59,18 +58,18 @@
 <div>
     @if (User.Identity.IsAuthenticated)
     {
-        <text> | </text>
-        <a asp-action="AddToWishlist" asp-route-id="@Model.Id">Add To Wishlist</a>
-        <text> | </text>
-        <a asp-action="AddToBeersDrank" asp-route-id="@Model.Id">Add To Beers Drank</a>
-        <text> | </text>
+        <text>   </text>
+        <a  type="button" class="btn btn-warning" asp-action="AddToWishlist" asp-route-id="@Model.Id">Add To Wishlist</a>
+        <text>   </text>
+        <a  type="button" class="btn btn-warning" asp-action="AddToBeersDrank" asp-route-id="@Model.Id">Add To Beers Drank</a>
+        <text>   </text>
     }
-    <a asp-action="Index">Back to List</a>
+    <a  type="button" class="btn btn-danger" asp-action="Index">Back to List</a>
 </div>
 
 <div></div>
 <h3>Reviews</h3>
-<a asp-action="CreateReview" asp-route-id="@Model.Id">Create Review</a>
+<a  type="button" class="btn btn-warning" asp-action="CreateReview" asp-route-id="@Model.Id">Create Review</a>
 <div>
     <table class="table">
         <thead>

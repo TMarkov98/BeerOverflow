@@ -8,7 +8,7 @@
 <h1>Beers Drank</h1>
 
 <p>
-    <a asp-action="Create">Add to Drank List</a>
+    <a  type="button" class="btn btn-warning"  asp-action="Create">Add to Drank List</a>
 </p>
 <table class="table">
     <thead>
@@ -30,7 +30,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Beer.Name)
                 </td>
-                <td>
+                <td class="btn btn-danger">
                     @Html.ActionLink("Remove from Drank List", "Delete", new { userId = item.UserId, beerId = item.BeerId })
                 </td>
             </tr>

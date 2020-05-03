@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4>Are you sure you want to Remove this beer from your wishlist?</h4>
+<h4>Are you sure you want to remove this beer from your wishlist?</h4>
 
 <div>
     <hr />
@@ -21,7 +21,7 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="UserId" />
         <input type="hidden" asp-for="BeerId" />
-        <input type="submit" value="Remove" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Remove" class="btn btn-danger" />  
+        <a  type="button" class="btn btn-danger"  asp-action="Index">Back to List</a>
     </form>
 </div>
