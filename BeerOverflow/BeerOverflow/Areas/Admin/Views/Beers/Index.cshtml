@@ -8,13 +8,13 @@
 <h1>Beers</h1>
 
 <p>
-    <a asp-action="Create">Create Beer</a>
+    <a class="btn btn-warning" asp-action="Create">Create Beer</a>
 </p>
 <form asp-controller="Beers" asp-action="Index">
     <p>
         Find Beer: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
-        <input type="submit" value="Search" class="btn-primary" /> |
-        <a asp-action="Index">Back to Full List</a>
+        <input type="submit" value="Search" class="btn btn-warning" />
+        <a asp-action="Index" class="btn btn-danger">Back to Full List</a>
     </p>
 </form>
 
@@ -40,9 +40,6 @@
             <th>
                 ModifiedOn
             </th>
-            <th>
-                IsDeleted
-            </th>
         </tr>
     </thead>
     <tbody>
@@ -50,7 +47,7 @@
         {
         <tr>
             <td align="center">
-                <img src=@Html.DisplayFor(modelItem => item.ImgUrl) height="75">
+                <img src=@Html.DisplayFor(modelItem => item.ImgUrl) height="125">
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -71,12 +68,12 @@
                 @Html.DisplayFor(modelItem => item.ModifiedOn)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsDeleted)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="AddToWishlist" asp-route-id="@item.Id">Add To Wishlist</a> |
-                <a asp-action="AddToBeersDrank" asp-route-id="@item.Id">Add To Beers Drank</a>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <p> </p>
+                <a class="btn btn-warning" asp-action="AddToWishlist" asp-route-id="@item.Id">Add To Wishlist</a>
+                <a class="btn btn-warning" asp-action="AddToBeersDrank" asp-route-id="@item.Id">Add To Beers Drank</a>
             </td>
         </tr>
         }
@@ -90,12 +87,12 @@
 <a asp-action="Index"
    asp-route-pageNumber="@(Model.PageIndex - 1)"
    asp-route-currentFilter="@ViewData["CurrentFilter"]"
-   class="btn btn-primary @prevDisabled">
+   class="btn btn-warning @prevDisabled">
     Previous
 </a>
 <a asp-action="Index"
    asp-route-pageNumber="@(Model.PageIndex + 1)"
    asp-route-currentFilter="@ViewData["CurrentFilter"]"
-   class="btn btn-primary @nextDisabled">
+   class="btn btn-warning @nextDisabled">
     Next
 </a>

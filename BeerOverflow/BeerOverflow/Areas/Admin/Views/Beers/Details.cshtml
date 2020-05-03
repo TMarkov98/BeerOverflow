@@ -6,10 +6,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>@Html.DisplayFor(model => model.Name)</h4>
+    <h4>Details for Beer @Html.DisplayFor(model => model.Name)</h4>
     @if (User.Identity.IsAuthenticated)
     {
         @if (Model.Likes.FirstOrDefault(l => l.BeerId == Model.Id && l.UserId == User.GetUserId()) == null)
@@ -80,14 +78,13 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+    <a class="btn btn-danger" asp-action="Index">Back to List</a>
 </div>
 <div>
     @if (User.Identity.IsAuthenticated)
     {
-        <a asp-action="AddToWishlist" asp-route-id="@Model.Id">Add To Wishlist</a>
-        <text> | </text>
-        <a asp-action="AddToBeersDrank" asp-route-id="@Model.Id">Add To Beers Drank</a>
+        <a class="btn btn-warning" asp-action="AddToWishlist" asp-route-id="@Model.Id">Add To Wishlist</a>
+        <a class="btn btn-warning" asp-action="AddToBeersDrank" asp-route-id="@Model.Id">Add To Beers Drank</a>
     }
 </div>

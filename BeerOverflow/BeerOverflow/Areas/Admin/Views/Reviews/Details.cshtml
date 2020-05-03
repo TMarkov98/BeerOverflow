@@ -4,11 +4,8 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Details</h1>
-
 <div>
-    <h4>Review</h4>
+    <h4>Review for @Html.DisplayFor(model => model.TargetBeer.Name)</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -68,6 +65,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
+    <a class="btn btn-danger" asp-action="Index">Back to List</a>
 </div>

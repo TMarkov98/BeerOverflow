@@ -52,6 +52,12 @@ namespace BeerOverflow.Database
                     UserId = 1
                 });
 
+            modelBuilder.Entity<IdentityUserRole<int>>().HasData(
+                new IdentityUserRole<int>
+                {
+                    RoleId = 1,
+                    UserId = 2
+                });
 
             //SEED ALL COUNRTIES
 
