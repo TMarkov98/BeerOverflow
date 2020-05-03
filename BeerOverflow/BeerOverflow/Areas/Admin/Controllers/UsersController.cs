@@ -67,7 +67,7 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IsBanned,BanReason,IsDeleted,LockoutEnd")] User user)
+        public async Task<IActionResult> Edit(int id, [Bind("IsBanned,BanReason,IsDeleted,DeletedOn,CreatedOn,ModifiedOn,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] User user)
         {
             if (id != user.Id)
             {
@@ -77,8 +77,7 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 try
-                {
-                    if (user.IsDeleted)
+                {if (user.IsDeleted)
                         user.DeletedOn = DateTime.Now;
                     user.ModifiedOn = DateTime.Now;
                     _context.Update(user);

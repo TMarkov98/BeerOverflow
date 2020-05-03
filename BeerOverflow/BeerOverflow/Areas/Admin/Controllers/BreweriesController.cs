@@ -92,7 +92,7 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CountryId,IsDeleted,DeletedOn,CreatedOn,ModifiedOn")] Brewery brewery)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CountryId,IsDeleted,DeletedOn,ModifiedOn")] Brewery brewery)
         {
             if (id != brewery.Id)
             {

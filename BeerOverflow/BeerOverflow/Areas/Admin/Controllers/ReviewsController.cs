@@ -60,7 +60,7 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Rating,Name,Text,TargetBeerId,AuthorId,CreatedOn,ModifiedOn,IsDeleted,DeletedOn")] Review review)
+        public async Task<IActionResult> Create([Bind("Id,Rating,Name,Text,TargetBeerId,AuthorId,ModifiedOn,IsDeleted,DeletedOn")] Review review)
         {
             if (ModelState.IsValid)
             {
