@@ -13,6 +13,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th />
             <th>
                 Beers
             </th>
@@ -20,15 +21,19 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Beer.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Remove from Drank List", "Delete", new { userId = item.UserId, beerId = item.BeerId })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td align="center">
+                    <img src=@Html.DisplayFor(modelItem => item.Beer.ImgUrl) height=75>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Beer.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Remove from Drank List", "Delete", new { userId = item.UserId, beerId = item.BeerId })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
