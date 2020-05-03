@@ -442,7 +442,8 @@ namespace BeerOverflow.Database
                     BreweryId = 1,
                     AlcoholByVolume = 5,
                     CreatedOn = DateTime.Now,
-                    TypeId = 11
+                    TypeId = 11,
+                    ImgUrl = "\\images\\beers\\kaiser_pils.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -452,7 +453,8 @@ namespace BeerOverflow.Database
                     BreweryId = 2,
                     AlcoholByVolume = 6.4,
                     CreatedOn = DateTime.Now,
-                    TypeId = 7
+                    TypeId = 7,
+                    ImgUrl = "\\images\\beers\\ah_7.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -462,7 +464,7 @@ namespace BeerOverflow.Database
                     BreweryId = 2,
                     AlcoholByVolume = 5.0,
                     CreatedOn = DateTime.Now,
-                    TypeId = 1
+                    TypeId = 1,
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -472,7 +474,8 @@ namespace BeerOverflow.Database
                     BreweryId = 2,
                     AlcoholByVolume = 5.2,
                     CreatedOn = DateTime.Now,
-                    TypeId = 4
+                    TypeId = 4,
+                    ImgUrl = "\\images\\beers\\bg_pale_ale.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -592,7 +595,8 @@ namespace BeerOverflow.Database
                     BreweryId = 4,
                     AlcoholByVolume = 4.5,
                     CreatedOn = DateTime.Now,
-                    TypeId = 1
+                    TypeId = 1,
+                    ImgUrl = "\\images\\beers\\astika_fine_q_l.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -612,7 +616,8 @@ namespace BeerOverflow.Database
                     BreweryId = 4,
                     AlcoholByVolume = 4.4,
                     CreatedOn = DateTime.Now,
-                    TypeId = 1
+                    TypeId = 1,
+                    ImgUrl = "\\images\\beers\\burgasko_sv.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -2372,7 +2377,8 @@ namespace BeerOverflow.Database
                     BreweryId = 28,
                     AlcoholByVolume = 4.4,
                     CreatedOn = DateTime.Now,
-                    TypeId = 1
+                    TypeId = 1,
+                    ImgUrl = "\\images\\beers\\pirinsko_sv.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -2382,7 +2388,8 @@ namespace BeerOverflow.Database
                     BreweryId = 28,
                     AlcoholByVolume = 4.4,
                     CreatedOn = DateTime.Now,
-                    TypeId = 1
+                    TypeId = 1,
+                    ImgUrl = "\\images\\beers\\pirinsko_ml_pv.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -2422,7 +2429,8 @@ namespace BeerOverflow.Database
                     BreweryId = 30,
                     AlcoholByVolume = 4.8,
                     CreatedOn = DateTime.Now,
-                    TypeId = 11
+                    TypeId = 11,
+                    ImgUrl = "\\images\\beers\\kam_str_pivo.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -2432,7 +2440,8 @@ namespace BeerOverflow.Database
                     BreweryId = 30,
                     AlcoholByVolume = 5.0,
                     CreatedOn = DateTime.Now,
-                    TypeId = 8
+                    TypeId = 8,
+                    ImgUrl = "\\images\\beers\\kam_tamno.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -2462,7 +2471,8 @@ namespace BeerOverflow.Database
                     BreweryId = 30,
                     AlcoholByVolume = 4.4,
                     CreatedOn = DateTime.Now,
-                    TypeId = 1
+                    TypeId = 1,
+                    ImgUrl = "\\images\\beers\\kam_1881.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -3402,7 +3412,8 @@ namespace BeerOverflow.Database
                     BreweryId = 36,
                     AlcoholByVolume = 5.5,
                     CreatedOn = DateTime.Now,
-                    TypeId = 8
+                    TypeId = 8,
+                    ImgUrl = "\\images\\beers\\shumensko_tam.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
@@ -3432,7 +3443,8 @@ namespace BeerOverflow.Database
                     BreweryId = 36,
                     AlcoholByVolume = 5.2,
                     CreatedOn = DateTime.Now,
-                    TypeId = 1
+                    TypeId = 1,
+                    ImgUrl = "\\images\\beers\\shumensko.webp",
                 });
             modelBuilder.Entity<Beer>().HasData(
                 new Beer
