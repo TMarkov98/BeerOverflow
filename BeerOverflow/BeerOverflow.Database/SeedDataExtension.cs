@@ -27,9 +27,23 @@ namespace BeerOverflow.Database
                 SecurityStamp = "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN"
             };
 
+            User kiro = new User
+            {
+                Id = 2,
+                UserName = "kiro@biri.com",
+                NormalizedUserName = "KIRO@BIRI.COM",
+                Email = "kiro@biri.com",
+                NormalizedEmail = "KIRO@BIRI.COM",
+                CreatedOn = DateTime.UtcNow,
+                LockoutEnabled = true,
+                SecurityStamp = "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXV"
+            };
+
             managerUser.PasswordHash = hasher.HashPassword(managerUser, "Grand_Master420");
+            kiro.PasswordHash = hasher.HashPassword(kiro, "kiro123");
 
             modelBuilder.Entity<User>().HasData(managerUser);
+            modelBuilder.Entity<User>().HasData(kiro);
 
             modelBuilder.Entity<IdentityUserRole<int>>().HasData(
                 new IdentityUserRole<int>
@@ -3889,7 +3903,7 @@ namespace BeerOverflow.Database
             modelBuilder.Entity<User>().HasData(
                 new User
                 {
-                    Id = 2,
+                    Id = 6,
                     CreatedOn = DateTime.Now,
                     UserName = "Pesho",
                     NormalizedUserName = "PESHO",
