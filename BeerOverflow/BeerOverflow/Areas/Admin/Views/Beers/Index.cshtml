@@ -1,41 +1,52 @@
-﻿@model IEnumerable<BeerOverflow.Models.Beer>
+﻿@model PaginatedList<BeerOverflow.Models.Beer>
+@using BeerOverflow.Web
 
 @{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Beers";
 }
 
-<h1>Index</h1>
+<h1>Beers</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create Beer</a>
 </p>
+<form asp-controller="Beers" asp-action="Index">
+    <p>
+        Find Beer: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+        <input type="submit" value="Search" class="btn-primary" /> |
+        <a asp-action="Index">Back to Full List</a>
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                Name
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
+                Type
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Brewery)
+                Brewery
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreatedOn)
+                AlcoholByVolume
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsDeleted)
+                CreatedOn
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AlcoholByVolume)
+                ModifiedOn
             </th>
-            <th></th>
+            <th>
+                IsDeleted
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
@@ -47,20 +58,40 @@
                 @Html.DisplayFor(modelItem => item.Brewery.Name)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.AlcoholByVolume)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedOn)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IsDeleted)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AlcoholByVolume)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="AddToWishlist" asp-route-id="@item.Id">Add To Wishlist</a> |
+                <a asp-action="AddToBeersDrank" asp-route-id="@item.Id">Add To Beers Drank</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>

@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BeerOverflow.Database;
 using BeerOverflow.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BeerOverflow.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class BreweriesController : Controller
     {
         private readonly BeerOverflowContext _context;
@@ -21,10 +23,28 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
         }
 
         // GET: Admin/Breweries
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string currentFilter, string searchString, int? pageNumber)
         {
-            var beerOverflowContext = _context.Breweries.Include(b => b.Country);
-            return View(await beerOverflowContext.ToListAsync());
+            var breweries = _context.Breweries
+                .Where(b => !b.IsDeleted)
+                .Include(b => b.Country).AsQueryable();
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewData["CurrentFilter"] = searchString;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                breweries = breweries.Where(b => b.Name.ToLower().Contains(searchString.ToLower())
+                                       || b.Country.Name.ToLower().Contains(searchString.ToLower()));
+            }
+            int pageSize = 12;
+            return View(await PaginatedList<Brewery>.CreateAsync(breweries, pageNumber ?? 1, pageSize));
         }
 
         // GET: Admin/Breweries/Details/5

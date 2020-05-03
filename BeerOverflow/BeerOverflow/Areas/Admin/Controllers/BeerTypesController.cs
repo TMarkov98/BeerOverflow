@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BeerOverflow.Database;
 using BeerOverflow.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BeerOverflow.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class BeerTypesController : Controller
     {
         private readonly BeerOverflowContext _context;
@@ -21,9 +23,25 @@ namespace BeerOverflow.Web.Areas.Admin.Controllers
         }
 
         // GET: Admin/BeerTypes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string currentFilter, string searchString, int? pageNumber)
         {
-            return View(await _context.BeerTypes.ToListAsync());
+            var beerTypes = _context.BeerTypes
+                .Where(b => !b.IsDeleted).AsQueryable();
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+            ViewData["CurrentFilter"] = searchString;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                beerTypes = beerTypes.Where(b => b.Name.ToLower().Contains(searchString.ToLower()));
+            }
+            int pageSize = 12;
+            return View(await PaginatedList<BeerType>.CreateAsync(beerTypes, pageNumber ?? 1, pageSize));
         }
 
         // GET: Admin/BeerTypes/Details/5

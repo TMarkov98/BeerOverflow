@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BeerOverflow.Database;
 using BeerOverflow.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BeerOverflow.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class ReviewsController : Controller
     {
         private readonly BeerOverflowContext _context;
