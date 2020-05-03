@@ -38,6 +38,9 @@ namespace BeerOverflow.Database.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("ImgUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -66,7 +69,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 1,
                             AlcoholByVolume = 5.0,
                             BreweryId = 1,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(1291),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(3946),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kaiser",
                             TypeId = 11
@@ -76,7 +80,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 2,
                             AlcoholByVolume = 6.4000000000000004,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(6756),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4547),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ah! 7 - Mursalski Red Ale",
                             TypeId = 7
@@ -86,7 +91,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 3,
                             AlcoholByVolume = 5.0,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(7434),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4583),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ah! 5 - Bad Baba",
                             TypeId = 1
@@ -96,7 +102,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 4,
                             AlcoholByVolume = 5.2000000000000002,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(7559),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4643),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ah! 3 - Bulgarian Pale Ale",
                             TypeId = 4
@@ -106,7 +113,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 5,
                             AlcoholByVolume = 5.0,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(7672),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4667),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ah! Sofia Streets",
                             TypeId = 1
@@ -116,7 +124,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 6,
                             AlcoholByVolume = 7.0,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(7936),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4690),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Mr. Habi Benero",
                             TypeId = 10
@@ -126,7 +135,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 7,
                             AlcoholByVolume = 5.0,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(8112),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4710),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ah! 6 - Funky Janky",
                             TypeId = 6
@@ -136,7 +146,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 8,
                             AlcoholByVolume = 8.0,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(8330),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4731),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ah! 13 - Corruption Brown Ale",
                             TypeId = 8
@@ -146,7 +157,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 9,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(8479),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4752),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ah! 9 - Kiss My Kvass",
                             TypeId = 8
@@ -156,7 +168,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 10,
                             AlcoholByVolume = 6.4000000000000004,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(8736),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4774),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ah! 23 - French Apple Cider",
                             TypeId = 14
@@ -166,7 +179,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 11,
                             AlcoholByVolume = 4.9000000000000004,
                             BreweryId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(8953),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4795),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ah! 9 - Indian Pale Ale",
                             TypeId = 4
@@ -176,7 +190,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 12,
                             AlcoholByVolume = 6.0,
                             BreweryId = 3,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(9108),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4815),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ailyak Cryo Mosaic IPA",
                             TypeId = 5
@@ -186,7 +201,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 13,
                             AlcoholByVolume = 6.0,
                             BreweryId = 3,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(9329),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4835),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ailyak Cryo DDH NEIPA",
                             TypeId = 5
@@ -196,7 +212,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 14,
                             AlcoholByVolume = 6.0,
                             BreweryId = 3,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(9471),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4855),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ailyak ProViotic",
                             TypeId = 5
@@ -206,7 +223,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 15,
                             AlcoholByVolume = 6.5999999999999996,
                             BreweryId = 3,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(9691),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4875),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ailyak Birthday IPA",
                             TypeId = 1
@@ -216,7 +234,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 16,
                             AlcoholByVolume = 4.5,
                             BreweryId = 4,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(9810),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4895),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Astika Fine Quality Lager",
                             TypeId = 1
@@ -226,7 +245,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 17,
                             AlcoholByVolume = 4.9000000000000004,
                             BreweryId = 4,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 954, DateTimeKind.Local).AddTicks(9917),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4915),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Astika Lux Premium",
                             TypeId = 1
@@ -236,7 +256,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 18,
                             AlcoholByVolume = 4.4000000000000004,
                             BreweryId = 4,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(37),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4937),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Burgasko Svetlo",
                             TypeId = 1
@@ -246,7 +267,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 19,
                             AlcoholByVolume = 5.0,
                             BreweryId = 4,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(142),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(4958),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Astika Special",
                             TypeId = 1
@@ -256,7 +278,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 20,
                             AlcoholByVolume = 5.0,
                             BreweryId = 4,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(249),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5008),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Haskovo Beck's",
                             TypeId = 1
@@ -266,7 +289,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 21,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(351),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5030),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Basi Kefa",
                             TypeId = 5
@@ -276,7 +300,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 22,
                             AlcoholByVolume = 5.2000000000000002,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(454),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5051),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Po-Poleka",
                             TypeId = 5
@@ -286,7 +311,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 23,
                             AlcoholByVolume = 5.7999999999999998,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(559),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5071),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Faster Bastard",
                             TypeId = 5
@@ -296,7 +322,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 24,
                             AlcoholByVolume = 4.7000000000000002,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(685),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5091),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Freigeist Dirty Flamingo",
                             TypeId = 4
@@ -306,7 +333,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 25,
                             AlcoholByVolume = 6.5999999999999996,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(790),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5111),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Opasen Char",
                             TypeId = 5
@@ -316,7 +344,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 26,
                             AlcoholByVolume = 4.5999999999999996,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(895),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5131),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Bash Maistora",
                             TypeId = 1
@@ -326,7 +355,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 27,
                             AlcoholByVolume = 4.4000000000000004,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(998),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5151),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Edno Vreme",
                             TypeId = 11
@@ -336,7 +366,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 28,
                             AlcoholByVolume = 9.0,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(1101),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5170),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Solo New Garash Cake",
                             TypeId = 10
@@ -346,7 +377,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 29,
                             AlcoholByVolume = 7.0,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(1208),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5190),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Bone Chance",
                             TypeId = 9
@@ -356,7 +388,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 30,
                             AlcoholByVolume = 4.4000000000000004,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(1311),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5210),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Gusto Maina",
                             TypeId = 11
@@ -366,7 +399,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 31,
                             AlcoholByVolume = 9.6999999999999993,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(1415),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5230),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Tok i Zhica",
                             TypeId = 10
@@ -376,7 +410,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 32,
                             AlcoholByVolume = 8.0,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(1522),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5249),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Dami Kanyat",
                             TypeId = 10
@@ -386,7 +421,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 33,
                             AlcoholByVolume = 5.5,
                             BreweryId = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(1628),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5269),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beer Bastards Toplo Takova",
                             TypeId = 6
@@ -396,7 +432,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 34,
                             AlcoholByVolume = 5.5999999999999996,
                             BreweryId = 4,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(1741),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5291),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Astika Tumno",
                             TypeId = 8
@@ -406,7 +443,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 35,
                             AlcoholByVolume = 4.4000000000000004,
                             BreweryId = 4,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(1844),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5311),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Astika Svetlo",
                             TypeId = 1
@@ -416,7 +454,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 36,
                             AlcoholByVolume = 4.0,
                             BreweryId = 6,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(1947),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5331),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beerbox Galleon Weiss",
                             TypeId = 1
@@ -426,7 +465,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 37,
                             AlcoholByVolume = 5.0,
                             BreweryId = 6,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(2050),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5382),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beerbox Galleon Premium Lager",
                             TypeId = 1
@@ -436,7 +476,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 38,
                             AlcoholByVolume = 5.5999999999999996,
                             BreweryId = 8,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(2153),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5402),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "HBH Tumna Jiva Bira",
                             TypeId = 8
@@ -446,7 +487,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 39,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 7,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(2258),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5422),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Beershop-BG Gaida",
                             TypeId = 1
@@ -456,7 +498,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 40,
                             AlcoholByVolume = 5.2999999999999998,
                             BreweryId = 8,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(2363),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5443),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "HBH Svetla Jiva Bira",
                             TypeId = 1
@@ -466,7 +509,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 41,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(2466),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5463),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Stout",
                             TypeId = 10
@@ -476,7 +520,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 42,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(2586),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5483),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Rauchbier with Cocoa and Blek Pepper",
                             TypeId = 9
@@ -486,7 +531,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 43,
                             AlcoholByVolume = 7.7000000000000002,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(2690),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5503),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Kokonut Porter",
                             TypeId = 9
@@ -496,7 +542,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 44,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(2794),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5522),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Summer Is Coming",
                             TypeId = 4
@@ -506,7 +553,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 45,
                             AlcoholByVolume = 7.2999999999999998,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(2896),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5543),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Pumpking Ale",
                             TypeId = 7
@@ -516,7 +564,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 46,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(2999),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5563),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine IPA",
                             TypeId = 5
@@ -526,7 +575,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 47,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(3101),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5582),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine WCOS IPA",
                             TypeId = 5
@@ -536,7 +586,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 48,
                             AlcoholByVolume = 7.0,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(3210),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5601),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine New England",
                             TypeId = 5
@@ -546,7 +597,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 49,
                             AlcoholByVolume = 4.2999999999999998,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(3313),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5621),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Sour Session",
                             TypeId = 5
@@ -556,7 +608,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 50,
                             AlcoholByVolume = 6.5999999999999996,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(3417),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5641),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Blek & Red",
                             TypeId = 10
@@ -566,7 +619,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 51,
                             AlcoholByVolume = 9.0999999999999996,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(3522),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5661),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Rum Pum Pum",
                             TypeId = 6
@@ -576,7 +630,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 52,
                             AlcoholByVolume = 6.5999999999999996,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(3629),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5680),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Chilli in the Hills Chipotle Hoppy Stout",
                             TypeId = 10
@@ -586,7 +641,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 53,
                             AlcoholByVolume = 5.4000000000000004,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(3740),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5700),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Blanche De Citron",
                             TypeId = 1
@@ -596,7 +652,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 54,
                             AlcoholByVolume = 5.7000000000000002,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(3849),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5753),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Summer Is Coming - Episode 2",
                             TypeId = 4
@@ -606,7 +663,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 55,
                             AlcoholByVolume = 7.5999999999999996,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(4003),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5773),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Divo Divo",
                             TypeId = 6
@@ -616,7 +674,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 56,
                             AlcoholByVolume = 6.4000000000000004,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(4146),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5793),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Seriez Peach",
                             TypeId = 4
@@ -626,7 +685,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 57,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(4256),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5812),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Session",
                             TypeId = 5
@@ -636,7 +696,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 58,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(4505),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5832),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Sofia Metal Fest IPA",
                             TypeId = 5
@@ -646,7 +707,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 59,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(4722),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5852),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine Rye IPA",
                             TypeId = 5
@@ -656,7 +718,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 60,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(4839),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5871),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Blek Pine IPA Limited Edition",
                             TypeId = 5
@@ -666,7 +729,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 61,
                             AlcoholByVolume = 5.0,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(4981),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5890),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Boliarka Tumno",
                             TypeId = 8
@@ -676,7 +740,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 62,
                             AlcoholByVolume = 4.5999999999999996,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(5090),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5910),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Schweik Cheshko Pivo",
                             TypeId = 1
@@ -686,7 +751,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 63,
                             AlcoholByVolume = 4.0999999999999996,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(5196),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5930),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Balkansko Svetlo",
                             TypeId = 1
@@ -696,7 +762,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 64,
                             AlcoholByVolume = 4.2999999999999998,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(5304),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5949),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Boliarka Svetlo",
                             TypeId = 1
@@ -706,7 +773,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 65,
                             AlcoholByVolume = 5.0,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(5414),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5968),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Diana Lager",
                             TypeId = 1
@@ -716,7 +784,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 66,
                             AlcoholByVolume = 5.0,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(5539),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(5990),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kings Premium",
                             TypeId = 1
@@ -726,7 +795,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 67,
                             AlcoholByVolume = 4.0999999999999996,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(5648),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6010),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Boliarka Elba Svetlo Pivo",
                             TypeId = 1
@@ -736,7 +806,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 68,
                             AlcoholByVolume = 5.0,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(5757),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6029),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Boliarka Fort Premium Lager 100% Malt",
                             TypeId = 1
@@ -746,7 +817,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 69,
                             AlcoholByVolume = 3.0,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(5932),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6049),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Tsarsko Svetlo",
                             TypeId = 1
@@ -756,7 +828,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 70,
                             AlcoholByVolume = 4.2999999999999998,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(6051),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6103),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Boliarka Unpasteurised",
                             TypeId = 1
@@ -766,7 +839,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 71,
                             AlcoholByVolume = 4.0999999999999996,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(6165),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6124),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Diana Premium Lager",
                             TypeId = 1
@@ -776,7 +850,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 72,
                             AlcoholByVolume = 4.5999999999999996,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(6275),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6143),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Peti Okean Jiva Bira",
                             TypeId = 11
@@ -786,7 +861,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 73,
                             AlcoholByVolume = 4.0999999999999996,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(6380),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6163),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kehlstein Premium Lager",
                             TypeId = 1
@@ -796,7 +872,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 74,
                             AlcoholByVolume = 5.0,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(6487),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6182),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Boliarka Special",
                             TypeId = 1
@@ -806,7 +883,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 75,
                             AlcoholByVolume = 4.0999999999999996,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(6599),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6201),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Stara Stolitsa Svetlo Pivo",
                             TypeId = 1
@@ -816,7 +894,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 76,
                             AlcoholByVolume = 5.4000000000000004,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(6706),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6221),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Boliarka Weiss",
                             TypeId = 1
@@ -826,7 +905,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 77,
                             AlcoholByVolume = 4.0999999999999996,
                             BreweryId = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(6815),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6240),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Nashensko Svetlo",
                             TypeId = 1
@@ -836,7 +916,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 78,
                             AlcoholByVolume = 3.7999999999999998,
                             BreweryId = 11,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(7316),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6259),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Bro Beer Fat Free Pig",
                             TypeId = 5
@@ -846,7 +927,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 79,
                             AlcoholByVolume = 5.0,
                             BreweryId = 11,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(7458),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6279),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Bro Beer Importered Pig",
                             TypeId = 9
@@ -856,7 +938,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 80,
                             AlcoholByVolume = 5.5999999999999996,
                             BreweryId = 12,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(7571),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6299),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Brothers Brew Team Make Coffee Great Again",
                             TypeId = 10
@@ -866,7 +949,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 81,
                             AlcoholByVolume = 5.5,
                             BreweryId = 12,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(7693),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6318),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Brothers Brew Team Right As Rain",
                             TypeId = 6
@@ -876,7 +960,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 82,
                             AlcoholByVolume = 4.0,
                             BreweryId = 12,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(7801),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6338),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Brothers Brew Team Mosaic",
                             TypeId = 5
@@ -886,7 +971,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 83,
                             AlcoholByVolume = 5.9000000000000004,
                             BreweryId = 12,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(7914),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6357),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Brothers Deutschamerikaner",
                             TypeId = 5
@@ -896,7 +982,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 84,
                             AlcoholByVolume = 4.7000000000000002,
                             BreweryId = 12,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(8021),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6376),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Brothers Brew Team Hello, World!",
                             TypeId = 4
@@ -906,7 +993,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 85,
                             AlcoholByVolume = 8.1999999999999993,
                             BreweryId = 12,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(8126),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6395),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Brothers Brew Team Little Princess",
                             TypeId = 10
@@ -916,7 +1004,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 86,
                             AlcoholByVolume = 7.2000000000000002,
                             BreweryId = 12,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(8239),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6414),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Brothers Brew Team Liberation",
                             TypeId = 5
@@ -926,7 +1015,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 87,
                             AlcoholByVolume = 5.4000000000000004,
                             BreweryId = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(8345),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6488),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Veritas Spetsialen Lager",
                             TypeId = 1
@@ -936,7 +1026,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 88,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(8455),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6511),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Veritas Single & Single",
                             TypeId = 2
@@ -946,7 +1037,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 89,
                             AlcoholByVolume = 4.9000000000000004,
                             BreweryId = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(8567),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6531),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Burgaska - Pivovarnata Summer Ale",
                             TypeId = 2
@@ -956,7 +1048,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 90,
                             AlcoholByVolume = 5.5,
                             BreweryId = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(8685),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6551),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Veritas Schwarz",
                             TypeId = 9
@@ -966,7 +1059,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 91,
                             AlcoholByVolume = 5.2000000000000002,
                             BreweryId = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(8797),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6571),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Veritas IPA",
                             TypeId = 5
@@ -976,7 +1070,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 92,
                             AlcoholByVolume = 5.4000000000000004,
                             BreweryId = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(8909),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6590),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Veritas Green Lager",
                             TypeId = 11
@@ -986,7 +1081,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 93,
                             AlcoholByVolume = 5.5,
                             BreweryId = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(9021),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6610),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Veritas Tumna",
                             TypeId = 8
@@ -996,7 +1092,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 94,
                             AlcoholByVolume = 5.5,
                             BreweryId = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(9127),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6630),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Veritas Chervena",
                             TypeId = 7
@@ -1006,7 +1103,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 95,
                             AlcoholByVolume = 5.2999999999999998,
                             BreweryId = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(9237),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6650),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Veritas Weizen",
                             TypeId = 3
@@ -1016,7 +1114,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 96,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(9350),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6669),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Veritas Amber",
                             TypeId = 6
@@ -1026,7 +1125,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 97,
                             AlcoholByVolume = 4.0,
                             BreweryId = 14,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(9482),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6689),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Can Supply Stobsko Pivo",
                             TypeId = 11
@@ -1036,7 +1136,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 98,
                             AlcoholByVolume = 4.7000000000000002,
                             BreweryId = 14,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(9589),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6708),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Can Supply Brexit Craft Beer",
                             TypeId = 4
@@ -1046,7 +1147,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 99,
                             AlcoholByVolume = 4.2999999999999998,
                             BreweryId = 14,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(9701),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6728),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Can Supply Odesos Markovo Pivo",
                             TypeId = 1
@@ -1056,7 +1158,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 100,
                             AlcoholByVolume = 4.2999999999999998,
                             BreweryId = 14,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(9815),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6747),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Can Supply Odesos Svetlo Pivo",
                             TypeId = 1
@@ -1066,7 +1169,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 101,
                             AlcoholByVolume = 4.2999999999999998,
                             BreweryId = 14,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 955, DateTimeKind.Local).AddTicks(9928),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6767),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Can Supply Grussberg Pilsner",
                             TypeId = 11
@@ -1076,7 +1180,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 102,
                             AlcoholByVolume = 7.5,
                             BreweryId = 15,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(35),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6786),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Cohones Holy St. Out",
                             TypeId = 10
@@ -1086,7 +1191,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 103,
                             AlcoholByVolume = 7.0,
                             BreweryId = 15,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(143),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6806),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Cohones St. Out",
                             TypeId = 10
@@ -1096,7 +1202,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 104,
                             AlcoholByVolume = 5.0,
                             BreweryId = 15,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(250),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6825),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Cohones Family Jewels",
                             TypeId = 4
@@ -1106,7 +1213,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 105,
                             AlcoholByVolume = 7.0,
                             BreweryId = 16,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(359),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6875),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Dorst Zimen Bok",
                             TypeId = 8
@@ -1116,7 +1224,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 106,
                             AlcoholByVolume = 6.5999999999999996,
                             BreweryId = 16,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(468),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6896),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Dorst Hippy Shake",
                             TypeId = 5
@@ -1126,7 +1235,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 107,
                             AlcoholByVolume = 6.0,
                             BreweryId = 16,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(578),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6916),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Dorst Pink Future Mosaic",
                             TypeId = 7
@@ -1136,7 +1246,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 108,
                             AlcoholByVolume = 5.7999999999999998,
                             BreweryId = 17,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(689),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6936),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Roustchouk Porter",
                             TypeId = 9
@@ -1146,7 +1257,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 109,
                             AlcoholByVolume = 5.7000000000000002,
                             BreweryId = 17,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(798),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6955),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Dunav Sans Changement",
                             TypeId = 1
@@ -1156,7 +1268,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 110,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 17,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(909),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6975),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Dunav Radetzky",
                             TypeId = 4
@@ -1166,7 +1279,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 111,
                             AlcoholByVolume = 5.0,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(1018),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(6995),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Porter",
                             TypeId = 9
@@ -1176,7 +1290,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 112,
                             AlcoholByVolume = 6.0,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(1123),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7014),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Black Sea IPA",
                             TypeId = 5
@@ -1186,7 +1301,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 113,
                             AlcoholByVolume = 4.5999999999999996,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(1229),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7033),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Special English Ale",
                             TypeId = 4
@@ -1196,7 +1312,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 114,
                             AlcoholByVolume = 6.5,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(1333),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7052),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Dubbel",
                             TypeId = 7
@@ -1206,7 +1323,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 115,
                             AlcoholByVolume = 5.0,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(1436),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7072),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Saison",
                             TypeId = 3
@@ -1216,7 +1334,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 116,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(1547),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7091),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Premium Ale",
                             TypeId = 2
@@ -1226,7 +1345,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 117,
                             AlcoholByVolume = 5.5,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(1670),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7111),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Marzen",
                             TypeId = 3
@@ -1236,7 +1356,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 118,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(1777),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7130),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Jester",
                             TypeId = 4
@@ -1246,7 +1367,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 119,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(1884),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7150),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Halo",
                             TypeId = 4
@@ -1256,7 +1378,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 120,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(1992),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7169),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Fruity & Hazy",
                             TypeId = 6
@@ -1266,7 +1389,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 121,
                             AlcoholByVolume = 5.0,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(2099),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7188),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Rhodopi Dream",
                             TypeId = 1
@@ -1276,7 +1400,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 122,
                             AlcoholByVolume = 5.0,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(2202),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7208),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Signature Session IPA Mandarina Bavaria",
                             TypeId = 5
@@ -1286,7 +1411,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 123,
                             AlcoholByVolume = 5.0,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(2309),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7304),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus Holy Night",
                             TypeId = 10
@@ -1296,7 +1422,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 124,
                             AlcoholByVolume = 4.5999999999999996,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(2412),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7324),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Glarus London Porter",
                             TypeId = 9
@@ -1306,7 +1433,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 125,
                             AlcoholByVolume = 5.0,
                             BreweryId = 19,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(2521),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7343),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Halbite Nashto Pivo",
                             TypeId = 4
@@ -1316,7 +1444,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 126,
                             AlcoholByVolume = 5.0,
                             BreweryId = 20,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(2712),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7362),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Hills Helles Rauch",
                             TypeId = 9
@@ -1326,7 +1455,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 127,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 20,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(2900),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7382),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Hills Pils",
                             TypeId = 11
@@ -1336,7 +1466,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 128,
                             AlcoholByVolume = 3.7999999999999998,
                             BreweryId = 20,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(3015),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7402),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Hills Summer Blanche - Session Ale",
                             TypeId = 3
@@ -1346,7 +1477,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 129,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 20,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(3245),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7421),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Hills Smooth Bock",
                             TypeId = 13
@@ -1356,7 +1488,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 130,
                             AlcoholByVolume = 5.2000000000000002,
                             BreweryId = 20,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(3403),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7444),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Hills Single Stout",
                             TypeId = 10
@@ -1366,7 +1499,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 131,
                             AlcoholByVolume = 4.9000000000000004,
                             BreweryId = 20,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(3528),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7464),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Hills Weizen",
                             TypeId = 3
@@ -1376,7 +1510,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 132,
                             AlcoholByVolume = 5.0,
                             BreweryId = 21,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(3638),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7483),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Jägerhof Weiss",
                             TypeId = 3
@@ -1386,7 +1521,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 133,
                             AlcoholByVolume = 5.0,
                             BreweryId = 21,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(3743),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7502),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Jägerhof Dunkel",
                             TypeId = 8
@@ -1396,7 +1532,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 134,
                             AlcoholByVolume = 5.2999999999999998,
                             BreweryId = 21,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(3847),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7521),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Jägerhof Ale",
                             TypeId = 6
@@ -1406,7 +1543,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 135,
                             AlcoholByVolume = 7.0,
                             BreweryId = 21,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(3958),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7540),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Jägerhof Bock",
                             TypeId = 13
@@ -1416,7 +1554,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 136,
                             AlcoholByVolume = 5.5,
                             BreweryId = 21,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(4063),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7592),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Jägerhof Dunkel Weisse",
                             TypeId = 3
@@ -1426,7 +1565,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 137,
                             AlcoholByVolume = 6.5,
                             BreweryId = 22,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(4176),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7612),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kazan Artizan Stout",
                             TypeId = 10
@@ -1436,7 +1576,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 138,
                             AlcoholByVolume = 5.7000000000000002,
                             BreweryId = 22,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(4282),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7632),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kazan Artizan Ad Hoc IPA",
                             TypeId = 5
@@ -1446,7 +1587,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 139,
                             AlcoholByVolume = 5.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(4389),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7652),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Almus Tumno",
                             TypeId = 8
@@ -1456,7 +1598,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 140,
                             AlcoholByVolume = 5.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(4495),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7671),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Almus Cherveno",
                             TypeId = 6
@@ -1466,7 +1609,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 141,
                             AlcoholByVolume = 5.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(4601),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7690),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Vitoshko Lale",
                             TypeId = 1
@@ -1476,7 +1620,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 142,
                             AlcoholByVolume = 4.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(4709),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7710),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Almus Lager",
                             TypeId = 1
@@ -1486,7 +1631,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 143,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(4813),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7729),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Almus Lux",
                             TypeId = 1
@@ -1496,7 +1642,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 144,
                             AlcoholByVolume = 5.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(4919),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7748),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Vitoshko Lale Hoppy Weiss",
                             TypeId = 3
@@ -1506,7 +1653,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 145,
                             AlcoholByVolume = 5.0,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(5030),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7767),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Pivo Ubav Pustinyak",
                             TypeId = 7
@@ -1516,7 +1664,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 146,
                             AlcoholByVolume = 5.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(5137),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7786),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Amber Beer",
                             TypeId = 6
@@ -1526,7 +1675,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 147,
                             AlcoholByVolume = 4.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(5239),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7806),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Hmelo Lale",
                             TypeId = 2
@@ -1536,7 +1686,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 148,
                             AlcoholByVolume = 5.0,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(5346),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7825),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Pivo Blag Pustinyak",
                             TypeId = 3
@@ -1546,7 +1697,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 149,
                             AlcoholByVolume = 5.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(5451),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7845),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Pivo Shopsko Pivo",
                             TypeId = 1
@@ -1556,7 +1708,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 150,
                             AlcoholByVolume = 7.0,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(5572),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7864),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Pivo Bash Pustinyak",
                             TypeId = 1
@@ -1566,7 +1719,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 151,
                             AlcoholByVolume = 4.0,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(5679),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7883),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Pivo Pustinyak",
                             TypeId = 1
@@ -1576,7 +1730,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 152,
                             AlcoholByVolume = 5.0,
                             BreweryId = 18,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(5844),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7902),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Pivo Yak Pustinyak",
                             TypeId = 1
@@ -1586,7 +1741,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 153,
                             AlcoholByVolume = 6.0,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(5959),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7952),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Porter",
                             TypeId = 9
@@ -1596,7 +1752,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 154,
                             AlcoholByVolume = 4.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(6070),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7973),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Vitoshko Lale Pale Ale",
                             TypeId = 4
@@ -1606,7 +1763,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 155,
                             AlcoholByVolume = 5.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(6650),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(7994),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Vitoshko Lale Tumno Pivo",
                             TypeId = 8
@@ -1616,7 +1774,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 156,
                             AlcoholByVolume = 4.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(6891),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8014),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Pivo Everyday Lager",
                             TypeId = 1
@@ -1626,7 +1785,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 157,
                             AlcoholByVolume = 5.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(7022),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8033),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Pivo Everyday Luxe",
                             TypeId = 1
@@ -1636,7 +1796,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 158,
                             AlcoholByVolume = 5.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(7176),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8053),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Shipka",
                             TypeId = 1
@@ -1646,7 +1807,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 159,
                             AlcoholByVolume = 5.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(7410),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8073),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lomsko Lux",
                             TypeId = 1
@@ -1656,7 +1818,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 160,
                             AlcoholByVolume = 4.0,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(7631),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8093),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Gredberg",
                             TypeId = 1
@@ -1666,7 +1829,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 161,
                             AlcoholByVolume = 4.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(7746),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8112),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Shopsko Svetlo",
                             TypeId = 1
@@ -1676,7 +1840,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 162,
                             AlcoholByVolume = 5.0,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(7847),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8132),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Almus Special",
                             TypeId = 1
@@ -1686,7 +1851,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 163,
                             AlcoholByVolume = 3.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(7948),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8153),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Tsarsko Lager",
                             TypeId = 1
@@ -1696,7 +1862,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 164,
                             AlcoholByVolume = 4.0,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(8041),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8173),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Miziya Svetlo",
                             TypeId = 1
@@ -1706,7 +1873,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 165,
                             AlcoholByVolume = 3.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(8131),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8193),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Dunavsko Lager",
                             TypeId = 1
@@ -1716,7 +1884,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 166,
                             AlcoholByVolume = 3.5,
                             BreweryId = 23,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(8223),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8212),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Optima Svetlo",
                             TypeId = 11
@@ -1726,7 +1895,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 167,
                             AlcoholByVolume = 5.0,
                             BreweryId = 24,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(8316),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8232),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lucs Plum",
                             TypeId = 7
@@ -1736,7 +1906,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 168,
                             AlcoholByVolume = 5.0,
                             BreweryId = 24,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(8414),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8251),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lucs Cherry",
                             TypeId = 7
@@ -1746,7 +1917,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 169,
                             AlcoholByVolume = 6.5,
                             BreweryId = 24,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(8534),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8351),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lucs Trevnensko",
                             TypeId = 8
@@ -1756,7 +1928,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 170,
                             AlcoholByVolume = 5.0,
                             BreweryId = 24,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(8734),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8376),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lucs Kehlibar",
                             TypeId = 8
@@ -1766,7 +1939,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 171,
                             AlcoholByVolume = 5.0,
                             BreweryId = 24,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(9027),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8428),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Lucs Svetlo",
                             TypeId = 2
@@ -1776,7 +1950,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 172,
                             AlcoholByVolume = 5.2999999999999998,
                             BreweryId = 25,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(9303),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8449),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Mad Panda Cryo Bandit",
                             TypeId = 4
@@ -1786,7 +1961,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 173,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 25,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(9488),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8468),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Mad Panda God Gave the Hops",
                             TypeId = 5
@@ -1796,7 +1972,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 174,
                             AlcoholByVolume = 6.5999999999999996,
                             BreweryId = 25,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(9595),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8488),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Mad Panda Powder Mafia",
                             TypeId = 10
@@ -1806,7 +1983,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 175,
                             AlcoholByVolume = 5.5,
                             BreweryId = 25,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(9695),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8508),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Mad Panda PsycHOP Therapy",
                             TypeId = 4
@@ -1816,7 +1994,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 176,
                             AlcoholByVolume = 11.0,
                             BreweryId = 26,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 956, DateTimeKind.Local).AddTicks(9899),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8528),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Meadly Sweet Mead",
                             TypeId = 12
@@ -1826,7 +2005,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 177,
                             AlcoholByVolume = 13.0,
                             BreweryId = 26,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(163),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8548),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Meadly Traditional Mead",
                             TypeId = 12
@@ -1836,7 +2016,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 178,
                             AlcoholByVolume = 12.0,
                             BreweryId = 26,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(295),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8567),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Meadly Live Mead With Herbs",
                             TypeId = 12
@@ -1846,7 +2027,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 179,
                             AlcoholByVolume = 10.0,
                             BreweryId = 26,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(399),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8587),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Meadly Zhiva Medovina",
                             TypeId = 12
@@ -1856,7 +2038,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 180,
                             AlcoholByVolume = 5.5,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(496),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8607),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Space Lord",
                             TypeId = 1
@@ -1866,7 +2049,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 181,
                             AlcoholByVolume = 10.5,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(727),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8628),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Sweet Stout of Mine",
                             TypeId = 10
@@ -1876,7 +2060,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 182,
                             AlcoholByVolume = 6.9000000000000004,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(905),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8648),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Your Girlfriend's Girlfriend",
                             TypeId = 5
@@ -1886,7 +2071,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 183,
                             AlcoholByVolume = 5.4000000000000004,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(1176),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8667),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Lickitup",
                             TypeId = 4
@@ -1896,7 +2082,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 184,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(1328),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8686),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Headbangers Boil",
                             TypeId = 5
@@ -1906,7 +2093,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 185,
                             AlcoholByVolume = 4.5999999999999996,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(1569),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8706),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Cinn City",
                             TypeId = 7
@@ -1916,7 +2104,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 186,
                             AlcoholByVolume = 7.0,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(2868),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8726),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Supermassive Black IPA",
                             TypeId = 8
@@ -1926,7 +2115,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 187,
                             AlcoholByVolume = 7.0999999999999996,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(3165),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8746),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead King Nothing",
                             TypeId = 5
@@ -1936,7 +2126,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 188,
                             AlcoholByVolume = 5.9000000000000004,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(3277),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8765),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Turbo Lover",
                             TypeId = 5
@@ -1946,7 +2137,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 189,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(3406),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8817),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Pleasure and Pain",
                             TypeId = 3
@@ -1956,7 +2148,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 190,
                             AlcoholByVolume = 10.5,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(3512),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8836),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Sweet Stout of Mine Barrel Aged: Jack Daniel's",
                             TypeId = 10
@@ -1966,7 +2159,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 191,
                             AlcoholByVolume = 3.7999999999999998,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(3618),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8856),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Running Mild",
                             TypeId = 4
@@ -1976,7 +2170,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 192,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(3732),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8876),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Metalingus",
                             TypeId = 9
@@ -1986,7 +2181,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 193,
                             AlcoholByVolume = 6.5,
                             BreweryId = 27,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(3837),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8896),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Metalhead Hop Suey",
                             TypeId = 5
@@ -1996,7 +2192,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 194,
                             AlcoholByVolume = 4.4000000000000004,
                             BreweryId = 28,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(3950),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8915),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Pirinsko Svetlo Pivo",
                             TypeId = 1
@@ -2006,7 +2203,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 195,
                             AlcoholByVolume = 4.4000000000000004,
                             BreweryId = 28,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(4056),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8935),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Pirinsko Mlado Pivo",
                             TypeId = 1
@@ -2016,7 +2214,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 196,
                             AlcoholByVolume = 4.4000000000000004,
                             BreweryId = 28,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(4163),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8954),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Pirinsko Ledeno",
                             TypeId = 1
@@ -2026,7 +2225,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 197,
                             AlcoholByVolume = 4.7000000000000002,
                             BreweryId = 28,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(4267),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8973),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Pirinsko Tumno Pivo",
                             TypeId = 8
@@ -2036,7 +2236,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 198,
                             AlcoholByVolume = 4.0,
                             BreweryId = 29,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(4376),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(8993),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Pivoteka Hala",
                             TypeId = 1
@@ -2046,7 +2247,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 199,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(4481),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9012),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Staro Pivo",
                             TypeId = 11
@@ -2056,7 +2258,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 200,
                             AlcoholByVolume = 5.0,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(4589),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9032),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Tamno",
                             TypeId = 8
@@ -2066,7 +2269,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 201,
                             AlcoholByVolume = 5.0,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(4700),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9051),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Lev",
                             TypeId = 1
@@ -2076,7 +2280,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 202,
                             AlcoholByVolume = 5.0,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(4854),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9071),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Extra",
                             TypeId = 1
@@ -2086,7 +2291,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 203,
                             AlcoholByVolume = 4.4000000000000004,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(5066),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9090),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza 1881",
                             TypeId = 1
@@ -2096,7 +2302,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 204,
                             AlcoholByVolume = 4.0999999999999996,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(5180),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9109),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Slavena Svetlo",
                             TypeId = 1
@@ -2106,7 +2313,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 205,
                             AlcoholByVolume = 4.4000000000000004,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(5417),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9129),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Cherveno",
                             TypeId = 6
@@ -2116,7 +2324,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 206,
                             AlcoholByVolume = 5.0,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(5541),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9182),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Bialo",
                             TypeId = 1
@@ -2126,7 +2335,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 207,
                             AlcoholByVolume = 4.0999999999999996,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(5653),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9203),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Pleven Svetlo Pivo",
                             TypeId = 1
@@ -2136,7 +2346,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 208,
                             AlcoholByVolume = 4.9000000000000004,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(6383),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9222),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Nefiltrirano",
                             TypeId = 3
@@ -2146,7 +2357,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 209,
                             AlcoholByVolume = 6.0,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(7969),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9242),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Tumno",
                             TypeId = 8
@@ -2156,7 +2368,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 210,
                             AlcoholByVolume = 5.0,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(8110),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9262),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Pshenichno",
                             TypeId = 3
@@ -2166,7 +2379,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 211,
                             AlcoholByVolume = 5.0999999999999996,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(8217),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9281),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Live",
                             TypeId = 1
@@ -2176,7 +2390,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 212,
                             AlcoholByVolume = 9.0,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(8322),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9302),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kamenitza Tvurdo",
                             TypeId = 11
@@ -2186,7 +2401,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 213,
                             AlcoholByVolume = 4.4000000000000004,
                             BreweryId = 30,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(8433),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9321),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Pleven Svetlo",
                             TypeId = 1
@@ -2196,7 +2412,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 214,
                             AlcoholByVolume = 4.5,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(8595),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9341),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Divo Pivo",
                             TypeId = 4
@@ -2206,7 +2423,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 215,
                             AlcoholByVolume = 4.5,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(8798),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9361),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Divo Pivo HD Limited",
                             TypeId = 4
@@ -2216,7 +2434,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 216,
                             AlcoholByVolume = 5.5999999999999996,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(8920),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9381),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Divo Pivo Red Ale",
                             TypeId = 7
@@ -2226,7 +2445,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 218,
                             AlcoholByVolume = 4.5,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(9023),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9401),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Divo Pivo Session IPA",
                             TypeId = 5
@@ -2236,7 +2456,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 219,
                             AlcoholByVolume = 4.5,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(9120),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9421),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Divo Pivo DDH DDH",
                             TypeId = 4
@@ -2246,7 +2467,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 220,
                             AlcoholByVolume = 4.5,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(9209),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9441),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kotka & Mishka Session IPA",
                             TypeId = 5
@@ -2256,7 +2478,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 221,
                             AlcoholByVolume = 4.7000000000000002,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(9299),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9462),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Samets",
                             TypeId = 7
@@ -2266,7 +2489,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 222,
                             AlcoholByVolume = 4.5,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(9389),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9483),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Na Specialnata Peika",
                             TypeId = 5
@@ -2276,7 +2500,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 223,
                             AlcoholByVolume = 4.5,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(9481),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9502),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Na Peikata",
                             TypeId = 5
@@ -2286,7 +2511,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 224,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(9577),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9521),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Divo Pivo Gaillot",
                             TypeId = 10
@@ -2296,7 +2522,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 225,
                             AlcoholByVolume = 4.5999999999999996,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(9678),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9598),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Divo Pivo Kapana Ale",
                             TypeId = 4
@@ -2306,7 +2533,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 226,
                             AlcoholByVolume = 4.5,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(9777),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9619),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Divo Pivo Weiss",
                             TypeId = 3
@@ -2316,7 +2544,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 227,
                             AlcoholByVolume = 4.5,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 957, DateTimeKind.Local).AddTicks(9881),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9641),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Divo Pivo 3rd of March",
                             TypeId = 2
@@ -2326,7 +2555,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 228,
                             AlcoholByVolume = 4.5,
                             BreweryId = 31,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(9),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9660),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Divo Pivo First Birthday Edition",
                             TypeId = 2
@@ -2336,7 +2566,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 229,
                             AlcoholByVolume = 4.5,
                             BreweryId = 32,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(117),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9680),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Britos",
                             TypeId = 1
@@ -2346,7 +2577,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 230,
                             AlcoholByVolume = 4.5,
                             BreweryId = 32,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(216),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9700),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Britos Contintental Lager",
                             TypeId = 1
@@ -2356,7 +2588,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 231,
                             AlcoholByVolume = 5.0,
                             BreweryId = 32,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(310),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9719),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Britos Hoppy Blond",
                             TypeId = 2
@@ -2366,7 +2599,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 232,
                             AlcoholByVolume = 5.5,
                             BreweryId = 32,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(402),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9740),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Britos Opusheno",
                             TypeId = 9
@@ -2376,7 +2610,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 233,
                             AlcoholByVolume = 4.0,
                             BreweryId = 32,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(497),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9759),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Nazdrave Svetlo",
                             TypeId = 1
@@ -2386,7 +2621,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 234,
                             AlcoholByVolume = 4.0,
                             BreweryId = 32,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(592),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9778),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kronberg",
                             TypeId = 1
@@ -2396,7 +2632,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 235,
                             AlcoholByVolume = 6.5,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(689),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9798),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Stolichno Bock",
                             TypeId = 13
@@ -2406,7 +2643,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 236,
                             AlcoholByVolume = 6.5,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(780),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9817),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Stolichno Weiss",
                             TypeId = 3
@@ -2416,7 +2654,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 237,
                             AlcoholByVolume = 7.0999999999999996,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(878),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9838),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Stolichno Pale Bock",
                             TypeId = 13
@@ -2426,7 +2665,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 238,
                             AlcoholByVolume = 6.0,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(974),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9857),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Stolichno Amber Pils",
                             TypeId = 6
@@ -2436,7 +2676,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 239,
                             AlcoholByVolume = 5.5,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(1074),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9877),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Stolichno Pale Ale",
                             TypeId = 4
@@ -2446,7 +2687,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 240,
                             AlcoholByVolume = 4.5,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(1176),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9896),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kradetsut na Yabulki Sochna Yabulka",
                             TypeId = 14
@@ -2456,7 +2698,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 241,
                             AlcoholByVolume = 5.5,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(1274),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9916),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ariana Tumno",
                             TypeId = 8
@@ -2466,7 +2709,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 242,
                             AlcoholByVolume = 6.0,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(1368),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9966),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Zagorka Rezerva",
                             TypeId = 7
@@ -2476,7 +2720,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 243,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(1516),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 981, DateTimeKind.Local).AddTicks(9987),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Zagorka IPA",
                             TypeId = 5
@@ -2486,7 +2731,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 244,
                             AlcoholByVolume = 4.5,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(1734),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(6),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Zagorka Retro",
                             TypeId = 1
@@ -2496,7 +2742,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 245,
                             AlcoholByVolume = 5.0,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(3152),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(26),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Zagorka Spetsialno",
                             TypeId = 1
@@ -2506,7 +2753,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 246,
                             AlcoholByVolume = 4.5,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(3805),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(45),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ariana",
                             TypeId = 1
@@ -2516,7 +2764,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 247,
                             AlcoholByVolume = 5.0,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(4054),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(64),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Zagorka Gold",
                             TypeId = 1
@@ -2526,7 +2775,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 248,
                             AlcoholByVolume = 4.5,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(4292),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(84),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kradetsut na Yabulki Krade I Slivi",
                             TypeId = 14
@@ -2536,7 +2786,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 249,
                             AlcoholByVolume = 4.5,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(4814),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(103),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Kradetsut na Yabulki Krade I Vishni",
                             TypeId = 14
@@ -2546,7 +2797,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 250,
                             AlcoholByVolume = 5.0,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(5062),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(122),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Amstel Dark",
                             TypeId = 8
@@ -2556,7 +2808,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 251,
                             AlcoholByVolume = 4.9000000000000004,
                             BreweryId = 33,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(5172),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(142),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Ariana Varka7",
                             TypeId = 1
@@ -2566,7 +2819,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 252,
                             AlcoholByVolume = 9.3000000000000007,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(5273),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(161),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Impreial Porter (Barrel Aged)",
                             TypeId = 9
@@ -2576,7 +2830,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 253,
                             AlcoholByVolume = 7.2000000000000002,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(5378),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(181),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Dirty",
                             TypeId = 10
@@ -2586,7 +2841,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 254,
                             AlcoholByVolume = 7.2000000000000002,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(5479),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(202),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Imperial Porter",
                             TypeId = 9
@@ -2596,7 +2852,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 255,
                             AlcoholByVolume = 6.0,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(6768),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(222),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Aloha IPA",
                             TypeId = 5
@@ -2606,7 +2863,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 256,
                             AlcoholByVolume = 5.7999999999999998,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(6976),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(241),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Weizen IPA",
                             TypeId = 5
@@ -2616,7 +2874,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 257,
                             AlcoholByVolume = 5.0,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(9271),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(261),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus English Porter",
                             TypeId = 9
@@ -2626,7 +2885,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 258,
                             AlcoholByVolume = 6.2999999999999998,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 958, DateTimeKind.Local).AddTicks(9930),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(280),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Dr. Brettish",
                             TypeId = 7
@@ -2636,7 +2896,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 259,
                             AlcoholByVolume = 6.0,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(353),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(339),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Dr. Cherry Kriek",
                             TypeId = 7
@@ -2646,7 +2907,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 260,
                             AlcoholByVolume = 6.0,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(515),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(359),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Alba - White IPA",
                             TypeId = 5
@@ -2656,7 +2918,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 261,
                             AlcoholByVolume = 6.0,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(638),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(379),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Apfel Strudel",
                             TypeId = 8
@@ -2666,7 +2929,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 262,
                             AlcoholByVolume = 7.5999999999999996,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(746),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(400),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Pearl",
                             TypeId = 6
@@ -2676,7 +2940,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 263,
                             AlcoholByVolume = 6.2999999999999998,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(850),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(419),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus In the Blooming Rye",
                             TypeId = 5
@@ -2686,7 +2951,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 264,
                             AlcoholByVolume = 3.8999999999999999,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(959),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(439),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Violet",
                             TypeId = 7
@@ -2696,7 +2962,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 265,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(1069),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(458),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Lavender Nights",
                             TypeId = 9
@@ -2706,7 +2973,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 266,
                             AlcoholByVolume = 6.4000000000000004,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(1183),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(478),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Mint Nights",
                             TypeId = 10
@@ -2716,7 +2984,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 267,
                             AlcoholByVolume = 3.0,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(1294),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(500),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Hakuna Matata",
                             TypeId = 3
@@ -2726,7 +2995,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 268,
                             AlcoholByVolume = 9.1999999999999993,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(1402),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(519),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Tok i Zhica",
                             TypeId = 10
@@ -2736,7 +3006,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 269,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(1509),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(569),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Orpheus Gruit",
                             TypeId = 7
@@ -2746,7 +3017,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 270,
                             AlcoholByVolume = 8.0,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(1611),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(589),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus The Crow",
                             TypeId = 9
@@ -2756,7 +3028,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 271,
                             AlcoholByVolume = 5.0999999999999996,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(1708),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(608),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Christmas Fever",
                             TypeId = 10
@@ -2766,7 +3039,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 272,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(1805),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(628),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus AnimAle",
                             TypeId = 1
@@ -2776,7 +3050,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 273,
                             AlcoholByVolume = 7.2000000000000002,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(1904),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(648),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Pardon I'm Brut",
                             TypeId = 5
@@ -2786,7 +3061,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 274,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(2005),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(667),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Irish Red",
                             TypeId = 7
@@ -2796,7 +3072,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 275,
                             AlcoholByVolume = 5.0,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(2105),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(687),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Weiss",
                             TypeId = 3
@@ -2806,7 +3083,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 276,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(2225),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(707),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Pale Ale",
                             TypeId = 4
@@ -2816,7 +3094,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 277,
                             AlcoholByVolume = 5.5,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(2337),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(728),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Dark Steel",
                             TypeId = 5
@@ -2826,7 +3105,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 278,
                             AlcoholByVolume = 4.5,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(2439),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(747),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus St. Patrick's Beer",
                             TypeId = 4
@@ -2836,7 +3116,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 279,
                             AlcoholByVolume = 3.5,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(2547),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(767),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Catch the Wave",
                             TypeId = 5
@@ -2846,7 +3127,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 333,
                             AlcoholByVolume = 4.5,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(2659),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(786),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Pilsner",
                             TypeId = 11
@@ -2856,7 +3138,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 334,
                             AlcoholByVolume = 7.0999999999999996,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(2761),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(805),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Easter",
                             TypeId = 8
@@ -2866,7 +3149,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 335,
                             AlcoholByVolume = 5.4000000000000004,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(2862),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(825),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Belona",
                             TypeId = 5
@@ -2876,7 +3160,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 336,
                             AlcoholByVolume = 5.9000000000000004,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(2968),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(844),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Mart",
                             TypeId = 6
@@ -2886,7 +3171,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 337,
                             AlcoholByVolume = 5.7999999999999998,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(3079),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(864),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Black Widow",
                             TypeId = 5
@@ -2896,7 +3182,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 338,
                             AlcoholByVolume = 6.0,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(3177),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(884),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Arriba Arriba",
                             TypeId = 9
@@ -2906,7 +3193,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 339,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(3270),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(938),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Boston Tea Party",
                             TypeId = 5
@@ -2916,7 +3204,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 340,
                             AlcoholByVolume = 4.5,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(3364),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(959),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Kirschtorte",
                             TypeId = 3
@@ -2926,7 +3215,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 341,
                             AlcoholByVolume = 5.5,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(3464),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(978),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Breakfast Oatmeal Stout",
                             TypeId = 10
@@ -2936,7 +3226,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 342,
                             AlcoholByVolume = 5.7999999999999998,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(3568),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(999),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Star Anise Stout",
                             TypeId = 10
@@ -2946,7 +3237,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 280,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(3671),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1018),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Brown Ale",
                             TypeId = 8
@@ -2956,7 +3248,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 281,
                             AlcoholByVolume = 5.7000000000000002,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(3772),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1038),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Flanders Brown Ale Special Selection",
                             TypeId = 8
@@ -2966,7 +3259,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 282,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(3876),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1057),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Belgian Blond",
                             TypeId = 3
@@ -2976,7 +3270,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 283,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(3973),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1076),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Spetsialno",
                             TypeId = 7
@@ -2986,7 +3281,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 284,
                             AlcoholByVolume = 6.5999999999999996,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(4075),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1096),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Imperial Ale",
                             TypeId = 10
@@ -2996,7 +3292,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 285,
                             AlcoholByVolume = 4.7999999999999998,
                             BreweryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(4173),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1115),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Rhombus Svetlo",
                             TypeId = 4
@@ -3006,7 +3303,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 286,
                             AlcoholByVolume = 6.2000000000000002,
                             BreweryId = 35,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(4294),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1134),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Royal Cat",
                             TypeId = 3
@@ -3016,7 +3314,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 287,
                             AlcoholByVolume = 5.5999999999999996,
                             BreweryId = 36,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(4404),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1154),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Shumensko Kolektsiya Na Pivovarite Belgiyski Stil",
                             TypeId = 3
@@ -3026,7 +3325,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 288,
                             AlcoholByVolume = 5.5,
                             BreweryId = 36,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(4514),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1174),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Shumensko Tumno",
                             TypeId = 8
@@ -3036,7 +3336,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 289,
                             AlcoholByVolume = 5.0999999999999996,
                             BreweryId = 36,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(4620),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1193),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Shumensko Cherveno",
                             TypeId = 7
@@ -3046,7 +3347,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 290,
                             AlcoholByVolume = 5.4000000000000004,
                             BreweryId = 36,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(4727),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1213),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Shumnesko Kolektsiya na Pivovarite Cheshki Stil",
                             TypeId = 11
@@ -3056,7 +3358,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 291,
                             AlcoholByVolume = 5.2000000000000002,
                             BreweryId = 36,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(4835),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1232),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Shumensko",
                             TypeId = 1
@@ -3066,7 +3369,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 292,
                             AlcoholByVolume = 4.5999999999999996,
                             BreweryId = 36,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(4937),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1251),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Shumensko Premium",
                             TypeId = 1
@@ -3076,7 +3380,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 293,
                             AlcoholByVolume = 4.2999999999999998,
                             BreweryId = 36,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(5041),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1271),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Shumensko Svetlo Pivo",
                             TypeId = 6
@@ -3086,7 +3391,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 294,
                             AlcoholByVolume = 7.0,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(5143),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1325),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama CHIPA",
                             TypeId = 5
@@ -3096,7 +3402,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 295,
                             AlcoholByVolume = 5.5,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(5247),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1345),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama Mashin' Pumpkins",
                             TypeId = 6
@@ -3106,7 +3413,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 296,
                             AlcoholByVolume = 5.0,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(5352),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1365),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama Bloody Muddy",
                             TypeId = 7
@@ -3116,7 +3424,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 297,
                             AlcoholByVolume = 7.0,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(5459),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1384),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama Ginger Sucker Happy Ginger Ale",
                             TypeId = 6
@@ -3126,7 +3435,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 298,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(5561),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1404),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama Janka",
                             TypeId = 4
@@ -3136,7 +3446,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 299,
                             AlcoholByVolume = 5.5999999999999996,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(5669),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1423),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama Smoking Hot",
                             TypeId = 9
@@ -3146,7 +3457,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 300,
                             AlcoholByVolume = 5.0,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(6791),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1443),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama Ancient Meridian",
                             TypeId = 2
@@ -3156,7 +3468,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 301,
                             AlcoholByVolume = 5.0,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(6938),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1462),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama Unlackee",
                             TypeId = 7
@@ -3166,7 +3479,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 302,
                             AlcoholByVolume = 5.0,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(7043),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1482),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama Chai Malko",
                             TypeId = 2
@@ -3176,7 +3490,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 303,
                             AlcoholByVolume = 5.0,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(7148),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1502),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama Chisto I Prosto",
                             TypeId = 2
@@ -3186,7 +3501,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 304,
                             AlcoholByVolume = 5.0,
                             BreweryId = 37,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(7248),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1521),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Trima I Dvama Black Head Stout",
                             TypeId = 10
@@ -3196,7 +3512,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 305,
                             AlcoholByVolume = 7.0,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(7909),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1540),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Tropikalia IPA",
                             TypeId = 5
@@ -3206,7 +3523,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 306,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(8083),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1559),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork 1908 Stout",
                             TypeId = 10
@@ -3216,7 +3534,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 307,
                             AlcoholByVolume = 9.0,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(8181),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1579),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork White Stout",
                             TypeId = 10
@@ -3226,7 +3545,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 308,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(8278),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1599),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Boys Don't Cry-o",
                             TypeId = 1
@@ -3236,7 +3556,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 309,
                             AlcoholByVolume = 7.0,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(8375),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1619),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Cosmic Debris",
                             TypeId = 5
@@ -3246,7 +3567,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 310,
                             AlcoholByVolume = 5.5,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(8476),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1638),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Pushing The Limets",
                             TypeId = 3
@@ -3256,7 +3578,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 311,
                             AlcoholByVolume = 3.5,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(8575),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1689),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Rai",
                             TypeId = 5
@@ -3266,7 +3589,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 312,
                             AlcoholByVolume = 5.5,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(8671),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1710),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Original",
                             TypeId = 4
@@ -3276,7 +3600,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 313,
                             AlcoholByVolume = 6.7000000000000002,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(8768),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1730),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Dark Side",
                             TypeId = 10
@@ -3286,7 +3611,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 314,
                             AlcoholByVolume = 3.6000000000000001,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(8866),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1750),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Sofiiski Weisse",
                             TypeId = 3
@@ -3296,7 +3622,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 315,
                             AlcoholByVolume = 9.0999999999999996,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(8971),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1769),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Mutants",
                             TypeId = 5
@@ -3306,7 +3633,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 316,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(9074),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1790),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork BOOGIEon by Ramsey Hercules",
                             TypeId = 11
@@ -3316,7 +3644,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 317,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(9176),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1810),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Hop Along",
                             TypeId = 11
@@ -3326,7 +3655,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 318,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(9277),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1829),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Into The Galaxy",
                             TypeId = 11
@@ -3336,7 +3666,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 319,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(9377),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1849),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Just a Pilsner",
                             TypeId = 11
@@ -3346,7 +3677,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 320,
                             AlcoholByVolume = 7.0,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(9479),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1868),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Tropikalia V2.0",
                             TypeId = 5
@@ -3356,7 +3688,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 321,
                             AlcoholByVolume = 7.0,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(9578),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1888),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Take Me Somewhere Nice",
                             TypeId = 5
@@ -3366,7 +3699,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 322,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(9674),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1907),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Dry Hopped House Pilsner",
                             TypeId = 11
@@ -3376,7 +3710,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 323,
                             AlcoholByVolume = 4.2000000000000002,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(9773),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1927),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Kinky Afro",
                             TypeId = 11
@@ -3386,7 +3721,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 324,
                             AlcoholByVolume = 5.7000000000000002,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(9896),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1947),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Borderless",
                             TypeId = 6
@@ -3396,7 +3732,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 325,
                             AlcoholByVolume = 10.0,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 959, DateTimeKind.Local).AddTicks(9997),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1966),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Intergalactic DIPA DDH",
                             TypeId = 5
@@ -3406,7 +3743,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 326,
                             AlcoholByVolume = 5.5,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 960, DateTimeKind.Local).AddTicks(98),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(1986),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "White Stork Summer",
                             TypeId = 4
@@ -3416,7 +3754,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 327,
                             AlcoholByVolume = 5.0,
                             BreweryId = 39,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 960, DateTimeKind.Local).AddTicks(196),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(2005),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Zlatna Varna Amber",
                             TypeId = 6
@@ -3426,7 +3765,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 328,
                             AlcoholByVolume = 4.9000000000000004,
                             BreweryId = 38,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 960, DateTimeKind.Local).AddTicks(288),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(2027),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "Zlatna Varna Pilsner",
                             TypeId = 11
@@ -3436,7 +3776,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 329,
                             AlcoholByVolume = 6.5,
                             BreweryId = 40,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 960, DateTimeKind.Local).AddTicks(389),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(2107),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "G-n Xops Coconut Milk Porter",
                             TypeId = 9
@@ -3446,7 +3787,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 330,
                             AlcoholByVolume = 6.0,
                             BreweryId = 40,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 960, DateTimeKind.Local).AddTicks(484),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(2130),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "G-n Xops NEIPA V2.0",
                             TypeId = 5
@@ -3456,7 +3798,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 331,
                             AlcoholByVolume = 4.9000000000000004,
                             BreweryId = 40,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 960, DateTimeKind.Local).AddTicks(592),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(2150),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "G-n Xops Pale Ale V2.0",
                             TypeId = 4
@@ -3466,7 +3809,8 @@ namespace BeerOverflow.Database.Migrations
                             Id = 332,
                             AlcoholByVolume = 4.5,
                             BreweryId = 40,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 960, DateTimeKind.Local).AddTicks(694),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(2169),
+                            ImgUrl = "\\images\\Beer-Placeholder.jpg",
                             IsDeleted = false,
                             Name = "G-n Xops",
                             TypeId = 4
@@ -3572,98 +3916,98 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 949, DateTimeKind.Local).AddTicks(3698),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7750),
                             IsDeleted = false,
                             Name = "Pale Lager"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 950, DateTimeKind.Local).AddTicks(4893),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9188),
                             IsDeleted = false,
                             Name = "Blonde Ale"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 950, DateTimeKind.Local).AddTicks(5305),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9235),
                             IsDeleted = false,
                             Name = "Hefewizen"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 950, DateTimeKind.Local).AddTicks(5412),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9252),
                             IsDeleted = false,
                             Name = "Pale Ale"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 950, DateTimeKind.Local).AddTicks(5533),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9268),
                             IsDeleted = false,
                             Name = "IPA"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 950, DateTimeKind.Local).AddTicks(5716),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9286),
                             IsDeleted = false,
                             Name = "Amber Ale"
                         },
                         new
                         {
                             Id = 7,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 951, DateTimeKind.Local).AddTicks(4208),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9301),
                             IsDeleted = false,
                             Name = "Irish Red Ale"
                         },
                         new
                         {
                             Id = 8,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 951, DateTimeKind.Local).AddTicks(4385),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9317),
                             IsDeleted = false,
                             Name = "Brown Ale"
                         },
                         new
                         {
                             Id = 9,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 951, DateTimeKind.Local).AddTicks(4471),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9332),
                             IsDeleted = false,
                             Name = "Porter"
                         },
                         new
                         {
                             Id = 10,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 951, DateTimeKind.Local).AddTicks(5201),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9348),
                             IsDeleted = false,
                             Name = "Stout"
                         },
                         new
                         {
                             Id = 11,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 951, DateTimeKind.Local).AddTicks(5340),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9364),
                             IsDeleted = false,
                             Name = "Pilsner"
                         },
                         new
                         {
                             Id = 12,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 951, DateTimeKind.Local).AddTicks(5426),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9379),
                             IsDeleted = false,
                             Name = "Mead"
                         },
                         new
                         {
                             Id = 13,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 951, DateTimeKind.Local).AddTicks(5511),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9394),
                             IsDeleted = false,
                             Name = "Bock"
                         },
                         new
                         {
                             Id = 14,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 951, DateTimeKind.Local).AddTicks(5596),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(9409),
                             IsDeleted = false,
                             Name = "Cider"
                         });
@@ -3707,7 +4051,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 1,
                             CountryId = 87,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 946, DateTimeKind.Local).AddTicks(1444),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(4627),
                             IsDeleted = false,
                             Name = "Mythos Breweries"
                         },
@@ -3715,7 +4059,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 2,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(4262),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6455),
                             IsDeleted = false,
                             Name = "Ah! Brew Works Sofia"
                         },
@@ -3723,7 +4067,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 3,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(4722),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6520),
                             IsDeleted = false,
                             Name = "Ailyak Sofia"
                         },
@@ -3731,7 +4075,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 4,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(4903),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6538),
                             IsDeleted = false,
                             Name = "Astika Brewery Haskovo"
                         },
@@ -3739,7 +4083,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 5,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(5136),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6553),
                             IsDeleted = false,
                             Name = "Beer Bastards Burgas"
                         },
@@ -3747,7 +4091,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 6,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(5362),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6573),
                             IsDeleted = false,
                             Name = "Beerbox Sofia"
                         },
@@ -3755,7 +4099,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 7,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(5458),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6588),
                             IsDeleted = false,
                             Name = "Beershop-BG Sofia"
                         },
@@ -3763,7 +4107,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 8,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(5542),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6603),
                             IsDeleted = false,
                             Name = "Birariya River Side Sofia"
                         },
@@ -3771,7 +4115,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 9,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(5623),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6618),
                             IsDeleted = false,
                             Name = "Blek Pine Sofia"
                         },
@@ -3779,7 +4123,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 10,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(5709),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6635),
                             IsDeleted = false,
                             Name = "Boliarka Brewery Veliko Tarnovo"
                         },
@@ -3787,7 +4131,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 11,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(5795),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6652),
                             IsDeleted = false,
                             Name = "Bro Beer Sofia"
                         },
@@ -3795,7 +4139,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 12,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(5879),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6667),
                             IsDeleted = false,
                             Name = "Brothers Brew Varna"
                         },
@@ -3803,7 +4147,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 13,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(5961),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6682),
                             IsDeleted = false,
                             Name = "Pivovarnata Burgas"
                         },
@@ -3811,7 +4155,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 14,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6038),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6697),
                             IsDeleted = false,
                             Name = "Can Supply Blagoevgrad"
                         },
@@ -3819,7 +4163,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 15,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6111),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6714),
                             IsDeleted = false,
                             Name = "Cohones Brewery Sofia"
                         },
@@ -3827,7 +4171,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 16,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6184),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6765),
                             IsDeleted = false,
                             Name = "Dorst Sofia"
                         },
@@ -3835,7 +4179,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 17,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6256),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6783),
                             IsDeleted = false,
                             Name = "Dunav Craft Brewery Ruse"
                         },
@@ -3843,7 +4187,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 18,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6376),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6801),
                             IsDeleted = false,
                             Name = "Glarus Craft Brewing Company Varna"
                         },
@@ -3851,7 +4195,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 19,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6451),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6818),
                             IsDeleted = false,
                             Name = "Halbite Sofia"
                         },
@@ -3859,7 +4203,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 20,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6528),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6833),
                             IsDeleted = false,
                             Name = "Hills Brewery Perushtitsa"
                         },
@@ -3867,7 +4211,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 21,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6607),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6848),
                             IsDeleted = false,
                             Name = "Jägerhof Plovdiv"
                         },
@@ -3875,7 +4219,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 22,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6686),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6864),
                             IsDeleted = false,
                             Name = "Kazan Artizan Sofia"
                         },
@@ -3883,7 +4227,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 23,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6762),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6879),
                             IsDeleted = false,
                             Name = "Lomsko Pivo AD Lom"
                         },
@@ -3891,7 +4235,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 24,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6845),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6895),
                             IsDeleted = false,
                             Name = "Birariya Tryavna"
                         },
@@ -3899,7 +4243,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 25,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6919),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6910),
                             IsDeleted = false,
                             Name = "Mad Panda Brewery Sofia"
                         },
@@ -3907,7 +4251,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 26,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(6992),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6927),
                             IsDeleted = false,
                             Name = "Meadly Sofia"
                         },
@@ -3915,7 +4259,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 27,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(7064),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6942),
                             IsDeleted = false,
                             Name = "Metalhead Brewery Burgas"
                         },
@@ -3923,7 +4267,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 28,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(7271),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6958),
                             IsDeleted = false,
                             Name = "Pirinsko Pivo Blagoevgrad"
                         },
@@ -3931,7 +4275,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 29,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(7376),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6973),
                             IsDeleted = false,
                             Name = "Pivoteka Sofia"
                         },
@@ -3939,7 +4283,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 30,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(7451),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(6988),
                             IsDeleted = false,
                             Name = "Pivovaren Zavod Kamenitsa Plovdiv"
                         },
@@ -3947,7 +4291,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 31,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(7525),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7004),
                             IsDeleted = false,
                             Name = "Pivovarna 359 Mramor"
                         },
@@ -3955,7 +4299,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 32,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(7604),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7018),
                             IsDeleted = false,
                             Name = "Pivovarna Britos Veliko Tarnovo"
                         },
@@ -3963,7 +4307,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 33,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(7761),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7035),
                             IsDeleted = false,
                             Name = "Pivovarna Zagorka Stara Zagora"
                         },
@@ -3971,7 +4315,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 34,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(7930),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7052),
                             IsDeleted = false,
                             Name = "Rhombus Craft Brewery Pazardzhik"
                         },
@@ -3979,7 +4323,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 35,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(8028),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7067),
                             IsDeleted = false,
                             Name = "Royal Cat Varna"
                         },
@@ -3987,7 +4331,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 36,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(8110),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7112),
                             IsDeleted = false,
                             Name = "Shumensko Pivo Shumen"
                         },
@@ -3995,7 +4339,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 37,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(8183),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7129),
                             IsDeleted = false,
                             Name = "Trima i Dvama Sliven"
                         },
@@ -4003,7 +4347,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 38,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(8295),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7145),
                             IsDeleted = false,
                             Name = "White Stork Beer Company Sofia"
                         },
@@ -4011,7 +4355,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 39,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(8384),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7160),
                             IsDeleted = false,
                             Name = "The Black Sheep Varna"
                         },
@@ -4019,7 +4363,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 40,
                             CountryId = 34,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 948, DateTimeKind.Local).AddTicks(8459),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 980, DateTimeKind.Local).AddTicks(7175),
                             IsDeleted = false,
                             Name = "Meltum Brewery Lovech"
                         });
@@ -5600,7 +5944,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 1,
                             AuthorId = 1,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 964, DateTimeKind.Local).AddTicks(4136),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(8502),
                             IsDeleted = false,
                             Name = "Na Pesho Review-to",
                             Rating = 10,
@@ -5611,7 +5955,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 2,
                             AuthorId = 2,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 964, DateTimeKind.Local).AddTicks(5812),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(8719),
                             IsDeleted = false,
                             Name = "Na Gosho Review-to",
                             Rating = 7,
@@ -5622,7 +5966,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 3,
                             AuthorId = 3,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 964, DateTimeKind.Local).AddTicks(5970),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(8746),
                             IsDeleted = false,
                             Name = "Na Tosho Review-to",
                             Rating = 8,
@@ -5633,7 +5977,7 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 4,
                             AuthorId = 4,
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 964, DateTimeKind.Local).AddTicks(6070),
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(8766),
                             IsDeleted = false,
                             Name = "Kaiser nomer edno",
                             Rating = 10,
@@ -5674,21 +6018,21 @@ namespace BeerOverflow.Database.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "a73b2f1e-00c6-411b-8602-2eade4f2f1d1",
+                            ConcurrencyStamp = "19dc9b9f-f765-4a35-a687-eebbea838c6f",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "8d21970e-da1a-48bf-8c38-f6c432ff24dc",
+                            ConcurrencyStamp = "7251c423-f752-4998-b9f5-6956eb60b0cb",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "065415ee-a0aa-47af-8f1a-d76b07a831ab",
+                            ConcurrencyStamp = "7c893fd8-7a21-4e52-8427-bedbb2c33f2e",
                             Name = "Guest",
                             NormalizedName = "GUEST"
                         });
@@ -5785,8 +6129,8 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "98797215-b865-46c4-ae9f-fb61d701d571",
-                            CreatedOn = new DateTime(2020, 5, 1, 11, 40, 42, 755, DateTimeKind.Utc).AddTicks(7319),
+                            ConcurrencyStamp = "bf068e41-69e1-45c1-a731-2866ddbeef94",
+                            CreatedOn = new DateTime(2020, 5, 3, 12, 6, 47, 954, DateTimeKind.Utc).AddTicks(4024),
                             Email = "grand_master@biri.com",
                             EmailConfirmed = false,
                             IsBanned = false,
@@ -5794,7 +6138,7 @@ namespace BeerOverflow.Database.Migrations
                             LockoutEnabled = true,
                             NormalizedEmail = "GRAND_MASTER@BIRI.COM",
                             NormalizedUserName = "GRAND_MASTER@BIRI.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEs8JyQOWICFCmnxDHooKYNqlS7ytQ0Hq0IR6OF4kbOMsaAFaQ5aduV3nYNVgwd+hA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEJ1ehvv34o8AhZXbY4Aj/1UNBkE3M7SqP5FTkMR/Nri1P3GGUg5AHPbwuYhZNWz+HQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "7I5VNHIJTSZNOT3KDWKNFUV5PVYBHGXN",
                             TwoFactorEnabled = false,
@@ -5804,8 +6148,8 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "04f1fe2c-03a6-4c24-9ebc-4f6b8c8ed71f",
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 961, DateTimeKind.Local).AddTicks(7759),
+                            ConcurrencyStamp = "016fa1d0-503b-4ec6-a6d9-5eb88ace545c",
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(4742),
                             Email = "Pesho@biri.com",
                             EmailConfirmed = false,
                             IsBanned = false,
@@ -5822,8 +6166,8 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 3,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7aadf6f7-a036-436f-9557-e0248972626f",
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 962, DateTimeKind.Local).AddTicks(1339),
+                            ConcurrencyStamp = "652efe45-4b6d-4a82-b628-23f98b11dd7c",
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(5247),
                             Email = "Gosho@biri.com",
                             EmailConfirmed = false,
                             IsBanned = false,
@@ -5840,8 +6184,8 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 4,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "abb2893f-8f61-479d-9d8f-1c8570a02705",
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 962, DateTimeKind.Local).AddTicks(1474),
+                            ConcurrencyStamp = "5ca77a89-8a63-475c-ac6c-f084ee606f74",
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(5284),
                             Email = "Tosho@biri.com",
                             EmailConfirmed = false,
                             IsBanned = false,
@@ -5858,8 +6202,8 @@ namespace BeerOverflow.Database.Migrations
                         {
                             Id = 5,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "18960580-0936-4896-9b78-e9892c1db320",
-                            CreatedOn = new DateTime(2020, 5, 1, 14, 40, 42, 962, DateTimeKind.Local).AddTicks(1600),
+                            ConcurrencyStamp = "aa9a9d04-1d1b-4270-a29d-4ce31c868587",
+                            CreatedOn = new DateTime(2020, 5, 3, 15, 6, 47, 982, DateTimeKind.Local).AddTicks(5308),
                             Email = "Slavcho@biri.com",
                             EmailConfirmed = false,
                             IsBanned = false,

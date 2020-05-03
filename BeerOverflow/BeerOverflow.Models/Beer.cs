@@ -12,6 +12,10 @@ namespace BeerOverflow.Models
             this.Likes = new List<Like>();
             this.Reviews = new List<Review>();
             this.CreatedOn = DateTime.Now;
+            if(this.ImgUrl == null)
+            {
+                this.ImgUrl = "\\images\\Beer-Placeholder.jpg";
+            }
         }
         public int Id { get; set; }
         [Required]
@@ -30,5 +34,6 @@ namespace BeerOverflow.Models
         public double AlcoholByVolume { get; set; }
         public List<Like> Likes { get; set; }
         public List<Review> Reviews { get; set; }
+        public string ImgUrl { get; set; }
     }
 }
