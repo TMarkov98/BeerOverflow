@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -48,7 +49,6 @@ namespace BeerOverflow.Web.Controllers
             int pageSize = 12;
             return View(await PaginatedList<Beer>.CreateAsync(beers, pageNumber ?? 1, pageSize));
         }
-
         // GET: Beers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
