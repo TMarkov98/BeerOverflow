@@ -44,8 +44,7 @@
 <div>
     @if (User.Identity.Name == Model.Author.UserName)
     {
-        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-        <text> | </text>
+        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
     }
     <a  type="button" class="btn btn-danger"  asp-action="Index">Back to List</a>
 </div>

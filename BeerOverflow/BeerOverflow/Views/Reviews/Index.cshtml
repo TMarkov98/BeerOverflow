@@ -55,8 +55,7 @@ else
                     <td>
                         @if (User.Identity.Name == item.Author.UserName)
                         {
-                            <a type="button" class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                            <text> | </text>
+                            <a type="button" class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a> 
                         }
                         <a type="button" class="btn btn-warning" asp-action="Details" asp-route-id="@item.Id">Details</a>
                     </td>
