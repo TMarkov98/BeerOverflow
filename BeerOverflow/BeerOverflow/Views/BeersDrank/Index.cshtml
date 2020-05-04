@@ -8,8 +8,14 @@
 <h1>Beers Drank</h1>
 
 <p>
-    <a  type="button" class="btn btn-warning"  asp-action="Create">Add to Drank List</a>
+    <a type="button" class="btn btn-warning" asp-action="Create">Add to Drank List</a>
 </p>
+@if (Model.FirstOrDefault() == null)
+{
+    <h4 class="text-danger">You have no Beers added to your Drank list.</h4>
+}
+else
+{
 <table class="table">
     <thead>
         <tr>
@@ -37,3 +43,5 @@
         }
     </tbody>
 </table>
+
+}

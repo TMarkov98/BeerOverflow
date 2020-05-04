@@ -8,35 +8,42 @@
 <h1>Beer Types</h1>
 
 <p>
-    <a  type="button" class="btn btn-warning"  asp-action="Create">Create Beer Type</a>
+    <a type="button" class="btn btn-warning" asp-action="Create">Create Beer Type</a>
 </p>
 <form asp-controller="BeerTypes" asp-action="Index">
     <p>
         Find BeerType: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
-        <input type="submit" value="Search" class="btn btn-warning" />  
-        <a  type="button" class="btn btn-danger" asp-action="Index">Back to Full List</a>
+        <input type="submit" value="Search" class="btn btn-warning" />
+        <a type="button" class="btn btn-danger" asp-action="Index">Back to Full List</a>
     </p>
 </form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Name
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+@if (Model.FirstOrDefault() == null)
+{
+    <h4 class="text-danger">No BeerTypes found with this criteria.</h4>
+}
+else
+{
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
+                <th>
+                    Name
+                </th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
 @{
     var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
     var nextDisabled = !Model.HasNextPage ? "disabled" : "";
