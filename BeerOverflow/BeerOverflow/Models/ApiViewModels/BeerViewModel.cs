@@ -14,6 +14,7 @@ namespace BeerOverflow.Web.Models.ApiViewModels
             this.Id = beerDTO.Id;
             this.Name = beerDTO.Name;
             this.BeerType = beerDTO.BeerType;
+            this.Brewery = beerDTO.Brewery;
             this.BreweryCountry = beerDTO.BreweryCountry;
             this.AlcoholByVolume = beerDTO.AlcoholByVolume;
             this.Likes = beerDTO.Likes;

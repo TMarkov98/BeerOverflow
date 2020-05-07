@@ -58,7 +58,7 @@ namespace BeerOverflow.Services
 
         public ICollection<BeerDTO> GetAllBeers()
         {
-            var beers = _context.Beers
+            var beers = _context.Beers.Include(b => b.Brewery)
                 .Select(x => new BeerDTO
                 {
                     Id = x.Id,
